@@ -6,17 +6,12 @@ const SiteFooter = () => {
     <footer className="border-t border-border/70 bg-background">
       <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="font-serif text-3xl text-foreground leading-tight text-balance">
-            Une première conversation, sans engagement.
+          <p className="font-serif text-2xl text-foreground leading-tight">
+            Loraine Habib
           </p>
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-colors"
-          >
-            Prendre rendez-vous →
-          </a>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Accompagnement de fondateurs
+          </p>
         </div>
         <div className="md:col-span-3">
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">

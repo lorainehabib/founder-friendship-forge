@@ -20,9 +20,6 @@ const Index = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-12 md:pt-24 pb-20 md:pb-32">
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
-                Loraine Habib · Accompagnement de fondateurs
-              </p>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance text-foreground">
                 Dans une startup, tout se pilote.
                 <span className="block italic text-muted-foreground mt-2">
@@ -35,9 +32,8 @@ const Index = () => {
                   c'est toute la boîte qui vacille.
                 </p>
                 <p>
-                  Face à ça, les réflexes sont souvent les mêmes — prendre sur
-                  soi, éviter les sujets qui fâchent, espérer que ça passe. Et
-                  ça ne résout rien.
+                  Face à ça, on prend sur soi, on évite les sujets difficiles,
+                  on se dit que ça va passer. Ça ne passe pas.
                 </p>
                 <p className="text-foreground">
                   J'accompagne les fondateurs pour que leur association tienne
@@ -48,7 +44,6 @@ const Index = () => {
 
             <div className="lg:col-span-5 animate-fade-in">
               <div className="relative">
-                <div className="absolute -inset-4 md:-inset-6 border border-border/70 translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6" />
                 <img
                   src={portrait}
                   alt="Portrait de Loraine Habib"
