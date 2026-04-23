@@ -26,9 +26,11 @@ const situations = [
     paragraphs: [
       "Une startup e-commerce, deux associés. Celui qui me contacte n'en peut plus — mais il ne sait pas de quoi exactement. Est-ce que c'est la boîte qui ne va pas dans la direction qu'il veut ? Est-ce que c'est son associé qui n'a pas été à la hauteur cette année ? Est-ce qu'ils sont trop similaires pour se compléter ? Tout s'est mélangé, et la frustration a pris toute la place.",
       "D'une séance à l'autre, sa position changeait. Parfois plusieurs fois par semaine. Partir, rester, confronter, laisser couler. Cette hésitation permanente n'était pas un manque de lucidité — c'était le signe que quelque chose de plus profond bloquait la décision.",
-      "Le travail a consisté à démêler. Séparer ce qui relevait du projet, de la relation, et de ce qu'il n'arrivait pas à se dire à lui-même. Ce qui est apparu au fil des séances, c'est qu'il savait. Il ne voulait plus travailler avec son associé. Non pas par colère, mais par clarté. Et assumer cette clarté — et ce que ça impliquait comme conversations difficiles —",
     ],
-    pull: "C'est là que le vrai travail a commencé.",
+    inlineLast: {
+      text: "Le travail a consisté à démêler. Séparer ce qui relevait du projet, de la relation, et de ce qu'il n'arrivait pas à se dire à lui-même. Ce qui est apparu au fil des séances, c'est qu'il savait. Il ne voulait plus travailler avec son associé. Non pas par colère, mais par clarté. Et assumer cette clarté — et ce que ça impliquait comme conversations difficiles — ",
+      pull: "c'est là que le vrai travail a commencé.",
+    },
   },
 ];
 
