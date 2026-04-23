@@ -1,12 +1,39 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
-import portrait from "@/assets/loraine-portrait-2.jpg";
+import portrait from "@/assets/loraine-portrait-3.jpg";
 
-const trainings = [
-  { year: "2026", school: "Fabulous Systemic Learning", label: "L'approche systémique et stratégique" },
-  { year: "2024", school: "HEC Paris", label: "Certificat de Coaching Professionnel Avancé" },
-  { year: "2019", school: "Certificat de Thérapeute AEMD", label: "Méthode issue de la Thérapie Centrée sur les Émotions" },
-  { year: "2012", school: "EM Lyon Business School", label: "MSc in Management" },
+const trainings: {
+  year: string;
+  school: string;
+  description: string;
+  certificate: string;
+  certificateMissing?: boolean;
+}[] = [
+  {
+    year: "2026",
+    school: "Fabulous Systemic Learning",
+    description: "L'approche systémique et stratégique",
+    certificate: "Nom du certificat à compléter",
+    certificateMissing: true,
+  },
+  {
+    year: "2024",
+    school: "HEC Paris",
+    description: "École de management de référence",
+    certificate: "Certificat de Coaching Professionnel Avancé",
+  },
+  {
+    year: "2019",
+    school: "AEMD",
+    description: "Méthode issue de la Thérapie Centrée sur les Émotions",
+    certificate: "Certificat de Thérapeute AEMD",
+  },
+  {
+    year: "2012",
+    school: "EM Lyon Business School",
+    description: "Grande école de management",
+    certificate: "MSc in Management",
+  },
 ];
 
 const APropos = () => {

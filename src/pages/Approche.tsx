@@ -1,7 +1,7 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import { Link } from "react-router-dom";
-import portrait from "@/assets/loraine-portrait-3.jpg";
+import portrait from "@/assets/loraine-portrait-2.jpg";
 
 const faq = [
   {
@@ -51,15 +51,12 @@ const Approche = () => {
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-24 md:py-36 grid gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <div className="relative">
-              <div className="absolute -inset-4 md:-inset-5 border border-accent/30 -translate-x-4 translate-y-4 md:-translate-x-5 md:translate-y-5" />
-              <img
-                src={portrait}
-                alt="Loraine Habib"
-                className="relative w-full aspect-[4/5] object-cover"
-                loading="lazy"
-              />
-            </div>
+            <img
+              src={portrait}
+              alt="Loraine Habib"
+              className="w-full aspect-[4/5] object-cover"
+              loading="lazy"
+            />
           </div>
           <div className="lg:col-span-7 order-1 lg:order-2">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
@@ -161,7 +158,7 @@ const Approche = () => {
         </div>
       </section>
 
-      <CtaBlock heading="Prêt·e à regarder ce qui se joue vraiment&nbsp;?" />
+      <CtaBlock onlyButton />
     </SiteLayout>
   );
 };
