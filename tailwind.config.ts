@@ -13,12 +13,21 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        ink: {
+          DEFAULT: "hsl(var(--ink))",
+          foreground: "hsl(var(--ink-foreground))",
+          muted: "hsl(var(--ink-muted))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
