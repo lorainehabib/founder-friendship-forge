@@ -58,26 +58,15 @@ const Index = () => {
 
       {/* RECOGNITION */}
       <section className="border-t border-border/60 bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-36">
-          <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-              Reconnaissance
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground">
-              Ces situations vous parlent&nbsp;?
-            </h2>
-          </div>
-
-          <ul className="mt-16 grid gap-px bg-border/60 md:grid-cols-2 border border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-36">
+          <ul className="space-y-6 md:space-y-8">
             {recognitionItems.map((item, i) => (
               <li
                 key={i}
-                className="bg-background p-8 md:p-10 flex gap-5 group hover:bg-secondary/60 transition-colors duration-500"
+                className="flex gap-5 text-lg md:text-xl text-foreground/85 leading-relaxed"
               >
-                <span className="font-serif italic text-accent text-2xl leading-none mt-1">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-foreground/85 leading-relaxed">{item}</p>
+                <span className="text-accent mt-2 select-none">—</span>
+                <p>{item}</p>
               </li>
             ))}
           </ul>
