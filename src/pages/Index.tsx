@@ -20,9 +20,6 @@ const Index = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-12 md:pt-24 pb-20 md:pb-32">
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
-              <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
-                Loraine Habib · Accompagnement de fondateurs
-              </p>
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance text-foreground">
                 Dans une startup, tout se pilote.
                 <span className="block italic text-muted-foreground mt-2">
@@ -35,9 +32,8 @@ const Index = () => {
                   c'est toute la boîte qui vacille.
                 </p>
                 <p>
-                  Face à ça, les réflexes sont souvent les mêmes — prendre sur
-                  soi, éviter les sujets qui fâchent, espérer que ça passe. Et
-                  ça ne résout rien.
+                  Face à ça, on prend sur soi, on évite les sujets difficiles,
+                  on se dit que ça va passer. Ça ne passe pas.
                 </p>
                 <p className="text-foreground">
                   J'accompagne les fondateurs pour que leur association tienne
@@ -48,7 +44,6 @@ const Index = () => {
 
             <div className="lg:col-span-5 animate-fade-in">
               <div className="relative">
-                <div className="absolute -inset-4 md:-inset-6 border border-border/70 translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6" />
                 <img
                   src={portrait}
                   alt="Portrait de Loraine Habib"
@@ -63,26 +58,15 @@ const Index = () => {
 
       {/* RECOGNITION */}
       <section className="border-t border-border/60 bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-36">
-          <div className="max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-              Reconnaissance
-            </p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground">
-              Ces situations vous parlent&nbsp;?
-            </h2>
-          </div>
-
-          <ul className="mt-16 grid gap-px bg-border/60 md:grid-cols-2 border border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-36">
+          <ul className="space-y-6 md:space-y-8">
             {recognitionItems.map((item, i) => (
               <li
                 key={i}
-                className="bg-background p-8 md:p-10 flex gap-5 group hover:bg-secondary/60 transition-colors duration-500"
+                className="flex gap-5 text-lg md:text-xl text-foreground/85 leading-relaxed"
               >
-                <span className="font-serif italic text-accent text-2xl leading-none mt-1">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <p className="text-foreground/85 leading-relaxed">{item}</p>
+                <span className="text-accent mt-2 select-none">—</span>
+                <p>{item}</p>
               </li>
             ))}
           </ul>
@@ -104,9 +88,6 @@ const Index = () => {
       {/* APPROACH PREVIEW */}
       <section>
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-28 md:py-40">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8 text-center">
-            Aperçu de l'approche
-          </p>
           <p className="font-serif text-3xl md:text-5xl leading-[1.2] text-balance text-foreground text-center">
             Je ne m'arrête pas au problème tel que vous le décrivez.
             <span className="block text-muted-foreground italic mt-3">
@@ -128,18 +109,22 @@ const Index = () => {
 
       {/* TESTIMONIALS placeholder */}
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-32">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6 text-center">
-            Témoignages
-          </p>
-          <figure className="text-center">
-            <blockquote className="font-serif italic text-2xl md:text-4xl leading-[1.25] text-balance text-foreground/85">
-              « Bloc témoignages clients — contenu à intégrer. »
-            </blockquote>
-            <figcaption className="mt-8 text-sm text-muted-foreground tracking-wide">
-              — Témoignages à venir
-            </figcaption>
-          </figure>
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-32">
+          <div className="grid gap-6 md:grid-cols-3">
+            {[1, 2, 3].map((n) => (
+              <div
+                key={n}
+                className="border-2 border-dashed border-destructive/60 bg-background p-8 text-center min-h-[180px] flex flex-col items-center justify-center"
+              >
+                <p className="text-[10px] uppercase tracking-[0.25em] text-destructive font-semibold mb-3">
+                  Manquant
+                </p>
+                <p className="font-serif italic text-lg text-muted-foreground">
+                  Témoignage client {n}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

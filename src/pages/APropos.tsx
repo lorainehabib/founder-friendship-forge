@@ -1,12 +1,39 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
-import portrait from "@/assets/loraine-portrait-2.jpg";
+import portrait from "@/assets/loraine-portrait-3.jpg";
 
-const trainings = [
-  { year: "2026", school: "Fabulous Systemic Learning", label: "L'approche systémique et stratégique" },
-  { year: "2024", school: "HEC Paris", label: "Certificat de Coaching Professionnel Avancé" },
-  { year: "2019", school: "Certificat de Thérapeute AEMD", label: "Méthode issue de la Thérapie Centrée sur les Émotions" },
-  { year: "2012", school: "EM Lyon Business School", label: "MSc in Management" },
+const trainings: {
+  year: string;
+  school: string;
+  description: string;
+  certificate: string;
+  certificateMissing?: boolean;
+}[] = [
+  {
+    year: "2026",
+    school: "Fabulous Systemic Learning",
+    description: "L'approche systémique et stratégique",
+    certificate: "Nom du certificat à compléter",
+    certificateMissing: true,
+  },
+  {
+    year: "2024",
+    school: "HEC Paris",
+    description: "École de management de référence",
+    certificate: "Certificat de Coaching Professionnel Avancé",
+  },
+  {
+    year: "2019",
+    school: "AEMD",
+    description: "Méthode issue de la Thérapie Centrée sur les Émotions",
+    certificate: "Certificat de Thérapeute AEMD",
+  },
+  {
+    year: "2012",
+    school: "EM Lyon Business School",
+    description: "Grande école de management",
+    certificate: "MSc in Management",
+  },
 ];
 
 const APropos = () => {
@@ -17,20 +44,14 @@ const APropos = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36 grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
-              <div className="relative">
-                <div className="absolute -inset-4 md:-inset-6 border border-border/70 translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6" />
-                <img
-                  src={portrait}
-                  alt="Loraine Habib"
-                  className="relative w-full aspect-[4/5] object-cover"
-                />
-              </div>
+              <img
+                src={portrait}
+                alt="Loraine Habib"
+                className="w-full aspect-[4/5] object-cover"
+              />
             </div>
           </div>
           <div className="lg:col-span-7">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
-              À propos · Loraine Habib
-            </p>
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
               Avant que ça devienne une activité, c'était une curiosité.
             </h1>
@@ -121,24 +142,37 @@ const APropos = () => {
             {trainings.map((t) => (
               <li
                 key={t.year + t.school}
-                className="grid grid-cols-12 gap-4 md:gap-8 py-7 items-baseline"
+                className="grid grid-cols-12 gap-4 md:gap-6 py-7 items-baseline"
               >
                 <span className="col-span-3 md:col-span-2 font-serif text-2xl text-accent">
                   {t.year}
                 </span>
-                <span className="col-span-9 md:col-span-4 font-serif text-xl md:text-2xl text-foreground">
-                  {t.school}
-                </span>
-                <span className="col-span-12 md:col-span-6 text-sm md:text-base text-muted-foreground md:text-right">
-                  {t.label}
-                </span>
+                <div className="col-span-9 md:col-span-5">
+                  <p className="font-serif text-xl md:text-2xl text-foreground leading-tight">
+                    {t.school}
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {t.description}
+                  </p>
+                </div>
+                <div className="col-span-12 md:col-span-5 md:text-right">
+                  {t.certificateMissing ? (
+                    <span className="inline-block border-2 border-dashed border-destructive/60 px-3 py-1 text-xs uppercase tracking-[0.2em] text-destructive font-semibold">
+                      {t.certificate}
+                    </span>
+                  ) : (
+                    <span className="text-sm md:text-base text-foreground/85">
+                      {t.certificate}
+                    </span>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <CtaBlock heading="Voyons ensemble si je peux vous aider." />
+      <CtaBlock onlyButton />
     </SiteLayout>
   );
 };
