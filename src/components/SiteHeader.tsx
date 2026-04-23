@@ -38,9 +38,10 @@ const SiteHeader = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10 md:py-6">
         <Link
           to="/"
-          className="font-serif text-xl tracking-tight text-foreground hover:text-accent transition-colors"
+          className="font-serif text-base md:text-lg tracking-tight text-foreground hover:text-accent transition-colors leading-tight"
         >
           Loraine Habib
+          <span className="hidden sm:inline text-muted-foreground"> — Coach de fondateurs et équipes dirigeantes</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">

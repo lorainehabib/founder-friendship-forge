@@ -53,14 +53,13 @@ const APropos = () => {
           </div>
           <div className="lg:col-span-7">
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
-              Avant que ça devienne une activité, c'était une curiosité.
+              Avant d'en faire mon métier, c'était un intérêt personnel.
             </h1>
             <div className="mt-10 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Je me suis formée à la psychologie sans vraiment savoir où ça
-                allait me mener. C'était pendant mes années chez BlaBlaCar
-                (j'étais Chief of Staff du CEO, et membre du comité exécutif)
-                et je n'avais pas de projet particulier derrière.
+                Je me suis formée à la psychologie en parallèle de mon poste
+                chez BlaBlaCar — j'étais Chief of Staff du CEO et membre du
+                comité exécutif — sans vraiment savoir où ça allait me mener.
               </p>
               <p>
                 Au bout de deux ans de formation, j'ai voulu pratiquer. Pas

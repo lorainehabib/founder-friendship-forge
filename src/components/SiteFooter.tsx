@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CALENDLY_URL } from "@/lib/site";
+import { LINKEDIN_URL } from "@/lib/site";
 
 const SiteFooter = () => {
   return (
@@ -10,7 +10,7 @@ const SiteFooter = () => {
             Loraine Habib
           </p>
           <p className="mt-2 text-sm text-muted-foreground">
-            Accompagnement de fondateurs
+            Coach de fondateurs et équipes dirigeantes
           </p>
         </div>
         <div className="md:col-span-3">
@@ -31,6 +31,16 @@ const SiteFooter = () => {
             <li>habib.loraine@gmail.com</li>
             <li>10 rue Saint Marc, 75002 Paris</li>
             <li>Présentiel & visio</li>
+            <li>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="hover:text-accent transition-colors"
+              >
+                LinkedIn ↗
+              </a>
+            </li>
           </ul>
         </div>
       </div>

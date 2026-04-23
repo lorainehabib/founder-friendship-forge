@@ -59,6 +59,9 @@ const Index = () => {
       {/* RECOGNITION */}
       <section className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-36">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14">
+            Ces situations vous parlent ?
+          </h2>
           <ul className="space-y-6 md:space-y-8">
             {recognitionItems.map((item, i) => (
               <li
@@ -82,27 +85,24 @@ const Index = () => {
               démarche.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* APPROACH PREVIEW */}
-      <section>
-        <div className="mx-auto max-w-5xl px-6 md:px-10 py-28 md:py-40">
-          <p className="font-serif text-3xl md:text-5xl leading-[1.2] text-balance text-foreground text-center">
-            Je ne m'arrête pas au problème tel que vous le décrivez.
-            <span className="block text-muted-foreground italic mt-3">
+          <div className="mt-16 pt-12 border-t border-border/60 max-w-3xl space-y-5 text-lg text-foreground/85 leading-relaxed">
+            <p>
+              Je ne m'arrête pas au problème tel que vous le décrivez.
+            </p>
+            <p className="font-serif italic text-2xl text-foreground">
               Je cherche ce qui le produit — et c'est là que le travail
               commence.
-            </span>
-          </p>
-          <div className="mt-14 text-center">
-            <Link
-              to="/approche"
-              className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
-            >
-              Découvrir mon approche
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
+            </p>
+            <div className="pt-4">
+              <Link
+                to="/approche"
+                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+              >
+                Découvrir mon approche
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

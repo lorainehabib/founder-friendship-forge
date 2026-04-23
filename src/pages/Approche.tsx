@@ -32,9 +32,6 @@ const Approche = () => {
       {/* Stat hero */}
       <section className="relative">
         <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-10">
-            Approche
-          </p>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-balance text-foreground max-w-5xl">
             <span className="text-accent">65 %</span> des startups à fort
             potentiel échouent à cause de conflits entre cofondateurs.
@@ -62,10 +59,7 @@ const Approche = () => {
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
               Mon regard
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground">
-              Ce regard, je l'ai construit à deux endroits en même temps.
-            </h2>
-            <div className="mt-10 space-y-5 text-lg text-foreground/80 leading-relaxed">
+            <div className="mt-2 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
                 Dix ans dans des équipes dirigeantes de startups — dont Chief
                 of Staff chez BlaBlaCar — m'ont appris à lire un contexte
@@ -91,10 +85,7 @@ const Approche = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
             Comment je travaille
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground">
-            Mon travail commence là où le vôtre s'arrête.
-          </h2>
-          <div className="mt-12 space-y-6 text-lg text-foreground/80 leading-relaxed">
+          <div className="mt-2 space-y-6 text-lg text-foreground/80 leading-relaxed">
             <p>
               Face à des tensions, la plupart des fondateurs commencent par
               essayer de résoudre les choses entre eux : en parler,
@@ -132,12 +123,9 @@ const Approche = () => {
       {/* FAQ */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-36">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-12">
             Ce qu'on me demande souvent
           </p>
-          <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground mb-16 max-w-3xl">
-            Les questions qui reviennent le plus.
-          </h2>
           <div className="divide-y divide-border/70 border-y border-border/70">
             {faq.map((item, i) => (
               <details key={i} className="group py-8">
