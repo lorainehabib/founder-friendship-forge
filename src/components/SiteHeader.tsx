@@ -5,6 +5,7 @@ import { CALENDLY_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { to: "/", label: "Accueil", end: true },
   { to: "/approche", label: "Approche" },
   { to: "/situations", label: "Situations" },
   { to: "/a-propos", label: "À propos" },
@@ -41,7 +42,7 @@ const SiteHeader = () => {
           className="font-serif text-base md:text-lg tracking-tight text-foreground hover:text-accent transition-colors leading-tight"
         >
           Loraine Habib
-          <span className="hidden sm:inline text-muted-foreground"> — Coach de fondateurs et équipes dirigeantes</span>
+          <span className="hidden sm:inline text-muted-foreground">, Coach de fondateurs et équipes dirigeantes</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
@@ -49,6 +50,7 @@ const SiteHeader = () => {
             <NavLink
               key={l.to}
               to={l.to}
+              end={l.end}
               className={({ isActive }) =>
                 cn(
                   "text-sm tracking-wide transition-colors relative py-1",
@@ -103,6 +105,7 @@ const SiteHeader = () => {
             <NavLink
               key={l.to}
               to={l.to}
+              end={l.end}
               className={({ isActive }) =>
                 cn(
                   "font-serif text-2xl",

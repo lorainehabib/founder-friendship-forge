@@ -8,7 +8,7 @@ interface CtaBlockProps {
 }
 
 const CtaBlock = ({
-  heading = "Une première conversation pour voir où vous en êtes — et comment avancer.",
+  heading = "Une première conversation pour voir où vous en êtes, et comment avancer.",
   caption,
   note = "Gratuit et sans engagement · Échanges strictement confidentiels",
   onlyButton = false,

@@ -53,13 +53,13 @@ const APropos = () => {
           </div>
           <div className="lg:col-span-7">
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
-              Avant d'en faire mon métier, un intérêt personnel.
+              Avant d'en faire mon métier, c'était une fascination&nbsp;: découvrir qu'on peut vraiment faire bouger une relation.
             </h1>
             <div className="mt-10 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
                 Je me suis formée à la psychologie en parallèle de mon poste
-                chez BlaBlaCar — j'étais Chief of Staff du CEO et membre du
-                comité exécutif — sans vraiment savoir où ça allait me mener.
+                chez BlaBlaCar, j'étais Chief of Staff du CEO et membre du
+                comité exécutif, sans vraiment savoir où ça allait me mener.
               </p>
               <p>
                 Au bout de deux ans de formation, j'ai voulu pratiquer. Pas
@@ -91,9 +91,9 @@ const APropos = () => {
           </p>
           <div className="space-y-6 text-lg text-foreground/85 leading-relaxed">
             <p>
-              Les mêmes schémas que je voyais en séance — des attentes non
+              Les mêmes schémas que je voyais en séance, des attentes non
               formulées, des réactions qui aggravent ce qu'elles cherchent à
-              résoudre — je les retrouvais exactement dans les relations
+              résoudre, je les retrouvais exactement dans les relations
               entre dirigeants. Avec les mêmes effets sur la capacité à
               décider, à avancer, à faire confiance.
             </p>
@@ -121,7 +121,7 @@ const APropos = () => {
             </p>
             <p>
               Et un accompagnement avec moi a toujours une fin. Mon objectif
-              n'est pas de m'installer dans la durée — c'est que vous n'ayez
+              n'est pas de m'installer dans la durée, c'est que vous n'ayez
               plus besoin de moi.
             </p>
           </div>
