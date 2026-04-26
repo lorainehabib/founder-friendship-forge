@@ -86,15 +86,27 @@ const Index = () => {
             <p className="mt-4 text-base md:text-lg text-ink-muted">
               Même si vous êtes seul·e à faire la démarche.
             </p>
-            <div className="mt-10">
-              <Link
-                to="/approche"
-                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
-              >
-                Découvrir mon approche
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </Link>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Respiration claire entre les deux blocs sombres */}
+      <section className="bg-background border-y border-border/60">
+        <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
+          <p className="font-serif italic text-2xl md:text-4xl leading-[1.25] text-balance text-foreground">
+            Travailler la relation, ce n'est pas régler un conflit.
+            <span className="block not-italic text-muted-foreground mt-3">
+              C'est créer les conditions pour qu'elle tienne dans la durée.
+            </span>
+          </p>
+          <div className="mt-12">
+            <Link
+              to="/approche"
+              className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+            >
+              Découvrir mon approche
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
           </div>
         </div>
       </section>
