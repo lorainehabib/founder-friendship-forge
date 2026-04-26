@@ -119,7 +119,7 @@ const APropos = () => {
               avec la rigueur qu'il demande.
             </p>
             <p>
-              Et un accompagnement avec moi a toujours une fin. Mon objectif
+              Un accompagnement avec moi a toujours une fin. Mon objectif
               n'est pas de m'installer dans la durée, c'est que vous n'ayez
               plus besoin de moi.
             </p>
@@ -130,11 +130,8 @@ const APropos = () => {
       {/* Trainings */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-36">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-            Formations & certifications
-          </p>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14 max-w-3xl">
-            Le parcours derrière la pratique.
+            Formations & certifications
           </h2>
           <ul className="divide-y divide-border/70 border-y border-border/70">
             {trainings.map((t) => (

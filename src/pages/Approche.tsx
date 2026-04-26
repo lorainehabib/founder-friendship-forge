@@ -14,7 +14,7 @@ const faq = [
   },
   {
     q: "À quel moment faut-il venir vous voir ?",
-    a: "Le plus tôt possible. Les conflits importants qu'on voit des années après la création étaient presque toujours présents dès le début, sous forme de petits irritants qu'on a minimisés. Plus on travaille tôt, moins on laisse ces signaux s'installer.",
+    a: "Le plus tôt possible. Les conflits importants qu'on voit des années après la création étaient presque toujours présents dès le début, sous forme de petits irritants qu'on a minimisés. Plus on travaille tôt, moins on laisse ces tensions s'installer.",
   },
   {
     q: "Concrètement, comment se passe une séance ?",
