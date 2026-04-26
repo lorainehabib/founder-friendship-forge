@@ -119,7 +119,7 @@ const APropos = () => {
               avec la rigueur qu'il demande.
             </p>
             <p>
-              Et un accompagnement avec moi a toujours une fin. Mon objectif
+              Un accompagnement avec moi a toujours une fin. Mon objectif
               n'est pas de m'installer dans la durée, c'est que vous n'ayez
               plus besoin de moi.
             </p>
