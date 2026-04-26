@@ -62,13 +62,16 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14">
             Ces situations vous parlent ?
           </h2>
-          <ul className="space-y-6 md:space-y-8">
+          <ul className="divide-y divide-border/50 border-y border-border/50">
             {recognitionItems.map((item, i) => (
               <li
                 key={i}
-                className="flex gap-5 text-lg md:text-xl text-foreground/85 leading-relaxed"
+                className="flex items-start gap-6 py-6 md:py-7 text-lg md:text-xl text-foreground/85 leading-relaxed"
               >
-                <span className="text-accent mt-2 select-none">—</span>
+                <span
+                  aria-hidden
+                  className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                />
                 <p>{item}</p>
               </li>
             ))}
