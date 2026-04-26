@@ -33,7 +33,7 @@ const Index = () => {
                 </p>
                 <p>
                   Face à ça, on prend sur soi, on évite les sujets difficiles,
-                  on se dit que ça va passer. Ça ne passe pas.
+                  on se dit que ça va passer. Mais plus on attend, plus ça s'ancre.
                 </p>
                 <p className="text-foreground">
                   J'accompagne les fondateurs pour que leur association tienne
