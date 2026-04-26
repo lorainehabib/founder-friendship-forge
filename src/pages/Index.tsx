@@ -83,25 +83,17 @@ const Index = () => {
 
             {/* Right: response — sticky on desktop, framed by terracotta rule */}
             <aside className="lg:col-span-5">
-              <div className="lg:sticky lg:top-28 border-l-2 border-accent pl-6 md:pl-8 space-y-6">
+              <div className="lg:sticky lg:top-28 pl-0 space-y-6">
                 <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
                   Ces situations ne sont pas des passages obligés. Ce sont
                   des signes qu'une dynamique s'est installée entre vous —
                   et qu'elle ne se résoudra pas toute seule.
                 </p>
                 <p className="font-serif text-xl md:text-2xl leading-snug text-foreground">
-                  Mais elle se travaille. Même si vous êtes seul·e à faire
-                  la démarche.
-                </p>
-
-                <div className="h-px w-12 bg-border/80" />
-
-                <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
-                  Je ne m'arrête pas au problème tel que vous le décrivez.
-                </p>
-                <p className="font-serif italic text-xl md:text-2xl leading-snug text-foreground">
-                  Je cherche ce qui le produit — et c'est là que le travail
-                  commence.
+                  Mais elle se travaille.{" "}
+                  <span className="text-foreground/60">
+                    (Même si vous êtes seul·e à faire la démarche.)
+                  </span>
                 </p>
 
                 <div className="pt-2">
