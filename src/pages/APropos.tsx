@@ -53,7 +53,7 @@ const APropos = () => {
           </div>
           <div className="lg:col-span-7">
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
-              Avant d'en faire mon métier, c'était un intérêt personnel.
+              Avant d'en faire mon métier, un intérêt personnel.
             </h1>
             <div className="mt-10 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
@@ -150,7 +150,7 @@ const APropos = () => {
                   <p className="font-serif text-xl md:text-2xl text-foreground leading-tight">
                     {t.school}
                   </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-base text-muted-foreground">
                     {t.description}
                   </p>
                 </div>

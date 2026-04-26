@@ -48,8 +48,17 @@ const Situations = () => {
   return (
     <SiteLayout>
       <section>
-        <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-24 pb-8 md:pb-12">
-          <p className="text-sm text-muted-foreground italic">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-24 pb-12 md:pb-16">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            Situations
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
+            Trois histoires d'associés, trois façons d'avancer.
+          </h1>
+          <p className="mt-8 text-lg text-foreground/80 leading-relaxed max-w-2xl">
+            Des accompagnements réels, racontés du point de vue de la personne qui m'a contactée. Pour donner à voir ce qui se joue concrètement et ce qui se débloque.
+          </p>
+          <p className="mt-6 text-sm text-muted-foreground italic">
             Les détails ont été modifiés pour préserver la confidentialité.
           </p>
         </div>

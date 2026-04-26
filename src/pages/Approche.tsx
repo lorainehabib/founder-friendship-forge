@@ -35,10 +35,9 @@ const Approche = () => {
           <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-balance text-foreground max-w-5xl">
             <span className="text-accent">65 %</span> des startups à fort
             potentiel échouent à cause de conflits entre cofondateurs.
-            <sup className="text-accent">*</sup>
           </h1>
-          <p className="mt-12 text-sm text-muted-foreground max-w-xl">
-            *Source&nbsp;: Noam Wasserman,{" "}
+          <p className="mt-12 text-base text-muted-foreground max-w-xl">
+            Source&nbsp;: Noam Wasserman,{" "}
             <em>The Founder's Dilemmas</em>, Harvard Business School.
           </p>
         </div>
