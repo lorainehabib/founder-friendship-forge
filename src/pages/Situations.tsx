@@ -53,12 +53,9 @@ const Situations = () => {
             Situations
           </p>
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
-            Trois histoires d'associés, trois façons d'avancer.
-          </h1>
-          <p className="mt-8 text-lg text-foreground/80 leading-relaxed max-w-2xl">
             Quelques exemples d'accompagnements que j'ai menés.
-          </p>
-          <p className="mt-4 text-sm text-muted-foreground italic">
+          </h1>
+          <p className="mt-8 text-base text-muted-foreground italic max-w-2xl">
             Les détails ont été modifiés pour préserver la confidentialité.
           </p>
         </div>

@@ -20,15 +20,15 @@ const Index = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-12 md:pt-24 pb-20 md:pb-32">
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance text-foreground">
+              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-balance text-foreground">
                 La relation entre fondateurs,
                 <span className="block italic text-muted-foreground mt-2">
                   ça se travaille.
                 </span>
               </h1>
-              <div className="mt-10 space-y-5 max-w-xl text-lg text-foreground/80 leading-relaxed text-pretty">
+              <div className="mt-10 space-y-5 max-w-xl text-xl md:text-2xl text-foreground/80 leading-relaxed text-pretty">
                 <p className="text-foreground">
-                  J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà compliqué.
+                  J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà tendu.
                 </p>
               </div>
             </div>
