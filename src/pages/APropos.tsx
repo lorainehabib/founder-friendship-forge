@@ -150,7 +150,7 @@ const APropos = () => {
                   <p className="font-serif text-xl md:text-2xl text-foreground leading-tight">
                     {t.school}
                   </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
+                  <p className="mt-1 text-base text-muted-foreground">
                     {t.description}
                   </p>
                 </div>
