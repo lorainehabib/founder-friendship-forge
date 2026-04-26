@@ -9,7 +9,7 @@ const recognitionItems = [
   "Quel que soit le sujet, vous finissez toujours par buter sur le même désaccord.",
   "Vous préparez ce que vous allez dire avant d'en parler à votre associé.",
   "Vous avez l'impression de porter plus que votre part.",
-  "Vous parlez de votre associé à d'autres — plutôt qu'à lui.",
+  "Vous parlez de votre associé à d'autres, plutôt qu'à lui.",
 ];
 
 const Index = () => {
@@ -72,7 +72,7 @@ const Index = () => {
           </ul>
         </div>
 
-        {/* Dark band — la chute */}
+        {/* Dark band, la chute */}
         <div className="bg-ink text-ink-foreground">
           <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
             <p className="text-base md:text-lg text-ink-muted leading-relaxed mb-10 md:mb-12">

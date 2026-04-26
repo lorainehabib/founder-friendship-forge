@@ -5,20 +5,20 @@ import portrait from "@/assets/loraine-portrait-2.jpg";
 
 const faq = [
   {
-    q: "Mon associé n'est pas prêt à faire cette démarche — ça peut quand même marcher ?",
+    q: "Mon associé n'est pas prêt à faire cette démarche, ça peut quand même marcher ?",
     a: "Oui. Une relation, c'est une dynamique : quand l'un des deux change sa façon d'agir, l'autre ne peut pas réagir exactement comme avant. La relation bouge, même si un seul des deux est engagé dans le travail.",
   },
   {
-    q: "Notre situation est vraiment spécifique — vous avez déjà vu ça ?",
-    a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation — c'est de comprendre ce qui la crée. Les tensions entre cofondateurs se ressemblent souvent en surface. Ce qui les alimente est presque toujours singulier.",
+    q: "Notre situation est vraiment spécifique, vous avez déjà vu ça ?",
+    a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre cofondateurs se ressemblent souvent en surface. Ce qui les alimente est presque toujours singulier.",
   },
   {
     q: "À quel moment faut-il venir vous voir ?",
-    a: "Le plus tôt possible. Les conflits importants qu'on voit des années après la création étaient presque toujours présents dès le début — sous forme de petits irritants qu'on a minimisés. Plus on travaille tôt, moins on laisse ces signaux s'installer.",
+    a: "Le plus tôt possible. Les conflits importants qu'on voit des années après la création étaient presque toujours présents dès le début, sous forme de petits irritants qu'on a minimisés. Plus on travaille tôt, moins on laisse ces signaux s'installer.",
   },
   {
     q: "Concrètement, comment se passe une séance ?",
-    a: "On part toujours d'une situation réelle — quelque chose qui s'est passé récemment, un échange qui a coincé, une décision qui n'avance pas. À partir de là, je pose des questions : qu'est-ce qui a été dit, comment l'autre a réagi, ce que vous avez ressenti à ce moment-là. Pas pour rejouer la scène, mais pour comprendre ce qui se joue en dessous — ce que chacun cherche vraiment, ce qui n'a pas été dit, ce qui fait que ça bloque. C'est ce travail-là qui permet de bouger.",
+    a: "On part toujours d'une situation réelle, quelque chose qui s'est passé récemment, un échange qui a coincé, une décision qui n'avance pas. À partir de là, je pose des questions : qu'est-ce qui a été dit, comment l'autre a réagi, ce que vous avez ressenti à ce moment-là. Pas pour rejouer la scène, mais pour comprendre ce qui se joue en dessous, ce que chacun cherche vraiment, ce qui n'a pas été dit, ce qui fait que ça bloque. C'est ce travail-là qui permet de bouger.",
   },
   {
     q: "Ça dure combien de temps ?",
@@ -59,8 +59,8 @@ const Approche = () => {
             </p>
             <div className="mt-2 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Dix ans dans des équipes dirigeantes de startups — dont Chief
-                of Staff chez BlaBlaCar — m'ont appris à lire un contexte
+                Dix ans dans des équipes dirigeantes de startups, dont Chief
+                of Staff chez BlaBlaCar, m'ont appris à lire un contexte
                 vite, à comprendre ce qui se joue vraiment derrière une
                 décision qui traîne ou une tension qui monte.
               </p>
@@ -102,8 +102,8 @@ const Approche = () => {
             <p>
               Mon travail commence là. Pas dans le contenu du désaccord, mais
               dans ce qui le fait revenir. Je rends visible ce qui se joue
-              entre les fondateurs — les mécanismes, les angles morts, les
-              schémas qui se répètent — pour qu'ils puissent enfin en sortir.
+              entre les fondateurs, les mécanismes, les angles morts, les
+              schémas qui se répètent, pour qu'ils puissent enfin en sortir.
             </p>
           </div>
           <div className="mt-14">
