@@ -72,22 +72,6 @@ const Index = () => {
           </ul>
         </div>
 
-        {/* Dark band, la chute */}
-        <div className="bg-ink text-ink-foreground">
-          <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
-            <p className="text-base md:text-lg text-ink-muted leading-relaxed mb-10 md:mb-12">
-              Ces situations ne sont pas des passages obligés. Ce sont des
-              signes qu'une dynamique s'est installée entre vous, et
-              elle ne se résoudra pas toute seule.
-            </p>
-            <p className="font-serif text-2xl md:text-4xl leading-[1.2] text-balance text-ink-foreground">
-              Mais elle se travaille.
-            </p>
-            <p className="mt-4 text-base md:text-lg text-ink-muted">
-              Même si vous êtes seul·e à faire la démarche.
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* Respiration claire entre les deux blocs sombres */}
