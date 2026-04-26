@@ -59,9 +59,12 @@ const Index = () => {
       {/* RECOGNITION */}
       <section className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-24 md:py-32">
-          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-12 md:mb-14">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-8">
             Ces situations vous parlent&nbsp;?
           </h2>
+          <p className="text-base md:text-lg text-foreground/75 leading-relaxed mb-12 md:mb-14 max-w-2xl">
+            Quelques signaux que je retrouve souvent chez les fondateurs qui me contactent. Si l'un d'eux résonne, c'est probablement le moment d'en parler.
+          </p>
           <ul className="space-y-5">
             {recognitionItems.map((item, i) => (
               <li
@@ -83,8 +86,8 @@ const Index = () => {
           <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
             <p className="text-base md:text-lg text-ink-muted leading-relaxed mb-10 md:mb-12">
               Ces situations ne sont pas des passages obligés. Ce sont des
-              signes qu'une dynamique s'est installée entre vous — et
-              qu'elle ne se résoudra pas toute seule.
+              signes qu'une dynamique s'est installée entre vous, et
+              elle ne se résoudra pas toute seule.
             </p>
             <p className="font-serif text-2xl md:text-4xl leading-[1.2] text-balance text-ink-foreground">
               Mais elle se travaille.

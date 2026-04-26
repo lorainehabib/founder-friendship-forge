@@ -5,7 +5,7 @@ import SiteFooter from "./SiteFooter";
 const SiteLayout = ({ children }: { children: ReactNode }) => (
   <div className="min-h-screen flex flex-col bg-background">
     <SiteHeader />
-    <main className="flex-1 pt-20 md:pt-24">{children}</main>
+    <main className="flex-1 pt-16 md:pt-20">{children}</main>
     <SiteFooter />
   </div>
 );
