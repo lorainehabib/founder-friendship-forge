@@ -12,14 +12,13 @@ const trainings: {
   {
     year: "2026",
     school: "Fabulous Systemic Learning",
-    description: "L'approche systémique et stratégique",
-    certificate: "Nom du certificat à compléter",
-    certificateMissing: true,
+    description: "",
+    certificate: "Approche systémique et stratégique",
   },
   {
     year: "2024",
     school: "HEC Paris",
-    description: "École de management de référence",
+    description: "",
     certificate: "Certificat de Coaching Professionnel Avancé",
   },
   {
@@ -31,7 +30,7 @@ const trainings: {
   {
     year: "2012",
     school: "EM Lyon Business School",
-    description: "Grande école de management",
+    description: "",
     certificate: "MSc in Management",
   },
 ];
@@ -150,9 +149,11 @@ const APropos = () => {
                   <p className="font-serif text-xl md:text-2xl text-foreground leading-tight">
                     {t.school}
                   </p>
-                  <p className="mt-1 text-base text-muted-foreground">
-                    {t.description}
-                  </p>
+                  {t.description && (
+                    <p className="mt-1 text-base text-muted-foreground">
+                      {t.description}
+                    </p>
+                  )}
                 </div>
                 <div className="col-span-12 md:col-span-5 md:text-right">
                   {t.certificateMissing ? (

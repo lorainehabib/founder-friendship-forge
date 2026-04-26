@@ -99,27 +99,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* TESTIMONIALS placeholder */}
-      <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-32">
-          <div className="grid gap-6 md:grid-cols-3">
-            {[1, 2, 3].map((n) => (
-              <div
-                key={n}
-                className="border-2 border-dashed border-destructive/60 bg-background p-8 text-center min-h-[180px] flex flex-col items-center justify-center"
-              >
-                <p className="text-[10px] uppercase tracking-[0.25em] text-destructive font-semibold mb-3">
-                  Manquant
-                </p>
-                <p className="font-serif italic text-lg text-muted-foreground">
-                  Témoignage client {n}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CtaBlock />
     </SiteLayout>
   );
