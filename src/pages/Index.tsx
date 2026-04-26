@@ -77,7 +77,7 @@ const Index = () => {
             ))}
           </ul>
 
-          <div className="mt-16 max-w-2xl space-y-5 text-lg text-foreground/80 leading-relaxed">
+          <div className="mt-16 max-w-3xl space-y-5 text-lg text-foreground/80 leading-relaxed">
             <p>
               Ces situations ne sont pas des passages obligés. Ce sont des
               signes qu'une dynamique s'est installée entre vous — et qu'elle
@@ -87,10 +87,7 @@ const Index = () => {
               Mais elle se travaille. Même si vous êtes seul·e à faire la
               démarche.
             </p>
-          </div>
-
-          <div className="mt-16 pt-12 border-t border-border/60 max-w-3xl space-y-5 text-lg text-foreground/85 leading-relaxed">
-            <p>
+            <p className="pt-4">
               Je ne m'arrête pas au problème tel que vous le décrivez.
             </p>
             <p className="font-serif italic text-2xl text-foreground">
