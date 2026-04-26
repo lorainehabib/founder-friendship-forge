@@ -21,23 +21,14 @@ const Index = () => {
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] text-balance text-foreground">
-                Dans une startup, tout se pilote.
+                La relation entre fondateurs,
                 <span className="block italic text-muted-foreground mt-2">
-                  Sauf la relation entre fondateurs.
+                  ça se travaille.
                 </span>
               </h1>
               <div className="mt-10 space-y-5 max-w-xl text-lg text-foreground/80 leading-relaxed text-pretty">
-                <p>
-                  Et pourtant, quand la relation entre associés se dégrade,
-                  c'est toute la boîte qui vacille.
-                </p>
-                <p>
-                  Face à ça, on prend sur soi, on évite les sujets difficiles,
-                  on se dit que ça va passer. Mais plus on attend, plus ça s'ancre.
-                </p>
                 <p className="text-foreground">
-                  J'accompagne les fondateurs pour que leur association tienne
-                  — et avance. Dès le début, ou quand c'est déjà tendu.
+                  J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà compliqué.
                 </p>
               </div>
             </div>

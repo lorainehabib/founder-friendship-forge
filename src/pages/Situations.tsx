@@ -56,9 +56,9 @@ const Situations = () => {
             Trois histoires d'associés, trois façons d'avancer.
           </h1>
           <p className="mt-8 text-lg text-foreground/80 leading-relaxed max-w-2xl">
-            Des accompagnements réels, racontés du point de vue de la personne qui m'a contactée. Pour donner à voir ce qui se joue concrètement et ce qui se débloque.
+            Quelques exemples d'accompagnements que j'ai menés.
           </p>
-          <p className="mt-6 text-sm text-muted-foreground italic">
+          <p className="mt-4 text-sm text-muted-foreground italic">
             Les détails ont été modifiés pour préserver la confidentialité.
           </p>
         </div>
