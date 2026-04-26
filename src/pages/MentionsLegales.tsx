@@ -22,17 +22,17 @@ const MentionsLegales = () => (
         </Section>
 
         <Section title="Hébergeur">
-          <p>Nom&nbsp;: [Nom de l'hébergeur]<br />Raison sociale&nbsp;: [Raison sociale]<br />Adresse&nbsp;: [Adresse]<br />Téléphone&nbsp;: [Téléphone]</p>
+          <p>Lovable (Lovable AB)<br />Adresse&nbsp;: Kungsgatan 8, 111 43 Stockholm, Suède<br />Site&nbsp;: <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">lovable.dev</a></p>
         </Section>
 
         <Section title="Propriété intellectuelle">
           <p>L'ensemble du contenu de ce site (textes, images, photographies, logo, structure) est la propriété exclusive de LHG, sauf mention contraire. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, est interdite sans autorisation écrite préalable.</p>
-          <p>Crédits photos&nbsp;: Camille</p>
+          <p>Crédits photos&nbsp;: Camille Collin et Aurélie Deglane.</p>
         </Section>
 
         <Section title="Données personnelles & RGPD">
           <p><strong className="font-medium text-foreground">Responsable du traitement.</strong> Loraine Habib — LHG, habib.loraine@gmail.com</p>
-          <p><strong className="font-medium text-foreground">Données collectées.</strong> Ce site ne collecte pas de données personnelles directement. La prise de rendez-vous s'effectue via la plateforme Calendly, qui agit en tant que sous-traitant et dispose de sa propre politique de confidentialité&nbsp;: <a href="https://calendly.com/privacy" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">calendly.com/privacy</a>.</p>
+          <p><strong className="font-medium text-foreground">Données collectées.</strong> Ce site ne collecte pas de données personnelles directement. La prise de rendez-vous s'effectue via la plateforme Cal.com, qui agit en tant que sous-traitant et dispose de sa propre politique de confidentialité&nbsp;: <a href="https://cal.com/privacy" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">cal.com/privacy</a>.</p>
           <p><strong className="font-medium text-foreground">Vos droits.</strong> Conformément au RGPD&nbsp;: accès, rectification, effacement, limitation, opposition, portabilité. Pour les exercer&nbsp;: habib.loraine@gmail.com. En cas de difficulté, vous pouvez saisir la CNIL&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">www.cnil.fr</a>.</p>
         </Section>
 
