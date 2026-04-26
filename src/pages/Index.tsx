@@ -93,11 +93,16 @@ const Index = () => {
       {/* Respiration claire entre les deux blocs sombres */}
       <section className="bg-background border-y border-border/60">
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
-          <p className="font-serif italic text-2xl md:text-4xl leading-[1.25] text-balance text-foreground">
-            Travailler la relation, ce n'est pas régler un conflit.
-            <span className="block not-italic text-muted-foreground mt-3">
-              C'est créer les conditions pour qu'elle tienne dans la durée.
-            </span>
+          <p className="text-base md:text-lg text-foreground/75 leading-relaxed mb-10 md:mb-12">
+            Ces situations ne sont pas des passages obligés. Ce sont des
+            signes qu'une dynamique s'est installée entre vous, et
+            elle ne se résoudra pas toute seule.
+          </p>
+          <p className="font-serif text-2xl md:text-4xl leading-[1.2] text-balance text-foreground">
+            Mais elle se travaille.
+          </p>
+          <p className="mt-4 text-base md:text-lg text-muted-foreground">
+            Même si vous êtes seul·e à faire la démarche.
           </p>
           <div className="mt-12">
             <Link
