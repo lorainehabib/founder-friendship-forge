@@ -134,7 +134,7 @@ const APropos = () => {
             Formations & certifications
           </p>
           <h2 className="font-serif text-4xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14 max-w-3xl">
-            Le parcours derrière la pratique.
+            Formations & certifications
           </h2>
           <ul className="divide-y divide-border/70 border-y border-border/70">
             {trainings.map((t) => (
