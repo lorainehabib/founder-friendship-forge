@@ -82,8 +82,8 @@ const Index = () => {
             </div>
 
             {/* Right: response — sticky on desktop, framed by terracotta rule */}
-            <aside className="lg:col-span-5">
-              <div className="lg:sticky lg:top-28 pl-0 space-y-6">
+            <aside className="lg:col-span-5 lg:flex lg:items-center">
+              <div className="space-y-6">
                 <p className="text-base md:text-lg text-foreground/75 leading-relaxed">
                   Ces situations ne sont pas des passages obligés. Ce sont
                   des signes qu'une dynamique s'est installée entre vous —
