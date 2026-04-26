@@ -5,6 +5,7 @@ import { CALENDLY_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { to: "/", label: "Accueil", end: true },
   { to: "/approche", label: "Approche" },
   { to: "/situations", label: "Situations" },
   { to: "/a-propos", label: "À propos" },
@@ -49,6 +50,7 @@ const SiteHeader = () => {
             <NavLink
               key={l.to}
               to={l.to}
+              end={l.end}
               className={({ isActive }) =>
                 cn(
                   "text-sm tracking-wide transition-colors relative py-1",
@@ -103,6 +105,7 @@ const SiteHeader = () => {
             <NavLink
               key={l.to}
               to={l.to}
+              end={l.end}
               className={({ isActive }) =>
                 cn(
                   "font-serif text-2xl",
