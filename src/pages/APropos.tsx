@@ -149,9 +149,11 @@ const APropos = () => {
                   <p className="font-serif text-xl md:text-2xl text-foreground leading-tight">
                     {t.school}
                   </p>
-                  <p className="mt-1 text-base text-muted-foreground">
-                    {t.description}
-                  </p>
+                  {t.description && (
+                    <p className="mt-1 text-base text-muted-foreground">
+                      {t.description}
+                    </p>
+                  )}
                 </div>
                 <div className="col-span-12 md:col-span-5 md:text-right">
                   {t.certificateMissing ? (
