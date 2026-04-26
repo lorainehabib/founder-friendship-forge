@@ -53,13 +53,13 @@ const APropos = () => {
           </div>
           <div className="lg:col-span-7">
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
-              Avant d'en faire mon métier, c'était une fascination&nbsp;: découvrir qu'on peut vraiment faire bouger une relation.
+              Avant d'en faire mon métier, c'était une fascination&nbsp;: découvrir qu'une relation, ça peut changer.
             </h1>
             <div className="mt-10 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
                 Je me suis formée à la psychologie en parallèle de mon poste
-                chez BlaBlaCar, j'étais Chief of Staff du CEO et membre du
-                comité exécutif, sans vraiment savoir où ça allait me mener.
+                chez BlaBlaCar — j'étais Chief of Staff du CEO et membre du
+                comité exécutif — sans vraiment savoir où ça allait me mener.
               </p>
               <p>
                 Au bout de deux ans de formation, j'ai voulu pratiquer. Pas
@@ -76,7 +76,7 @@ const APropos = () => {
                 de fonctionner, leurs angles morts.
               </p>
               <p className="font-serif italic text-2xl text-foreground">
-                C'est ce croisement qui a tout éclairé.
+                C'est là que tout s'est connecté.
               </p>
             </div>
           </div>
