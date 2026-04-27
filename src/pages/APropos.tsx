@@ -10,12 +10,6 @@ const trainings: {
   certificateMissing?: boolean;
 }[] = [
   {
-    year: "2026",
-    school: "Fabulous Systemic Learning",
-    description: "",
-    certificate: "Approche systémique et stratégique",
-  },
-  {
     year: "2024",
     school: "HEC Paris",
     description: "",
