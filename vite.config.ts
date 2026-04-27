@@ -5,7 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/founder-friendship-forge/" : "/",
+  // For GitHub Pages:
+  // - default Pages URL: https://<user>.github.io/<repo>/  -> base "/<repo>/"
+  // - custom domain: https://example.com/                 -> base "/"
+  base: process.env.VITE_BASE ?? (mode === "production" ? "/founder-friendship-forge/" : "/"),
   server: {
     host: "::",
     port: 8080,
