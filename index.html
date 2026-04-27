@@ -8,6 +8,24 @@
     <meta name="author" content="Loraine Habib" />
     <link rel="canonical" href="/" />
 
+    <script>
+      // SPA redirect handling for GitHub Pages (404.html -> "/?/<path>").
+      // Based on https://github.com/rafgraph/spa-github-pages
+      (function () {
+        var l = window.location;
+        if (l.search.startsWith("?/")) {
+          var decoded = l.search
+            .slice(2)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, l.pathname.replace(/\/$/, "") + "/" + decoded + l.hash);
+        }
+      })();
+    </script>
+
     <meta property="og:title" content="Loraine Habib — Accompagnement de fondateurs" />
     <meta property="og:description" content="Quand la relation entre associés se dégrade, c'est toute la boîte qui vacille. Un accompagnement pour que votre association tienne — et avance." />
     <meta property="og:type" content="website" />
