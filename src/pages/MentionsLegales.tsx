@@ -22,7 +22,7 @@ const MentionsLegales = () => (
         </Section>
 
         <Section title="Hébergeur">
-          <p>Lovable (Lovable AB)<br />Adresse&nbsp;: Kungsgatan 8, 111 43 Stockholm, Suède<br />Site&nbsp;: <a href="https://lovable.dev" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">lovable.dev</a></p>
+          <p>GitHub Pages (GitHub, Inc.)<br />Adresse&nbsp;: 88 Colin P Kelly Jr St, San Francisco, CA 94107, États-Unis<br />Site&nbsp;: <a href="https://pages.github.com" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">pages.github.com</a></p>
         </Section>
 
         <Section title="Propriété intellectuelle">
