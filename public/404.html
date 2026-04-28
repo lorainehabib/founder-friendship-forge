@@ -5,51 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting…</title>
     <script>
-      // SPA fallback for GitHub Pages.
-      // Based on https://github.com/rafgraph/spa-github-pages
       (function () {
         var l = window.location;
-        var repo = "/founder-friendship-forge";
+        // SPA fallback for GitHub Pages (custom domain).
+        // Based on https://github.com/rafgraph/spa-github-pages
         var pathname = l.pathname || "/";
-        // Custom domain often serves /qui-je-suis at host root; old links are not under /repo/.
-        var pathRest;
-        if (pathname.startsWith(repo + "/")) {
-          pathRest = pathname.slice(repo.length + 1).replace(/^\/+/, "");
-        } else if (pathname === repo || pathname === repo + "/") {
-          pathRest = "";
-        } else if (pathname !== "/" && pathname !== "") {
-          pathRest = pathname.replace(/^\/+/, "");
-        } else {
-          pathRest = "";
-        }
+        var pathRest = pathname.replace(/^\/+/, "");
         pathRest = pathRest.replace(/&/g, "~and~");
         var q = l.search || "";
         var target;
-        // If search is already ?/… (SPA hack), appending & + search caused ?/&/… and unbounded growth.
+
         if (q.startsWith("?/") && !pathRest) {
-          target = l.protocol + "//" + l.host + repo + "/" + q + l.hash;
+          target = l.protocol + "//" + l.host + "/" + q + l.hash;
         } else if (pathRest) {
           target =
             l.protocol +
             "//" +
             l.host +
-            repo +
             "/?/" +
             pathRest +
             (q && !q.startsWith("?/") ? "&" + q.slice(1).replace(/&/g, "~and~") : "") +
             l.hash;
         } else if (!q) {
-          target = l.protocol + "//" + l.host + repo + "/" + l.hash;
+          target = l.protocol + "//" + l.host + "/" + l.hash;
         } else {
-          target =
-            l.protocol +
-            "//" +
-            l.host +
-            repo +
-            "/?/&" +
-            q.slice(1).replace(/&/g, "~and~") +
-            l.hash;
+          target = l.protocol + "//" + l.host + "/?/&" + q.slice(1).replace(/&/g, "~and~") + l.hash;
         }
+
         l.replace(target);
       })();
     </script>
