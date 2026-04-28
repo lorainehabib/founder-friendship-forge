@@ -10,16 +10,25 @@
       (function () {
         var l = window.location;
         var repo = "/founder-friendship-forge";
-        l.replace(
-          l.protocol +
+        var pathRest = l.pathname.slice(repo.length + 1).replace(/^\/+/, "");
+        pathRest = pathRest.replace(/&/g, "~and~");
+        var q = l.search || "";
+        // If search is already ?/… (SPA hack), appending & + search caused ?/&/… and unbounded growth.
+        var target;
+        if (q.startsWith("?/") && !pathRest) {
+          target = l.protocol + "//" + l.host + repo + "/" + q + l.hash;
+        } else {
+          target =
+            l.protocol +
             "//" +
             l.host +
             repo +
             "/?/" +
-            l.pathname.slice(repo.length + 1) +
-            (l.search ? "&" + l.search.slice(1) : "") +
-            l.hash
-        );
+            pathRest +
+            (q && !q.startsWith("?/") ? "&" + q.slice(1).replace(/&/g, "~and~") : "") +
+            l.hash;
+        }
+        l.replace(target);
       })();
     </script>
   </head>
