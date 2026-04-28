@@ -10,14 +10,25 @@
       (function () {
         var l = window.location;
         var repo = "/founder-friendship-forge";
-        var pathRest = l.pathname.slice(repo.length + 1).replace(/^\/+/, "");
+        var pathname = l.pathname || "/";
+        // Custom domain often serves /qui-je-suis at host root; old links are not under /repo/.
+        var pathRest;
+        if (pathname.startsWith(repo + "/")) {
+          pathRest = pathname.slice(repo.length + 1).replace(/^\/+/, "");
+        } else if (pathname === repo || pathname === repo + "/") {
+          pathRest = "";
+        } else if (pathname !== "/" && pathname !== "") {
+          pathRest = pathname.replace(/^\/+/, "");
+        } else {
+          pathRest = "";
+        }
         pathRest = pathRest.replace(/&/g, "~and~");
         var q = l.search || "";
-        // If search is already ?/… (SPA hack), appending & + search caused ?/&/… and unbounded growth.
         var target;
+        // If search is already ?/… (SPA hack), appending & + search caused ?/&/… and unbounded growth.
         if (q.startsWith("?/") && !pathRest) {
           target = l.protocol + "//" + l.host + repo + "/" + q + l.hash;
-        } else {
+        } else if (pathRest) {
           target =
             l.protocol +
             "//" +
@@ -26,6 +37,17 @@
             "/?/" +
             pathRest +
             (q && !q.startsWith("?/") ? "&" + q.slice(1).replace(/&/g, "~and~") : "") +
+            l.hash;
+        } else if (!q) {
+          target = l.protocol + "//" + l.host + repo + "/" + l.hash;
+        } else {
+          target =
+            l.protocol +
+            "//" +
+            l.host +
+            repo +
+            "/?/&" +
+            q.slice(1).replace(/&/g, "~and~") +
             l.hash;
         }
         l.replace(target);
