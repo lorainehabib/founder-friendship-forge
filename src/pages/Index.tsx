@@ -27,7 +27,7 @@ const Index = () => {
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
               <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-balance text-foreground">
-                La relation entre fondateurs,
+                La relation entre fondateurs,{" "}
                 <span className="block italic text-muted-foreground mt-2">
                   ça se travaille.
                 </span>

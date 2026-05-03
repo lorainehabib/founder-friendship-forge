@@ -28,7 +28,7 @@ const situations: Situation[] = [
       "Derrière ce qui ressemblait à un problème de communication, quelque chose de plus profond s'était installé. Le CEO challengeait systématiquement les décisions des autres, pour lui, c'était normal, il voulait les pousser à aller plus loin. Mais pour les autres, c'était le signal qu'il ne leur faisait pas confiance. Moins ils se sentaient légitimes, plus ils cherchaient sa validation, jusqu'à ne plus rien décider sans lui. Lui portait tout, seul.",
     ],
     inlineLast: {
-      lead: "Le travail a permis de poser ce que personne n'avait jamais dit. Les autres voulaient encore prendre le lead, ils n'avaient jamais cessé de le vouloir. Lui était à bout, et il ne s'en était jamais autorisé à le dire. ",
+      lead: "Le travail a permis de poser ce que personne n'avait jamais dit. Les autres voulaient encore prendre le lead, ils n'avaient jamais cessé de le vouloir. Lui était à bout, et il ne s'était jamais autorisé à le dire. ",
       pull: "Quand il l'a fait, le soulagement a été immédiat, pour tout le monde.",
     },
   },

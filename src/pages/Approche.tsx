@@ -4,40 +4,89 @@ import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import portrait from "@/assets/loraine-portrait-2.jpg";
 
-const faq = [
+const faqSections = [
   {
-    q: "Mon associé n'est pas prêt à faire cette démarche, ça peut quand même marcher ?",
-    a: "Oui. Une relation, c'est une dynamique : quand l'un des deux change sa façon d'agir, l'autre ne peut pas réagir exactement comme avant. La relation bouge, même si un seul des deux est engagé dans le travail.",
+    theme: "Est-ce que c'est pour nous ?",
+    items: [
+      {
+        q: "On ne se dispute pas. C'est quand même utile ?",
+        a: "Les fondateurs qui me contactent ne sont pas toujours en conflit ouvert. C'est un désaccord qui revient sans se résoudre, des décisions qu'on repousse, un sujet qu'on contourne depuis des mois. Le travail est utile à ce moment-là. Avant que ça ne se fige.",
+      },
+      {
+        q: "Mon associé n'est pas prêt à faire cette démarche, ça peut quand même marcher ?",
+        a: "Oui. Une relation, c'est une dynamique : quand l'un des deux change sa façon d'agir, l'autre ne peut pas réagir exactement comme avant. La relation bouge, même si un seul des deux est engagé dans le travail.",
+      },
+      {
+        q: "Tout va bien entre nous, est-ce que ça sert quand même de venir ?",
+        a: "Il faut un sujet. Mais le sujet, ce n'est pas forcément un conflit. Ça peut être une levée qui arrive, une équipe qui double, des rôles qui ne sont plus clairs, un associé qui s'ajoute. Quand le contexte change, la relation doit s'ajuster. C'est ça qu'on travaille.",
+      },
+      {
+        q: "Notre situation est vraiment spécifique, vous avez déjà vu ça ?",
+        a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre cofondateurs se ressemblent souvent en surface. Ce qui les alimente est singulier.",
+      },
+      {
+        q: "C'est un problème de business, pas de relation. Un coach peut vraiment aider ?",
+        a: "Parfois le problème a l'air business et il est relationnel. Parfois c'est l'inverse. Dans les deux cas, le travail permet d'identifier où se situe le vrai blocage.",
+      },
+    ],
   },
   {
-    q: "Notre situation est vraiment spécifique, vous avez déjà vu ça ?",
-    a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre cofondateurs se ressemblent souvent en surface. Ce qui les alimente est presque toujours singulier.",
+    theme: "Qu'est-ce qui vous différencie ?",
+    items: [
+      {
+        q: "Quelle est la différence entre un coach et un médiateur ?",
+        a: "Un médiateur intervient quand la relation est trop abîmée pour fonctionner et qu'il faut se mettre d'accord sur des termes concrets. Mon travail se situe avant ça, quand on veut encore faire marcher la relation. Ou parfois en parallèle, en individuel, pour celui qui traverse la situation.",
+      },
+      {
+        q: "Quelle différence avec un mentor ou un board member qui nous conseillerait ?",
+        a: "Un mentor partage ce qu'il a vécu et ce qui a marché pour lui. C'est utile quand vous cherchez un retour d'expérience. Mais chaque dynamique relationnelle est unique. Un conseil qui a marché ailleurs ne résout pas ce qui se joue entre vous. Le coaching part de là : de ce qui se passe dans votre relation, pas dans celle de quelqu'un d'autre.",
+      },
+    ],
   },
   {
-    q: "À quel moment faut-il venir vous voir ?",
-    a: "Le plus tôt possible. Les conflits importants qu'on voit des années après la création étaient presque toujours présents dès le début, sous forme de petits irritants qu'on a minimisés. Plus on travaille tôt, moins on laisse ces tensions s'installer.",
-  },
-  {
-    q: "Concrètement, comment se passe une séance ?",
-    a: "On part toujours d'une situation réelle, quelque chose qui s'est passé récemment, un échange qui a coincé, une décision qui n'avance pas. À partir de là, je pose des questions : qu'est-ce qui a été dit, comment l'autre a réagi, ce que vous avez ressenti à ce moment-là. Pas pour rejouer la scène, mais pour comprendre ce qui se joue en dessous, ce que chacun cherche vraiment, ce qui n'a pas été dit, ce qui fait que ça bloque. C'est ce travail-là qui permet de bouger.",
-  },
-  {
-    q: "Ça dure combien de temps ?",
-    a: "En moyenne 8 séances sur 4 à 6 mois. L'accompagnement peut se faire avec un seul fondateur ou avec les cofondateurs ensemble, en présentiel à Paris ou en visio.",
+    theme: "Comment ça se passe ?",
+    items: [
+      {
+        q: "À quel moment faut-il venir vous voir ?",
+        a: "Le plus tôt possible. Les gros conflits entre fondateurs ne sortent pas de nulle part. Ce sont des petits irritants qu'on a laissé s'installer. Plus on attend, plus c'est difficile à démêler.",
+      },
+      {
+        q: "Comment commence le travail ?",
+        a: "Par un premier échange en visio, gratuit et sans engagement. Si on décide de travailler ensemble, la première séance sert à poser un objectif précis pour l'accompagnement. Vous arrivez avec votre demande, telle que vous la formulez aujourd'hui. À partir de là, on définit ensemble ce qu'on va vraiment travailler.",
+      },
+      {
+        q: "Concrètement, comment se passe une séance ?",
+        a: "On part toujours d'une situation réelle, quelque chose qui s'est passé récemment, un échange qui a coincé, une décision qui n'avance pas. À partir de là, on tire le fil : qu'est-ce qui a été dit, comment l'autre a réagi, ce que vous avez ressenti à ce moment-là. Pour voir ce qui se joue en dessous.",
+      },
+      {
+        q: "Ça marche aussi à distance ?",
+        a: "Oui, en visio. Pas de réunion juste avant ni juste après, un endroit calme, une porte qui ferme. C'est ce qui recrée ce que le présentiel offre naturellement : un espace à part, une coupure avec le quotidien.",
+      },
+      {
+        q: "Ce qui se dit en séance reste confidentiel ?",
+        a: "Oui, sans exception. Même quand l'accompagnement est initié par un investisseur ou un fonds, rien de ce qui se dit en séance ne leur est transmis. C'est une condition non négociable pour que le travail fonctionne.",
+      },
+      {
+        q: "Comment ça se passe si on se rend compte qu'on doit se séparer ?",
+        a: "Ça arrive. Le travail fait bouger la relation, et parfois, en y voyant plus clair, l'un des deux se rend compte que les conditions ne lui conviennent plus. Cette décision serait venue de toute façon. Elle vient juste plus vite, et plus lucidement.",
+      },
+    ],
   },
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faq.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.a,
-    },
-  })),
+  mainEntity: faqSections.flatMap((section) =>
+    section.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  ),
 };
 
 const Approche = () => {
@@ -65,15 +114,15 @@ const Approche = () => {
       {/* My perspective */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-24 md:py-36 grid gap-16 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <div className="lg:col-span-4 order-2 lg:order-1">
             <img
               src={portrait}
               alt="Loraine Habib"
-              className="w-full aspect-[4/5] object-cover"
+              className="w-full max-w-sm mx-auto lg:max-w-none aspect-[4/5] object-cover"
               loading="lazy"
             />
           </div>
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div className="lg:col-span-8 order-1 lg:order-2">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
               Mon regard
             </p>
@@ -125,6 +174,17 @@ const Approche = () => {
               entre les fondateurs, les mécanismes, les angles morts, les
               schémas qui se répètent, pour qu'ils puissent enfin en sortir.
             </p>
+            <p>
+              Je ne commence pas par des tests de personnalité ou des
+              diagnostics. Vous me racontez votre situation, et on part de
+              là. Ça permet d'être concret dès la première séance, sur ce
+              que vous vivez vraiment. Ce qui se passe entre vous ne se
+              résume pas à des profils ou des typologies&nbsp;: c'est votre
+              fonctionnement, vos dynamiques, vos zones aveugles à vous.
+              Et personne ne se retrouve rangé dans une case, parce que
+              «&nbsp;c'est normal, il est comme ça&nbsp;» devient vite une
+              façon de ne rien bouger.
+            </p>
           </div>
           <div className="mt-14">
             <Link
@@ -144,21 +204,30 @@ const Approche = () => {
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-12">
             Ce qu'on me demande souvent
           </p>
-          <div className="divide-y divide-border/70 border-y border-border/70">
-            {faq.map((item, i) => (
-              <details key={i} className="group py-8">
-                <summary className="flex cursor-pointer items-start justify-between gap-8 list-none">
-                  <h3 className="font-serif text-xl md:text-2xl text-foreground leading-snug group-open:text-accent transition-colors text-balance">
-                    {item.q}
-                  </h3>
-                  <span className="text-accent text-2xl font-serif leading-none mt-1 transition-transform duration-500 group-open:rotate-45">
-                    +
-                  </span>
-                </summary>
-                <p className="mt-5 text-foreground/80 leading-relaxed max-w-3xl text-lg">
-                  {item.a}
-                </p>
-              </details>
+          <div className="space-y-16 md:space-y-20">
+            {faqSections.map((section) => (
+              <div key={section.theme}>
+                <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8 md:mb-10">
+                  {section.theme}
+                </h2>
+                <div className="divide-y divide-border/70 border-y border-border/70">
+                  {section.items.map((item) => (
+                    <details key={item.q} className="group py-8">
+                      <summary className="flex cursor-pointer items-start justify-between gap-8 list-none">
+                        <h3 className="font-serif text-xl md:text-2xl text-foreground leading-snug group-open:text-accent transition-colors text-balance">
+                          {item.q}
+                        </h3>
+                        <span className="text-accent text-2xl font-serif leading-none mt-1 transition-transform duration-500 group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-5 text-foreground/80 leading-relaxed max-w-3xl text-lg">
+                        {item.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

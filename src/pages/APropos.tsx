@@ -92,7 +92,7 @@ const APropos = () => {
             <p>
               Les mêmes schémas que je voyais en séance, des attentes non
               formulées, des réactions qui aggravent ce qu'elles cherchent à
-              résoudre, je les retrouvais exactement dans les relations
+              résoudre, je les retrouvais dans les relations
               entre dirigeants. Avec les mêmes effets sur la capacité à
               décider, à avancer, à faire confiance.
             </p>
