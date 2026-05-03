@@ -11,15 +11,15 @@ const routes = [
   },
   {
     path: "/situations/",
-    title: "Exemples clients — Loraine Habib | Accompagnement de cofondateurs",
+    title: "Situations accompagnées — Loraine Habib",
     description:
-      "Trois situations réelles d'accompagnement de cofondateurs pour débloquer les conflits, clarifier les décisions et relancer la dynamique d'équipe.",
+      "Exemples concrets d'accompagnement de fondateurs pour débloquer des tensions relationnelles et décisionnelles.",
   },
   {
     path: "/a-propos/",
-    title: "À propos — Loraine Habib | Coach en relation entre fondateurs",
+    title: "À propos — Loraine Habib",
     description:
-      "Le parcours de Loraine Habib entre psychologie et startup pour accompagner la relation entre fondateurs et prévenir les conflits entre cofondateurs.",
+      "Parcours, formation et pratique de Loraine Habib pour accompagner les relations entre fondateurs.",
   },
   {
     path: "/mentions-legales/",

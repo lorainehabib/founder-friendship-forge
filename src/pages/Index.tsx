@@ -36,9 +36,6 @@ const Index = () => {
                 <p className="text-foreground">
                   J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà tendu.
                 </p>
-                <p className="text-lg md:text-xl text-muted-foreground">
-                  Coaching de fondateurs a Paris et a distance, avec un focus sur la relation entre cofondateurs et la resolution des conflits.
-                </p>
               </div>
             </div>
 
@@ -60,7 +57,7 @@ const Index = () => {
       <section className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-24 md:py-32">
           <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-12 md:mb-14">
-            Signes frequents de conflit entre cofondateurs
+            Ces situations vous parlent&nbsp;?
           </h2>
           <ul className="space-y-5">
             {recognitionItems.map((item, i) => (
@@ -92,19 +89,12 @@ const Index = () => {
           <p className="mt-4 text-base md:text-lg text-muted-foreground">
             Même si vous êtes seul·e à faire la démarche.
           </p>
-          <div className="mt-12 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-8 sm:gap-10">
+          <div className="mt-12">
             <Link
               to="/approche/"
               className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
             >
               Découvrir mon approche
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
-            <Link
-              to="/situations/"
-              className="group inline-flex items-center gap-3 text-muted-foreground text-sm tracking-wide border-b border-border hover:text-accent hover:border-accent pb-1 transition-all"
-            >
-              Voir des exemples clients
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </div>

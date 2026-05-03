@@ -1,7 +1,6 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
-import { Link } from "react-router-dom";
 
 type Situation = {
   title: string;
@@ -50,8 +49,8 @@ const Situations = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Exemples clients — Loraine Habib | Accompagnement de cofondateurs"
-        description="Trois situations réelles d'accompagnement de cofondateurs pour débloquer les conflits, clarifier les décisions et relancer la dynamique d'équipe."
+        title="Situations accompagnées — Loraine Habib"
+        description="Exemples concrets d'accompagnement de fondateurs pour débloquer des tensions relationnelles et décisionnelles."
         path="/situations/"
       />
       <section>
@@ -60,12 +59,9 @@ const Situations = () => {
             Situations
           </p>
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
-            Exemples de conflits entre cofondateurs accompagnes en coaching.
+            Quelques exemples d'accompagnements.
           </h1>
-          <p className="mt-8 text-base text-muted-foreground italic max-w-3xl">
-            Ces cas montrent comment un accompagnement de fondateurs aide a debloquer des tensions relationnelles et des decisions qui n'avancent plus.
-          </p>
-          <p className="mt-4 text-base text-muted-foreground italic max-w-2xl">
+          <p className="mt-8 text-base text-muted-foreground italic max-w-2xl">
             Les détails ont été modifiés pour préserver la confidentialité.
           </p>
         </div>
@@ -95,17 +91,6 @@ const Situations = () => {
               </div>
             </article>
           ))}
-        </div>
-      </section>
-
-      <section className="border-t border-border/60 bg-secondary/20">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-14 flex flex-wrap items-center gap-6 text-sm">
-          <Link to="/approche/" className="text-accent border-b border-accent/40 hover:border-accent">
-            Comprendre l'approche de coaching
-          </Link>
-          <Link to="/" className="text-muted-foreground border-b border-border hover:text-accent hover:border-accent">
-            Retour a l'accueil
-          </Link>
         </div>
       </section>
 

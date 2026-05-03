@@ -56,9 +56,6 @@ const Approche = () => {
             <span className="text-accent">65 %</span> des startups à fort
             potentiel échouent à cause de conflits entre cofondateurs.
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-foreground/80 max-w-3xl leading-relaxed">
-            Cette page detaille mon approche de coaching pour restaurer la relation entre cofondateurs avant que les tensions ne bloquent l'execution.
-          </p>
           <p className="mt-12 text-base text-muted-foreground max-w-2xl whitespace-normal">
             Source&nbsp;: Noam Wasserman,&nbsp;<em>The Founder's Dilemmas</em>,&nbsp;Harvard Business School.
           </p>
@@ -137,15 +134,6 @@ const Approche = () => {
               Voir des exemples concrets d'accompagnement
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
-            <div className="mt-4">
-              <Link
-                to="/"
-                className="group inline-flex items-center gap-3 text-muted-foreground text-sm tracking-wide border-b border-border hover:text-accent hover:border-accent pb-1 transition-all"
-              >
-                Revenir a l'accueil
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
