@@ -33,6 +33,75 @@ const upsertCanonical = (href: string) => {
   link.setAttribute("href", href);
 };
 
+const buildBaseSchemas = (canonicalUrl: string) => {
+  const personId = `${SITE_URL}/#person`;
+  const serviceId = `${SITE_URL}/#service`;
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": personId,
+      name: "Loraine Habib",
+      jobTitle: "Coach de fondateurs",
+      url: SITE_URL,
+      knowsAbout: [
+        "Relation entre cofondateurs",
+        "Conflits entre cofondateurs",
+        "Coaching de fondateurs",
+        "Accompagnement des equipes dirigeantes",
+      ],
+      worksFor: {
+        "@id": serviceId,
+      },
+      sameAs: ["https://www.linkedin.com/in/loraine-habib"],
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": serviceId,
+      name: "Loraine Habib - Coaching de fondateurs",
+      url: SITE_URL,
+      description:
+        "Accompagnement des cofondateurs pour prevenir ou resoudre les tensions relationnelles et decisionnelles.",
+      areaServed: ["Paris", "France"],
+      serviceType: [
+        "Coaching de fondateurs",
+        "Accompagnement de cofondateurs",
+        "Resolution de conflits entre cofondateurs",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "10 rue Saint Marc",
+        postalCode: "75002",
+        addressLocality: "Paris",
+        addressCountry: "FR",
+      },
+      provider: {
+        "@id": personId,
+      },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "habib.loraine@gmail.com",
+          availableLanguage: ["fr"],
+        },
+      ],
+      offers: {
+        "@type": "Offer",
+        availability: "https://schema.org/InStock",
+        itemOffered: {
+          "@type": "Service",
+          name: "Premier rendez-vous",
+          description: "Premier echange pour evaluer les tensions et definir la suite de l'accompagnement.",
+        },
+      },
+      mainEntityOfPage: canonicalUrl,
+    },
+  ];
+};
+
 const Seo = ({ title, description, path, structuredData }: SeoProps) => {
   useEffect(() => {
     const canonicalUrl = new URL(path, `${SITE_URL}/`).toString();
@@ -50,7 +119,8 @@ const Seo = ({ title, description, path, structuredData }: SeoProps) => {
     const staleStructuredData = document.head.querySelectorAll('script[data-seo-jsonld="true"]');
     staleStructuredData.forEach((script) => script.remove());
 
-    const schemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+    const customSchemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+    const schemas = [...buildBaseSchemas(canonicalUrl), ...customSchemas];
     for (const schema of schemas) {
       const script = document.createElement("script");
       script.type = "application/ld+json";
