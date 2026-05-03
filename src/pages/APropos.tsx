@@ -1,5 +1,6 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
+import Seo from "@/components/Seo";
 import portrait from "@/assets/loraine-portrait-3.jpg";
 
 const trainings: {
@@ -32,6 +33,11 @@ const trainings: {
 const APropos = () => {
   return (
     <SiteLayout>
+      <Seo
+        title="À propos — Loraine Habib"
+        description="Parcours, formation et pratique de Loraine Habib pour accompagner les relations entre fondateurs."
+        path="/a-propos"
+      />
       {/* Origin */}
       <section>
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36 grid gap-16 lg:grid-cols-12">

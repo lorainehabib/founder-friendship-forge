@@ -1,6 +1,8 @@
 import SiteLayout from "@/components/SiteLayout";
+import Seo from "@/components/Seo";
+import type { ReactNode } from "react";
 
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+const Section = ({ title, children }: { title: string; children: ReactNode }) => (
   <section className="space-y-3">
     <h2 className="font-serif text-2xl md:text-3xl text-foreground">{title}</h2>
     <div className="text-foreground/80 leading-relaxed space-y-3">{children}</div>
@@ -9,6 +11,11 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const MentionsLegales = () => (
   <SiteLayout>
+    <Seo
+      title="Mentions légales — Loraine Habib"
+      description="Mentions légales, informations éditeur, RGPD et hébergement du site lorainehabib.com."
+      path="/mentions-legales"
+    />
     <article className="mx-auto max-w-3xl px-6 md:px-10 py-16 md:py-28">
       <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">Légal</p>
       <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-foreground mb-12">

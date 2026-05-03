@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
+import Seo from "@/components/Seo";
 import portrait from "@/assets/loraine-portrait-1.jpg";
 
 const recognitionItems = [
@@ -15,6 +16,11 @@ const recognitionItems = [
 const Index = () => {
   return (
     <SiteLayout>
+      <Seo
+        title="Loraine Habib — Accompagnement de fondateurs"
+        description="J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà tendu."
+        path="/"
+      />
       {/* HERO */}
       <section className="relative">
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-12 md:pt-24 pb-20 md:pb-32">

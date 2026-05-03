@@ -1,5 +1,6 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
+import Seo from "@/components/Seo";
 import { Link } from "react-router-dom";
 import portrait from "@/assets/loraine-portrait-2.jpg";
 
@@ -29,6 +30,11 @@ const faq = [
 const Approche = () => {
   return (
     <SiteLayout>
+      <Seo
+        title="Approche — Loraine Habib"
+        description="Comprendre ce qui fait revenir les tensions entre cofondateurs pour restaurer une dynamique de travail solide."
+        path="/approche"
+      />
       {/* Stat hero */}
       <section className="relative">
         <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">

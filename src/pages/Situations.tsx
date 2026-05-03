@@ -1,5 +1,6 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
+import Seo from "@/components/Seo";
 
 type Situation = {
   title: string;
@@ -47,6 +48,11 @@ const situations: Situation[] = [
 const Situations = () => {
   return (
     <SiteLayout>
+      <Seo
+        title="Situations accompagnées — Loraine Habib"
+        description="Exemples concrets d'accompagnement de fondateurs pour débloquer des tensions relationnelles et décisionnelles."
+        path="/situations"
+      />
       <section>
         <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-24 pb-12 md:pb-16">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
