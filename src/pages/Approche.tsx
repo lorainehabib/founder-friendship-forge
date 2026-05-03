@@ -99,8 +99,8 @@ const Approche = () => {
         structuredData={faqSchema}
       />
       {/* Stat hero */}
-      <section className="relative">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
+      <section className="relative lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-balance text-foreground max-w-5xl">
             <span className="text-accent">65 %</span> des startups à fort
             potentiel échouent à cause de conflits entre cofondateurs.
@@ -113,16 +113,16 @@ const Approche = () => {
 
       {/* My perspective */}
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-start">
-          <div className="lg:col-span-3 order-2 lg:order-1">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-5 order-2 lg:order-1">
             <img
               src={portrait}
               alt="Loraine Habib"
-              className="w-full max-w-[220px] md:max-w-[260px] mx-auto lg:max-w-none aspect-[4/5] object-cover"
+              className="w-full max-w-sm mx-auto lg:max-w-none aspect-[4/5] object-cover"
               loading="lazy"
             />
           </div>
-          <div className="lg:col-span-9 order-1 lg:order-2">
+          <div className="lg:col-span-7 order-1 lg:order-2">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
               Mon regard
             </p>
@@ -155,23 +155,23 @@ const Approche = () => {
           <div className="mt-2 space-y-6 text-lg text-foreground/80 leading-relaxed">
             <p>
               Face à des tensions, la plupart des fondateurs commencent par
-              essayer de résoudre les choses entre eux : en parler,
+              essayer de résoudre les choses entre eux&nbsp;: en parler,
               s'expliquer, trouver un fonctionnement qui convient à tout le
               monde. Quand ça ne suffit pas, c'est souvent parce que chacun
               aborde la discussion avec sa propre vision de ce qui est juste,
-              efficace, prioritaire. Ces convictions sont rarement posées sur
-              la table. Pourtant, elles orientent tout&nbsp;: la façon dont on
-              interprète un désaccord, ce qu'on attend de l'autre, ce qu'on
-              est prêt à lâcher ou pas.
+              efficace, prioritaire. Ces visions-là sont rarement explicitées.
+              Mais elles orientent tout, et elles font que les interactions
+              finissent par se ressembler, quel que soit le sujet.
             </p>
             <p className="font-serif italic text-2xl text-foreground border-l-2 border-accent pl-6 my-10">
-              Pas dans le contenu du désaccord, mais dans ce qui le fait
-              revenir.
+              Pas dans le contenu du désaccord, mais dans ce que chacun fait
+              pour le résoudre, et qui souvent l'aggrave.
             </p>
             <p>
-              Mon travail commence là. Je rends visible ce qui se joue
-              entre les fondateurs, les mécanismes, les angles morts, les
-              schémas qui se répètent, pour qu'ils puissent enfin en sortir.
+              Je ne cherche pas qui a raison. Je regarde d'où chacun parle, et
+              ce que ça produit entre eux. Je rends visible les mécanismes,
+              les angles morts, les boucles dans lesquelles ils sont pris,
+              pour qu'ils puissent enfin en sortir.
             </p>
           </div>
 
