@@ -1,14 +1,69 @@
-import { copyFile, mkdir } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
-const routes = ["/approche", "/situations", "/a-propos", "/mentions-legales"];
+const siteUrl = "https://lorainehabib.com";
+const routes = [
+  {
+    path: "/approche/",
+    title: "Approche — Loraine Habib",
+    description:
+      "Comprendre ce qui fait revenir les tensions entre cofondateurs pour restaurer une dynamique de travail solide.",
+  },
+  {
+    path: "/situations/",
+    title: "Situations accompagnées — Loraine Habib",
+    description:
+      "Exemples concrets d'accompagnement de fondateurs pour débloquer des tensions relationnelles et décisionnelles.",
+  },
+  {
+    path: "/a-propos/",
+    title: "À propos — Loraine Habib",
+    description:
+      "Parcours, formation et pratique de Loraine Habib pour accompagner les relations entre fondateurs.",
+  },
+  {
+    path: "/mentions-legales/",
+    title: "Mentions légales — Loraine Habib",
+    description:
+      "Mentions légales, informations éditeur, RGPD et hébergement du site lorainehabib.com.",
+  },
+];
 
 const distDir = resolve(process.cwd(), "dist");
 const indexFile = resolve(distDir, "index.html");
+const indexHtml = await readFile(indexFile, "utf8");
+
+const upsert = (html, pattern, replacement, anchorPattern) => {
+  if (pattern.test(html)) {
+    return html.replace(pattern, replacement);
+  }
+
+  return html.replace(anchorPattern, `${replacement}\n$&`);
+};
+
+const updateHtml = ({ path, title, description }) => {
+  const canonical = `${siteUrl}${path}`;
+
+  let html = indexHtml
+    .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
+    .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${description}" />`)
+    .replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${canonical}" />`)
+    .replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${title}" />`)
+    .replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${description}" />`);
+
+  html = upsert(
+    html,
+    /<meta property="og:url" content=".*?" \/>/,
+    `<meta property="og:url" content="${canonical}" />`,
+    /<meta property="og:locale" content=".*?" \/>/,
+  );
+
+  return html;
+};
 
 for (const route of routes) {
-  const routeDir = resolve(distDir, route.slice(1));
+  const routeDir = resolve(distDir, route.path.slice(1));
   await mkdir(routeDir, { recursive: true });
-  await copyFile(indexFile, resolve(routeDir, "index.html"));
+  await writeFile(resolve(routeDir, "index.html"), updateHtml(route), "utf8");
 }
 
