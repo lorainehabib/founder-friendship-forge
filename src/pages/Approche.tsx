@@ -27,6 +27,19 @@ const faq = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 const Approche = () => {
   return (
     <SiteLayout>
@@ -34,6 +47,7 @@ const Approche = () => {
         title="Approche de coaching — Loraine Habib | Conflits entre cofondateurs"
         description="Une approche de coaching pour fondateurs qui aide à décrypter les tensions entre cofondateurs et à rétablir une relation de travail solide."
         path="/approche/"
+        structuredData={faqSchema}
       />
       {/* Stat hero */}
       <section className="relative">
