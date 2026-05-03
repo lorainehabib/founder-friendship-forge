@@ -144,7 +144,7 @@ const Index = () => {
           </p>
           <div className="mt-12">
             <Link
-              to="/approche"
+              to="/approche/"
               className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
             >
               Découvrir mon approche
@@ -175,10 +175,10 @@ const Index = () => {
             ))}
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/approche" className="text-accent border-b border-accent/40 hover:border-accent">
+            <Link to="/approche/" className="text-accent border-b border-accent/40 hover:border-accent">
               Voir l'approche de coaching
             </Link>
-            <Link to="/situations" className="text-accent border-b border-accent/40 hover:border-accent">
+            <Link to="/situations/" className="text-accent border-b border-accent/40 hover:border-accent">
               Lire des exemples clients
             </Link>
           </div>

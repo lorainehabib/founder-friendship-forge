@@ -1,6 +1,7 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
+import { Link } from "react-router-dom";
 import portrait from "@/assets/loraine-portrait-3.jpg";
 
 const trainings: {
@@ -36,7 +37,7 @@ const APropos = () => {
       <Seo
         title="À propos — Loraine Habib | Coach en relation entre fondateurs"
         description="Le parcours de Loraine Habib entre psychologie et startup pour accompagner la relation entre fondateurs et prévenir les conflits entre cofondateurs."
-        path="/a-propos"
+        path="/a-propos/"
       />
       {/* Origin */}
       <section>
@@ -166,6 +167,25 @@ const APropos = () => {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-5xl px-6 md:px-10 py-14">
+          <p className="text-sm text-muted-foreground mb-5">
+            Pour aller plus loin :
+          </p>
+          <div className="flex flex-wrap items-center gap-6 text-sm">
+            <Link to="/approche/" className="text-accent border-b border-accent/40 hover:border-accent">
+              Decouvrir l'approche de coaching
+            </Link>
+            <Link to="/situations/" className="text-accent border-b border-accent/40 hover:border-accent">
+              Voir des situations accompagnees
+            </Link>
+            <Link to="/" className="text-muted-foreground border-b border-border hover:text-accent hover:border-accent">
+              Retour a l'accueil
+            </Link>
+          </div>
         </div>
       </section>
 

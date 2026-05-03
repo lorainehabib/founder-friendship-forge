@@ -25,9 +25,9 @@ const SiteFooter = () => {
           </p>
           <ul className="space-y-2 text-sm">
             <li><Link to="/" onClick={scrollTop} className="hover:text-accent transition-colors">Accueil</Link></li>
-            <li><Link to="/approche" onClick={scrollTop} className="hover:text-accent transition-colors">Approche</Link></li>
-            <li><Link to="/situations" onClick={scrollTop} className="hover:text-accent transition-colors">Situations</Link></li>
-            <li><Link to="/a-propos" onClick={scrollTop} className="hover:text-accent transition-colors">À propos</Link></li>
+            <li><Link to="/approche/" onClick={scrollTop} className="hover:text-accent transition-colors">Approche</Link></li>
+            <li><Link to="/situations/" onClick={scrollTop} className="hover:text-accent transition-colors">Situations</Link></li>
+            <li><Link to="/a-propos/" onClick={scrollTop} className="hover:text-accent transition-colors">À propos</Link></li>
           </ul>
         </div>
         <div className="md:col-span-4">
@@ -54,7 +54,7 @@ const SiteFooter = () => {
       <div className="border-t border-border/70">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} LHG — SIRET 982 781 387 00013</p>
-          <Link to="/mentions-legales" onClick={scrollTop} className="hover:text-accent transition-colors">
+          <Link to="/mentions-legales/" onClick={scrollTop} className="hover:text-accent transition-colors">
             Mentions légales
           </Link>
         </div>

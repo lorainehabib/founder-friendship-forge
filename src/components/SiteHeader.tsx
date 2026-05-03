@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { to: "/", label: "Accueil", end: true },
-  { to: "/approche", label: "Approche" },
-  { to: "/situations", label: "Situations" },
-  { to: "/a-propos", label: "À propos" },
+  { to: "/approche/", label: "Approche" },
+  { to: "/situations/", label: "Situations" },
+  { to: "/a-propos/", label: "À propos" },
 ];
 
 const SiteHeader = () => {

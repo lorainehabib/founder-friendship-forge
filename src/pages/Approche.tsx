@@ -33,7 +33,7 @@ const Approche = () => {
       <Seo
         title="Approche de coaching — Loraine Habib | Conflits entre cofondateurs"
         description="Une approche de coaching pour fondateurs qui aide à décrypter les tensions entre cofondateurs et à rétablir une relation de travail solide."
-        path="/approche"
+        path="/approche/"
       />
       {/* Stat hero */}
       <section className="relative">
@@ -117,7 +117,7 @@ const Approche = () => {
           </div>
           <div className="mt-14">
             <Link
-              to="/situations"
+              to="/situations/"
               className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
             >
               Voir des exemples concrets d'accompagnement

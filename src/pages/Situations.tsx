@@ -52,7 +52,7 @@ const Situations = () => {
       <Seo
         title="Exemples clients — Loraine Habib | Accompagnement de cofondateurs"
         description="Trois situations réelles d'accompagnement de cofondateurs pour débloquer les conflits, clarifier les décisions et relancer la dynamique d'équipe."
-        path="/situations"
+        path="/situations/"
       />
       <section>
         <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-24 pb-12 md:pb-16">
@@ -100,7 +100,7 @@ const Situations = () => {
 
       <section className="border-t border-border/60 bg-secondary/20">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-14 flex flex-wrap items-center gap-6 text-sm">
-          <Link to="/approche" className="text-accent border-b border-accent/40 hover:border-accent">
+          <Link to="/approche/" className="text-accent border-b border-accent/40 hover:border-accent">
             Comprendre l'approche de coaching
           </Link>
           <Link to="/" className="text-muted-foreground border-b border-border hover:text-accent hover:border-accent">
