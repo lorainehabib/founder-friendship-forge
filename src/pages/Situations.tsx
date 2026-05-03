@@ -61,7 +61,12 @@ const Situations = () => {
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
             Quelques exemples d'accompagnements.
           </h1>
-          <p className="mt-8 text-base text-muted-foreground italic max-w-2xl">
+          <p className="mt-8 text-lg md:text-xl text-foreground/85 leading-relaxed max-w-3xl">
+            Trois situations réelles d'accompagnement de fondateurs&nbsp;:
+            tensions entre associés, problèmes de gouvernance,
+            questionnements sur l'avenir de l'association.
+          </p>
+          <p className="mt-6 text-base text-muted-foreground italic max-w-2xl">
             Les détails ont été modifiés pour préserver la confidentialité.
           </p>
         </div>

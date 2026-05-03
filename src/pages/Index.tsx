@@ -2,7 +2,9 @@ import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
-import portrait from "@/assets/loraine-portrait-1.jpg";
+import Picture from "@/components/Picture";
+import portraitJpg from "@/assets/loraine-portrait-1.jpg";
+import portraitWebp from "@/assets/loraine-portrait-1.webp";
 
 const recognitionItems = [
   "Vous mettez trois réunions à trancher ce qui se décidait en cinq minutes.",
@@ -41,8 +43,9 @@ const Index = () => {
 
             <div className="lg:col-span-5 animate-fade-in">
               <div className="relative">
-                <img
-                  src={portrait}
+                <Picture
+                  webp={portraitWebp}
+                  jpg={portraitJpg}
                   alt="Portrait de Loraine Habib"
                   className="relative w-full aspect-[4/5] object-cover grayscale-[15%]"
                   loading="eager"

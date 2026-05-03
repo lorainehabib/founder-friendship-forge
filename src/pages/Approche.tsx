@@ -1,11 +1,14 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
+import Picture from "@/components/Picture";
 import { Link } from "react-router-dom";
-import portrait from "@/assets/loraine-portrait-2.jpg";
+import portraitJpg from "@/assets/loraine-portrait-2.jpg";
+import portraitWebp from "@/assets/loraine-portrait-2.webp";
 
 const faqSections = [
   {
+    id: "pour-nous",
     theme: "Est-ce que c'est pour nous ?",
     items: [
       {
@@ -31,6 +34,7 @@ const faqSections = [
     ],
   },
   {
+    id: "differences",
     theme: "Qu'est-ce qui vous différencie ?",
     items: [
       {
@@ -44,6 +48,7 @@ const faqSections = [
     ],
   },
   {
+    id: "deroulement",
     theme: "Comment ça se passe ?",
     items: [
       {
@@ -115,8 +120,9 @@ const Approche = () => {
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
-            <img
-              src={portrait}
+            <Picture
+              webp={portraitWebp}
+              jpg={portraitJpg}
               alt="Loraine Habib"
               className="w-full max-w-sm mx-auto lg:max-w-none aspect-[4/5] object-cover"
               loading="lazy"
@@ -207,12 +213,32 @@ const Approche = () => {
       {/* FAQ */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-36">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-12">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
             Ce qu'on me demande souvent
           </p>
+          <nav
+            aria-label="Sections de la FAQ"
+            className="mb-14 md:mb-16 flex flex-col md:flex-row md:flex-wrap md:items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
+          >
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
+              Aller à
+            </span>
+            <ul className="flex flex-col md:flex-row md:flex-wrap gap-x-6 gap-y-3">
+              {faqSections.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    className="border-b border-border/60 hover:border-accent hover:text-accent pb-1 transition-colors"
+                  >
+                    {section.theme}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
           <div className="space-y-16 md:space-y-20">
             {faqSections.map((section) => (
-              <div key={section.theme}>
+              <div key={section.theme} id={section.id} className="scroll-mt-28">
                 <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8 md:mb-10">
                   {section.theme}
                 </h2>

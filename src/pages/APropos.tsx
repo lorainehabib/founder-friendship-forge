@@ -1,7 +1,9 @@
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
-import portrait from "@/assets/loraine-portrait-3.jpg";
+import Picture from "@/components/Picture";
+import portraitJpg from "@/assets/loraine-portrait-3.jpg";
+import portraitWebp from "@/assets/loraine-portrait-3.webp";
 
 const trainings: {
   year: string;
@@ -43,8 +45,9 @@ const APropos = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36 grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
-              <img
-                src={portrait}
+              <Picture
+                webp={portraitWebp}
+                jpg={portraitJpg}
                 alt="Loraine Habib"
                 className="w-full aspect-[4/5] object-cover"
               />
