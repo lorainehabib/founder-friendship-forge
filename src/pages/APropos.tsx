@@ -34,8 +34,8 @@ const APropos = () => {
   return (
     <SiteLayout>
       <Seo
-        title="À propos — Loraine Habib"
-        description="Parcours, formation et pratique de Loraine Habib pour accompagner les relations entre fondateurs."
+        title="À propos — Loraine Habib | Coach en relation entre fondateurs"
+        description="Le parcours de Loraine Habib entre psychologie et startup pour accompagner la relation entre fondateurs et prévenir les conflits entre cofondateurs."
         path="/a-propos"
       />
       {/* Origin */}

@@ -13,12 +13,27 @@ const recognitionItems = [
   "Vous parlez de votre associé à d'autres, plutôt qu'à lui.",
 ];
 
+const homeFaq = [
+  {
+    q: "A quel moment consulter pour une tension entre cofondateurs ?",
+    a: "Le plus tot possible. Plus un conflit entre cofondateurs s'installe, plus il devient couteux pour la relation et pour l'entreprise.",
+  },
+  {
+    q: "Faut-il venir a deux pour commencer un accompagnement ?",
+    a: "Non. Un seul fondateur peut commencer. Quand la posture d'une personne evolue, la dynamique de la relation entre cofondateurs bouge aussi.",
+  },
+  {
+    q: "Quels sujets peut-on traiter en coaching de fondateurs ?",
+    a: "Desaccords repetitifs, tensions de communication, decisions bloquees, perte de confiance, difficultes de repartition des roles ou du pouvoir.",
+  },
+];
+
 const Index = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Loraine Habib — Accompagnement de fondateurs"
-        description="J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà tendu."
+        title="Loraine Habib — Coach de fondateurs | Relation entre cofondateurs"
+        description="La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension."
         path="/"
       />
       {/* HERO */}
@@ -35,6 +50,9 @@ const Index = () => {
               <div className="mt-10 space-y-5 max-w-xl text-xl md:text-2xl text-foreground/80 leading-relaxed text-pretty">
                 <p className="text-foreground">
                   J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà tendu.
+                </p>
+                <p className="text-lg md:text-xl text-muted-foreground">
+                  Coaching de fondateurs a Paris et a distance, avec un focus sur la relation entre cofondateurs et la resolution des conflits.
                 </p>
               </div>
             </div>
@@ -57,7 +75,7 @@ const Index = () => {
       <section className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-24 md:py-32">
           <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-12 md:mb-14">
-            Ces situations vous parlent&nbsp;?
+            Signes frequents de conflit entre cofondateurs
           </h2>
           <ul className="space-y-5">
             {recognitionItems.map((item, i) => (
@@ -96,6 +114,37 @@ const Index = () => {
             >
               Découvrir mon approche
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-10">
+            Questions frequentes sur la relation entre cofondateurs
+          </h2>
+          <div className="divide-y divide-border/70 border-y border-border/70">
+            {homeFaq.map((item) => (
+              <details key={item.q} className="group py-7">
+                <summary className="flex cursor-pointer items-start justify-between gap-8 list-none">
+                  <h3 className="font-serif text-xl md:text-2xl text-foreground leading-snug group-open:text-accent transition-colors text-balance">
+                    {item.q}
+                  </h3>
+                  <span className="text-accent text-2xl font-serif leading-none mt-1 transition-transform duration-500 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 text-foreground/80 leading-relaxed text-lg">{item.a}</p>
+              </details>
+            ))}
+          </div>
+          <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+            <Link to="/approche" className="text-accent border-b border-accent/40 hover:border-accent">
+              Voir l'approche de coaching
+            </Link>
+            <Link to="/situations" className="text-accent border-b border-accent/40 hover:border-accent">
+              Lire des exemples clients
             </Link>
           </div>
         </div>

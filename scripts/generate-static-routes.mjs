@@ -5,27 +5,27 @@ const siteUrl = "https://lorainehabib.com";
 const routes = [
   {
     path: "/approche/",
-    title: "Approche — Loraine Habib",
+    title: "Approche de coaching — Loraine Habib | Conflits entre cofondateurs",
     description:
-      "Comprendre ce qui fait revenir les tensions entre cofondateurs pour restaurer une dynamique de travail solide.",
+      "Une approche de coaching pour fondateurs qui aide à décrypter les tensions entre cofondateurs et à rétablir une relation de travail solide.",
   },
   {
     path: "/situations/",
-    title: "Situations accompagnées — Loraine Habib",
+    title: "Exemples clients — Loraine Habib | Accompagnement de cofondateurs",
     description:
-      "Exemples concrets d'accompagnement de fondateurs pour débloquer des tensions relationnelles et décisionnelles.",
+      "Trois situations réelles d'accompagnement de cofondateurs pour débloquer les conflits, clarifier les décisions et relancer la dynamique d'équipe.",
   },
   {
     path: "/a-propos/",
-    title: "À propos — Loraine Habib",
+    title: "À propos — Loraine Habib | Coach en relation entre fondateurs",
     description:
-      "Parcours, formation et pratique de Loraine Habib pour accompagner les relations entre fondateurs.",
+      "Le parcours de Loraine Habib entre psychologie et startup pour accompagner la relation entre fondateurs et prévenir les conflits entre cofondateurs.",
   },
   {
     path: "/mentions-legales/",
-    title: "Mentions légales — Loraine Habib",
+    title: "Mentions légales — Loraine Habib | Coaching fondateurs",
     description:
-      "Mentions légales, informations éditeur, RGPD et hébergement du site lorainehabib.com.",
+      "Mentions légales, éditeur du site, RGPD et hébergement de lorainehabib.com, spécialisé en accompagnement de fondateurs.",
   },
 ];
 

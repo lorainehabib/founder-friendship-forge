@@ -12,8 +12,8 @@ const Section = ({ title, children }: { title: string; children: ReactNode }) =>
 const MentionsLegales = () => (
   <SiteLayout>
     <Seo
-      title="Mentions légales — Loraine Habib"
-      description="Mentions légales, informations éditeur, RGPD et hébergement du site lorainehabib.com."
+      title="Mentions légales — Loraine Habib | Coaching fondateurs"
+      description="Mentions légales, éditeur du site, RGPD et hébergement de lorainehabib.com, spécialisé en accompagnement de fondateurs."
       path="/mentions-legales"
     />
     <article className="mx-auto max-w-3xl px-6 md:px-10 py-16 md:py-28">
