@@ -6,6 +6,7 @@ type SeoProps = {
   title: string;
   description: string;
   path: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
 const upsertMeta = (selector: string, attribute: "name" | "property", value: string, content: string) => {
@@ -32,7 +33,7 @@ const upsertCanonical = (href: string) => {
   link.setAttribute("href", href);
 };
 
-const Seo = ({ title, description, path }: SeoProps) => {
+const Seo = ({ title, description, path, structuredData }: SeoProps) => {
   useEffect(() => {
     const canonicalUrl = new URL(path, `${SITE_URL}/`).toString();
 
@@ -45,7 +46,19 @@ const Seo = ({ title, description, path }: SeoProps) => {
     upsertMeta("meta[property=\"og:type\"]", "property", "og:type", "website");
     upsertMeta("meta[property=\"og:locale\"]", "property", "og:locale", "fr_FR");
     upsertMeta("meta[name=\"twitter:card\"]", "name", "twitter:card", "summary_large_image");
-  }, [description, path, title]);
+
+    const staleStructuredData = document.head.querySelectorAll('script[data-seo-jsonld="true"]');
+    staleStructuredData.forEach((script) => script.remove());
+
+    const schemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+    for (const schema of schemas) {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.dataset.seoJsonld = "true";
+      script.text = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+  }, [description, path, structuredData, title]);
 
   return null;
 };

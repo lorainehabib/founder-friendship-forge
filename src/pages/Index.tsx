@@ -13,6 +13,27 @@ const recognitionItems = [
   "Vous parlez de votre associé à d'autres, plutôt qu'à lui.",
 ];
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Loraine Habib",
+  legalName: "LHG",
+  url: "https://lorainehabib.com/",
+  founder: {
+    "@type": "Person",
+    name: "Loraine Habib",
+  },
+  sameAs: ["https://www.linkedin.com/in/loraine-habib"],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "habib.loraine@gmail.com",
+      availableLanguage: ["fr"],
+    },
+  ],
+};
+
 const homeFaq = [
   {
     q: "A quel moment consulter pour une tension entre cofondateurs ?",
@@ -28,6 +49,19 @@ const homeFaq = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: homeFaq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
+};
+
 const Index = () => {
   return (
     <SiteLayout>
@@ -35,6 +69,7 @@ const Index = () => {
         title="Loraine Habib — Coach de fondateurs | Relation entre cofondateurs"
         description="La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension."
         path="/"
+        structuredData={[organizationSchema, faqSchema]}
       />
       {/* HERO */}
       <section className="relative">
