@@ -113,16 +113,16 @@ const Approche = () => {
 
       {/* My perspective */}
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 py-24 md:py-36 grid gap-16 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-4 order-2 lg:order-1">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-start">
+          <div className="lg:col-span-3 order-2 lg:order-1">
             <img
               src={portrait}
               alt="Loraine Habib"
-              className="w-full max-w-sm mx-auto lg:max-w-none aspect-[4/5] object-cover"
+              className="w-full max-w-[220px] md:max-w-[260px] mx-auto lg:max-w-none aspect-[4/5] object-cover"
               loading="lazy"
             />
           </div>
-          <div className="lg:col-span-8 order-1 lg:order-2">
+          <div className="lg:col-span-9 order-1 lg:order-2">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
               Mon regard
             </p>
@@ -165,16 +165,21 @@ const Approche = () => {
               est prêt à lâcher ou pas.
             </p>
             <p className="font-serif italic text-2xl text-foreground border-l-2 border-accent pl-6 my-10">
-              Même quand les sujets changent, ils finissent toujours par
-              buter sur le même désaccord.
+              Pas dans le contenu du désaccord, mais dans ce qui le fait
+              revenir.
             </p>
             <p>
-              Mon travail commence là. Pas dans le contenu du désaccord, mais
-              dans ce qui le fait revenir. Je rends visible ce qui se joue
+              Mon travail commence là. Je rends visible ce qui se joue
               entre les fondateurs, les mécanismes, les angles morts, les
               schémas qui se répètent, pour qu'ils puissent enfin en sortir.
             </p>
-            <p>
+          </div>
+
+          <div className="mt-14 md:mt-16">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+              En séance
+            </p>
+            <p className="text-lg text-foreground/80 leading-relaxed">
               Je ne commence pas par des tests de personnalité ou des
               diagnostics. Vous me racontez votre situation, et on part de
               là. Ça permet d'être concret dès la première séance, sur ce
@@ -186,6 +191,7 @@ const Approche = () => {
               façon de ne rien bouger.
             </p>
           </div>
+
           <div className="mt-14">
             <Link
               to="/situations/"
