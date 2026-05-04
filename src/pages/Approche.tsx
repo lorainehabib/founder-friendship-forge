@@ -104,8 +104,8 @@ const Approche = () => {
         structuredData={faqSchema}
       />
       {/* Stat hero */}
-      <section className="relative lg:min-h-screen lg:flex lg:flex-col lg:justify-center">
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
+      <section className="relative">
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-20 md:pb-28">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-balance text-foreground max-w-5xl">
             <span className="text-accent">65 %</span> des startups à fort
             potentiel échouent à cause de conflits entre cofondateurs.
@@ -117,11 +117,14 @@ const Approche = () => {
       </section>
 
       {/* What I see */}
-      <section className="border-t border-border/60">
+      <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
             Ce que je vois
           </p>
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-10 md:mb-12">
+            Derrière ce chiffre, un mécanisme qui se répète.
+          </h2>
           <p className="text-lg text-foreground/80 leading-relaxed">
             Face à des tensions, la plupart des fondateurs commencent par
             essayer de résoudre les choses entre eux&nbsp;: en parler,
@@ -136,7 +139,7 @@ const Approche = () => {
       </section>
 
       {/* What I do */}
-      <section className="border-t border-border/60 bg-secondary/30">
+      <section className="border-t border-border/60">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
             <Picture
@@ -181,7 +184,7 @@ const Approche = () => {
       </section>
 
       {/* What it looks like */}
-      <section className="border-t border-border/60">
+      <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
             Ce à quoi ça ressemble
@@ -212,7 +215,7 @@ const Approche = () => {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-border/60 bg-secondary/30">
+      <section className="border-t border-border/60">
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-36">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
             Ce qu'on me demande souvent
