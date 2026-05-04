@@ -118,7 +118,7 @@ const Approche = () => {
 
       {/* What I see */}
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-4xl px-6 md:px-10 pt-14 md:pt-16 pb-24 md:pb-32">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-16 md:py-20">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">
             Ce que je vois
           </p>
