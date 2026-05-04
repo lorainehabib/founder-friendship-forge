@@ -2,7 +2,7 @@ import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
 import Picture from "@/components/Picture";
-import { Link } from "react-router-dom";
+import { CALENDLY_URL } from "@/lib/site";
 import portraitJpg from "@/assets/loraine-portrait-2.jpg";
 import portraitWebp from "@/assets/loraine-portrait-2.webp";
 
@@ -116,7 +116,26 @@ const Approche = () => {
         </div>
       </section>
 
-      {/* My perspective */}
+      {/* What I see */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-32">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            Ce que je vois
+          </p>
+          <p className="text-lg text-foreground/80 leading-relaxed">
+            Face à des tensions, la plupart des fondateurs commencent par
+            essayer de résoudre les choses entre eux&nbsp;: en parler,
+            s'expliquer, trouver un fonctionnement qui convient à tout le
+            monde. Quand ça ne suffit pas, c'est souvent parce que chacun
+            aborde la discussion avec sa propre vision de ce qui est juste,
+            efficace, prioritaire. Sans en avoir conscience.
+            Résultat&nbsp;: les mêmes sujets reviennent, les mêmes
+            réactions aussi, et rien ne bouge.
+          </p>
+        </div>
+      </section>
+
+      {/* What I do */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
           <div className="lg:col-span-5 order-2 lg:order-1">
@@ -130,82 +149,64 @@ const Approche = () => {
           </div>
           <div className="lg:col-span-7 order-1 lg:order-2">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-              Mon regard
+              Ce que je fais
             </p>
             <div className="mt-2 space-y-5 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Dix ans dans des équipes dirigeantes de startups, dont Chief
-                of Staff chez BlaBlaCar, m'ont appris à lire un contexte
-                vite, à comprendre ce qui se joue vraiment derrière une
-                décision qui traîne ou une tension qui monte.
+                Je ne considère pas que c'est une personne qui dysfonctionne.
+                Ce sont les interactions entre associés qui produisent les
+                frictions.
               </p>
               <p>
-                Une formation en psychologie et une pratique auprès de
-                patients m'ont appris à ne pas rester en surface quand quelque
-                chose de plus profond apparaît dans une relation.
+                Dix ans dans des équipes dirigeantes de startups, dont Chief
+                of Staff chez BlaBlaCar, m'ont appris à lire un contexte vite.
+                Une formation en psychologie et une pratique clinique m'ont
+                appris à ne pas rester en surface. C'est ce croisement qui
+                me permet de voir ce qui n'est pas visible au premier regard.
               </p>
-              <p className="font-serif italic text-2xl text-foreground">
-                C'est ce croisement qui définit la façon dont je travaille.
+              <p>
+                Vous me racontez votre situation, et on part de là. Je ne
+                cherche pas qui a raison. Je regarde ce que chacun fait pour
+                résoudre le problème. Je rends visible les mécanismes, les
+                angles morts, les boucles dans lesquelles vous êtes pris,
+                pour que vous puissiez en sortir.
+              </p>
+              <p className="font-serif italic text-2xl text-foreground border-l-2 border-accent pl-6 mt-8">
+                Pas dans le contenu du désaccord, mais dans ce que chacun
+                fait pour le résoudre, et qui souvent l'aggrave.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How I work */}
-      <section>
-        <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-36">
+      {/* What it looks like */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-            Comment je travaille
+            Ce à quoi ça ressemble
           </p>
-          <div className="mt-2 space-y-6 text-lg text-foreground/80 leading-relaxed">
+          <div className="space-y-5 text-lg text-foreground/80 leading-relaxed">
             <p>
-              Face à des tensions, la plupart des fondateurs commencent par
-              essayer de résoudre les choses entre eux&nbsp;: en parler,
-              s'expliquer, trouver un fonctionnement qui convient à tout le
-              monde. Quand ça ne suffit pas, c'est souvent parce que chacun
-              aborde la discussion avec sa propre vision de ce qui est juste,
-              efficace, prioritaire. Ces visions-là sont rarement explicitées.
-              Mais elles orientent tout, et elles font que les interactions
-              finissent par se ressembler, quel que soit le sujet.
-            </p>
-            <p className="font-serif italic text-2xl text-foreground border-l-2 border-accent pl-6 my-10">
-              Pas dans le contenu du désaccord, mais dans ce que chacun fait
-              pour le résoudre, et qui souvent l'aggrave.
+              Environ 8 séances, sur 4 à 6 mois. En présentiel à Paris ou
+              en visio. Ça fonctionne aussi bien seul qu'à deux.
             </p>
             <p>
-              Je ne cherche pas qui a raison. Je regarde d'où chacun parle, et
-              ce que ça produit entre eux. Je rends visible les mécanismes,
-              les angles morts, les boucles dans lesquelles ils sont pris,
-              pour qu'ils puissent enfin en sortir.
+              Ce n'est pas un accompagnement de confort. Vous allez
+              apprendre de nouvelles façons de faire et de percevoir les
+              situations.
             </p>
           </div>
-
-          <div className="mt-14 md:mt-16">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-              En séance
-            </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              Je ne commence pas par des tests de personnalité ou des
-              diagnostics. Vous me racontez votre situation, et on part de
-              là. Ça permet d'être concret dès la première séance, sur ce
-              que vous vivez vraiment. Ce qui se passe entre vous ne se
-              résume pas à des profils ou des typologies&nbsp;: c'est votre
-              fonctionnement, vos dynamiques, vos zones aveugles à vous.
-              Et personne ne se retrouve rangé dans une case, parce que
-              «&nbsp;c'est normal, il est comme ça&nbsp;» devient vite une
-              façon de ne rien bouger.
-            </p>
-          </div>
-
-          <div className="mt-14">
-            <Link
-              to="/situations/"
-              className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+          <div className="mt-12">
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="group inline-flex items-center gap-3 bg-accent hover:bg-foreground text-accent-foreground px-8 py-4 text-sm tracking-wide transition-colors duration-300"
             >
-              Voir des exemples concrets d'accompagnement
+              Prendre rendez-vous
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
