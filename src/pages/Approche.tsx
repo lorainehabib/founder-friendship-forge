@@ -105,12 +105,12 @@ const Approche = () => {
       />
       {/* Stat hero */}
       <section className="relative">
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-20 md:pb-28">
+        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-12 md:pb-16">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-balance text-foreground max-w-5xl">
             <span className="text-accent">65 %</span> des startups à fort
             potentiel échouent à cause de conflits entre cofondateurs.
           </h1>
-          <p className="mt-12 text-base text-muted-foreground max-w-2xl whitespace-normal">
+          <p className="mt-8 text-base text-muted-foreground max-w-2xl whitespace-normal">
             Source&nbsp;: Noam Wasserman,&nbsp;<em>The Founder's Dilemmas</em>,&nbsp;Harvard Business School.
           </p>
         </div>
@@ -118,8 +118,8 @@ const Approche = () => {
 
       {/* What I see */}
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-4xl px-6 md:px-10 py-24 md:py-32">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 pt-14 md:pt-16 pb-24 md:pb-32">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">
             Ce que je vois
           </p>
           <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-10 md:mb-12">
