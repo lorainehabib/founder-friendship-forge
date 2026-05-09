@@ -15,6 +15,43 @@ const recognitionItems = [
   "Vous parlez de votre associé à d'autres, plutôt qu'à lui.",
 ];
 
+const testimonials = [
+  {
+    quote:
+      "Je traversais une période particulièrement stressante. Je suis repartie avec des options claires. Et surtout, c'étaient les miennes.",
+    attribution: "Marie Loubière · Cofondatrice, Gynea",
+    schemaAuthor: "Marie Loubière",
+  },
+  {
+    quote:
+      "J'étais dans le flou. Loraine a mis des mots précis sur ce que je n'arrivais pas à formuler. À partir de là, j'ai pu structurer une vision claire de mon organisation.",
+    attribution: "Matieu Pons · Cofondateur, Datack",
+    schemaAuthor: "Matieu Pons",
+  },
+  {
+    quote:
+      "Loraine m'a aidé à regarder en face ce que j'évitais, et à trancher. Ce qui traînait depuis des mois s'est débloqué en quelques semaines.",
+    attribution: "CEO · Fintech · +40 collaborateurs",
+    schemaAuthor: "CEO d'une fintech (+40 collaborateurs)",
+  },
+];
+
+const SITE_URL = "https://lorainehabib.com";
+
+const reviewSchemas = testimonials.map((t) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  reviewBody: t.quote,
+  author: {
+    "@type": "Person",
+    name: t.schemaAuthor,
+  },
+  itemReviewed: {
+    "@id": `${SITE_URL}/#service`,
+  },
+  inLanguage: "fr",
+}));
+
 const Index = () => {
   return (
     <SiteLayout>
@@ -22,6 +59,7 @@ const Index = () => {
         title="Loraine Habib — Coach de fondateurs | Relation entre cofondateurs"
         description="La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension."
         path="/"
+        structuredData={reviewSchemas}
       />
       {/* HERO */}
       <section className="relative">
@@ -81,7 +119,7 @@ const Index = () => {
       </section>
 
       {/* Respiration claire entre les deux blocs sombres */}
-      <section className="bg-background border-y border-border/60">
+      <section className="bg-background border-t border-border/60">
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
           <p className="text-base md:text-lg text-foreground/75 leading-relaxed mb-10 md:mb-12">
             Ce sont des signes que des tensions se sont installées entre vous — et elles ne se résoudront pas toutes seules.
@@ -100,6 +138,27 @@ const Index = () => {
               Découvrir mon approche
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="border-y border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-32">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-12 md:mb-16">
+            Ils en parlent
+          </p>
+          <div className="space-y-14 md:space-y-20">
+            {testimonials.map((t) => (
+              <figure key={t.attribution}>
+                <blockquote className="font-serif text-xl md:text-2xl leading-[1.4] text-foreground italic max-w-4xl">
+                  «&nbsp;{t.quote}&nbsp;»
+                </blockquote>
+                <figcaption className="mt-6 text-sm tracking-wide text-muted-foreground">
+                  {t.attribution}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
