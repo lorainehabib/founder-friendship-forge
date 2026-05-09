@@ -144,17 +144,17 @@ const Index = () => {
 
       {/* TESTIMONIALS */}
       <section className="border-y border-border/60 bg-secondary/40">
-        <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-32">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-12 md:mb-16">
             Ils en parlent
           </p>
-          <div className="space-y-14 md:space-y-20">
+          <div className="grid gap-12 md:gap-16 lg:grid-cols-3">
             {testimonials.map((t) => (
-              <figure key={t.attribution}>
-                <blockquote className="font-serif text-xl md:text-2xl leading-[1.4] text-foreground italic max-w-4xl">
+              <figure key={t.attribution} className="flex flex-col">
+                <blockquote className="font-serif text-xl leading-[1.5] text-foreground italic">
                   «&nbsp;{t.quote}&nbsp;»
                 </blockquote>
-                <figcaption className="mt-6 text-sm tracking-wide text-muted-foreground">
+                <figcaption className="mt-auto pt-6 text-sm tracking-wide text-muted-foreground">
                   {t.attribution}
                 </figcaption>
               </figure>
