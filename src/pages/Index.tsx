@@ -3,8 +3,8 @@ import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
 import Picture from "@/components/Picture";
-import portraitJpg from "@/assets/loraine-portrait-1.jpg";
-import portraitWebp from "@/assets/loraine-portrait-1.webp";
+import portraitJpg from "@/assets/loraine-portrait-2.jpg";
+import portraitWebp from "@/assets/loraine-portrait-2.webp";
 
 const recognitionItems = [
   "Vous mettez trois réunions à trancher ce qui se décidait en cinq minutes.",
@@ -21,18 +21,24 @@ const testimonials = [
       "Je traversais une période particulièrement stressante. Je suis repartie avec des options claires. Et surtout, c'étaient les miennes.",
     attribution: "Marie Loubière · Cofondatrice, Gynea",
     schemaAuthor: "Marie Loubière",
+    before: "Stress",
+    after: "Options claires",
   },
   {
     quote:
       "J'étais dans le flou. Loraine a mis des mots précis sur ce que je n'arrivais pas à formuler. À partir de là, j'ai pu structurer une vision claire de mon organisation.",
     attribution: "Matieu Pons · Cofondateur, Datack",
     schemaAuthor: "Matieu Pons",
+    before: "Flou",
+    after: "Structure",
   },
   {
     quote:
       "Loraine m'a aidé à regarder en face ce que j'évitais, et à trancher. Ce qui traînait depuis des mois s'est débloqué en quelques semaines.",
     attribution: "CEO · Fintech · +40 collaborateurs",
     schemaAuthor: "CEO d'une fintech (+40 collaborateurs)",
+    before: "Évite",
+    after: "Tranche",
   },
 ];
 
@@ -114,6 +120,10 @@ const Index = () => {
               </li>
             ))}
           </ul>
+          <p className="mt-12 md:mt-14 border-l-2 border-accent/50 pl-6 text-base md:text-lg text-foreground/80 italic leading-relaxed">
+            Pas de tension jusqu'à présent&nbsp;? Beaucoup de fondateurs me
+            contactent justement pour que ça reste le cas.
+          </p>
         </div>
 
       </section>
@@ -159,6 +169,43 @@ const Index = () => {
                 </figcaption>
               </figure>
             ))}
+          </div>
+
+          <div className="mt-20 md:mt-24 pt-14 md:pt-16 border-t border-border/60 max-w-2xl">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8 md:mb-10">
+              Avant / Après
+            </p>
+            <ul className="space-y-6 md:space-y-7">
+              {testimonials.map((t) => (
+                <li
+                  key={t.attribution}
+                  className="grid grid-cols-[1fr_auto_1fr] items-baseline gap-4 md:gap-8"
+                >
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-1">
+                      Avant
+                    </p>
+                    <p className="font-serif text-2xl md:text-3xl italic text-foreground/60 leading-tight">
+                      {t.before}
+                    </p>
+                  </div>
+                  <span
+                    aria-hidden
+                    className="text-accent text-xl md:text-2xl leading-none"
+                  >
+                    →
+                  </span>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-1">
+                      Après
+                    </p>
+                    <p className="font-serif text-2xl md:text-3xl text-foreground leading-tight">
+                      {t.after}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

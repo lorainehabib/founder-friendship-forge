@@ -3,6 +3,7 @@ import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
 
 type Situation = {
+  label: string;
   title: string;
   paragraphs: string[];
   inlineLast: { lead: string; pull: string; trail?: string };
@@ -10,6 +11,7 @@ type Situation = {
 
 const situations: Situation[] = [
   {
+    label: "Préparer une association",
     title: "S'associer avec quelqu'un qu'on connaît à peine",
     paragraphs: [
       "Deux entrepreneurs expérimentés, un nouveau projet ensemble, trois mois de travail en commun. L'un des deux me contacte, pas parce que ça se passe mal, mais pour vérifier. Il voulait un diagnostic : est-ce que les profils sont compatibles ? Est-ce que ça va tenir ? Il avait déjà vécu une association où il n'arrivait pas à trouver sa place, et il ne voulait pas revivre ça.",
@@ -21,6 +23,7 @@ const situations: Situation[] = [
     },
   },
   {
+    label: "Dénouer les tensions entre associés",
     title: "Cinq associés, un seul décideur",
     paragraphs: [
       "Une startup à impact en croissance. Cinq associés. Sur le papier, tout avance, mais en coulisses, plus rien ne circule. Chacun vient se confier séparément, personne ne dit les choses en collectif. L'un d'entre eux envisage de partir sans l'avoir annoncé aux autres.",
@@ -33,9 +36,10 @@ const situations: Situation[] = [
     },
   },
   {
+    label: "Prendre une décision",
     title: "Tout est mélangé, plus rien n'avance",
     paragraphs: [
-      "Une startup e-commerce, deux associés. Celui qui me contacte n'en peut plus, mais il ne sait pas de quoi exactement. Est-ce que c'est la boîte qui ne va pas dans la direction qu'il veut ? Est-ce que c'est son associé qui n'a pas été à la hauteur cette année ? Est-ce qu'ils sont trop similaires pour se compléter ? Tout s'est mélangé, et la frustration a pris toute la place.",
+      "Une startup e-commerce, deux associés. Celui avec qui je travaille n'en peut plus, mais il ne sait pas de quoi exactement. Est-ce que c'est la boîte qui ne va pas dans la direction qu'il veut ? Est-ce que c'est son associé qui n'a pas été à la hauteur cette année ? Est-ce qu'ils sont trop similaires pour se compléter ? Tout s'est mélangé, et la frustration a pris toute la place.",
       "D'une séance à l'autre, sa position changeait. Parfois plusieurs fois par semaine. Partir, rester, confronter, laisser couler. Cette hésitation permanente n'était pas un flou, c'était une façon de ne pas aller au bout de ce qu'il savait déjà.",
     ],
     inlineLast: {
@@ -63,8 +67,8 @@ const Situations = () => {
           </h1>
           <p className="mt-8 text-lg md:text-xl text-foreground/85 leading-relaxed max-w-3xl">
             Trois situations réelles d'accompagnement de fondateurs&nbsp;:
-            tensions entre associés, problèmes de gouvernance,
-            questionnements sur l'avenir de l'association.
+            préparer une association, dénouer les tensions entre associés,
+            prendre une décision.
           </p>
           <p className="mt-6 text-base text-muted-foreground italic max-w-2xl">
             Les détails ont été modifiés pour préserver la confidentialité.
@@ -80,6 +84,9 @@ const Situations = () => {
               className="grid gap-10 lg:grid-cols-12 py-20 md:py-28"
             >
               <header className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
+                <p className="text-xs uppercase tracking-[0.3em] text-accent mb-4">
+                  {s.label}
+                </p>
                 <h2 className="font-serif text-3xl md:text-4xl leading-[1.15] text-foreground text-balance">
                   {s.title}
                 </h2>
