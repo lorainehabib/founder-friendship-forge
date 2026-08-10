@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local bun install (not the project's package manager choice — kept out of tree)
+.bun/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
