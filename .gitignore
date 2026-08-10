@@ -12,8 +12,10 @@ dist
 dist-ssr
 *.local
 
-# Local bun install (not the project's package manager choice — kept out of tree)
+# This project uses npm — never commit bun lockfiles or a local bun install
 .bun/
+bun.lock
+bun.lockb
 
 # Editor directories and files
 .vscode/*
