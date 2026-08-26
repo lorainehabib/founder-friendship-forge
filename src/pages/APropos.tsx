@@ -85,9 +85,9 @@ const APropos = () => {
             La différence tenait à l'échelle
           </p>
           <p className="font-serif italic text-2xl md:text-3xl text-foreground border-l-2 border-accent pl-6 leading-[1.25]">
-            En cabinet, elle changeait une personne&nbsp;; entre dirigeants,
-            elle pouvait changer la trajectoire d'une entreprise. J'ai décidé
-            d'en faire mon métier.
+            En cabinet, ce travail changeait une personne&nbsp;; entre
+            dirigeants, il pouvait changer la trajectoire d'une entreprise.
+            J'ai décidé d'en faire mon métier.
           </p>
         </div>
       </section>

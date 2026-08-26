@@ -34,7 +34,7 @@ const travaillerSteps = [
   },
   {
     label: "Identifier ce que ça nous fait ressentir.",
-    body: "Seul, on s'arrête à la surface : «\u00a0il m'agace\u00a0». On n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on n'a encore moins d'accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
+    body: "Seul, on s'arrête à la surface : «\u00a0il m'agace\u00a0». On n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on a encore moins accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
   },
   {
     label: "Ajuster nos comportements.",
