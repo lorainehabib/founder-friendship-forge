@@ -17,9 +17,8 @@ const MentionsLegales = () => (
       path="/mentions-legales/"
     />
     <article className="mx-auto max-w-3xl px-6 md:px-10 py-16 md:py-28">
-      <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">Légal</p>
       <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-foreground mb-12">
-        Mentions légales
+        Mentions légales.
       </h1>
 
       <div className="space-y-12">
@@ -39,7 +38,7 @@ const MentionsLegales = () => (
 
         <Section title="Données personnelles & RGPD">
           <p><strong className="font-medium text-foreground">Responsable du traitement.</strong> Loraine Habib — LHG, habib.loraine@gmail.com</p>
-          <p><strong className="font-medium text-foreground">Données collectées.</strong> Ce site ne collecte pas de données personnelles directement. La prise de rendez-vous s'effectue via la plateforme Cal.com, qui agit en tant que sous-traitant et dispose de sa propre politique de confidentialité&nbsp;: <a href="https://cal.com/privacy" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">cal.com/privacy</a>.</p>
+          <p><strong className="font-medium text-foreground">Données collectées.</strong> Si vous laissez votre adresse email pour recevoir le PDF «&nbsp;Le point sur votre association&nbsp;», elle est collectée via MailerLite, qui agit en tant que sous-traitant. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque email. La prise de rendez-vous s'effectue via la plateforme Cal.com, qui agit en tant que sous-traitant et dispose de sa propre politique de confidentialité&nbsp;: <a href="https://cal.com/privacy" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">cal.com/privacy</a>.</p>
           <p><strong className="font-medium text-foreground">Vos droits.</strong> Conformément au RGPD&nbsp;: accès, rectification, effacement, limitation, opposition, portabilité. Pour les exercer&nbsp;: habib.loraine@gmail.com. En cas de difficulté, vous pouvez saisir la CNIL&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">www.cnil.fr</a>.</p>
         </Section>
 
@@ -51,7 +50,7 @@ const MentionsLegales = () => (
           <p>Le présent site et ses mentions légales sont régis par le droit français. En cas de litige, les tribunaux français seront seuls compétents.</p>
         </Section>
 
-        <p className="text-sm text-muted-foreground pt-8">Dernière mise à jour&nbsp;: 23 avril 2026</p>
+        <p className="text-sm text-muted-foreground pt-8">Dernière mise à jour&nbsp;: 26 août 2026</p>
       </div>
     </article>
   </SiteLayout>

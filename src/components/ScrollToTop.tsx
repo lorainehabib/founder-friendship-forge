@@ -2,10 +2,23 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const id = hash.replace(/^#/, "");
+      // Attendre le prochain paint pour que l'élément soit monté
+      requestAnimationFrame(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "instant" as ScrollBehavior, block: "start" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+        }
+      });
+      return;
+    }
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 

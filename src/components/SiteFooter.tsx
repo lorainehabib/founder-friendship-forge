@@ -26,8 +26,10 @@ const SiteFooter = () => {
           <ul className="space-y-2 text-sm">
             <li><Link to="/" onClick={scrollTop} className="hover:text-accent transition-colors">Accueil</Link></li>
             <li><Link to="/approche/" onClick={scrollTop} className="hover:text-accent transition-colors">Approche</Link></li>
+            <li><Link to="/offres/" onClick={scrollTop} className="hover:text-accent transition-colors">Offres</Link></li>
             <li><Link to="/situations/" onClick={scrollTop} className="hover:text-accent transition-colors">Situations</Link></li>
             <li><Link to="/a-propos/" onClick={scrollTop} className="hover:text-accent transition-colors">À propos</Link></li>
+            <li><Link to="/faire-le-point/" onClick={scrollTop} className="hover:text-accent transition-colors">Le point sur votre association</Link></li>
           </ul>
         </div>
         <div className="md:col-span-4">

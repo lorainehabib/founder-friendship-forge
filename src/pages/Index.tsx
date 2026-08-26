@@ -3,6 +3,8 @@ import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
 import Picture from "@/components/Picture";
+import EchelleDiagram from "@/components/EchelleDiagram";
+import FreebieCapture from "@/components/FreebieCapture";
 import portraitJpg from "@/assets/loraine-portrait-2.jpg";
 import portraitWebp from "@/assets/loraine-portrait-2.webp";
 
@@ -15,30 +17,44 @@ const recognitionItems = [
   "Vous parlez de votre associé à d'autres, plutôt qu'à lui.",
 ];
 
+const portes = [
+  {
+    title: "Vous vous apprêtez à vous associer.",
+    subtitle: "Se mettre d'accord sur l'essentiel, avant de vous engager.",
+    to: "/offres/#s-associer",
+  },
+  {
+    title: "Tout va bien, et vous voulez que ça dure.",
+    subtitle:
+      "Mettre les inconforts sur la table avant qu'ils ne deviennent des tensions.",
+    to: "/offres/#entretenir",
+  },
+  {
+    title: "C'est déjà tendu.",
+    subtitle:
+      "Dénouer ce qui bloque, quand vous voulez encore avancer ensemble.",
+    to: "/offres/#debloquer",
+  },
+];
+
 const testimonials = [
   {
     quote:
       "Je traversais une période particulièrement stressante. Je suis repartie avec des options claires. Et surtout, c'étaient les miennes.",
     attribution: "Marie Loubière · Cofondatrice, Gynea",
     schemaAuthor: "Marie Loubière",
-    before: "Stress",
-    after: "Options claires",
   },
   {
     quote:
       "J'étais dans le flou. Loraine a mis des mots précis sur ce que je n'arrivais pas à formuler. À partir de là, j'ai pu structurer une vision claire de mon organisation.",
     attribution: "Matieu Pons · Cofondateur, Datack",
     schemaAuthor: "Matieu Pons",
-    before: "Flou",
-    after: "Structure",
   },
   {
     quote:
       "Loraine m'a aidé à regarder en face ce que j'évitais, et à trancher. Ce qui traînait depuis des mois s'est débloqué en quelques semaines.",
     attribution: "CEO · Fintech · +40 collaborateurs",
     schemaAuthor: "CEO d'une fintech (+40 collaborateurs)",
-    before: "Évite",
-    after: "Tranche",
   },
 ];
 
@@ -67,6 +83,7 @@ const Index = () => {
         path="/"
         structuredData={reviewSchemas}
       />
+
       {/* HERO */}
       <section className="relative">
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-12 md:pt-24 pb-20 md:pb-32">
@@ -80,7 +97,12 @@ const Index = () => {
               </h1>
               <div className="mt-10 space-y-5 max-w-xl text-xl md:text-2xl text-foreground/80 leading-relaxed text-pretty">
                 <p className="text-foreground">
-                  J'accompagne les fondateurs pour que leur association tienne, et avance. Dès le début, ou quand c'est déjà tendu.
+                  Ce qui casse une association, ce ne sont pas les grandes
+                  disputes. Ce sont les petits inconforts qu'on garde pour soi.
+                </p>
+                <p className="text-foreground/80 text-lg md:text-xl">
+                  J'accompagne les fondateurs pour que leur association tienne,
+                  et avance.
                 </p>
               </div>
             </div>
@@ -125,28 +147,108 @@ const Index = () => {
             contactent justement pour que ça reste le cas.
           </p>
         </div>
-
       </section>
 
-      {/* Respiration claire entre les deux blocs sombres */}
-      <section className="bg-background border-t border-border/60">
-        <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28 text-center">
-          <p className="text-base md:text-lg text-foreground/75 leading-relaxed mb-10 md:mb-12">
-            Ce sont des signes que des tensions se sont installées entre vous — et elles ne se résoudront pas toutes seules.
+      {/* TROIS PORTES */}
+      <section className="border-t border-border/60 bg-background">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-32">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            Selon là où vous en êtes
           </p>
-          <p className="font-serif text-2xl md:text-4xl leading-[1.2] text-balance text-foreground">
-            Mais ça se travaille.
+          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14 md:mb-16 max-w-3xl">
+            Trois façons de travailler la relation.
+          </h2>
+          <div className="divide-y divide-border/70 border-y border-border/70">
+            {portes.map((p) => (
+              <Link
+                key={p.to}
+                to={p.to}
+                className="group grid gap-4 md:grid-cols-12 md:gap-8 py-8 md:py-10 items-baseline hover:bg-secondary/30 transition-colors -mx-2 px-2 md:mx-0 md:px-0"
+              >
+                <h3 className="md:col-span-5 font-serif text-2xl md:text-3xl leading-[1.15] text-foreground group-hover:text-accent transition-colors text-balance">
+                  {p.title}
+                </h3>
+                <p className="md:col-span-6 text-base md:text-lg text-foreground/80 leading-relaxed">
+                  {p.subtitle}
+                </p>
+                <span
+                  aria-hidden
+                  className="md:col-span-1 md:text-right text-accent text-2xl leading-none transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ECHELLE + APPROCHE */}
+      <section className="border-t border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-32">
+          <div className="max-w-3xl space-y-6 text-lg text-foreground/85 leading-relaxed">
+            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-2">
+              Mon approche
+            </p>
+            <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
+              <span className="text-accent">65 %</span> des start-ups à fort
+              potentiel échouent pour des raisons humaines, contre 35 % à cause
+              du produit ou du marché.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Noam Wasserman, <em>The Founder's Dilemmas</em>, Harvard Business
+              School.
+            </p>
+            <p>
+              Ces raisons humaines s'installent lentement. Tout part de petits
+              inconforts qu'on garde pour soi.
+            </p>
+          </div>
+          <div className="mt-14 md:mt-16">
+            <EchelleDiagram />
+          </div>
+          <div className="mt-12 md:mt-14 max-w-3xl">
+            <p className="text-lg text-foreground">
+              La repérer tôt, c'est pouvoir agir pendant que c'est encore
+              simple.
+            </p>
+            <div className="mt-8">
+              <Link
+                to="/approche/"
+                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+              >
+                Comprendre mon approche
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* QUI JE SUIS */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            Qui je suis
           </p>
-          <p className="mt-4 text-base md:text-lg text-muted-foreground">
-            Même si vous êtes seul·e à faire la démarche.
+          <p className="text-lg md:text-xl text-foreground/85 leading-relaxed max-w-3xl">
+            Ancienne Chief of Staff du CEO de BlaBlaCar, formée à la psychologie
+            et à la thérapie des relations, je croise deux regards&nbsp;: le
+            terrain des équipes dirigeantes, et la clinique de la relation.
+            C'est ce qui me permet de voir ce que vous ne pouvez pas repérer de
+            l'intérieur.
           </p>
-          <div className="mt-12">
+          <div className="mt-10">
             <Link
-              to="/approche/"
+              to="/a-propos/"
               className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
             >
-              Découvrir mon approche
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              À propos
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
             </Link>
           </div>
         </div>
@@ -170,47 +272,20 @@ const Index = () => {
               </figure>
             ))}
           </div>
-
-          <div className="mt-20 md:mt-24 pt-14 md:pt-16 border-t border-border/60 max-w-2xl">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8 md:mb-10">
-              Avant / Après
-            </p>
-            <ul className="space-y-6 md:space-y-7">
-              {testimonials.map((t) => (
-                <li
-                  key={t.attribution}
-                  className="grid grid-cols-[1fr_auto_1fr] items-baseline gap-4 md:gap-8"
-                >
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-1">
-                      Avant
-                    </p>
-                    <p className="font-serif text-2xl md:text-3xl italic text-foreground/60 leading-tight">
-                      {t.before}
-                    </p>
-                  </div>
-                  <span
-                    aria-hidden
-                    className="text-accent text-xl md:text-2xl leading-none"
-                  >
-                    →
-                  </span>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.3em] text-accent mb-1">
-                      Après
-                    </p>
-                    <p className="font-serif text-2xl md:text-3xl text-foreground leading-tight">
-                      {t.after}
-                    </p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </section>
 
-      <CtaBlock />
+      <CtaBlock
+        heading="Une première conversation pour voir où vous en êtes, et comment avancer."
+        note="Gratuite et sans engagement, strictement confidentielle."
+      />
+
+      {/* FREEBIE */}
+      <section className="border-t border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-3xl px-6 md:px-10 py-24 md:py-32">
+          <FreebieCapture source="accueil" />
+        </div>
+      </section>
     </SiteLayout>
   );
 };

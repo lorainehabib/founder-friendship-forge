@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Le point sur votre association — Loraine Habib</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --cream: #faf8f5;
+        --ink: #2c2420;
+        --accent: #b85c38;
+        --muted: #8c7b6b;
+        --sand: #e0d5c8;
+        --gold: #c4a882;
+      }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; }
+      body {
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "DM Sans", sans-serif;
+        font-size: 11pt;
+        line-height: 1.5;
+      }
+      @page {
+        size: A4;
+        margin: 14mm 15mm 18mm;
+        @bottom-center {
+          content: "Loraine Habib";
+          font-family: "Cormorant Garamond", Georgia, serif;
+          font-size: 9pt;
+          color: #8c7b6b;
+        }
+      }
+      .page { max-width: 180mm; margin: 0 auto; padding: 8mm 0 14mm; }
+      h1 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 600;
+        font-size: 26pt;
+        line-height: 1.12;
+        margin: 0 0 16pt;
+      }
+      h2 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 600;
+        font-size: 16pt;
+        line-height: 1.2;
+        margin: 22pt 0 10pt;
+        page-break-after: avoid;
+      }
+      h3 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 600;
+        font-size: 13pt;
+        margin: 14pt 0 6pt;
+        page-break-after: avoid;
+      }
+      p { margin: 0 0 10pt; }
+      .lead { font-size: 11.5pt; }
+      .mark {
+        display: inline-block;
+        width: 13pt;
+        height: 13pt;
+        border: 1px solid var(--sand);
+        vertical-align: middle;
+        margin: 0 1pt;
+      }
+      .q {
+        display: grid;
+        grid-template-columns: 18pt 1fr auto;
+        gap: 8pt 10pt;
+        align-items: start;
+        padding: 7pt 0;
+        border-bottom: 1px solid var(--sand);
+        page-break-inside: avoid;
+      }
+      .q-n {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 14pt;
+        color: var(--accent);
+        line-height: 1.2;
+      }
+      .q-scale { white-space: nowrap; padding-top: 1pt; color: var(--muted); font-size: 9pt; }
+      .total {
+        display: flex;
+        align-items: center;
+        gap: 12pt;
+        margin-top: 14pt;
+        padding: 10pt 12pt;
+        border: 1px solid var(--sand);
+        background: #f3eee8;
+        page-break-inside: avoid;
+      }
+      .total strong {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 14pt;
+        font-weight: 600;
+      }
+      .total-box {
+        width: 42pt;
+        height: 22pt;
+        border: 1px solid var(--ink);
+        background: #fff;
+      }
+      .note { color: var(--muted); font-size: 10pt; }
+      .palier {
+        border-left: 2px solid var(--accent);
+        padding: 2pt 0 2pt 12pt;
+        margin: 10pt 0 12pt;
+        page-break-inside: avoid;
+      }
+      .palier .range {
+        font-size: 8.5pt;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 3pt;
+      }
+      table.grid {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        margin-top: 8pt;
+      }
+      table.grid th, table.grid td {
+        border: 1px solid var(--sand);
+        vertical-align: top;
+        padding: 8pt 9pt;
+      }
+      table.grid th {
+        background: #f3eee8;
+        font-weight: 500;
+        text-align: left;
+      }
+      .col-title {
+        display: block;
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 12pt;
+        font-weight: 600;
+      }
+      .col-hint {
+        display: block;
+        margin-top: 3pt;
+        font-size: 8.5pt;
+        font-weight: 400;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+      table.grid .moment-label th {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 10pt;
+        font-weight: 600;
+        padding: 3pt 8pt;
+        line-height: 1.1;
+        vertical-align: middle;
+      }
+      table.grid tr { page-break-inside: avoid; }
+      table.grid td { height: 52mm; }
+      .synth {
+        page-break-before: always;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .synth-intro { margin-bottom: 8pt; }
+      .synth-note {
+        border-left: 2px solid var(--accent);
+        padding: 2pt 0 2pt 12pt;
+        margin: 0 0 10pt;
+        page-break-inside: avoid;
+      }
+      .synth-box {
+        margin-top: 0;
+        border: 1px solid var(--sand);
+        background: #fff;
+        height: 52mm;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 6pt;
+        background: var(--accent);
+        color: var(--cream) !important;
+        text-decoration: none;
+        padding: 8pt 14pt;
+        font-size: 10.5pt;
+        letter-spacing: 0.04em;
+      }
+      .section { page-break-inside: avoid; }
+      .break { page-break-before: always; }
+      @media print {
+        body { background: #fff; }
+        .page { max-width: none; padding: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <h1>Le point sur votre association</h1>
+
+      <p class="lead">
+        En tant que fondateur, vous êtes doué pour encaisser. Tenir bon,
+        absorber les frictions, avancer quand même&nbsp;: c'est même ce qui
+        vous a menés jusqu'ici. Mais cette force a un revers. À force de
+        prendre sur soi, on cesse de voir les petits inconforts de la
+        relation, on les range dans les détails, et on les laisse grossir
+        sans s'en rendre compte. Et un inconfort répété qu'on ignore est
+        le terreau de futures tensions.
+      </p>
+      <p class="lead">
+        Faites le point en deux temps. D'abord, un questionnaire d'auto-évaluation&nbsp;:
+        il mesure le niveau d'inconfort dans votre association. Ensuite, une
+        grille d'auto-observation&nbsp;: elle vous fait aller un cran plus loin,
+        en identifiant ce qui se joue derrière ces inconforts.
+      </p>
+
+      <h2>1. Le questionnaire d'auto-évaluation</h2>
+      <p>Pour chaque phrase, notez de 0 (pas du tout d'accord) à 4 (tout à fait d'accord).</p>
+
+      <div class="q"><span class="q-n">1</span><span>Je peux dire à mon associé ce que je pense vraiment.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">2</span><span>Je me sens compris par mon associé.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">3</span><span>Je peux être en désaccord avec lui sans que ça m'inquiète.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">4</span><span>Je me sens serein après nos discussions.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">5</span><span>Je me sens reconnu à ma juste valeur dans notre association.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">6</span><span>J'ai le sentiment qu'on s'investit autant l'un que l'autre.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">7</span><span>Je me sens soutenu par mon associé au quotidien.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">8</span><span>Je sens que mon associé me fait confiance pour gérer mon périmètre.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">9</span><span>Je fais confiance à mon associé pour gérer le sien.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">10</span><span>Je me sens à ma place dans cette association.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div class="q"><span class="q-n">11</span><span>Travailler avec mon associé me donne plus d'énergie que ça ne m'en coûte.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+
+      <div class="total">
+        <strong>Mon total</strong>
+        <span class="total-box"></span>
+        <span class="note">/ 44</span>
+      </div>
+
+      <h2>Vos résultats</h2>
+      <p>
+        Additionnez vos réponses. Ce total n'est pas une note, juste une
+        indication de là où vous en êtes. Lisez-le avec vos réponses les plus
+        basses&nbsp;: ce sont elles qui en disent le plus.
+      </p>
+      <p class="note">Le repère ci-dessous est indicatif.</p>
+
+      <div class="palier">
+        <div class="range">De 34 à 44 — Tout va bien</div>
+        <p>
+          Votre relation a l'air solide, et c'est précieux&nbsp;: peu d'associations
+          tiennent aussi bien. C'est aussi le meilleur moment pour la travailler,
+          tant qu'il n'y a rien à réparer. Regardez vos réponses les plus basses&nbsp;:
+          même ici, il y a sûrement un ou deux petits inconforts. Servez-vous de
+          la grille pour les repérer et les poser avant qu'ils ne s'installent.
+        </p>
+      </div>
+      <div class="palier">
+        <div class="range">De 23 à 33 — Des inconforts pointent</div>
+        <p>
+          Globalement, ça tient. Mais quelques réponses plus basses signalent des
+          inconforts qui commencent à pointer. Ce ne sont pas des alarmes, plutôt
+          de petits signaux, le genre qu'on range d'habitude dans les détails. Et
+          à force de les y ranger, ils grossissent. Le bon moment pour les
+          regarder, c'est maintenant&nbsp;: repérez vos items les plus bas et
+          servez-vous de la grille pour retrouver les moments derrière.
+        </p>
+      </div>
+      <div class="palier">
+        <div class="range">De 12 à 22 — Des tensions s'installent</div>
+        <p>
+          Plusieurs réponses basses dessinent des tensions qui se sont installées.
+          Ce n'est pas un conflit ouvert, mais des inconforts qui reviennent,
+          encore et encore. C'est le moment d'agir, pendant que c'est encore
+          souple. Commencez par vos items les plus bas, et servez-vous de la
+          grille pour mettre des mots sur ce qui se répète.
+        </p>
+      </div>
+      <div class="palier">
+        <div class="range">De 0 à 11 — C'est devenu lourd</div>
+        <p>
+          Beaucoup de réponses basses&nbsp;: ce que vous portez est lourd, et
+          sûrement depuis un moment. Ce que vous ressentez est réel, et ça ne
+          veut pas dire que la relation est fichue. Ça veut dire qu'il y a de
+          quoi travailler. La grille est un premier pas pour y voir clair.
+        </p>
+      </div>
+
+      <h2 class="break">2. La grille d'auto-observation</h2>
+      <p>
+        Repensez aux dernières semaines. Cherchez un moment où quelque chose
+        vous a gêné dans la relation avec votre associé. Pas besoin d'un grand
+        événement&nbsp;: un agacement, une gêne, un moment un peu désagréable,
+        même si cela vous paraît anodin. Notez-le dans la grille ci-dessous,
+        puis tirez le fil&nbsp;: notez ce que vous vous êtes dit dans votre
+        tête, et enfin ce que ça vous a fait ressentir.
+      </p>
+      <p>Faites-le pour trois moments différents.</p>
+
+      <table class="grid">
+        <thead>
+          <tr>
+            <th>
+              <span class="col-title">Ce qu'il s'est passé</span>
+              <span class="col-hint">Décrivez la scène</span>
+            </th>
+            <th>
+              <span class="col-title">Ce que je me suis dit</span>
+              <span class="col-hint">La pensée associée à la scène</span>
+            </th>
+            <th>
+              <span class="col-title">Comment ça m'a fait me sentir</span>
+              <span class="col-hint">Le ressenti associé à la pensée</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="moment-label">
+            <th scope="row" colspan="3">Moment 1</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="moment-label">
+            <th scope="row" colspan="3">Moment 2</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="moment-label">
+            <th scope="row" colspan="3">Moment 3</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <section class="synth">
+        <h3>La synthèse</h3>
+        <p class="synth-intro">
+          Vos trois moments posés, regardez-les ensemble. Qu'est-ce qui
+          revient&nbsp;?
+        </p>
+        <p class="synth-note">
+          C'est là, dans ce qui se répète, que se trouve le nœud.
+        </p>
+        <div class="synth-box"></div>
+
+        <h2>3. Pour aller plus loin</h2>
+      <p>
+        Vous venez peut-être de mettre le doigt sur un inconfort que vous
+        portez depuis un moment. C'est déjà beaucoup&nbsp;: d'habitude, on le
+        laisse passer sans s'y arrêter.
+      </p>
+      <p>
+        Mais l'avoir vu ne suffit pas à le dénouer. Pour ça, il faut le mettre
+        sur la table et le travailler, ce qui n'est pas simple à faire seul.
+      </p>
+      <p>
+        Si vous voulez aller plus loin, une première conversation pour voir
+        ensemble comment avancer est gratuite et sans engagement.
+      </p>
+      <p>
+        <a
+          class="cta"
+          href="https://cal.com/loraine-habib/echange"
+          >Prendre rendez-vous →</a
+        >
+      </p>
+      </section>
+    </main>
+  </body>
+</html>

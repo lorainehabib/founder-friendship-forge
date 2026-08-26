@@ -1,460 +1,301 @@
-import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
-import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
-import Picture from "@/components/Picture";
-import portraitJpg from "@/assets/loraine-portrait-1.jpg";
-import portraitWebp from "@/assets/loraine-portrait-1.webp";
+import EchelleDiagram from "@/components/EchelleDiagram";
+import FreebieCapture from "@/components/FreebieCapture";
 
-const reasons = [
+const inconfortQuotes = [
+  "Assez vite, j'ai remarqué qu'il faisait passer ses intérêts personnels avant le reste.",
+  "On n'a jamais vraiment défini les rôles de chacun. À chaque fois qu'on essayait, on se confrontait aux mêmes désaccords.",
+  "Je ne comprends pas pourquoi elle ne veut pas partager certaines informations avec moi, mais devant son refus répété, j'ai laissé tomber ce sujet.",
+];
+
+const rationalisations = [
+  "C'est un détail.",
+  "Il est comme ça, il ne changera pas.",
+  "Je ne vais pas en faire toute une histoire.",
+  "Ça ne sert à rien d'en parler.",
+  "C'est normal dans son rôle.",
+  "C'est peut-être moi le problème.",
+];
+
+const alexStanParagraphs = [
+  "Un binôme que j'ai accompagné, appelons-les Alex et Stan, a su désamorcer les inconforts à temps. Tout allait bien : série A tout juste bouclée, ils venaient travailler leur relation par précaution.",
+  "Quand je demande à Alex si quelque chose le gêne, il dit d'abord non. Puis : «\u00a0Ah si, mais c'est vraiment un détail.\u00a0» La veille, devant leurs investisseurs, Stan avait répondu à sa place\u00a0; la semaine d'avant, il l'avait contredit devant l'équipe. Sur le coup, pas de quoi en faire tout un plat. Mais Alex se sentait dénigré, sans le dire.",
+  "Stan, de son côté, ne mentionne aucun de ces épisodes. Lui aussi trouve que tout va bien. Il faut creuser un peu pour qu'il finisse par dire ce qui lui pèse : la lenteur d'Alex, et le sentiment d'être seul à décider.",
+  "En séance commune, tout se pose. Alex a besoin de temps pour se forger un avis\u00a0; Stan n'en sait rien, alors il le presse, l'interrompt, lui laisse moins de place. Et le cercle vicieux apparaît : plus Stan veut aller vite, plus Alex se sent dénigré. Plus Alex se sent dénigré, moins il ose donner son avis. Moins il donne son avis, plus Stan se sent seul.",
+  "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière l'impatience de Stan, un grand sentiment de solitude. Ils ont ajusté, le nœud s'est défait.",
+  "Prise à ce stade, la tension s'est réglée sans grande douleur. Laissée courir des mois, elle aurait donné un associé exaspéré par la lenteur de l'autre, et un autre qui l'évitait pour ne pas se sentir nul sous son regard. Une relation qui ne fonctionne plus.",
+];
+
+const travaillerSteps = [
   {
-    num: "01",
-    title: "On ne voit pas l'inconfort s'accumuler",
-    intro:
-      "Un conflit ne surgit pas du jour au lendemain. On retrace ses prémices au début de la relation :",
-    quotes: [
-      "Depuis le début, j'avais remarqué qu'il faisait passer ses intérêts personnels avant le reste.",
-      "On n'a jamais vraiment défini les rôles de chacun ; à chaque fois qu'on essayait, on se confrontait aux mêmes désaccords.",
-      "Je ne comprends pas pourquoi elle ne veut pas partager certaines informations avec moi, mais devant son refus répété je n'ai pas insisté.",
-    ],
-    body: [
-      "Ces intuitions et désaccords sont tus, soit parce qu'ils ne sont jamais abordés, soit parce que la ou les conversations qu'on a eues à leur sujet n'ont pas abouti.",
-      "Alors, on se dit que c'est un détail. Que l'association vaut le coup malgré cela. Et on décide de prendre sur soi pour éviter le conflit.",
-      "Mais combien peut-on prendre sur soi ? Quand est-ce que « il est comme ça, je fais avec » devient « tout ce qu'il dit m'est insupportable à entendre » ?",
-    ],
-    punchline:
-      "L'opposé de « se prendre la tête », ce n'est pas « prendre sur soi » indéfiniment. Il y a un chemin du milieu : aller au fond d'un sujet difficile. Et si on n'y arrive pas, ce n'est pas que c'est impossible.",
+    label: "Repérer les inconforts assez tôt.",
+    body: "Le problème, c'est qu'on est occupé à bien le supporter. On l'a rangé dans les détails, on a pris sur soi, et ce qu'on a appris à ignorer, on ne le remarque plus. Il faut quelqu'un qui pose la bonne question, et qui ne nous laisse pas répondre «\u00a0ce n'est rien\u00a0», pour que ce qu'on ressentait sans le nommer remonte à la surface.",
   },
   {
-    num: "02",
-    title: "On attend l'urgence pour agir",
-    intro:
-      "Tant que ça ne fait pas vraiment mal, on repousse. Sauf qu'une relation travaillée tôt coûte bien moins de temps, d'énergie et d'argent qu'une relation déjà en conflit.",
-    story: [
-      "Je reçois un binôme de fondateurs, appelons-les Alex et Stan.",
-      "À première vue, tout va bien dans leur association. Ils viennent de finaliser leur série A et souhaitent travailler sur leur relation à titre préventif.",
-      "Je m'entretiens d'abord avec Alex : « Est-ce qu'il y a des aspects de votre relation qui te gênent ? »",
-      "Il me dit que non. Ah si, il s'est passé quelque chose cette semaine. Et quelque chose de similaire s'était passé la semaine d'avant.",
-      "Il me raconte.",
-      "Hier, ils sont au téléphone en haut-parleur avec leurs investisseurs. Alex répond à une question posée par l'investisseur. Stan ne le laisse pas terminer sa phrase et répond à sa place. Sur le coup, ça agace Alex, mais pas de quoi en faire tout un plat. Maintenant qu'il y pense, ça lui rappelle que la semaine dernière, quand ils ont parlé à l'équipe, Stan l'a contredit devant tout le monde.",
-      "« Comment as-tu vécu ça ? — Je me sens dénigré, j'ai l'impression qu'il ne voit pas la valeur que j'apporte. »",
-      "De son côté, Stan ne mentionne pas spontanément ces exemples, mais il me dit qu'il est frustré par la lenteur de réflexion d'Alex. Et qu'il se sent seul dans la prise de décision.",
-      "En séance commune, on pose les éléments sur la table. Alex a besoin de temps d'analyse pour se faire un avis. Ne sachant pas cela, Stan, frustré par la lenteur d'Alex, a tendance à le presser, à l'interrompre, à lui laisser moins de place.",
-      "Résultat : Alex se sent de plus en plus dénigré. À force, il ose moins donner son avis, et laisse Stan seul dans les décisions.",
-      "Plus Stan veut aller vite, plus Alex se sent dénigré. Plus Alex se sent dénigré, moins il ose donner son avis. Moins il donne son avis, plus Stan se sent seul.",
-    ],
-    punchline:
-      "Prise à ce stade, cette tension se règle sans grande douleur. Laissée courir des mois, elle donne un associé exaspéré par la lenteur de l'autre, et un autre qui l'évite pour ne pas se sentir nul sous son regard. Une relation qui ne fonctionne plus.",
+    label: "Identifier ce que ça nous fait ressentir.",
+    body: "Seul, on s'arrête à la surface : «\u00a0il m'agace\u00a0». On n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on n'a encore moins d'accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
   },
   {
-    num: "03",
-    title: "On confond « j'ai tout essayé » avec « c'est insoluble »",
-    body: [
-      "Face à une tension installée, on essaie de résoudre le problème par soi-même : en parler, s'expliquer, prendre sur soi. On s'épuise, puis on finit par abandonner, persuadé que la situation est sans issue.",
-      "Mais avoir tout essayé ne veut pas dire que tout a été essayé.",
-      "Les relations ont cela de particulier que, lorsqu'on est partie prenante, on ne peut pas être lucide sur ce qui s'y joue.",
-      "Seul un regard extérieur permet d'identifier le nœud du problème, et de proposer des changements concrets adaptés à la situation.",
-    ],
-    punchline:
-      "On n'a pas tout essayé tant qu'on n'a pas demandé de l'aide extérieure.",
+    label: "Ajuster nos comportements.",
+    body: "On ne peut pas ajuster ce qu'on n'a pas ressenti. Une fois qu'on a nommé juste, l'ajustement se fait souvent sans effort.",
   },
 ];
 
-const formats = [
+const faqItems = [
   {
-    eyebrow: "S'associer",
-    title: "Se mettre d'accord, avant de s'engager",
-    tags: ["Format clé en main", "À deux"],
-    price: "4 000 € HT",
-    body: [
-      "Vous avez trouvé la personne avec qui vous associer. Vous avez commencé à travailler ensemble sur le projet, mais rien n'est encore scellé. Et une question tourne : est-ce que j'y vais, ou pas ? Soit vous cherchez à être rassuré avant cette grande décision. Soit vous savez déjà que vous y allez, et vous voulez préparer au mieux l'association que vous vous apprêtez à démarrer.",
-    ],
-    stepsIntro: "Le programme se déroule en trois temps :",
-    steps: [
-      "En amont, je vous envoie à chacun un état des lieux pré-association : une grille des sujets à avoir abordés avant de s'associer. Chacun la remplit de son côté. Vos réponses me permettent de préparer les séances et de repérer là où il faut creuser.",
-      "Ensuite, deux demi-journées en présentiel, espacées de deux à trois semaines, dont le contenu s'adapte à vos réponses. Entre les deux, je vous confie des sujets à discuter à deux.",
-      "En sortie, je vous remets une synthèse écrite : vos points d'accord, vos points de vigilance, et les sujets qui restent à traiter.",
-    ],
+    q: "Coach ou médiateur ?",
+    a: "Un médiateur intervient quand la décision d'arrêter est déjà prise, pour organiser la séparation. Moi, j'interviens quand vous voulez encore avancer ensemble (ou que vous hésitez).",
   },
   {
-    eyebrow: "Entretenir la relation",
-    title:
-      "Mettre les inconforts sur la table avant qu'ils ne deviennent des tensions",
-    tags: ["Sur mesure", "Seul ou à deux"],
-    price: "à partir de 3 000 € HT",
-    body: [
-      "À n'importe quel moment de l'association. Peut-être que tout va bien. Peut-être que de légères frustrations pointent de temps en temps. Peut-être que l'un de vous n'est pas tout à fait satisfait, quand pour l'autre tout roule. Il n'y a pas de conflit ouvert, et c'est justement le bon moment pour travailler la relation.",
-      "Il n'y a pas de situation type, l'accompagnement se construit sur mesure, à partir de là où vous en êtes.",
-    ],
+    q: "Coach, mentor ou board member ?",
+    a: "Un mentor partage ce qui a marché pour lui\u00a0; un board conseille sur le business. Je ne travaille ni votre stratégie ni vos décisions en direct : je travaille la relation qui les porte.",
   },
   {
-    eyebrow: "Débloquer la relation",
-    title: "Quand c'est déjà tendu",
-    tags: ["Sur mesure", "Seul ou à deux"],
-    price: "à partir de 3 000 € HT",
-    body: [
-      "La tension est déjà installée. Vous avez le sentiment d'avoir déjà tout essayé. Vous avez encore envie de faire fonctionner la relation.",
-      "Essayer de régler une tension seuls, ou le faire avec un regard extérieur, ce n'est pas la même chose : je vois des choses que vous ne pouvez pas voir, parce que vous êtes partie prenante de la relation.",
-    ],
-    note:
-      "Une précision : je fais du coaching, pas de la médiation. Le coaching, c'est quand vous voulez encore faire fonctionner la relation. La médiation, c'est quand la décision d'arrêter est déjà prise et qu'il s'agit d'organiser la séparation, sur les aspects contractuels.",
-  },
-];
-
-const faqSections = [
-  {
-    id: "pour-nous",
-    theme: "Est-ce que c'est pour nous ?",
-    items: [
-      {
-        q: "Notre relation marche bien. C'est quand même utile ?",
-        a: "Je travaille avec des fondateurs qui savent que la relation entre cofondateurs est clé pour l'entreprise. Le travail peut se faire dès l'idée de l'association, dans les débuts pour mettre en place des bases saines, quand des tensions émergent, et quand la relation est devenue conflictuelle.",
-      },
-      {
-        q: "Mon associé n'est pas prêt à faire cette démarche, ça peut quand même marcher ?",
-        a: "Oui. Une relation, c'est une dynamique : quand l'un des deux change sa façon d'agir, l'autre ne peut pas réagir exactement comme avant. La relation bouge, même si un seul des deux est engagé dans le travail.",
-      },
-      {
-        q: "Notre situation est vraiment spécifique, vous avez déjà vu ça ?",
-        a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre cofondateurs se ressemblent souvent en surface, mais ce qui les alimente est propre à chaque individu.",
-      },
-      {
-        q: "C'est un problème de business, pas de relation. Un coach peut vraiment aider ?",
-        a: "Parfois le problème a l'air business alors qu'il est relationnel. Parfois c'est l'inverse. Dans les deux cas, le travail permet d'identifier où se situe le vrai blocage.",
-      },
-    ],
-  },
-  {
-    id: "differences",
-    theme: "Qu'est-ce qui vous différencie ?",
-    items: [
-      {
-        q: "Quelle est la différence entre un coach et un médiateur ?",
-        a: "Un médiateur intervient quand la décision d'arrêter est déjà prise et qu'il s'agit d'organiser la séparation, sur les aspects contractuels. En tant que coach, je travaille à faire fonctionner la relation.",
-      },
-      {
-        q: "Quelle différence avec un mentor ou un board member qui nous conseillerait ?",
-        a: "Un mentor partage ce qu'il a vécu et ce qui a marché pour lui. C'est utile quand vous cherchez un retour d'expérience. Mais chaque dynamique relationnelle est unique. Un conseil qui a marché ailleurs ne résout pas ce qui se joue entre vous. Le coaching part de ce qui se passe dans votre relation, pas dans celle de quelqu'un d'autre.",
-      },
-    ],
-  },
-  {
-    id: "deroulement",
-    theme: "Comment ça se passe ?",
-    items: [
-      {
-        q: "À quel moment faut-il venir vous voir ?",
-        a: "À n'importe quel moment de l'association. Avant de s'associer pour se mettre d'accord, quand ça va bien pour consolider, quand il y a de légères tensions pour les mettre sur la table avant qu'elles ne s'enveniment, quand la relation ne marche plus et que vous avez déjà l'impression d'avoir tout essayé.",
-      },
-      {
-        q: "Comment commence le travail ?",
-        a: "Par un premier échange en visio, gratuit et sans engagement. Si on décide de travailler ensemble, la première séance sert à poser un objectif précis pour l'accompagnement à partir de votre demande, telle que vous la formulez aujourd'hui.",
-      },
-      {
-        q: "Ça marche aussi à distance ?",
-        a: "Oui, en visio, en recréant les conditions que le présentiel offre naturellement : pas de réunion juste avant ni juste après, un endroit calme, une porte qui ferme, etc.",
-      },
-      {
-        q: "Ce qui se dit en séance reste confidentiel ?",
-        a: "Oui, sans exception. Même quand l'accompagnement est initié par un investisseur ou un fonds, rien de ce qui se dit en séance ne leur est transmis. C'est une condition non négociable pour que le travail fonctionne.",
-      },
-      {
-        q: "Comment ça se passe si on se rend compte qu'on doit se séparer ?",
-        a: "Ça arrive. Le travail fait bouger la relation, et parfois, en y voyant plus clair, l'un des deux se rend compte que les conditions ne lui conviennent plus. Cette décision serait venue de toute façon. Elle vient juste plus vite, et plus lucidement.",
-      },
-    ],
+    q: "«\u00a0Notre problème est business, pas relationnel.\u00a0»",
+    a: "Parfois un problème a l'air business alors qu'il est relationnel\u00a0; parfois c'est l'inverse. Dans les deux cas, c'est en travaillant qu'on démêle les deux.",
   },
 ];
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: faqSections.flatMap((section) =>
-    section.items.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
-    })),
-  ),
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a,
+    },
+  })),
 };
 
 const Approche = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Approche de coaching — Loraine Habib | Conflits entre cofondateurs"
-        description="Une approche de coaching pour fondateurs qui aide à décrypter les tensions entre cofondateurs et à rétablir une relation de travail solide."
+        title="Approche — Loraine Habib | La conversation qu'on évite"
+        description="Une approche éditoriale du travail de la relation entre fondateurs : repérer les inconforts avant qu'ils ne deviennent des tensions."
         path="/approche/"
         structuredData={faqSchema}
       />
 
-      {/* Stat hero */}
-      <section className="relative">
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-12 md:pb-16">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.02] text-balance text-foreground max-w-5xl">
-            <span className="text-accent">65 %</span> des startups à fort
-            potentiel échouent à cause de conflits entre cofondateurs.
+      {/* HERO */}
+      <section>
+        <div className="mx-auto max-w-4xl px-6 md:px-10 pt-16 md:pt-28 pb-16 md:pb-20">
+          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
+            La conversation qu'on évite.
           </h1>
-          <p className="mt-8 text-base text-muted-foreground max-w-2xl whitespace-normal">
-            Source&nbsp;: Noam Wasserman,&nbsp;<em>The Founder's Dilemmas</em>,&nbsp;Harvard Business School.
-          </p>
-          <p className="mt-10 text-xl md:text-2xl text-foreground/85 leading-relaxed max-w-3xl">
-            Je vois trois raisons principales à ce constat. Elles sont toutes
-            trois évitables.
-          </p>
-        </div>
-      </section>
-
-      {/* Trois raisons */}
-      <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-5xl px-6 md:px-10 py-20 md:py-28">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-14 md:mb-20">
-            Trois raisons évitables
-          </p>
-          <div className="space-y-24 md:space-y-32">
-            {reasons.map((r) => (
-              <article key={r.num} className="grid gap-8 md:gap-12 lg:grid-cols-12">
-                <header className="lg:col-span-4">
-                  <p className="font-serif text-5xl md:text-6xl text-accent/70 leading-none mb-4">
-                    {r.num}
-                  </p>
-                  <h2 className="font-serif text-3xl md:text-4xl leading-[1.15] text-balance text-foreground">
-                    {r.title}
-                  </h2>
-                </header>
-                <div className="lg:col-span-8 space-y-5 text-lg text-foreground/85 leading-relaxed">
-                  {r.intro && <p>{r.intro}</p>}
-                  {r.quotes && (
-                    <div className="space-y-3 my-2">
-                      {r.quotes.map((quote) => (
-                        <blockquote
-                          key={quote}
-                          className="border-l-2 border-accent pl-5 py-2 font-serif italic text-lg md:text-xl text-foreground/90"
-                        >
-                          «&nbsp;{quote}&nbsp;»
-                        </blockquote>
-                      ))}
-                    </div>
-                  )}
-                  {r.body?.map((p, i) => <p key={i}>{p}</p>)}
-                  {r.story?.map((p, i) => <p key={i}>{p}</p>)}
-                  {r.punchline && (
-                    <p className="mt-6 pt-6 border-t border-border/60 font-serif italic text-xl md:text-2xl leading-snug text-foreground">
-                      {r.punchline}
-                    </p>
-                  )}
-                </div>
-              </article>
-            ))}
+          <div className="mt-12 md:mt-14 max-w-3xl">
+            <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
+              <span className="text-accent">65 %</span> des start-ups à fort
+              potentiel échouent pour des raisons humaines, contre 35 % à cause
+              du produit ou du marché.
+            </p>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Source&nbsp;: Noam Wasserman,{" "}
+              <em>The Founder's Dilemmas</em>, Harvard Business School.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Trois formats */}
+      {/* Inconforts */}
+      <section className="border-t border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
+          <div className="space-y-6 text-lg text-foreground/85 leading-relaxed">
+            <p>
+              Derrière ces «&nbsp;raisons humaines&nbsp;», on imagine de
+              grandes disputes, des trahisons, des egos qui s'affrontent. Ce
+              que je vois est bien plus discret : ce qui casse une association,
+              ce sont les petits inconforts qu'on a gardés pour soi.
+            </p>
+            <p>
+              J'ai accompagné plusieurs dizaines d'associés en difficulté, dont
+              certains n'arrivaient plus du tout à travailler ensemble. Ils
+              décrivent la même chronologie des faits : les sujets de tension
+              entre eux existaient depuis très tôt dans la relation, et c'est
+              avec le temps qu'ils se sont transformés en sujets de conflit. Il
+              ne s'est pas passé quelque chose de complètement imprévisible,
+              l'autre n'est pas devenu une personne infernale du jour au
+              lendemain. Mais les choses qui les agaçaient légèrement, à force
+              de se répéter sans être résolues, sont devenues chaque jour un
+              peu plus difficiles à encaisser, jusqu'à devenir carrément
+              insupportables.
+            </p>
+            <p>
+              Avant un conflit, il y a donc des tensions. Et avant les
+              tensions, des inconforts – ces petites choses qui nous gênent
+              dans la relation, mais qu'on ne juge pas assez graves pour en
+              faire quoi que ce soit&nbsp;:
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-4">
+            {inconfortQuotes.map((q) => (
+              <blockquote
+                key={q}
+                className="border-l-2 border-accent pl-5 py-2 font-serif italic text-lg md:text-xl text-foreground/90"
+              >
+                «&nbsp;{q}&nbsp;»
+              </blockquote>
+            ))}
+          </div>
+
+          <p className="mt-10 font-serif italic text-xl md:text-2xl leading-snug text-foreground">
+            Tous ces inconforts ne deviendront pas des conflits. Mais tous les
+            conflits viennent d'inconforts non réglés.
+          </p>
+        </div>
+      </section>
+
+      {/* Signes avant-coureurs */}
       <section className="border-t border-border/60">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-20 md:py-28">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-            Trois formats d'accompagnement
+          <div className="max-w-4xl">
+          <p className="text-lg text-foreground/85 leading-relaxed">
+            Avec le recul, on sait identifier les signes avant-coureurs du
+            conflit. On les avait bien ressentis, mais on n'en avait rien fait.
+            On s'était dit quelque chose comme&nbsp;:
           </p>
-          <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14 md:mb-16 max-w-3xl">
-            Selon là où vous en êtes, trois façons de travailler la relation.
-          </h2>
-          <div className="space-y-6 md:space-y-8">
-            {formats.map((f) => (
-              <article
-                key={f.eyebrow}
-                className="border border-border/70 bg-background p-8 md:p-10"
+          <ul className="mt-8 grid gap-3 md:grid-cols-2">
+            {rationalisations.map((r) => (
+              <li
+                key={r}
+                className="flex items-start gap-4 text-base md:text-lg text-foreground/85 leading-relaxed border-l border-border/70 pl-4 py-1"
               >
-                <header className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between pb-6 md:pb-8 border-b border-border/60">
-                  <div className="max-w-2xl">
-                    <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3">
-                      {f.eyebrow}
-                    </p>
-                    <h3 className="font-serif text-2xl md:text-3xl leading-[1.2] text-balance text-foreground">
-                      {f.title}
-                    </h3>
-                  </div>
-                  <div className="flex flex-wrap gap-2 md:justify-end md:pt-2">
-                    {f.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs tracking-wide text-muted-foreground border border-border/70 bg-secondary/40 px-3 py-1.5"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                    <span className="text-xs tracking-wide font-semibold text-accent border border-accent/40 bg-accent/10 px-3 py-1.5">
-                      {f.price}
-                    </span>
-                  </div>
-                </header>
-                <div className="mt-6 md:mt-8 space-y-4 text-base md:text-lg text-foreground/85 leading-relaxed max-w-3xl">
-                  {f.body.map((p, i) => (
-                    <p key={i}>{p}</p>
-                  ))}
-                  {f.stepsIntro && (
-                    <p className="pt-2 font-medium text-foreground">
-                      {f.stepsIntro}
-                    </p>
-                  )}
-                  {f.steps && (
-                    <ol className="space-y-4 pt-1">
-                      {f.steps.map((step, i) => (
-                        <li key={i} className="flex gap-5">
-                          <span
-                            aria-hidden
-                            className="font-serif text-2xl text-accent leading-none pt-0.5 shrink-0 w-8"
-                          >
-                            {i + 1}
-                          </span>
-                          <span>{step}</span>
-                        </li>
-                      ))}
-                    </ol>
-                  )}
-                  {f.note && (
-                    <p className="mt-4 border-l-2 border-accent pl-5 py-2 text-base italic text-foreground/80 bg-secondary/30">
-                      {f.note}
-                    </p>
-                  )}
-                </div>
-              </article>
+                <span
+                  aria-hidden
+                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                />
+                <p className="italic">«&nbsp;{r}&nbsp;»</p>
+              </li>
             ))}
+          </ul>
+
+          <div className="mt-12 space-y-5 text-lg text-foreground/85 leading-relaxed">
+            <p>
+              Toutes ces petites phrases qu'on se raconte, on leur donne un
+              nom : <em>prendre sur soi</em>. On se l'imagine comme une
+              qualité : on se croit patient, solide, endurant. Persévérant,
+              même.
+            </p>
+            <p>
+              Mais la persévérance, la vraie, sert à avancer vers quelque
+              chose. Ici, on n'avance vers rien : on encaisse un inconfort qui
+              revient, encore et encore. On est tellement occupé à bien le
+              supporter qu'on ne s'en occupe pas. Et c'est justement là qu'il
+              grandit.
+            </p>
+            <p className="font-serif italic text-xl md:text-2xl leading-snug text-foreground">
+              Ce qu'on prend pour de la persévérance, en l'occurrence, c'est de
+              l'évitement.
+            </p>
+          </div>
           </div>
 
-          {/* Seul ou à deux */}
-          <aside className="mt-12 md:mt-16 border-l-2 border-accent pl-6 md:pl-8 py-6 max-w-3xl">
-            <p className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-              Seul ou à deux&nbsp;?
-            </p>
-            <div className="space-y-4 text-base md:text-lg text-foreground/85 leading-relaxed">
-              <p>
-                Pour <em className="italic">Entretenir la relation</em> comme
-                pour <em className="italic">Débloquer la relation</em>, le
-                travail peut se faire seul, à deux, ou à plusieurs selon qui
-                est motivé pour entamer le travail.
-              </p>
-              <p className="font-medium text-foreground">
-                N'attendez pas que l'autre veuille s'y mettre pour vous faire
-                accompagner&nbsp;: si une seule personne change son
-                comportement, c'est toute la relation qui se modifie.
-              </p>
-            </div>
-          </aside>
+          <div className="mt-14 md:mt-16">
+            <EchelleDiagram />
+          </div>
         </div>
       </section>
 
-      {/* Mon approche — bio */}
+      {/* Alex et Stan */}
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-6 md:px-10 py-20 md:py-28 grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <Picture
-              webp={portraitWebp}
-              jpg={portraitJpg}
-              alt="Loraine Habib"
-              className="w-full max-w-sm mx-auto lg:max-w-none aspect-[4/5] object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div className="lg:col-span-7 order-1 lg:order-2">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-              Mon approche
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
+          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
+            À temps
+          </p>
+          <div className="space-y-5 text-lg text-foreground/85 leading-relaxed">
+            {alexStanParagraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+            <p className="mt-6 pt-6 border-t border-border/60 font-serif italic text-xl md:text-2xl leading-snug text-foreground">
+              Ce qui a fait la différence, pour Alex et Stan, ce n'est pas
+              d'avoir pris sur eux, ni d'avoir tout déballé. C'est d'avoir eu,
+              à temps, la conversation qu'ils évitaient.
             </p>
-            <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-8">
-              Deux mondes qui se croisent&nbsp;: le terrain des équipes
-              dirigeantes, et la clinique de la relation.
-            </h2>
-            <div className="space-y-5 text-lg text-foreground/85 leading-relaxed">
-              <p>
-                Ancienne Chief of Staff du CEO de BlaBlaCar, j'ai accompagné
-                la croissance de l'entreprise de 50 à 700 employés, et la
-                transition de gouvernance d'un trio de cofondateurs à un
-                comité exécutif.
-              </p>
-              <p>
-                Je me suis formée en parallèle comme thérapeute, spécialisée
-                dans les dynamiques relationnelles.
-              </p>
-              <p>
-                Ce double regard me permet de saisir à la fois les enjeux de
-                la croissance rapide, et ceux de la complexité du lien
-                interpersonnel.
-              </p>
-            </div>
-            <div className="mt-10">
-              <Link
-                to="/a-propos/"
-                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
-              >
-                Mon parcours en détail
-                <span className="transition-transform duration-300 group-hover:translate-x-1">
-                  →
-                </span>
-              </Link>
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Travailler la relation */}
+      <section className="border-t border-border/60">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
+          <p className="text-lg text-foreground/85 leading-relaxed">
+            L'opposé de «&nbsp;se prendre la tête&nbsp;», ce n'est pas
+            «&nbsp;prendre sur soi&nbsp;» indéfiniment. Il y a un chemin du
+            milieu.
+          </p>
+          <p className="mt-6 font-serif text-2xl md:text-3xl leading-[1.2] text-foreground">
+            Travailler une relation consiste à&nbsp;:
+          </p>
+
+          <ol className="mt-10 space-y-8">
+            {travaillerSteps.map((s, i) => (
+              <li key={s.label} className="grid gap-4 md:grid-cols-12">
+                <div className="md:col-span-1 font-serif text-3xl md:text-4xl text-accent leading-none">
+                  {i + 1}
+                </div>
+                <div className="md:col-span-11 space-y-3">
+                  <p className="font-serif text-xl md:text-2xl text-foreground leading-snug">
+                    {s.label}
+                  </p>
+                  <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
+                    {s.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-14 text-lg text-foreground/85 leading-relaxed max-w-3xl">
+            Si ces trois étapes ne se font pas d'elles-mêmes, ce n'est pas par
+            manque de volonté ni de courage. C'est simplement qu'elles sont
+            difficiles à réaliser seul. On ne voit pas clair dans une relation
+            dont on fait partie.
+          </p>
+          <p className="mt-6 font-serif italic text-xl md:text-2xl leading-snug text-foreground max-w-3xl">
+            Travailler la relation, ce n'est pas viser une association sans le
+            moindre inconfort. C'est faire en sorte que les inconforts ne
+            s'accumulent plus : on les repère, on les met sur la table, ils se
+            règlent avant de peser. C'est comme ça qu'une association tient, et
+            qu'elle avance.
+          </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-border/60">
-        <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-36">
+      <section className="border-t border-border/60 bg-secondary/30">
+        <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
             Ce qu'on me demande souvent
           </p>
-          <nav
-            aria-label="Sections de la FAQ"
-            className="mb-14 md:mb-16 flex flex-col md:flex-row md:flex-wrap md:items-center gap-x-6 gap-y-3 text-sm text-muted-foreground"
-          >
-            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground/70">
-              Aller à
-            </span>
-            <ul className="flex flex-col md:flex-row md:flex-wrap gap-x-6 gap-y-3">
-              {faqSections.map((section) => (
-                <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className="border-b border-border/60 hover:border-accent hover:text-accent pb-1 transition-colors"
-                  >
-                    {section.theme}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="space-y-16 md:space-y-20">
-            {faqSections.map((section) => (
-              <div key={section.theme} id={section.id} className="scroll-mt-28">
-                <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-8 md:mb-10">
-                  {section.theme}
-                </h2>
-                <div className="divide-y divide-border/70 border-y border-border/70">
-                  {section.items.map((item) => (
-                    <details key={item.q} className="group py-8">
-                      <summary className="flex cursor-pointer items-start justify-between gap-8 list-none">
-                        <h3 className="font-serif text-xl md:text-2xl text-foreground leading-snug group-open:text-accent transition-colors text-balance">
-                          {item.q}
-                        </h3>
-                        <span className="text-accent text-2xl font-serif leading-none mt-1 transition-transform duration-500 group-open:rotate-45">
-                          +
-                        </span>
-                      </summary>
-                      <p className="mt-5 text-foreground/80 leading-relaxed max-w-3xl text-lg">
-                        {item.a}
-                      </p>
-                    </details>
-                  ))}
-                </div>
-              </div>
+          <div className="divide-y divide-border/70 border-y border-border/70">
+            {faqItems.map((item) => (
+              <details key={item.q} className="group py-8">
+                <summary className="flex cursor-pointer items-start justify-between gap-8 list-none">
+                  <h2 className="font-serif text-xl md:text-2xl text-foreground leading-snug group-open:text-accent transition-colors text-balance">
+                    {item.q}
+                  </h2>
+                  <span className="text-accent text-2xl font-serif leading-none mt-1 transition-transform duration-500 group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-5 text-foreground/80 leading-relaxed max-w-3xl text-lg">
+                  {item.a}
+                </p>
+              </details>
             ))}
           </div>
         </div>
       </section>
 
-      <CtaBlock onlyButton />
+      <section className="border-t border-border/60 bg-secondary/40">
+        <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28">
+          <FreebieCapture source="approche" />
+        </div>
+      </section>
     </SiteLayout>
   );
 };

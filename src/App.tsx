@@ -7,8 +7,10 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Approche from "./pages/Approche.tsx";
+import Offres from "./pages/Offres.tsx";
 import Situations from "./pages/Situations.tsx";
 import APropos from "./pages/APropos.tsx";
+import FaireLePoint from "./pages/FaireLePoint.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
 
 const queryClient = new QueryClient();
@@ -23,8 +25,11 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/approche" element={<Approche />} />
+          <Route path="/offres" element={<Offres />} />
           <Route path="/situations" element={<Situations />} />
           <Route path="/a-propos" element={<APropos />} />
+          <Route path="/faire-le-point" element={<FaireLePoint />} />
+          <Route path="/echelle" element={<Navigate to="/faire-le-point/" replace />} />
           <Route path="/qui-je-suis" element={<Navigate to="/a-propos/" replace />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -13,17 +13,25 @@ const routes = [
   },
   {
     path: "/approche/",
-    title: "Approche de coaching — Loraine Habib | Conflits entre cofondateurs",
+    title: "Approche — Loraine Habib | La conversation qu'on évite",
     description:
-      "Une approche de coaching pour fondateurs qui aide à décrypter les tensions entre cofondateurs et à rétablir une relation de travail solide.",
+      "Une approche éditoriale du travail de la relation entre fondateurs : repérer les inconforts avant qu'ils ne deviennent des tensions.",
+    changefreq: "weekly",
+    priority: "0.9",
+  },
+  {
+    path: "/offres/",
+    title: "Offres — Loraine Habib | Trois façons de travailler la relation",
+    description:
+      "S'associer, entretenir la relation, débloquer une tension : trois formats d'accompagnement pour fondateurs, selon là où vous en êtes.",
     changefreq: "weekly",
     priority: "0.9",
   },
   {
     path: "/situations/",
-    title: "Situations accompagnées — Loraine Habib",
+    title: "Situations — Loraine Habib | Quelques exemples d'accompagnements",
     description:
-      "Exemples concrets d'accompagnement de fondateurs pour débloquer des tensions relationnelles et décisionnelles.",
+      "Quatre situations réelles d'accompagnement de fondateurs, avant, pendant et après l'installation d'une tension entre associés.",
     changefreq: "weekly",
     priority: "0.8",
   },
@@ -31,9 +39,17 @@ const routes = [
     path: "/a-propos/",
     title: "À propos — Loraine Habib",
     description:
-      "Parcours, formation et pratique de Loraine Habib pour accompagner les relations entre fondateurs.",
+      "Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre fondateurs.",
     changefreq: "monthly",
     priority: "0.7",
+  },
+  {
+    path: "/faire-le-point/",
+    title: "Le point sur votre association — Loraine Habib",
+    description:
+      "En 20 minutes, faites le point sur votre association : un questionnaire d'auto-évaluation, puis une grille d'auto-observation. Un PDF gratuit, à garder pour vous.",
+    changefreq: "monthly",
+    priority: "0.6",
   },
   {
     path: "/mentions-legales/",
