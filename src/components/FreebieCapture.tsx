@@ -23,7 +23,7 @@ const FreebieCapture = ({
             : "font-serif text-3xl md:text-4xl leading-[1.15] text-balance text-foreground"
         }
       >
-        Le point sur votre association.
+        Le point sur votre association
       </Heading>
       <p
         className={
@@ -33,8 +33,9 @@ const FreebieCapture = ({
         }
       >
         Les petits inconforts d'aujourd'hui sont les tensions de demain. En 20
-        minutes, faites le point sur votre association&nbsp;: où vous en êtes, et
-        ce qui se joue derrière ce que vous ressentez.
+        minutes, faites le point sur votre association&nbsp;: un questionnaire
+        pour évaluer votre niveau d'inconfort, puis une grille d'observation
+        pour creuser.
       </p>
       <div className="mt-10">
         <FreebieForm source={source} />

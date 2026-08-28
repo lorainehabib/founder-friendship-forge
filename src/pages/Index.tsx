@@ -209,8 +209,7 @@ const Index = () => {
           </div>
           <div className="mt-12 md:mt-14 max-w-3xl">
             <p className="text-lg text-foreground">
-              La repérer tôt, c'est pouvoir agir pendant que c'est encore
-              simple.
+              La repérer tôt, c'est pouvoir agir quand c'est encore simple.
             </p>
             <div className="mt-8">
               <Link
@@ -258,7 +257,7 @@ const Index = () => {
       <section className="border-y border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-12 md:mb-16">
-            Ils en parlent
+            + 80 fondateurs accompagnés
           </p>
           <div className="grid gap-12 md:gap-16 lg:grid-cols-3">
             {testimonials.map((t) => (

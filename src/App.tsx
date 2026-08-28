@@ -12,6 +12,8 @@ import Situations from "./pages/Situations.tsx";
 import APropos from "./pages/APropos.tsx";
 import FaireLePoint from "./pages/FaireLePoint.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
+import Blog from "./pages/Blog.tsx";
+import LaConversationQuonEvite from "./pages/blog/LaConversationQuonEvite.tsx";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/echelle" element={<Navigate to="/faire-le-point/" replace />} />
           <Route path="/qui-je-suis" element={<Navigate to="/a-propos/" replace />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/la-conversation-quon-evite" element={<LaConversationQuonEvite />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

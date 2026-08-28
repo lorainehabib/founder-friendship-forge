@@ -10,6 +10,7 @@ const links = [
   { to: "/offres/", label: "Offres" },
   { to: "/situations/", label: "Situations" },
   { to: "/a-propos/", label: "À propos" },
+  { to: "/blog/", label: "Blog" },
 ];
 
 const SiteHeader = () => {
@@ -98,7 +99,7 @@ const SiteHeader = () => {
       <div
         className={cn(
           "md:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-out bg-background border-b border-border/60",
-          open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          open ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
         )}
       >
         <nav className="flex flex-col px-6 py-6 gap-5">

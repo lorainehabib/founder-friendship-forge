@@ -13,9 +13,9 @@ const routes = [
   },
   {
     path: "/approche/",
-    title: "Approche — Loraine Habib | La conversation qu'on évite",
+    title: "Approche — Loraine Habib | Le meilleur moment",
     description:
-      "Une approche éditoriale du travail de la relation entre fondateurs : repérer les inconforts avant qu'ils ne deviennent des tensions.",
+      "Le meilleur moment pour travailler la relation entre fondateurs, c'est avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions.",
     changefreq: "weekly",
     priority: "0.9",
   },
@@ -47,9 +47,25 @@ const routes = [
     path: "/faire-le-point/",
     title: "Le point sur votre association — Loraine Habib",
     description:
-      "En 20 minutes, faites le point sur votre association : un questionnaire d'auto-évaluation, puis une grille d'auto-observation. Un PDF gratuit, à garder pour vous.",
+      "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour creuser.",
     changefreq: "monthly",
     priority: "0.6",
+  },
+  {
+    path: "/blog/",
+    title: "Blog — Loraine Habib",
+    description:
+      "Notes sur la relation entre fondateurs : inconforts, tensions, et ce qui permet à une association de tenir.",
+    changefreq: "weekly",
+    priority: "0.7",
+  },
+  {
+    path: "/blog/la-conversation-quon-evite/",
+    title: "La conversation qu'on évite — Loraine Habib",
+    description:
+      "Ce qui casse une association, ce ne sont pas les grandes disputes. Ce sont les petits inconforts qu'on a gardés pour soi.",
+    changefreq: "monthly",
+    priority: "0.7",
   },
   {
     path: "/mentions-legales/",

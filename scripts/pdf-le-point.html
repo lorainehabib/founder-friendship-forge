@@ -66,7 +66,19 @@
         border: 1px solid var(--sand);
         vertical-align: middle;
         margin: 0 1pt;
+        position: relative;
       }
+      .anchor {
+        position: absolute;
+        left: 1pt;
+        top: 3pt;
+        font-size: 7pt;
+        line-height: 1;
+        color: #faf8f5;
+        pointer-events: none;
+      }
+      .q-scale { white-space: nowrap; padding-top: 1pt; color: var(--muted); font-size: 9pt; }
+      .opt { position: relative; display: inline-block; }
       .q {
         display: grid;
         grid-template-columns: 18pt 1fr auto;
@@ -82,7 +94,6 @@
         color: var(--accent);
         line-height: 1.2;
       }
-      .q-scale { white-space: nowrap; padding-top: 1pt; color: var(--muted); font-size: 9pt; }
       .total {
         display: flex;
         align-items: center;
@@ -99,6 +110,7 @@
         font-weight: 600;
       }
       .total-box {
+        position: relative;
         width: 42pt;
         height: 22pt;
         border: 1px solid var(--ink);
@@ -157,7 +169,7 @@
         vertical-align: middle;
       }
       table.grid tr { page-break-inside: avoid; }
-      table.grid td { height: 52mm; }
+      table.grid td { height: 52mm; position: relative; }
       .synth {
         page-break-before: always;
         page-break-inside: avoid;
@@ -171,6 +183,7 @@
         page-break-inside: avoid;
       }
       .synth-box {
+        position: relative;
         margin-top: 0;
         border: 1px solid var(--sand);
         background: #fff;
@@ -218,22 +231,11 @@
 
       <h2>1. Le questionnaire d'auto-évaluation</h2>
       <p>Pour chaque phrase, notez de 0 (pas du tout d'accord) à 4 (tout à fait d'accord).</p>
-
-      <div class="q"><span class="q-n">1</span><span>Je peux dire à mon associé ce que je pense vraiment.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">2</span><span>Je me sens compris par mon associé.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">3</span><span>Je peux être en désaccord avec lui sans que ça m'inquiète.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">4</span><span>Je me sens serein après nos discussions.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">5</span><span>Je me sens reconnu à ma juste valeur dans notre association.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">6</span><span>J'ai le sentiment qu'on s'investit autant l'un que l'autre.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">7</span><span>Je me sens soutenu par mon associé au quotidien.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">8</span><span>Je sens que mon associé me fait confiance pour gérer mon périmètre.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">9</span><span>Je fais confiance à mon associé pour gérer le sien.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">10</span><span>Je me sens à ma place dans cette association.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
-      <div class="q"><span class="q-n">11</span><span>Travailler avec mon associé me donne plus d'énergie qu'il ne m'en coûte.</span><span class="q-scale"><span class="mark"></span>0 <span class="mark"></span>1 <span class="mark"></span>2 <span class="mark"></span>3 <span class="mark"></span>4</span></div>
+      <div id="questions"></div>
 
       <div class="total">
         <strong>Mon total</strong>
-        <span class="total-box"></span>
+        <span class="total-box"><span class="anchor">«total»</span></span>
         <span class="note">/ 44</span>
       </div>
 
@@ -319,25 +321,25 @@
             <th scope="row" colspan="3">Moment 1</th>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><span class="anchor">«m1a»</span></td>
+            <td><span class="anchor">«m1b»</span></td>
+            <td><span class="anchor">«m1c»</span></td>
           </tr>
           <tr class="moment-label">
             <th scope="row" colspan="3">Moment 2</th>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><span class="anchor">«m2a»</span></td>
+            <td><span class="anchor">«m2b»</span></td>
+            <td><span class="anchor">«m2c»</span></td>
           </tr>
           <tr class="moment-label">
             <th scope="row" colspan="3">Moment 3</th>
           </tr>
           <tr>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><span class="anchor">«m3a»</span></td>
+            <td><span class="anchor">«m3b»</span></td>
+            <td><span class="anchor">«m3c»</span></td>
           </tr>
         </tbody>
       </table>
@@ -351,17 +353,12 @@
         <p class="synth-note">
           C'est là, dans ce qui se répète, que se trouve le nœud.
         </p>
-        <div class="synth-box"></div>
+        <div class="synth-box"><span class="anchor">«synth»</span></div>
 
         <h2>3. Pour aller plus loin</h2>
       <p>
         Vous venez peut-être de mettre le doigt sur un inconfort que vous
-        portez depuis un moment. C'est déjà beaucoup&nbsp;: d'habitude, on le
-        laisse passer sans s'y arrêter.
-      </p>
-      <p>
-        Mais l'avoir vu ne suffit pas à le dénouer. Pour ça, il faut le mettre
-        sur la table et le travailler, ce qui n'est pas simple à faire seul.
+        portez depuis un moment. C'est déjà beaucoup.
       </p>
       <p>
         Si vous voulez aller plus loin, une première conversation pour voir
@@ -376,5 +373,33 @@
       </p>
       </section>
     </main>
+    <script>
+      const questions = [
+        "Je peux dire à mon associé ce que je pense vraiment.",
+        "Je me sens compris par mon associé.",
+        "Je peux être en désaccord avec lui sans que ça m'inquiète.",
+        "Je me sens serein après nos discussions.",
+        "Je me sens reconnu à ma juste valeur dans notre association.",
+        "J'ai le sentiment qu'on s'investit autant l'un que l'autre.",
+        "Je me sens soutenu par mon associé au quotidien.",
+        "Je sens que mon associé me fait confiance pour gérer mon périmètre.",
+        "Je fais confiance à mon associé pour gérer le sien.",
+        "Je me sens à ma place dans cette association.",
+        "Travailler avec mon associé me donne plus d'énergie qu'il ne m'en coûte.",
+      ];
+      const root = document.getElementById("questions");
+      root.innerHTML = questions
+        .map((text, i) => {
+          const n = i + 1;
+          const scale = ["a", "b", "c", "d", "e"]
+            .map(
+              (s, si) =>
+                `<span class="opt"><span class="mark"><span class="anchor">«q${n}${s}»</span></span>${si}</span>`,
+            )
+            .join(" ");
+          return `<div class="q"><span class="q-n">${n}</span><span>${text}</span><span class="q-scale">${scale}</span></div>`;
+        })
+        .join("");
+    </script>
   </body>
 </html>
