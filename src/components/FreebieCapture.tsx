@@ -35,7 +35,7 @@ const FreebieCapture = ({
         Les petits inconforts d'aujourd'hui sont les tensions de demain. En 20
         minutes, faites le point sur votre association&nbsp;: un questionnaire
         pour évaluer votre niveau d'inconfort, puis une grille d'observation
-        pour creuser.
+        pour y voir plus clair.
       </p>
       <div className="mt-10">
         <FreebieForm source={source} />

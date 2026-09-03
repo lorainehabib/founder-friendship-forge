@@ -88,7 +88,7 @@ const faqItems = [
   },
   {
     q: "Notre situation est vraiment spécifique, vous avez déjà vu ça ?",
-    a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre cofondateurs se ressemblent souvent en surface, mais ce qui les alimente est propre à chaque individu.",
+    a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre associés se ressemblent souvent en surface, mais ce qui les alimente est propre à chaque individu.",
   },
   {
     q: "Comment commence le travail ?",

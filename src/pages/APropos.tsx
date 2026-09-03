@@ -32,7 +32,7 @@ const APropos = () => {
     <SiteLayout>
       <Seo
         title="À propos — Loraine Habib"
-        description="Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre fondateurs."
+        description="Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre associés."
         path="/a-propos/"
       />
 

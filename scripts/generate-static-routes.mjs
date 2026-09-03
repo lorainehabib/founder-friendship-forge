@@ -13,9 +13,9 @@ const routes = [
   },
   {
     path: "/approche/",
-    title: "Approche — Loraine Habib | Le meilleur moment",
+    title: "Approche — Loraine Habib | Travailler la relation",
     description:
-      "Le meilleur moment pour travailler la relation entre fondateurs, c'est avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions.",
+      "Travailler la relation, avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions.",
     changefreq: "weekly",
     priority: "0.9",
   },
@@ -39,7 +39,7 @@ const routes = [
     path: "/a-propos/",
     title: "À propos — Loraine Habib",
     description:
-      "Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre fondateurs.",
+      "Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre associés.",
     changefreq: "monthly",
     priority: "0.7",
   },
@@ -47,7 +47,7 @@ const routes = [
     path: "/faire-le-point/",
     title: "Le point sur votre association — Loraine Habib",
     description:
-      "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour creuser.",
+      "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
     changefreq: "monthly",
     priority: "0.6",
   },

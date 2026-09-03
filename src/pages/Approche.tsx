@@ -23,6 +23,10 @@ const faqItems = [
     q: "«\u00a0Notre problème est business, pas relationnel.\u00a0»",
     a: "Parfois un problème a l'air business alors qu'il est relationnel\u00a0; parfois c'est l'inverse. Dans les deux cas, c'est en travaillant qu'on démêle les deux.",
   },
+  {
+    q: "Et si je ne veux pas parler de mes émotions ?",
+    a: "On n'en fera pas un sujet en soi. On part du concret : un moment précis, une réaction, une décision qui coince. L'objectif est opérationnel : décider et avancer avec votre associé.",
+  },
 ];
 
 const faqSchema = {
@@ -42,8 +46,8 @@ const Approche = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Approche — Loraine Habib | Le meilleur moment"
-        description="Le meilleur moment pour travailler la relation entre fondateurs, c'est avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions."
+        title="Approche — Loraine Habib | Travailler la relation"
+        description="Travailler la relation, avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions."
         path="/approche/"
         structuredData={faqSchema}
       />
@@ -51,7 +55,7 @@ const Approche = () => {
       <section>
         <div className="mx-auto max-w-4xl px-6 md:px-10 pt-16 md:pt-28 pb-16 md:pb-20">
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
-            Le meilleur moment c'est avant d'en avoir besoin.
+            Travailler la relation, avant d'en avoir besoin.
           </h1>
           <div className="mt-12 md:mt-14 max-w-3xl">
             <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">

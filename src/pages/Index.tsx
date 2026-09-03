@@ -90,7 +90,7 @@ const Index = () => {
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
               <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-balance text-foreground">
-                La relation entre fondateurs,{" "}
+                La relation entre associés,{" "}
                 <span className="block italic text-muted-foreground mt-2">
                   ça se travaille.
                 </span>
@@ -209,7 +209,7 @@ const Index = () => {
           </div>
           <div className="mt-12 md:mt-14 max-w-3xl">
             <p className="text-lg text-foreground">
-              La repérer tôt, c'est pouvoir agir quand c'est encore simple.
+              Les repérer tôt, c'est pouvoir agir quand c'est encore simple.
             </p>
             <div className="mt-8">
               <Link
@@ -234,10 +234,9 @@ const Index = () => {
           </p>
           <p className="text-lg md:text-xl text-foreground/85 leading-relaxed max-w-3xl">
             Ancienne Chief of Staff du CEO de BlaBlaCar, formée à la psychologie
-            et à la thérapie des relations, je croise deux regards&nbsp;: le
-            terrain des équipes dirigeantes, et la clinique de la relation.
-            C'est ce qui me permet de voir ce que vous ne pouvez pas repérer de
-            l'intérieur.
+            des relations, je croise deux regards&nbsp;: le terrain des équipes
+            dirigeantes, et la clinique de la relation. C'est ce qui me permet
+            de voir ce que vous ne pouvez pas repérer de l'intérieur.
           </p>
           <div className="mt-10">
             <Link
@@ -276,7 +275,6 @@ const Index = () => {
 
       <CtaBlock
         heading="Une première conversation pour voir où vous en êtes, et comment avancer."
-        note="Gratuite et sans engagement, strictement confidentielle."
       />
 
       {/* FREEBIE */}

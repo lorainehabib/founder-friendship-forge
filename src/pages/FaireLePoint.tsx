@@ -6,7 +6,7 @@ const FaireLePoint = () => (
   <SiteLayout>
     <Seo
       title="Le point sur votre association — Loraine Habib"
-      description="En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour creuser."
+      description="En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair."
       path="/faire-le-point/"
     />
     <section>
