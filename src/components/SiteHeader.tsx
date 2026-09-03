@@ -1,7 +1,7 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/site";
+import { CALENDLY_URL, JOB_TITLE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { newsletterName } from "@/content/blog";
 
@@ -39,16 +39,20 @@ const SiteHeader = () => {
           : "bg-transparent"
       )}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10 md:py-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 md:px-10 md:py-6">
         <Link
           to="/"
-          className="font-serif text-base md:text-lg tracking-tight text-foreground hover:text-accent transition-colors leading-tight"
+          className="shrink-0 min-w-0 flex flex-col gap-1 text-foreground hover:text-accent transition-colors"
         >
-          Loraine Habib
-          <span className="hidden sm:inline text-muted-foreground"> — Coach de fondateurs et équipes dirigeantes</span>
+          <span className="font-serif text-xl md:text-2xl tracking-tight leading-none whitespace-nowrap">
+            Loraine Habib
+          </span>
+          <span className="text-xs text-muted-foreground leading-snug">
+            {JOB_TITLE}
+          </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6 lg:gap-10">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 2xl:gap-7 shrink-0">
           {links.map((l) => (
             <NavLink
               key={l.to}
@@ -56,7 +60,7 @@ const SiteHeader = () => {
               end={l.end}
               className={({ isActive }) =>
                 cn(
-                  "text-sm tracking-wide transition-colors relative py-1",
+                  "whitespace-nowrap text-sm tracking-wide transition-colors relative py-1",
                   isActive
                     ? "text-accent"
                     : "text-foreground/80 hover:text-foreground"
@@ -80,7 +84,7 @@ const SiteHeader = () => {
             href={CALENDLY_URL}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 text-sm tracking-wide hover:bg-foreground transition-colors duration-300"
+            className="group inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-accent text-accent-foreground px-5 py-2.5 text-sm tracking-wide hover:bg-foreground transition-colors duration-300"
           >
             Prendre rendez-vous
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
@@ -90,7 +94,7 @@ const SiteHeader = () => {
         <button
           aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden text-foreground p-2 -mr-2"
+          className="lg:hidden text-foreground p-2 -mr-2"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -99,7 +103,7 @@ const SiteHeader = () => {
       {/* Mobile sheet */}
       <div
         className={cn(
-          "md:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-out bg-background border-b border-border/60",
+          "lg:hidden overflow-hidden transition-[max-height,opacity] duration-500 ease-out bg-background border-b border-border/60",
           open ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
         )}
       >

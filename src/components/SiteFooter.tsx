@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { LINKEDIN_URL } from "@/lib/site";
+import { JOB_TITLE, LINKEDIN_URL } from "@/lib/site";
 import { newsletterName } from "@/content/blog";
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -17,7 +17,7 @@ const SiteFooter = () => {
             Loraine Habib
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">
-            Coach de fondateurs et équipes dirigeantes
+            {JOB_TITLE}
           </p>
         </div>
         <div className="md:col-span-3">
