@@ -5,21 +5,21 @@ const stages = [
     title: "Inconfort",
     label: "diffus",
     feel: "Une gêne, un agacement par moments.",
-    say: "« C'est un détail. Il est comme ça. »",
+    say: "«\u00a0C'est un détail. Il est comme\u00a0ça.\u00a0»",
     card: "border border-dashed border-border bg-background/80",
   },
   {
     title: "Tension",
     label: "on la sent",
     feel: "De l'irritation, presque à chaque fois.",
-    say: "« C'est une phase, ça passera. »",
+    say: "«\u00a0C'est une phase, ça\u00a0passera.\u00a0»",
     card: "border border-border bg-secondary/50",
   },
   {
     title: "Conflit",
     label: "évident",
     feel: "De l'exaspération. Je ne le supporte plus.",
-    say: "« J'ai tout essayé, c'est insoluble. »",
+    say: "«\u00a0J'ai tout essayé, c'est\u00a0insoluble.\u00a0»",
     card: "border-2 border-accent bg-accent/10",
   },
 ];
@@ -68,7 +68,7 @@ const EchelleDiagram = ({ className, showIntro = true }: EchelleDiagramProps) =>
               <p className="md:hidden text-[10px] uppercase tracking-[0.22em] text-muted-foreground mb-2">
                 Ce qu'on se dit
               </p>
-              <p className="text-sm md:text-[15px] italic text-foreground/80 leading-relaxed">
+              <p className="text-sm md:text-[15px] italic text-foreground/80 leading-relaxed text-pretty">
                 {s.say}
               </p>
             </div>
