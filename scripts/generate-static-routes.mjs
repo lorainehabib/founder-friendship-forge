@@ -53,9 +53,9 @@ const routes = [
   },
   {
     path: "/blog/",
-    title: "Blog — Loraine Habib",
+    title: "L'angle mort — Loraine Habib",
     description:
-      "Notes sur la relation entre fondateurs : inconforts, tensions, et ce qui permet à une association de tenir.",
+      "Une lettre sur ce qui empêche les dirigeants d'avancer.",
     changefreq: "weekly",
     priority: "0.7",
   },

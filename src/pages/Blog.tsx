@@ -1,21 +1,31 @@
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
-import { blogPosts } from "@/content/blog";
+import NewsletterCapture from "@/components/NewsletterCapture";
+import { blogPosts, newsletterDescription, newsletterName, newsletterTagline } from "@/content/blog";
 
 const Blog = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Blog — Loraine Habib"
-        description="Notes sur la relation entre fondateurs : inconforts, tensions, et ce qui permet à une association de tenir."
+        title={`${newsletterName} — Loraine Habib`}
+        description={newsletterTagline}
         path="/blog/"
       />
       <section>
         <div className="mx-auto max-w-4xl px-6 md:px-10 pt-16 md:pt-28 pb-24 md:pb-36">
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
-            Blog.
+            {newsletterName}.
           </h1>
+          <p className="mt-8 md:mt-10 font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
+            {newsletterTagline}
+          </p>
+          <p className="mt-8 max-w-3xl text-lg md:text-xl text-foreground/85 leading-relaxed">
+            {newsletterDescription}
+          </p>
+          <div className="mt-12 md:mt-14">
+            <NewsletterCapture />
+          </div>
           <ul className="mt-14 md:mt-16 divide-y divide-border/70 border-y border-border/70">
             {blogPosts.map((post) => (
               <li key={post.slug}>

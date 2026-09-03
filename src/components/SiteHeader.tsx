@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { newsletterName } from "@/content/blog";
 
 const links = [
   { to: "/", label: "Accueil", end: true },
@@ -10,7 +11,7 @@ const links = [
   { to: "/offres/", label: "Offres" },
   { to: "/situations/", label: "Situations" },
   { to: "/a-propos/", label: "À propos" },
-  { to: "/blog/", label: "Blog" },
+  { to: "/blog/", label: newsletterName },
 ];
 
 const SiteHeader = () => {
@@ -47,7 +48,7 @@ const SiteHeader = () => {
           <span className="hidden sm:inline text-muted-foreground"> — Coach de fondateurs et équipes dirigeantes</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-10">
           {links.map((l) => (
             <NavLink
               key={l.to}

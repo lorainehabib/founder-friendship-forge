@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { LINKEDIN_URL } from "@/lib/site";
+import { newsletterName } from "@/content/blog";
 
 const scrollTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -29,7 +30,7 @@ const SiteFooter = () => {
             <li><Link to="/offres/" onClick={scrollTop} className="hover:text-accent transition-colors">Offres</Link></li>
             <li><Link to="/situations/" onClick={scrollTop} className="hover:text-accent transition-colors">Situations</Link></li>
             <li><Link to="/a-propos/" onClick={scrollTop} className="hover:text-accent transition-colors">À propos</Link></li>
-            <li><Link to="/blog/" onClick={scrollTop} className="hover:text-accent transition-colors">Blog</Link></li>
+            <li><Link to="/blog/" onClick={scrollTop} className="hover:text-accent transition-colors">{newsletterName}</Link></li>
           </ul>
         </div>
         <div className="md:col-span-4">

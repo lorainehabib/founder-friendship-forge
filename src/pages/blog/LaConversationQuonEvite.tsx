@@ -3,7 +3,7 @@ import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import EchelleDiagram from "@/components/EchelleDiagram";
 import FreebieCapture from "@/components/FreebieCapture";
-import { blogPosts } from "@/content/blog";
+import { blogPosts, newsletterName } from "@/content/blog";
 
 const post = blogPosts[0];
 
@@ -77,7 +77,7 @@ const LaConversationQuonEvite = () => {
           <div className="mx-auto max-w-4xl px-6 md:px-10 pt-16 md:pt-28 pb-16 md:pb-20">
             <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
               <Link to="/blog/" className="hover:text-foreground transition-colors">
-                Blog
+                {newsletterName}
               </Link>
               <span className="text-muted-foreground"> · {post.dateLabel}</span>
             </p>

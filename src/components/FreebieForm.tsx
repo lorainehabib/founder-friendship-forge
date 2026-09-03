@@ -6,6 +6,11 @@ import { MAILERLITE_SUBSCRIBE_URL } from "@/lib/site";
 type FreebieFormProps = {
   className?: string;
   source?: string;
+  subscribeUrl?: string;
+  submitLabel?: string;
+  successMessage?: string;
+  consentLabel?: string;
+  consentError?: string;
 };
 
 type SubscribeResponse = {
@@ -13,7 +18,14 @@ type SubscribeResponse = {
   errors?: { fields?: { email?: string[] } };
 };
 
-const FreebieForm = ({ className }: FreebieFormProps) => {
+const FreebieForm = ({
+  className,
+  subscribeUrl = MAILERLITE_SUBSCRIBE_URL,
+  submitLabel = "Recevoir le PDF gratuitement",
+  successMessage = "Merci. Vous allez recevoir le lien vers le PDF par email.",
+  consentLabel = "J'accepte de recevoir le PDF et des emails de Loraine Habib.",
+  consentError = "Cochez la case pour recevoir le PDF.",
+}: FreebieFormProps) => {
   const inputId = useId();
   const consentId = useId();
   const errorId = useId();
@@ -30,7 +42,7 @@ const FreebieForm = ({ className }: FreebieFormProps) => {
       return;
     }
     if (!consent) {
-      setError("Cochez la case pour recevoir le PDF.");
+      setError(consentError);
       return;
     }
 
@@ -43,7 +55,7 @@ const FreebieForm = ({ className }: FreebieFormProps) => {
         "ml-submit": "1",
         anticsrf: "true",
       });
-      const res = await fetch(MAILERLITE_SUBSCRIBE_URL, {
+      const res = await fetch(subscribeUrl, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body,
@@ -74,7 +86,7 @@ const FreebieForm = ({ className }: FreebieFormProps) => {
         )}
         role="status"
       >
-        Merci. Vous allez recevoir le lien vers le PDF par email.
+        {successMessage}
       </div>
     );
   }
@@ -111,7 +123,7 @@ const FreebieForm = ({ className }: FreebieFormProps) => {
           disabled={status === "submitting"}
           className="group inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-6 py-3 text-sm tracking-wide hover:bg-foreground transition-colors duration-300 disabled:opacity-60 disabled:hover:bg-accent"
         >
-          {status === "submitting" ? "Envoi…" : "Recevoir le PDF gratuitement"}
+          {status === "submitting" ? "Envoi…" : submitLabel}
           {status !== "submitting" && (
             <span className="transition-transform duration-300 group-hover:translate-x-0.5">
               →
@@ -134,7 +146,7 @@ const FreebieForm = ({ className }: FreebieFormProps) => {
           className="mt-1 h-4 w-4 shrink-0 accent-[#B85C38]"
         />
         <span>
-          J'accepte de recevoir le PDF et des emails de Loraine Habib.{" "}
+          {consentLabel}{" "}
           <Link
             to="/mentions-legales/"
             className="underline underline-offset-4 hover:text-accent"
