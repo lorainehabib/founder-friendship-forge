@@ -60,14 +60,6 @@ const routes = [
     priority: "0.7",
   },
   {
-    path: "/blog/la-conversation-quon-evite/",
-    title: "La conversation qu'on évite — Loraine Habib",
-    description:
-      "Ce qui casse une association, ce ne sont pas les grandes disputes. Ce sont les petits inconforts qu'on a gardés pour soi.",
-    changefreq: "monthly",
-    priority: "0.7",
-  },
-  {
     path: "/mentions-legales/",
     title: "Mentions légales — Loraine Habib | Coaching fondateurs",
     description:

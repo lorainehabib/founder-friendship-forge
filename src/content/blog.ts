@@ -13,6 +13,7 @@ export type BlogPost = {
   date: string;
   dateLabel: string;
   path: string;
+  published: boolean;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -24,5 +25,8 @@ export const blogPosts: BlogPost[] = [
     date: "2026-08-28",
     dateLabel: "28 août 2026",
     path: "/blog/la-conversation-quon-evite/",
+    published: false,
   },
 ];
+
+export const publishedPosts = blogPosts.filter((post) => post.published);

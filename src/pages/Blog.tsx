@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import NewsletterCapture from "@/components/NewsletterCapture";
-import { blogPosts, newsletterDescription, newsletterName, newsletterTagline } from "@/content/blog";
+import { publishedPosts, newsletterDescription, newsletterName, newsletterTagline } from "@/content/blog";
 
 const Blog = () => {
   return (
@@ -26,32 +26,34 @@ const Blog = () => {
           <div className="mt-12 md:mt-14">
             <NewsletterCapture />
           </div>
-          <ul className="mt-14 md:mt-16 divide-y divide-border/70 border-y border-border/70">
-            {blogPosts.map((post) => (
-              <li key={post.slug}>
-                <Link
-                  to={post.path}
-                  className="group grid gap-3 py-10 md:py-12 hover:bg-secondary/30 transition-colors -mx-2 px-2 md:mx-0 md:px-0"
-                >
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {post.dateLabel}
-                  </p>
-                  <h2 className="font-serif text-2xl md:text-4xl leading-[1.15] text-foreground group-hover:text-accent transition-colors text-balance">
-                    {post.title}.
-                  </h2>
-                  <p className="max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  <span className="mt-2 inline-flex items-center gap-3 text-accent text-sm tracking-wide">
-                    Lire
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
-                      →
+          {publishedPosts.length > 0 && (
+            <ul className="mt-14 md:mt-16 divide-y divide-border/70 border-y border-border/70">
+              {publishedPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link
+                    to={post.path}
+                    className="group grid gap-3 py-10 md:py-12 hover:bg-secondary/30 transition-colors -mx-2 px-2 md:mx-0 md:px-0"
+                  >
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      {post.dateLabel}
+                    </p>
+                    <h2 className="font-serif text-2xl md:text-4xl leading-[1.15] text-foreground group-hover:text-accent transition-colors text-balance">
+                      {post.title}.
+                    </h2>
+                    <p className="max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
+                      {post.excerpt}
+                    </p>
+                    <span className="mt-2 inline-flex items-center gap-3 text-accent text-sm tracking-wide">
+                      Lire
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
                     </span>
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
     </SiteLayout>

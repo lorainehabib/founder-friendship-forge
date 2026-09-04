@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import EchelleDiagram from "@/components/EchelleDiagram";
@@ -138,17 +137,6 @@ const Approche = () => {
             <p className="font-serif italic text-xl md:text-2xl leading-snug text-foreground">
               C'est comme ça qu'une association tient, et qu'elle avance.
             </p>
-          </div>
-          <div className="mt-10">
-            <Link
-              to="/blog/la-conversation-quon-evite/#alex-stan"
-              className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
-            >
-              Lire un cas réel d'accompagnement
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </Link>
           </div>
         </div>
       </section>
