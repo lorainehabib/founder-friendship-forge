@@ -4,7 +4,7 @@ export const newsletterTagline =
   "Une lettre sur ce qui empêche les dirigeants d'avancer.";
 
 export const newsletterDescription =
-  "À partir de situations réellement vécues par mes clients, on tire le fil jusqu'à mettre le doigt sur l'angle mort\u00a0: cet endroit qui bloque, qu'on ne voit pas parce qu'on est dedans. Et à voir l'angle mort des autres, on finit par entrevoir le sien.";
+  "À partir de situations réellement vécues par mes clients, on tire le fil jusqu'à mettre le doigt sur l'angle mort\u00a0: cet endroit qui bloque, qu'on ne voit pas parce qu'on est dedans. Et à voir l'angle mort des autres, on finit parfois par entrevoir le sien.";
 
 export type BlogPost = {
   slug: string;

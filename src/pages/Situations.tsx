@@ -42,10 +42,10 @@ const situations: Situation[] = [
       "Il me raconte. La veille, au téléphone avec leurs investisseurs, Alex répond à une question\u00a0; Stan ne le laisse pas finir et répond à sa place. Sur le coup, ça l'agace, mais pas de quoi en faire un plat. Sauf que ce n'est pas la première fois : la semaine d'avant, Stan l'avait contredit devant toute l'équipe. Je lui demande comment il l'a vécu. «\u00a0Je me sens dénigré. J'ai l'impression qu'il ne voit pas ce que j'apporte.\u00a0»",
       "De son côté, Stan ne mentionne aucun de ces épisodes. Ce qui le préoccupe, lui, c'est la lenteur de réflexion d'Alex, et le sentiment d'être seul à décider.",
       "En séance commune, on pose tout sur la table, et le cercle vicieux apparaît. Alex a besoin de temps pour se forger un avis\u00a0; ne le sachant pas, Stan le presse, l'interrompt, lui laisse moins de place. Plus Stan veut aller vite, plus Alex se sent dénigré. Plus Alex se sent dénigré, moins il ose donner son avis. Moins il donne son avis, plus Stan se sent seul.",
-      "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière son impatience, un grand sentiment de solitude. Ils ont ajusté, le nœud s'est défait.",
+      "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière l'impatience de Stan, un grand sentiment de solitude. Chacun ajuste alors son comportement. Et ce qu'on a su faire une fois, on peut le refaire.",
     ],
     closing: {
-      lead: "Prise à ce stade, la tension s'est réglée sans grande douleur. Laissée courir des mois, elle aurait donné un associé exaspéré par la lenteur de l'autre, et un autre qui l'évitait pour ne pas se sentir nul sous son regard. ",
+      lead: "Pris à ce stade, l'inconfort ne deviendra pas une tension. Laissé courir des mois, ce même inconfort aurait donné un associé exaspéré par la lenteur de l'autre, et un autre qui l'évitait pour ne pas se sentir nul sous son regard. ",
       pull: "Une relation qui ne fonctionne plus.",
     },
     bridge: {
