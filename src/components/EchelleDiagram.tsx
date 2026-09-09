@@ -10,7 +10,7 @@ const stages = [
   },
   {
     title: "Tension",
-    label: "on la sent",
+    label: "palpable",
     feel: "De l'irritation, presque à chaque fois.",
     say: "«\u00a0C'est une phase, ça\u00a0passera.\u00a0»",
     card: "border border-border bg-secondary/50",
@@ -30,7 +30,7 @@ type EchelleDiagramProps = {
 };
 
 const EchelleDiagram = ({ className, showIntro = true }: EchelleDiagramProps) => (
-  <figure className={cn("w-full", className)}>
+  <figure id="echelle-diagram" className={cn("w-full", className)}>
     {showIntro && (
       <div className="mb-8 md:mb-10 max-w-3xl">
         <p className="font-serif text-2xl md:text-3xl text-foreground leading-tight">
