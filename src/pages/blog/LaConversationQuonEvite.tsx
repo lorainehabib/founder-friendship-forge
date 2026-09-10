@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import EchelleDiagram from "@/components/EchelleDiagram";
-import FreebieCapture from "@/components/FreebieCapture";
+import NewsletterCapture from "@/components/NewsletterCapture";
 import { blogPosts, newsletterName } from "@/content/blog";
 
 const post = blogPosts[0];
@@ -19,30 +19,37 @@ const rationalisations = [
   "Je ne vais pas en faire toute une histoire.",
   "Ça ne sert à rien d'en parler.",
   "C'est normal dans son rôle.",
+  "Elle apporte tellement au projet que ça vaut le coup.",
   "C'est peut-être moi le problème.",
 ];
 
 const alexStanParagraphs = [
-  "Un binôme que j'ai accompagné, appelons-les Alex et Stan, a su désamorcer les inconforts à temps. Tout allait bien : série A tout juste bouclée, ils venaient travailler leur relation par précaution.",
-  "Quand je demande à Alex si quelque chose le gêne, il dit d'abord non. Puis : «\u00a0Ah si, mais c'est vraiment un détail.\u00a0» La veille, devant leurs investisseurs, Stan avait répondu à sa place\u00a0; la semaine d'avant, il l'avait contredit devant l'équipe. Sur le coup, pas de quoi en faire tout un plat. Mais Alex se sentait dénigré, sans le dire.",
+  "Un binôme de fondateurs que j'ai accompagnés, appelons-les Alex et Stan, a su désamorcer les inconforts à temps. Tout allait bien : série A tout juste bouclée, ils venaient travailler leur relation par précaution.",
+  "Quand je demande à Alex si quelque chose le gêne, il répond d'abord non. Puis : «\u00a0Ah si, mais c'est vraiment un détail.\u00a0» La veille, devant leurs investisseurs, Stan avait répondu à sa place\u00a0; la semaine d'avant, il l'avait contredit devant l'équipe. Sur le coup, pas de quoi en faire tout un plat. Mais Alex s'était senti un peu dénigré, sans le dire.",
   "Stan, de son côté, ne mentionne aucun de ces épisodes. Lui aussi trouve que tout va bien. Il faut creuser un peu pour qu'il finisse par dire ce qui lui pèse : la lenteur d'Alex, et le sentiment d'être seul à décider.",
   "En séance commune, tout se pose. Alex a besoin de temps pour se forger un avis\u00a0; Stan n'en sait rien, alors il le presse, l'interrompt, lui laisse moins de place. Et le cercle vicieux apparaît : plus Stan veut aller vite, plus Alex se sent dénigré. Plus Alex se sent dénigré, moins il ose donner son avis. Moins il donne son avis, plus Stan se sent seul.",
-  "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière l'impatience de Stan, un grand sentiment de solitude. Ils ont ajusté, le nœud s'est défait.",
-  "Prise à ce stade, la tension s'est réglée sans grande douleur. Laissée courir des mois, elle aurait donné un associé exaspéré par la lenteur de l'autre, et un autre qui l'évitait pour ne pas se sentir nul sous son regard. Une relation qui ne fonctionne plus.",
+  "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière l'impatience de Stan, un sentiment de solitude. Chacun ajuste alors son comportement. Et ce qu'ils ont su faire une fois, ils pourront le refaire.",
+  "Désamorcé à ce stade, l'inconfort ne deviendra pas une tension. Laissé courir des mois, ce même inconfort aurait donné un associé exaspéré par la lenteur de l'autre, et un autre l'évitant pour ne pas se sentir nul sous son regard. Une relation qui ne fonctionne plus.",
 ];
 
-const travaillerSteps = [
+const travaillerConsists = [
+  "Repérer les inconforts suffisamment tôt.",
+  "Identifier ce que ça nous fait ressentir (chez Alex, «\u00a0pas considéré\u00a0»\u00a0; chez Stan, «\u00a0seul dans les décisions\u00a0»).",
+  "Ajuster nos comportements (ce qui se fait sans effort, quand on a visé juste à l'étape précédente).",
+];
+
+const travaillerWhy = [
   {
-    label: "Repérer les inconforts assez tôt.",
-    body: "Le problème, c'est qu'on est occupé à bien le supporter. On l'a rangé dans les détails, on a pris sur soi, et ce qu'on a appris à ignorer, on ne le remarque plus. Il faut quelqu'un qui pose la bonne question, et qui ne nous laisse pas répondre «\u00a0ce n'est rien\u00a0», pour que ce qu'on ressentait sans le nommer remonte à la surface.",
+    label: "Repérer l'inconfort.",
+    body: "Le problème, c'est qu'on est occupé à bien le supporter. On l'a rangé dans les détails, on a pris sur soi, et ce qu'on a appris à ignorer, on ne le remarque plus. Il faut quelqu'un qui pose la bonne question, et qui ne nous laisse pas répondre «\u00a0ce n'est rien\u00a0», pour faire remonter à la surface ce qu'on ressentait sans le nommer.",
   },
   {
     label: "Identifier ce que ça nous fait ressentir.",
-    body: "Seul, on s'arrête à la surface : «\u00a0il m'agace\u00a0». On n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on a encore moins accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
+    body: "Quand on s'arrête à la surface : «\u00a0il m'agace\u00a0», on n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on n'a encore moins d'accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
   },
   {
     label: "Ajuster nos comportements.",
-    body: "On ne peut pas ajuster ce qu'on n'a pas ressenti. Une fois qu'on a nommé juste, l'ajustement se fait souvent sans effort.",
+    body: "Quand on a mis des mots sur ce qu'on ressent, on ne réagit plus tout à fait pareil.",
   },
 ];
 
@@ -110,21 +117,19 @@ const LaConversationQuonEvite = () => {
               <p>
                 J'ai accompagné plusieurs dizaines d'associés en difficulté, dont
                 certains n'arrivaient plus du tout à travailler ensemble. Ils
-                décrivent la même chronologie des faits : les sujets de tension
-                entre eux existaient depuis très tôt dans la relation, et c'est
-                avec le temps qu'ils se sont transformés en sujets de conflit. Il
-                ne s'est pas passé quelque chose de complètement imprévisible,
-                l'autre n'est pas devenu une personne infernale du jour au
-                lendemain. Mais les choses qui les agaçaient légèrement, à force
-                de se répéter sans être résolues, sont devenues chaque jour un
-                peu plus difficiles à encaisser, jusqu'à devenir carrément
-                insupportables.
+                décrivent la même chronologie : les sujets de tension entre eux
+                existaient déjà très tôt dans la relation, et avec le temps, se
+                sont transformés en sujets de conflit. L'autre n'est pas devenu
+                une personne infernale du jour au lendemain. Mais les choses qui
+                les agaçaient légèrement, à force de se répéter sans être
+                résolues, sont devenues chaque jour un peu plus difficiles à
+                encaisser, jusqu'à devenir carrément insupportables.
               </p>
               <p>
-                Avant un conflit, il y a donc des tensions. Et avant les
-                tensions, des inconforts – ces petites choses qui nous gênent
-                dans la relation, mais qu'on ne juge pas assez graves pour en
-                faire quoi que ce soit&nbsp;:
+                Avant un conflit, il y a des tensions. Et avant les tensions,
+                des inconforts – ces petites choses qui nous gênent dans la
+                relation, mais qu'on ne juge pas assez graves pour en faire quoi
+                que ce soit&nbsp;:
               </p>
             </div>
 
@@ -143,6 +148,18 @@ const LaConversationQuonEvite = () => {
               Tous ces inconforts ne deviendront pas des conflits. Mais tous les
               conflits viennent d'inconforts non réglés.
             </p>
+
+            <p className="mt-14 font-serif text-2xl md:text-3xl leading-[1.2] text-foreground">
+              Alors comment savoir si un inconfort le restera, ou se
+              transformera en tension&nbsp;?
+            </p>
+            <p className="mt-6 text-lg text-foreground/85 leading-relaxed">
+              C'est la répétition. L'inconfort qui passe une fois n'a rien
+              d'inquiétant&nbsp;; c'est celui qui revient qu'il faut écouter.
+              S'il revient, c'est un signal : il touche à quelque chose
+              d'important pour nous, et notre façon de passer à autre chose ne
+              fonctionne pas.
+            </p>
           </div>
         </section>
 
@@ -151,8 +168,8 @@ const LaConversationQuonEvite = () => {
             <div className="max-w-4xl">
               <p className="text-lg text-foreground/85 leading-relaxed">
                 Avec le recul, on sait identifier les signes avant-coureurs du
-                conflit. On les avait bien ressentis, mais on n'en avait rien fait.
-                On s'était dit quelque chose comme&nbsp;:
+                conflit. On les avait bien ressentis, mais on n'en avait rien
+                fait. On s'était dit quelque chose comme&nbsp;:
               </p>
               <ul className="mt-8 grid gap-3 md:grid-cols-2">
                 {rationalisations.map((r) => (
@@ -173,19 +190,19 @@ const LaConversationQuonEvite = () => {
                 <p>
                   Toutes ces petites phrases qu'on se raconte, on leur donne un
                   nom : <em>prendre sur soi</em>. On se l'imagine comme une
-                  qualité : on se croit patient, solide, endurant. Persévérant,
-                  même.
+                  qualité. De patience, de solidité, d'endurance. De
+                  persévérance, même.
                 </p>
                 <p>
                   Mais la persévérance, la vraie, sert à avancer vers quelque
-                  chose. Ici, on n'avance vers rien : on encaisse un inconfort qui
-                  revient, encore et encore. On est tellement occupé à bien le
-                  supporter qu'on ne s'en occupe pas. Et c'est justement là qu'il
-                  grandit.
+                  chose. Ici, on n'avance vers rien : on encaisse un inconfort
+                  qui revient, encore et encore. On est tellement occupé à bien
+                  le supporter qu'on ne s'en occupe pas. Et c'est justement là
+                  qu'il grandit.
                 </p>
                 <p className="font-serif italic text-xl md:text-2xl leading-snug text-foreground">
-                  Ce qu'on prend pour de la persévérance, en l'occurrence, c'est de
-                  l'évitement.
+                  Ce qu'on prend pour de la persévérance, en l'occurrence, c'est
+                  de l'évitement.
                 </p>
               </div>
             </div>
@@ -201,17 +218,14 @@ const LaConversationQuonEvite = () => {
           className="border-t border-border/60 bg-secondary/30 scroll-mt-28"
         >
           <div className="mx-auto max-w-4xl px-6 md:px-10 py-20 md:py-28">
-            <p className="text-xs uppercase tracking-[0.3em] text-accent mb-6">
-              À temps
-            </p>
             <div className="space-y-5 text-lg text-foreground/85 leading-relaxed">
               {alexStanParagraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
               <p className="mt-6 pt-6 border-t border-border/60 font-serif italic text-xl md:text-2xl leading-snug text-foreground">
                 Ce qui a fait la différence, pour Alex et Stan, ce n'est pas
-                d'avoir pris sur eux, ni d'avoir tout déballé. C'est d'avoir eu,
-                à temps, la conversation qu'ils évitaient.
+                d'avoir pris sur eux, ni d'avoir tout balancé d'un coup. C'est
+                d'avoir eu, à temps, la conversation qu'ils évitaient.
               </p>
             </div>
           </div>
@@ -228,8 +242,28 @@ const LaConversationQuonEvite = () => {
               Travailler une relation consiste à&nbsp;:
             </p>
 
+            <ol className="mt-10 space-y-6">
+              {travaillerConsists.map((label, i) => (
+                <li key={label} className="grid gap-4 md:grid-cols-12">
+                  <div className="md:col-span-1 font-serif text-3xl md:text-4xl text-accent leading-none">
+                    {i + 1}
+                  </div>
+                  <p className="md:col-span-11 font-serif text-xl md:text-2xl text-foreground leading-snug">
+                    {label}
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <p className="mt-14 text-lg text-foreground/85 leading-relaxed max-w-3xl">
+              Si ces trois étapes ne se font pas d'elles-mêmes, ce n'est pas par
+              manque de volonté ni de courage. C'est simplement qu'elles sont
+              difficiles à réaliser de l'intérieur. Car on ne voit pas clair
+              dans une relation dont on fait partie&nbsp;:
+            </p>
+
             <ol className="mt-10 space-y-8">
-              {travaillerSteps.map((s, i) => (
+              {travaillerWhy.map((s, i) => (
                 <li key={s.label} className="grid gap-4 md:grid-cols-12">
                   <div className="md:col-span-1 font-serif text-3xl md:text-4xl text-accent leading-none">
                     {i + 1}
@@ -246,13 +280,7 @@ const LaConversationQuonEvite = () => {
               ))}
             </ol>
 
-            <p className="mt-14 text-lg text-foreground/85 leading-relaxed max-w-3xl">
-              Si ces trois étapes ne se font pas d'elles-mêmes, ce n'est pas par
-              manque de volonté ni de courage. C'est simplement qu'elles sont
-              difficiles à réaliser seul. On ne voit pas clair dans une relation
-              dont on fait partie.
-            </p>
-            <p className="mt-6 font-serif italic text-xl md:text-2xl leading-snug text-foreground max-w-3xl">
+            <p className="mt-14 font-serif italic text-xl md:text-2xl leading-snug text-foreground max-w-3xl">
               Travailler la relation, ce n'est pas viser une association sans le
               moindre inconfort. C'est faire en sorte que les inconforts ne
               s'accumulent plus : on les repère, on les met sur la table, ils se
@@ -265,7 +293,7 @@ const LaConversationQuonEvite = () => {
 
       <section className="border-t border-border/60 bg-secondary/40">
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-20 md:py-28">
-          <FreebieCapture source="blog-la-conversation-quon-evite" />
+          <NewsletterCapture />
         </div>
       </section>
     </SiteLayout>

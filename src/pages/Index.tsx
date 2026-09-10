@@ -209,7 +209,8 @@ const Index = () => {
           </div>
           <div className="mt-12 md:mt-14 max-w-3xl">
             <p className="text-lg text-foreground">
-              Les repérer tôt, c'est pouvoir agir quand c'est encore simple.
+              Repérer les inconforts tôt, c'est pouvoir agir quand c'est encore
+              simple.
             </p>
             <div className="mt-8">
               <Link

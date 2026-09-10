@@ -37,15 +37,13 @@ const situations: Situation[] = [
     title: "Tout va bien, à un détail près",
     paragraphs: [
       "Un binôme de fondateurs, appelons-les Alex et Stan.",
-      "À première vue, tout va bien dans leur association : ils viennent de boucler leur série A et souhaitent travailler leur relation à titre préventif.",
-      "Je m'entretiens d'abord avec Alex. «\u00a0Est-ce qu'il y a des aspects de votre relation qui te gênent\u00a0?\u00a0» Il me dit que non. Puis : «\u00a0Ah si, il s'est passé quelque chose cette semaine, mais c'est vraiment un détail.\u00a0»",
-      "Il me raconte. La veille, au téléphone avec leurs investisseurs, Alex répond à une question\u00a0; Stan ne le laisse pas finir et répond à sa place. Sur le coup, ça l'agace, mais pas de quoi en faire un plat. Sauf que ce n'est pas la première fois : la semaine d'avant, Stan l'avait contredit devant toute l'équipe. Je lui demande comment il l'a vécu. «\u00a0Je me sens dénigré. J'ai l'impression qu'il ne voit pas ce que j'apporte.\u00a0»",
-      "De son côté, Stan ne mentionne aucun de ces épisodes. Ce qui le préoccupe, lui, c'est la lenteur de réflexion d'Alex, et le sentiment d'être seul à décider.",
-      "En séance commune, on pose tout sur la table, et le cercle vicieux apparaît. Alex a besoin de temps pour se forger un avis\u00a0; ne le sachant pas, Stan le presse, l'interrompt, lui laisse moins de place. Plus Stan veut aller vite, plus Alex se sent dénigré. Plus Alex se sent dénigré, moins il ose donner son avis. Moins il donne son avis, plus Stan se sent seul.",
-      "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière l'impatience de Stan, un grand sentiment de solitude. Chacun ajuste alors son comportement. Et ce qu'on a su faire une fois, on peut le refaire.",
+      "À première vue, tout va bien dans leur association : ils viennent de boucler leur série A et souhaitent travailler leur relation à titre préventif. Quand je demande à Alex si quelque chose le gêne, il répond d'abord non. Puis : «\u00a0Ah si, mais c'est vraiment un détail.\u00a0» La veille, devant leurs investisseurs, Stan avait répondu à sa place\u00a0; la semaine d'avant, il l'avait contredit devant l'équipe. Sur le coup, pas de quoi en faire tout un plat. Mais Alex s'était senti un peu dénigré, sans le dire.",
+      "Stan, de son côté, ne mentionne aucun de ces épisodes. Lui aussi trouve que tout va bien. Il faut creuser un peu pour qu'il finisse par dire ce qui lui pèse : la lenteur d'Alex, et le sentiment d'être seul à décider.",
+      "En séance commune, tout se pose. Alex a besoin de temps pour se forger un avis\u00a0; Stan n'en sait rien, alors il le presse, l'interrompt, lui laisse moins de place. Et le cercle vicieux apparaît : plus Stan veut aller vite, plus Alex se sent dénigré. Plus Alex se sent dénigré, moins il ose donner son avis. Moins il donne son avis, plus Stan se sent seul.",
+      "En nommant ce cercle vicieux, chacun a compris ce que l'autre vivait : Alex n'est pas lent, il analyse\u00a0; derrière l'impatience de Stan, un sentiment de solitude. Chacun ajuste alors son comportement. Et ce qu'ils ont su faire une fois, ils pourront le refaire.",
     ],
     closing: {
-      lead: "Pris à ce stade, l'inconfort ne deviendra pas une tension. Laissé courir des mois, ce même inconfort aurait donné un associé exaspéré par la lenteur de l'autre, et un autre qui l'évitait pour ne pas se sentir nul sous son regard. ",
+      lead: "Désamorcé à ce stade, l'inconfort ne deviendra pas une tension. Laissé courir des mois, ce même inconfort aurait donné un associé exaspéré par la lenteur de l'autre, et un autre l'évitant pour ne pas se sentir nul sous son regard. ",
       pull: "Une relation qui ne fonctionne plus.",
     },
     bridge: {
