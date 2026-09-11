@@ -31,6 +31,7 @@ const App = () => (
           <Route path="/situations" element={<Situations />} />
           <Route path="/a-propos" element={<APropos />} />
           <Route path="/faire-le-point" element={<FaireLePoint />} />
+          <Route path="/le-point" element={<FaireLePoint />} />
           <Route path="/echelle" element={<Navigate to="/faire-le-point/" replace />} />
           <Route path="/qui-je-suis" element={<Navigate to="/a-propos/" replace />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />

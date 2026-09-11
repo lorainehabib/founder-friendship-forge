@@ -52,6 +52,14 @@ const routes = [
     priority: "0.6",
   },
   {
+    path: "/le-point/",
+    title: "Le point sur votre association — Loraine Habib",
+    description:
+      "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
+    changefreq: "monthly",
+    priority: "0.6",
+  },
+  {
     path: "/blog/",
     title: "L'angle mort — Loraine Habib",
     description:
