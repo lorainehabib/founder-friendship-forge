@@ -279,7 +279,10 @@ const Index = () => {
       />
 
       {/* FREEBIE */}
-      <section className="border-t border-border/60 bg-secondary/40">
+      <section
+        id="le-point"
+        className="scroll-mt-28 border-t border-border/60 bg-secondary/40"
+      >
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-24 md:py-32">
           <FreebieCapture source="accueil" />
         </div>
