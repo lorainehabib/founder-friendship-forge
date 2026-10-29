@@ -2,19 +2,20 @@ import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
-
-type OfferLink = { label: string; to: string };
+import { CALENDLY_URL } from "@/lib/site";
 
 type Offer = {
   id: string;
   aliases?: string[];
   name: string;
   title: string;
-  meta: string[];
-  body: string[];
-  stepsIntro?: string;
-  steps?: string[];
-  links: OfferLink[];
+  who: string;
+  format: string;
+  price: string | string[];
+  priceNote?: string;
+  signs: [string, string, string];
+  approach: string;
+  situation: { title: string; to: string };
 };
 
 const offers: Offer[] = [
@@ -22,64 +23,61 @@ const offers: Offer[] = [
     id: "socle",
     aliases: ["s-associer", "entretenir"],
     name: "Socle",
-    title: "Travailler la relation avant d'en avoir besoin",
-    meta: [
-      "À deux ou à trois",
-      "Sur trois mois",
-      "3 000 € HT à deux, 4 000 € HT à trois, sur devis au-delà",
+    title: "Quand tout va bien, et que vous voulez que ça dure",
+    who: "À deux ou plus",
+    format: "1h30 avec chacun, une séance commune, un suivi à deux mois",
+    price: ["3 000 € HT à deux", "4 000 € HT à trois"],
+    priceNote: "Au-delà, sur devis",
+    signs: [
+      "Vous vous associez, et vous voulez poser de bonnes bases.",
+      "De petites frustrations reviennent, sans que personne ne les nomme.",
+      "Vous venez de lever, et les rôles vont changer.",
     ],
-    body: [
-      "Vous vous apprêtez à vous associer, ou vous l'êtes déjà. Tout va bien pour le moment, et vous voulez que ça dure. Peut-être que de petites frustrations pointent de temps en temps, ou que l'un de vous est moins satisfait que l'autre. C'est le bon moment : un inconfort qu'on traite maintenant ne deviendra pas une tension.",
-    ],
-    stepsIntro: "En trois temps :",
-    steps: [
-      "Une séance individuelle d'1h30 avec chacun.",
-      "Une séance commune, de 2h à deux ou de 3h à trois.",
-      "Deux mois plus tard, un suivi : vingt minutes avec chacun, puis une séance commune.",
-    ],
-    links: [
-      {
-        label: "Sommes-nous compatibles ?",
-        to: "/situations/#compatibles",
-      },
-      {
-        label: "Tout va bien, à un détail près",
-        to: "/situations/#alex-stan",
-      },
-    ],
+    approach:
+      "Je vous aide à repérer les inconforts tant qu'ils sont petits, et à en parler avant qu'ils ne deviennent des tensions.",
+    situation: {
+      title: "Tout va bien, à un détail près",
+      to: "/situations/#alex-stan",
+    },
   },
   {
     id: "reset",
     aliases: ["debloquer"],
     name: "Reset",
     title: "Quand c'est déjà tendu, et que vous venez ensemble",
-    meta: ["À deux ou plus", "Sur devis, à partir de 6 000 € HT"],
-    body: [
-      "La tension est installée, et vous avez le sentiment d'avoir déjà tout essayé. Peut-être que vous voulez encore faire fonctionner la relation. Peut-être que vous ne savez plus si vous le voulez. Dans les deux cas, c'est un travail possible, à condition que chacun accepte d'y participer.",
-      "De l'intérieur, on ne voit pas ce qui entretient la tension, parce qu'on en fait partie. Chaque situation étant différente, l'accompagnement se construit après un premier échange.",
+    who: "À deux ou plus",
+    format: "Format adapté à votre situation",
+    price: "À partir de 6 000 € HT",
+    signs: [
+      "Vous avez le sentiment d'avoir déjà tout essayé.",
+      "Le même désaccord revient, sous des formes différentes.",
+      "L'un de vous se demande s'il veut continuer.",
     ],
-    links: [
-      {
-        label: "Se parler, à cinq associés",
-        to: "/situations/#cinq-associes",
-      },
-    ],
+    approach:
+      "Je ne creuse pas le fond du désaccord, je regarde la façon dont vous réagissez l'un à l'autre. C'est à cet endroit que la relation peut bouger.",
+    situation: {
+      title: "Se parler, à cinq associés",
+      to: "/situations/#cinq-associes",
+    },
   },
   {
     id: "solo",
     name: "Solo",
-    title:
-      "Coaching individuel, sur la relation avec votre associé ou sur votre rôle de dirigeant",
-    meta: ["Seul", "8 séances d'1h30 sur cinq mois", "4 500 € HT"],
-    body: [
-      "Vous venez seul, avec ce qui vous occupe aujourd'hui : la relation avec votre associé, une prise de poste, une décision qui traîne, votre place dans l'équipe dirigeante.",
+    title: "Quand vous venez seul",
+    who: "Seul · Coaching individuel",
+    format: "8 séances d'1h30",
+    price: "4 500 € HT",
+    signs: [
+      "La relation avec votre associé vous pèse, et il n'est pas prêt à se faire accompagner.",
+      "Vous prenez un nouveau poste, ou un nouveau périmètre.",
+      "Une décision traîne depuis des mois.",
     ],
-    links: [
-      {
-        label: "Ça ne va plus",
-        to: "/situations/#ca-ne-va-plus",
-      },
-    ],
+    approach:
+      "On part du concret : un moment précis, une réaction, une décision qui coince pour atteindre l'objectif fixé.",
+    situation: {
+      title: "Ça ne va plus",
+      to: "/situations/#ca-ne-va-plus",
+    },
   },
 ];
 
@@ -134,119 +132,125 @@ const Offres = () => {
       />
 
       <section>
-        <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-12 md:pb-16">
+        <div className="mx-auto max-w-7xl px-6 md:px-10 pt-16 md:pt-28 pb-10 md:pb-14">
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
             Travailler ensemble.
           </h1>
           <nav
             aria-label="Les trois offres"
-            className="mt-10 md:mt-12 flex flex-wrap items-center gap-x-1 gap-y-2 text-sm md:text-base tracking-wide"
+            className="mt-8 flex flex-wrap gap-2 lg:hidden"
           >
-            {offers.map((f, i) => (
-              <span key={f.id} className="inline-flex items-center gap-x-1">
-                {i > 0 && (
-                  <span aria-hidden className="text-muted-foreground/60 px-2">
-                    ·
-                  </span>
-                )}
-                <a
-                  href={`#${f.id}`}
-                  className="text-accent hover:text-foreground transition-colors"
-                >
-                  {f.name}
-                </a>
-              </span>
+            {offers.map((offer) => (
+              <a
+                key={offer.id}
+                href={`#${offer.id}`}
+                className="border border-border px-3 py-1.5 text-sm text-foreground hover:border-accent hover:text-accent transition-colors"
+              >
+                {offer.name}
+              </a>
             ))}
           </nav>
         </div>
       </section>
 
-      {offers.map((f, index) => (
-        <article
-          key={f.id}
-          id={f.id}
-          className={`scroll-mt-28 border-t border-border/60 ${
-            index % 2 === 1 ? "bg-secondary/30" : ""
-          }`}
-        >
-          {f.aliases?.map((alias) => (
-            <div
-              key={alias}
-              id={alias}
-              className="h-0 overflow-hidden scroll-mt-28"
-              aria-hidden
-            />
-          ))}
-          <div className="mx-auto max-w-6xl px-6 md:px-10 py-20 md:py-28 grid gap-12 lg:grid-cols-12 lg:gap-16">
-            <header className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
-              <p className="font-serif text-5xl md:text-6xl leading-none text-accent">
-                {f.name}
-              </p>
-              <ul className="mt-8 space-y-2 text-sm md:text-base text-foreground/75 leading-snug">
-                {f.meta.map((line) => (
-                  <li key={line}>{line}</li>
+      <section>
+        <div className="mx-auto max-w-7xl px-6 md:px-10 pb-20 md:pb-28">
+          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-6 lg:gap-y-0 lg:grid-rows-[repeat(12,auto)]">
+            {offers.map((offer) => (
+              <article
+                key={offer.id}
+                id={offer.id}
+                className="relative scroll-mt-28 flex flex-col border border-border/70 border-t-[3px] border-t-accent bg-secondary/55 p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_12] lg:gap-0 lg:[&>*]:self-start"
+              >
+                {offer.aliases?.map((alias) => (
+                  <span
+                    key={alias}
+                    id={alias}
+                    className="absolute top-0 scroll-mt-28"
+                    aria-hidden
+                  />
                 ))}
-              </ul>
-            </header>
 
-            <div className="lg:col-span-8">
-              <h2 className="font-serif text-2xl md:text-4xl leading-[1.15] text-balance text-foreground">
-                {f.title}
-              </h2>
-              <div className="mt-8 space-y-5 text-base md:text-lg text-foreground/85 leading-relaxed">
-                {f.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-              {f.stepsIntro && f.steps && (
-                <div className="mt-10">
-                  <p className="font-medium text-foreground">
-                    {f.stepsIntro}
-                  </p>
-                  <ol className="mt-6 space-y-5">
-                    {f.steps.map((step, i) => (
-                      <li key={step} className="grid grid-cols-[2.5rem_1fr] gap-4">
-                        <span
-                          aria-hidden
-                          className="font-serif text-3xl text-accent leading-none"
-                        >
-                          {i + 1}
-                        </span>
-                        <p className="text-base md:text-lg text-foreground/85 leading-relaxed pt-1">
-                          {step}
-                        </p>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              )}
-              {f.links.length > 0 && (
-                <div className="mt-12 pt-6 border-t border-border/60">
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
-                    {f.links.length > 1 ? "Situations" : "Situation"}
-                  </p>
-                  <div className="flex flex-col gap-3">
-                    {f.links.map((l) => (
-                      <Link
-                        key={l.to}
-                        to={l.to}
-                        className="group inline-flex items-center gap-3 text-accent text-sm md:text-base tracking-wide hover:text-foreground transition-colors w-fit"
+                <h2 className="font-serif text-6xl lg:text-7xl leading-[0.9] text-accent">
+                  {offer.name}
+                </h2>
+                <h3 className="mt-5 font-serif text-xl lg:text-[1.35rem] leading-snug font-medium text-foreground text-balance">
+                  {offer.title}
+                </h3>
+
+                <p className="mt-8 w-full border-t border-border/80 bg-background px-4 pt-5 pb-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground lg:!self-stretch">
+                  {offer.who}
+                </p>
+                <p className="w-full bg-background px-4 py-1.5 text-sm leading-snug text-foreground/80 lg:!self-stretch">
+                  {offer.format}
+                </p>
+                <div className="w-full border-b border-border/80 bg-background px-4 pt-2 pb-5 lg:!self-stretch">
+                  {(Array.isArray(offer.price) ? offer.price : [offer.price]).map(
+                    (line) => (
+                      <p
+                        key={line}
+                        className="font-serif text-xl leading-snug text-foreground"
                       >
-                        <span className="border-b border-accent/40 group-hover:border-foreground pb-0.5">
-                          {l.label}
-                        </span>
-                        <span className="transition-transform duration-300 group-hover:translate-x-1">
-                          →
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
+                        {line}
+                      </p>
+                    ),
+                  )}
+                  {offer.priceNote && (
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {offer.priceNote}
+                    </p>
+                  )}
                 </div>
-              )}
-            </div>
+
+                <p className="mt-6 font-serif italic text-lg leading-snug text-foreground">
+                  Vous en êtes peut-être là
+                </p>
+                {offer.signs.map((sign) => (
+                  <p
+                    key={sign}
+                    className="mt-3 border-l border-accent/50 pl-3 text-[15px] leading-snug text-foreground/85"
+                  >
+                    {sign}
+                  </p>
+                ))}
+
+                <p className="mt-6 w-full border-t border-border/70 pt-5 font-serif text-lg md:text-xl leading-snug text-foreground">
+                  {offer.approach}
+                </p>
+
+                <Link
+                  to={offer.situation.to}
+                  className="group mt-8 inline-flex flex-col gap-1.5 text-accent hover:text-foreground transition-colors w-fit"
+                >
+                  <span className="inline-flex items-center gap-2 text-sm tracking-wide">
+                    <span className="border-b border-accent/40 group-hover:border-foreground pb-0.5">
+                      Lire une situation réelle
+                    </span>
+                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </span>
+                  <span className="text-sm text-foreground/55 group-hover:text-foreground/80">
+                    « {offer.situation.title} »
+                  </span>
+                </Link>
+
+                <a
+                  href={CALENDLY_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group mt-5 inline-flex w-full items-center justify-center gap-2 bg-accent text-accent-foreground px-4 py-3.5 text-sm tracking-wide hover:bg-foreground transition-colors duration-300"
+                >
+                  Réserver un échange
+                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                    →
+                  </span>
+                </a>
+              </article>
+            ))}
           </div>
-        </article>
-      ))}
+        </div>
+      </section>
 
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-32">
