@@ -19,21 +19,19 @@ const recognitionItems = [
 
 const portes = [
   {
-    title: "Vous vous apprêtez à vous associer.",
-    subtitle: "Se mettre d'accord sur l'essentiel, avant de vous engager.",
-    to: "/offres/#s-associer",
+    title: "Socle.",
+    subtitle: "Vous vous associez, ou tout va bien.",
+    to: "/offres/#socle",
   },
   {
-    title: "Tout va bien, et vous voulez que ça dure.",
-    subtitle:
-      "Mettre les inconforts sur la table avant qu'ils ne deviennent des tensions.",
-    to: "/offres/#entretenir",
+    title: "Reset.",
+    subtitle: "C'est déjà tendu.",
+    to: "/offres/#reset",
   },
   {
-    title: "C'est déjà tendu.",
-    subtitle:
-      "Dénouer ce qui bloque, quand vous voulez encore avancer ensemble.",
-    to: "/offres/#debloquer",
+    title: "Solo.",
+    subtitle: "Vous venez seul.",
+    to: "/offres/#solo",
   },
 ];
 
@@ -156,7 +154,7 @@ const Index = () => {
             Selon là où vous en êtes
           </p>
           <h2 className="font-serif text-3xl md:text-5xl leading-[1.1] text-balance text-foreground mb-14 md:mb-16 max-w-3xl">
-            Trois façons de travailler la relation.
+            Travailler ensemble.
           </h2>
           <div className="divide-y divide-border/70 border-y border-border/70">
             {portes.map((p) => (

@@ -21,9 +21,9 @@ const routes = [
   },
   {
     path: "/offres/",
-    title: "Offres — Loraine Habib | Trois façons de travailler la relation",
+    title: "Travailler ensemble — Loraine Habib",
     description:
-      "S'associer, entretenir la relation, débloquer une tension : trois formats d'accompagnement pour fondateurs, selon là où vous en êtes.",
+      "Socle, Reset, Solo : trois accompagnements pour fondateurs, avant la tension, quand c'est déjà tendu, ou en individuel.",
     changefreq: "weekly",
     priority: "0.9",
   },

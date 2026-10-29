@@ -7,10 +7,10 @@ type OfferLink = { label: string; to: string };
 
 type Offer = {
   id: string;
-  eyebrow: string;
+  aliases?: string[];
+  name: string;
   title: string;
-  tags: string[];
-  price: string;
+  meta: string[];
   body: string[];
   stepsIntro?: string;
   steps?: string[];
@@ -19,62 +19,64 @@ type Offer = {
 
 const offers: Offer[] = [
   {
-    id: "s-associer",
-    eyebrow: "S'associer",
-    title: "Se mettre d'accord, avant de s'engager",
-    tags: ["Format clé en main", "À deux"],
-    price: "4 000 € HT",
-    body: [
-      "Vous avez trouvé la personne avec qui vous associer. Vous avez commencé à travailler ensemble sur le projet, mais rien n'est encore scellé. Et une question tourne : est-ce que j'y vais, ou pas ? Soit vous cherchez à être rassuré avant cette grande décision. Soit vous savez déjà que vous y allez, et vous voulez préparer au mieux l'association que vous vous apprêtez à démarrer.",
+    id: "socle",
+    aliases: ["s-associer", "entretenir"],
+    name: "Socle",
+    title: "Travailler la relation avant d'en avoir besoin",
+    meta: [
+      "À deux ou à trois",
+      "Sur trois mois",
+      "3 000 € HT à deux, 4 000 € HT à trois, sur devis au-delà",
     ],
-    stepsIntro: "Le programme se déroule en trois temps :",
+    body: [
+      "Vous vous apprêtez à vous associer, ou vous l'êtes déjà. Tout va bien pour le moment, et vous voulez que ça dure. Peut-être que de petites frustrations pointent de temps en temps, ou que l'un de vous est moins satisfait que l'autre. C'est le bon moment : un inconfort qu'on traite maintenant ne deviendra pas une tension.",
+    ],
+    stepsIntro: "En trois temps :",
     steps: [
-      "En amont, je vous envoie à chacun un état des lieux pré-association : une grille des sujets à avoir abordés avant de s'associer. Chacun la remplit de son côté. Vos réponses me permettent de préparer les séances et de repérer là où il faut creuser.",
-      "Ensuite, deux demi-journées en présentiel, espacées de deux à trois semaines, dont le contenu s'adapte à vos réponses. Entre les deux, je vous confie des sujets à discuter à deux.",
-      "En sortie, je vous remets une synthèse écrite : vos points d'accord, vos points de vigilance, et les sujets qui restent à traiter.",
+      "Une séance individuelle d'1h30 avec chacun.",
+      "Une séance commune, de 2h à deux ou de 3h à trois.",
+      "Deux mois plus tard, un suivi : vingt minutes avec chacun, puis une séance commune.",
     ],
     links: [
       {
-        label: "Lire une situation réelle : Sommes-nous compatibles ?",
+        label: "Sommes-nous compatibles ?",
         to: "/situations/#compatibles",
       },
-    ],
-  },
-  {
-    id: "entretenir",
-    eyebrow: "Entretenir la relation",
-    title:
-      "Mettre les inconforts sur la table avant qu'ils ne deviennent des tensions",
-    tags: ["Sur mesure", "Seul ou à deux"],
-    price: "à partir de 3 000 € HT",
-    body: [
-      "À n'importe quel moment de l'association. Peut-être que tout va bien. Peut-être que de légères frustrations pointent de temps en temps. Peut-être que l'un de vous n'est pas tout à fait satisfait, quand pour l'autre tout roule. Il n'y a pas de conflit ouvert, et c'est justement le bon moment pour travailler la relation.",
-      "Il n'y a pas de situation type, l'accompagnement se construit sur mesure, à partir de là où vous en êtes.",
-    ],
-    links: [
       {
-        label: "Lire une situation réelle : Tout va bien, à un détail près",
+        label: "Tout va bien, à un détail près",
         to: "/situations/#alex-stan",
       },
     ],
   },
   {
-    id: "debloquer",
-    eyebrow: "Débloquer la relation",
-    title: "Quand c'est déjà tendu",
-    tags: ["Sur mesure", "Seul ou à deux"],
-    price: "à partir de 3 000 € HT",
+    id: "reset",
+    aliases: ["debloquer"],
+    name: "Reset",
+    title: "Quand c'est déjà tendu, et que vous venez ensemble",
+    meta: ["À deux ou plus", "Sur devis, à partir de 6 000 € HT"],
     body: [
-      "La tension est déjà installée, et vous avez le sentiment d'avoir déjà tout essayé. Peut-être que vous voulez encore faire fonctionner la relation. Peut-être que vous ne savez même plus si vous le voulez, et qu'il vous faut d'abord y voir clair. Dans les deux cas, c'est un travail possible.",
-      "Essayer de régler une tension seul, ou le faire avec un regard extérieur, ce n'est pas la même chose : je vois des choses que vous ne pouvez pas voir, parce que vous êtes partie prenante de la relation.",
+      "La tension est installée, et vous avez le sentiment d'avoir déjà tout essayé. Peut-être que vous voulez encore faire fonctionner la relation. Peut-être que vous ne savez plus si vous le voulez. Dans les deux cas, c'est un travail possible, à condition que chacun accepte d'y participer.",
+      "De l'intérieur, on ne voit pas ce qui entretient la tension, parce qu'on en fait partie. Chaque situation étant différente, l'accompagnement se construit après un premier échange.",
     ],
     links: [
       {
-        label: "Lire une situation réelle : Se parler, à cinq associés",
+        label: "Se parler, à cinq associés",
         to: "/situations/#cinq-associes",
       },
+    ],
+  },
+  {
+    id: "solo",
+    name: "Solo",
+    title:
+      "Coaching individuel, sur la relation avec votre associé ou sur votre rôle de dirigeant",
+    meta: ["Seul", "8 séances d'1h30 sur cinq mois", "4 500 € HT"],
+    body: [
+      "Vous venez seul, avec ce qui vous occupe aujourd'hui : la relation avec votre associé, une prise de poste, une décision qui traîne, votre place dans l'équipe dirigeante.",
+    ],
+    links: [
       {
-        label: "Lire une situation réelle : Ça ne va plus",
+        label: "Ça ne va plus",
         to: "/situations/#ca-ne-va-plus",
       },
     ],
@@ -125,129 +127,127 @@ const Offres = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Offres — Loraine Habib | Trois façons de travailler la relation"
-        description="S'associer, entretenir la relation, débloquer une tension : trois formats d'accompagnement pour fondateurs, selon là où vous en êtes."
+        title="Travailler ensemble — Loraine Habib"
+        description="Socle, Reset, Solo : trois accompagnements pour fondateurs, avant la tension, quand c'est déjà tendu, ou en individuel."
         path="/offres/"
         structuredData={faqSchema}
       />
 
-      {/* Hero */}
       <section>
         <div className="mx-auto max-w-6xl px-6 md:px-10 pt-16 md:pt-28 pb-12 md:pb-16">
           <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
-            Trois façons de travailler la relation.
+            Travailler ensemble.
           </h1>
-          <p className="mt-8 text-lg md:text-xl text-foreground/85 leading-relaxed max-w-2xl">
-            Selon là où vous en êtes.
-          </p>
+          <nav
+            aria-label="Les trois offres"
+            className="mt-10 md:mt-12 flex flex-wrap items-center gap-x-1 gap-y-2 text-sm md:text-base tracking-wide"
+          >
+            {offers.map((f, i) => (
+              <span key={f.id} className="inline-flex items-center gap-x-1">
+                {i > 0 && (
+                  <span aria-hidden className="text-muted-foreground/60 px-2">
+                    ·
+                  </span>
+                )}
+                <a
+                  href={`#${f.id}`}
+                  className="text-accent hover:text-foreground transition-colors"
+                >
+                  {f.name}
+                </a>
+              </span>
+            ))}
+          </nav>
         </div>
       </section>
 
-      {/* Offers */}
-      <section className="border-t border-border/60">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-8 md:py-12 space-y-6 md:space-y-8">
-          {offers.map((f) => (
-            <article
-              key={f.id}
-              id={f.id}
-              className="scroll-mt-28 border border-border/70 bg-background p-8 md:p-10"
-            >
-              <header className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between pb-6 md:pb-8 border-b border-border/60">
-                <div className="max-w-2xl">
-                  <p className="text-xs uppercase tracking-[0.3em] text-accent mb-3">
-                    {f.eyebrow}
-                  </p>
-                  <h2 className="font-serif text-2xl md:text-3xl leading-[1.2] text-balance text-foreground">
-                    {f.title}
-                  </h2>
-                </div>
-                <div className="flex flex-wrap gap-2 md:justify-end md:pt-2">
-                  {f.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs tracking-wide text-muted-foreground border border-border/70 bg-secondary/40 px-3 py-1.5"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                  <span className="text-xs tracking-wide font-semibold text-accent border border-accent/40 bg-accent/10 px-3 py-1.5">
-                    {f.price}
-                  </span>
-                </div>
-              </header>
-              <div className="mt-6 md:mt-8 space-y-4 text-base md:text-lg text-foreground/85 leading-relaxed max-w-3xl">
-                {f.body.map((p, i) => (
-                  <p key={i}>{p}</p>
+      {offers.map((f, index) => (
+        <article
+          key={f.id}
+          id={f.id}
+          className={`scroll-mt-28 border-t border-border/60 ${
+            index % 2 === 1 ? "bg-secondary/30" : ""
+          }`}
+        >
+          {f.aliases?.map((alias) => (
+            <div
+              key={alias}
+              id={alias}
+              className="h-0 overflow-hidden scroll-mt-28"
+              aria-hidden
+            />
+          ))}
+          <div className="mx-auto max-w-6xl px-6 md:px-10 py-20 md:py-28 grid gap-12 lg:grid-cols-12 lg:gap-16">
+            <header className="lg:col-span-4 lg:sticky lg:top-32 lg:self-start">
+              <p className="font-serif text-5xl md:text-6xl leading-none text-accent">
+                {f.name}
+              </p>
+              <ul className="mt-8 space-y-2 text-sm md:text-base text-foreground/75 leading-snug">
+                {f.meta.map((line) => (
+                  <li key={line}>{line}</li>
                 ))}
-                {f.stepsIntro && (
-                  <p className="pt-2 font-medium text-foreground">
+              </ul>
+            </header>
+
+            <div className="lg:col-span-8">
+              <h2 className="font-serif text-2xl md:text-4xl leading-[1.15] text-balance text-foreground">
+                {f.title}
+              </h2>
+              <div className="mt-8 space-y-5 text-base md:text-lg text-foreground/85 leading-relaxed">
+                {f.body.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+              {f.stepsIntro && f.steps && (
+                <div className="mt-10">
+                  <p className="font-medium text-foreground">
                     {f.stepsIntro}
                   </p>
-                )}
-                {f.steps && (
-                  <ol className="space-y-4 pt-1">
+                  <ol className="mt-6 space-y-5">
                     {f.steps.map((step, i) => (
-                      <li key={i} className="flex gap-5">
+                      <li key={step} className="grid grid-cols-[2.5rem_1fr] gap-4">
                         <span
                           aria-hidden
-                          className="font-serif text-2xl text-accent leading-none pt-0.5 shrink-0 w-8"
+                          className="font-serif text-3xl text-accent leading-none"
                         >
                           {i + 1}
                         </span>
-                        <span>{step}</span>
+                        <p className="text-base md:text-lg text-foreground/85 leading-relaxed pt-1">
+                          {step}
+                        </p>
                       </li>
                     ))}
                   </ol>
-                )}
-              </div>
-              {f.links.length > 0 && (
-                <div className="mt-8 md:mt-10 pt-6 border-t border-border/60 flex flex-col gap-3">
-                  {f.links.map((l) => (
-                    <Link
-                      key={l.to}
-                      to={l.to}
-                      className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide hover:text-foreground transition-colors"
-                    >
-                      <span className="border-b border-accent/40 group-hover:border-foreground pb-0.5">
-                        {l.label}
-                      </span>
-                      <span className="transition-transform duration-300 group-hover:translate-x-1">
-                        →
-                      </span>
-                    </Link>
-                  ))}
                 </div>
               )}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Seul ou à deux */}
-      <section className="border-t border-border/60">
-        <div className="mx-auto max-w-6xl px-6 md:px-10 py-16 md:py-20">
-          <aside className="border-l-2 border-accent pl-6 md:pl-8 py-6 max-w-3xl">
-            <p className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-              Seul ou à deux&nbsp;?
-            </p>
-            <div className="space-y-4 text-base md:text-lg text-foreground/85 leading-relaxed">
-              <p>
-                Pour <em className="italic">Entretenir</em> comme pour{" "}
-                <em className="italic">Débloquer</em>, le travail peut se faire
-                seul, à deux, ou à plusieurs, selon qui est motivé pour
-                l'entamer.
-              </p>
-              <p className="font-medium text-foreground">
-                N'attendez pas que l'autre veuille s'y mettre pour vous faire
-                accompagner&nbsp;: si une seule personne change son
-                comportement, c'est toute la relation qui se modifie.
-              </p>
+              {f.links.length > 0 && (
+                <div className="mt-12 pt-6 border-t border-border/60">
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">
+                    {f.links.length > 1 ? "Situations" : "Situation"}
+                  </p>
+                  <div className="flex flex-col gap-3">
+                    {f.links.map((l) => (
+                      <Link
+                        key={l.to}
+                        to={l.to}
+                        className="group inline-flex items-center gap-3 text-accent text-sm md:text-base tracking-wide hover:text-foreground transition-colors w-fit"
+                      >
+                        <span className="border-b border-accent/40 group-hover:border-foreground pb-0.5">
+                          {l.label}
+                        </span>
+                        <span className="transition-transform duration-300 group-hover:translate-x-1">
+                          →
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
-          </aside>
-        </div>
-      </section>
+          </div>
+        </article>
+      ))}
 
-      {/* FAQ */}
       <section className="border-t border-border/60 bg-secondary/30">
         <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-32">
           <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">

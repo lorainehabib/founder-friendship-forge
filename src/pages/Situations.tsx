@@ -27,8 +27,8 @@ const situations: Situation[] = [
       pull: "su dépasser un mécanisme qui l'empêchait, ici et ailleurs, d'aborder des sujets délicats.",
     },
     bridge: {
-      label: "Ce que je propose avant de s'associer : S'associer",
-      to: "/offres/#s-associer",
+      label: "Ce que je propose : Socle",
+      to: "/offres/#socle",
     },
   },
   {
@@ -47,8 +47,8 @@ const situations: Situation[] = [
       pull: "Une relation qui ne fonctionne plus.",
     },
     bridge: {
-      label: "Ce que je propose à ce stade : Entretenir la relation",
-      to: "/offres/#entretenir",
+      label: "Ce que je propose : Socle",
+      to: "/offres/#socle",
     },
   },
   {
@@ -65,8 +65,8 @@ const situations: Situation[] = [
       pull: "Quand il l'a fait, le soulagement a été immédiat, pour tout le monde.",
     },
     bridge: {
-      label: "Ce que je propose quand c'est déjà tendu : Débloquer la relation",
-      to: "/offres/#debloquer",
+      label: "Ce que je propose : Reset",
+      to: "/offres/#reset",
     },
   },
   {
@@ -82,8 +82,8 @@ const situations: Situation[] = [
       pull: "il a pu se concentrer sur ce qui comptait vraiment : son produit.",
     },
     bridge: {
-      label: "Ce que je propose quand on ne sait plus : Débloquer la relation",
-      to: "/offres/#debloquer",
+      label: "Ce que je propose : Solo",
+      to: "/offres/#solo",
     },
   },
 ];
