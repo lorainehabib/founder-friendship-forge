@@ -11,7 +11,7 @@ type Offer = {
   title: string;
   who: string;
   format: string;
-  price: string | string[];
+  price: string;
   priceNote?: string;
   signs: [string, string, string];
   approach: string;
@@ -25,9 +25,10 @@ const offers: Offer[] = [
     name: "Socle",
     title: "Quand tout va bien, et que vous voulez que ça dure",
     who: "À deux ou plus",
-    format: "1h30 avec chacun, une séance commune, un suivi à deux mois",
-    price: ["3 000 € HT à deux", "4 000 € HT à trois"],
-    priceNote: "Au-delà, sur devis",
+    format:
+      "1h30 chacun, puis 2 séances de 2 à 3h ensemble",
+    price: "3 000 € HT",
+    priceNote: "À deux · 4 000 € HT à trois · au-delà sur devis",
     signs: [
       "Vous vous associez, et vous voulez poser de bonnes bases.",
       "De petites frustrations reviennent, sans que personne ne les nomme.",
@@ -46,8 +47,9 @@ const offers: Offer[] = [
     name: "Reset",
     title: "Quand c'est déjà tendu, et que vous venez ensemble",
     who: "À deux ou plus",
-    format: "Format adapté à votre situation",
-    price: "À partir de 6 000 € HT",
+    format: "Séances individuelles et communes",
+    price: "Dès 6 000 € HT",
+    priceNote: "Selon la situation et le nombre d'associés",
     signs: [
       "Vous avez le sentiment d'avoir déjà tout essayé.",
       "Le même désaccord revient, sous des formes différentes.",
@@ -65,7 +67,7 @@ const offers: Offer[] = [
     name: "Solo",
     title: "Quand vous venez seul",
     who: "Seul · Coaching individuel",
-    format: "8 séances d'1h30",
+    format: "8 séances d'1h30, sur cinq mois",
     price: "4 500 € HT",
     signs: [
       "La relation avec votre associé vous pèse, et il n'est pas prêt à se faire accompagner.",
@@ -155,12 +157,12 @@ const Offres = () => {
 
       <section>
         <div className="mx-auto max-w-7xl px-6 md:px-10 pb-20 md:pb-28">
-          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-6 lg:gap-y-0 lg:grid-rows-[repeat(12,auto)]">
+          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-6 lg:gap-y-0 lg:grid-rows-[repeat(13,auto)]">
             {offers.map((offer) => (
               <article
                 key={offer.id}
                 id={offer.id}
-                className="relative scroll-mt-28 flex flex-col border border-border/70 border-t-[3px] border-t-accent bg-secondary/55 p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_12] lg:gap-0 lg:[&>*]:self-start"
+                className="relative scroll-mt-28 flex flex-col border border-border/70 border-t-[3px] border-t-accent bg-secondary/55 p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_13] lg:gap-0 lg:[&>*]:self-start"
               >
                 {offer.aliases?.map((alias) => (
                   <span
@@ -184,23 +186,12 @@ const Offres = () => {
                 <p className="w-full bg-background px-4 py-1.5 text-sm leading-snug text-foreground/80 lg:!self-stretch">
                   {offer.format}
                 </p>
-                <div className="w-full border-b border-border/80 bg-background px-4 pt-2 pb-5 lg:!self-stretch">
-                  {(Array.isArray(offer.price) ? offer.price : [offer.price]).map(
-                    (line) => (
-                      <p
-                        key={line}
-                        className="font-serif text-xl leading-snug text-foreground"
-                      >
-                        {line}
-                      </p>
-                    ),
-                  )}
-                  {offer.priceNote && (
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      {offer.priceNote}
-                    </p>
-                  )}
-                </div>
+                <p className="w-full bg-background px-4 pt-2 font-serif text-xl leading-snug text-foreground lg:!self-stretch">
+                  {offer.price}
+                </p>
+                <p className="w-full border-b border-border/80 bg-background px-4 pt-2 pb-5 text-[13px] leading-snug text-muted-foreground lg:!self-stretch">
+                  {offer.priceNote ?? ""}
+                </p>
 
                 <p className="mt-6 font-serif italic text-lg leading-snug text-foreground">
                   Vous en êtes peut-être là
