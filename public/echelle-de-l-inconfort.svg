@@ -1,0 +1,47 @@
+<svg viewBox="0 0 760 392" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>L'échelle de l'inconfort</title>
+<desc>De gauche à droite : inconfort, tension, conflit. Pour chacun, ce qu'on ressent et ce qu'on se dit pour ne rien faire. À gauche c'est diffus et estompé, à droite c'est évident et net ; le ressenti monte de l'agacement à l'exaspération.</desc>
+<rect x="2" y="2" width="756" height="388" rx="16" fill="#fdfbf7" stroke="#e7e1d5"/>
+<text x="30" y="40" font-family="Georgia, serif" font-size="24" fill="#2b2b2b">L'échelle de l'inconfort</text>
+<text x="30" y="64" font-family="sans-serif" font-size="13" fill="#8a8378">Un conflit, c'est un inconfort qui s'est répété sans être réglé, jusqu'à devenir insupportable.</text>
+
+<text x="18" y="190" font-family="sans-serif" font-size="9.5" letter-spacing="0.04em" fill="#9a9488">CE QU'ON</text>
+<text x="18" y="203" font-family="sans-serif" font-size="9.5" letter-spacing="0.04em" fill="#9a9488">RESSENT</text>
+<text x="18" y="273" font-family="sans-serif" font-size="9.5" letter-spacing="0.04em" fill="#9a9488">CE QU'ON SE DIT</text>
+<text x="18" y="286" font-family="sans-serif" font-size="9.5" letter-spacing="0.04em" fill="#9a9488">POUR NE RIEN</text>
+<text x="18" y="299" font-family="sans-serif" font-size="9.5" letter-spacing="0.04em" fill="#9a9488">FAIRE</text>
+
+<rect x="145" y="98" width="180" height="232" rx="5" fill="#f9f3ea" stroke="#d8c6b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<text x="235" y="127" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="500" fill="#6b6355">Inconfort</text>
+<text x="235" y="145" text-anchor="middle" font-family="sans-serif" font-size="11" font-style="italic" fill="#9a8570">diffus</text>
+<line x1="157" y1="158" x2="313" y2="158" stroke="#e5dccb"/>
+<text x="235" y="186" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#8a8378">Une gêne, un agacement</text>
+<text x="235" y="204" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#8a8378">par moments.</text>
+<line x1="157" y1="228" x2="313" y2="228" stroke="#e5dccb"/>
+<text x="235" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" font-style="italic" fill="#c98a6a">« C'est un détail.</text>
+<text x="235" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" font-style="italic" fill="#c98a6a">Il est comme ça. »</text>
+
+<rect x="340" y="98" width="180" height="232" rx="5" fill="#ece0cd" stroke="#c2b39c" stroke-width="1.5"/>
+<text x="430" y="127" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="500" fill="#2b2b2b">Tension</text>
+<text x="430" y="145" text-anchor="middle" font-family="sans-serif" font-size="11" font-style="italic" fill="#8a7d68">palpable</text>
+<line x1="352" y1="158" x2="508" y2="158" stroke="#dccfb9"/>
+<text x="430" y="186" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#4a4438">De l'irritation,</text>
+<text x="430" y="204" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#4a4438">presque à chaque fois.</text>
+<line x1="352" y1="228" x2="508" y2="228" stroke="#dccfb9"/>
+<text x="430" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" font-style="italic" fill="#bd6a44">« C'est une phase,</text>
+<text x="430" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" font-style="italic" fill="#bd6a44">ça passera. »</text>
+
+<rect x="535" y="98" width="180" height="232" rx="5" fill="#ddccb2" stroke="#b8552e" stroke-width="2.5"/>
+<text x="625" y="127" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="500" fill="#2b2b2b">Conflit</text>
+<text x="625" y="145" text-anchor="middle" font-family="sans-serif" font-size="11" font-style="italic" fill="#a35a3a">évident</text>
+<line x1="547" y1="158" x2="703" y2="158" stroke="#d3c0a3"/>
+<text x="625" y="186" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#3a352c">De l'exaspération.</text>
+<text x="625" y="204" text-anchor="middle" font-family="sans-serif" font-size="12.5" fill="#3a352c">Je ne le supporte plus.</text>
+<line x1="547" y1="228" x2="703" y2="228" stroke="#d3c0a3"/>
+<text x="625" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" font-style="italic" fill="#b8552e">« J'ai tout essayé,</text>
+<text x="625" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" font-style="italic" fill="#b8552e">c'est insoluble. »</text>
+
+<text x="430" y="356" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#b8552e">ça monte</text>
+<line x1="150" y1="368" x2="700" y2="368" stroke="#b8552e" stroke-width="2"/>
+<polygon points="710,368 698,363 698,373" fill="#b8552e"/>
+</svg>

@@ -2,7 +2,7 @@ const box =
   "border border-[#e0d5c8] bg-[#f3eee8] px-4 py-4 text-center text-[17px] leading-snug text-foreground";
 
 const ReactionLoop = ({ className = "" }: { className?: string }) => (
-  <figure className={`mt-8 max-w-[40rem] ${className}`}>
+  <figure className={className}>
     <svg
       className="hidden h-auto w-full sm:block"
       viewBox="0 0 640 250"

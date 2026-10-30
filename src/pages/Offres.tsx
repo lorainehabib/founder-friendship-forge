@@ -13,7 +13,8 @@ type Offer = {
   name: string;
   title: string;
   who: string;
-  format: string;
+  sessions: string;
+  duration: string;
   price: string;
   priceNote: string;
   signs: [string, string, string];
@@ -29,16 +30,17 @@ const offers: Offer[] = [
     name: "Socle",
     title: "Quand tout va bien, et que vous voulez que ça dure",
     who: "À deux ou plus",
-    format: "1h30 chacun, puis 2 séances de 2 à 3h ensemble",
+    sessions: "Une avec chacun, puis deux ensemble",
+    duration: "1 à 3 mois",
     price: "3\u00a0000\u00a0€ HT",
     priceNote: "À deux · 4\u00a0000\u00a0€ HT à trois · au-delà sur devis",
     signs: [
       "Tout va bien, et vous savez que c'est maintenant que ça se travaille.",
-      "Vous vous associez, et vous voulez poser de bonnes bases.",
+      "Vous travaillez ensemble depuis peu, et vous voulez poser de bonnes bases.",
       "Vous venez de lever, et les rôles vont changer.",
     ],
     description:
-      "Seul avec moi, chacun dit ce qu'il a remarqué, même ce qu'il range dans les détails. Ensemble, on regarde comment ça se joue entre vous, et ce que chacun peut faire autrement. Vous repartez capables d'avoir cette conversation sans moi.",
+      "Un inconfort qui revient finit par devenir une tension. On le repère tant qu'il est petit, on regarde comment chacun y réagit, et on le désamorce à temps.",
     detail: "/offres/socle/",
     situation: {
       title: "La conversation qu'on évite",
@@ -51,7 +53,8 @@ const offers: Offer[] = [
     name: "Reset",
     title: "Quand c'est déjà tendu, et que vous venez ensemble",
     who: "À deux ou plus",
-    format: "Une séance ensemble, 1h30 chacun, puis 4 séances de 2h, sur trois mois",
+    sessions: "Une ensemble, une avec chacun, puis quatre ensemble",
+    duration: "3 à 4 mois",
     price: "Dès 6\u00a0000\u00a0€ HT",
     priceNote: "Selon la situation et le nombre d'associés",
     signs: [
@@ -60,7 +63,7 @@ const offers: Offer[] = [
       "L'un de vous se demande s'il veut continuer.",
     ],
     description:
-      "Je ne creuse pas le fond du désaccord, je regarde la façon dont vous réagissez l'un à l'autre. C'est à cet endroit que la relation peut bouger. Le temps seul avec chacun sert à entendre ce qui ne se dit pas encore devant l'autre. Entre les séances, il y a souvent quelque chose à essayer.",
+      "Je ne creuse pas le fond du désaccord, je regarde la façon dont vous réagissez l'un à l'autre\u00a0: c'est à cet endroit que la relation peut bouger. C'est le même travail que Socle, sur des tensions déjà installées, ce qui demande plus de temps.",
     detail: "/offres/reset/",
     situation: {
       title: "C'est lui le problème",
@@ -70,57 +73,38 @@ const offers: Offer[] = [
   {
     id: "solo",
     name: "Solo",
-    title: "Quand vous venez seul",
+    title: "Quand c'est à vous de faire bouger les choses",
     who: "Coaching individuel",
-    format: "8 séances d'1h30, sur cinq mois",
+    sessions: "Huit séances d'1h30",
+    duration: "4 à 6 mois",
     price: "4\u00a0500\u00a0€ HT",
     priceNote: "",
     signs: [
-      "La relation avec votre associé vous pèse, et vous voulez que quelque chose change, même s'il ne vient pas.",
+      "Une relation de travail vous pèse, avec un associé, un manager ou un collègue.",
       "Vous prenez un nouveau poste, ou un nouveau périmètre.",
       "Une décision traîne depuis des mois.",
     ],
     description:
-      "On part du concret\u00a0: un moment précis, une réaction, une décision qui coince. On fixe dès la première séance un objectif clair\u00a0: à quoi vous verrez que ça a changé. Entre deux séances, il y a souvent une chose à essayer, choisie ensemble.",
+      "Avant de chercher des solutions, on définit à quoi vous verrez que la situation a changé. Pas «\u00a0que ça aille mieux\u00a0», mais des changements concrets\u00a0: une réunion qui se passe autrement, une décision enfin prise. Puis on cherche précisément ce qui empêche ces changements aujourd'hui, et c'est sur ça qu'on travaille.",
   },
 ];
 
 const faqItems = [
   {
-    q: "Mon associé n'est pas prêt à faire cette démarche, ça peut quand même marcher ?",
-    a: "Oui. Une relation, c'est une dynamique : quand l'un des deux change sa façon d'agir, l'autre ne peut pas réagir exactement comme avant. La relation bouge, même si un seul des deux est engagé dans le travail.",
+    q: "Mon associé n'est pas prêt, ça peut marcher\u00a0?",
+    a: "Oui. C'est l'objet de Solo\u00a0: on travaille sur ce que vous, vous pouvez faire autrement. Quand une seule personne change sa façon de réagir, c'est toute la relation qui bouge.",
   },
   {
-    q: "Notre situation est vraiment spécifique, vous avez déjà vu ça ?",
-    a: "Probablement. Mais ce qui importe ce n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui la crée. Les tensions entre associés se ressemblent souvent en surface, mais ce qui les alimente est propre à chaque individu.",
+    q: "Notre situation est spécifique, vous avez déjà vu ça\u00a0?",
+    a: "Probablement. Mais l'important n'est pas d'avoir vu exactement la même situation, c'est de comprendre ce qui l'entretient. Les tensions se ressemblent souvent en surface, mais ce qui les alimente est propre à chaque relation.",
   },
   {
-    q: "Comment commence le travail ?",
-    a: "Par un premier échange en visio, gratuit et sans engagement. Si on décide de travailler ensemble, la première séance sert à poser un objectif précis pour l'accompagnement à partir de votre demande, telle que vous la formulez aujourd'hui.",
+    q: "Ça marche aussi à distance\u00a0?",
+    a: "Oui, en visio, en recréant les conditions que le présentiel offre naturellement\u00a0: pas de réunion juste avant ni juste après, un endroit calme, une porte qui ferme.",
   },
   {
-    q: "Ça marche aussi à distance ?",
-    a: "Oui, en visio, en recréant les conditions que le présentiel offre naturellement : pas de réunion juste avant ni juste après, un endroit calme, une porte qui ferme, etc.",
-  },
-  {
-    q: "Ce qui se dit en séance reste confidentiel ?",
-    a: "Oui, sans exception. Même quand l'accompagnement est initié par un investisseur ou un fonds, rien de ce qui se dit en séance ne leur est transmis. C'est une condition non négociable pour que le travail fonctionne.",
-  },
-  {
-    q: "Comment ça se passe si on se rend compte qu'on doit se séparer ?",
-    a: "Ça arrive. Le travail fait bouger la relation, et parfois, en y voyant plus clair, l'un des deux se rend compte que les conditions ne lui conviennent plus. Cette décision serait venue de toute façon. Elle vient juste plus vite, et plus lucidement.",
-  },
-  {
-    q: "Ce que je dis seul, vous le répéterez à mon associé\u00a0?",
-    a: "Ce qui se dit en séance individuelle sert le travail commun. Je ne répète rien à votre place, mais je ne garde pas non plus un secret qui empêcherait d'avancer\u00a0: si quelque chose doit être dit entre vous, je vous aide à trouver comment le dire vous-même.",
-  },
-  {
-    q: "Puis-je être coaché seul pendant que nous sommes accompagnés à deux\u00a0?",
-    a: "Non. Pendant un accompagnement à deux ou plus, et dans les six mois qui suivent, je n'accompagne aucun des associés individuellement. Ma place est d'être la même pour chacun. Si l'un de vous a besoin d'un travail personnel, je vous oriente vers un ou une collègue.",
-  },
-  {
-    q: "Et si toutes les séances ne sont pas nécessaires\u00a0?",
-    a: "Pour Reset et Solo, on s'arrête quand l'objectif est atteint. Les séances que vous n'avez pas utilisées restent disponibles pendant un an, si vous en avez besoin plus tard.",
+    q: "Ce qui se dit en séance reste confidentiel\u00a0?",
+    a: "Oui. Rien de ce qui se dit en séance ne sort de nos échanges. Et à deux, ce qui se dit en séance individuelle sert le travail commun\u00a0: je ne répète rien à votre place, mais si quelque chose doit être dit entre vous, je vous aide à le dire vous-même.",
   },
 ];
 
@@ -174,12 +158,12 @@ const Offres = () => {
           ))}
         </nav>
         <div className="mx-auto mt-[50px] max-w-7xl px-6 pb-20 md:mt-16 md:px-10 md:pb-28">
-          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:grid-rows-[repeat(11,auto)] lg:items-stretch lg:gap-x-6 lg:gap-y-0">
+          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:grid-rows-[repeat(12,auto)] lg:items-stretch lg:gap-x-6 lg:gap-y-0">
             {offers.map((offer) => (
               <article
                 key={offer.id}
                 id={offer.id}
-                className="relative flex scroll-mt-28 flex-col rounded border border-border bg-secondary p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_11] lg:gap-0 lg:[&>*]:self-start"
+                className="relative flex scroll-mt-28 flex-col rounded border border-border bg-secondary p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_12] lg:gap-0 lg:[&>*]:self-start"
               >
                 {offer.aliases?.map((alias) => (
                   <span key={alias} id={alias} className="absolute top-0 scroll-mt-28" aria-hidden />
@@ -189,7 +173,18 @@ const Offres = () => {
                 <p className="mt-4 font-serif text-xl italic leading-snug text-foreground text-balance">
                   {offer.title}
                 </p>
-                <p className="mt-3 text-[17px] leading-snug text-foreground">{offer.format}</p>
+                <p className="mt-4">
+                  <span className="mb-1 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-accent">
+                    Séances
+                  </span>
+                  <span className="block text-[17px] leading-snug text-foreground lining-nums">{offer.sessions}</span>
+                </p>
+                <p className="mt-3">
+                  <span className="mb-1 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-accent">
+                    Durée
+                  </span>
+                  <span className="block text-[17px] leading-snug text-foreground">{offer.duration}</span>
+                </p>
                 <p className="mt-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">{offer.who}</p>
                 <p className="mt-5 font-serif text-3xl leading-none text-foreground lining-nums">{offer.price}</p>
                 <p className="mt-2 min-h-[1.25rem] text-[13px] leading-snug text-muted-foreground lining-nums">

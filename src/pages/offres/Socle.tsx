@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import OfferPage, { OfferColumns, OfferLede, OfferRead, OfferSection, OfferSituation, OfferSteps } from "@/components/OfferPage";
+import EchelleInconfort from "@/components/EchelleInconfort";
+import OfferPage, { OfferLede, OfferRead, OfferSection, OfferSituation, OfferSteps } from "@/components/OfferPage";
 
 const Socle = () => (
   <OfferPage
     name="Socle"
     hook="Quand tout va bien, et que vous voulez que ça dure."
-    description="Quand tout va bien, et que vous voulez que ça dure. Tout va bien entre vous."
+    description="Quand tout va bien, et que vous voulez que ça dure. Socle sert à repérer un inconfort tant qu'il est petit."
     path="/offres/socle/"
     ogImage="/og/socle.png"
     facts={[
-      { label: "Format", value: "Avec chacun, puis ensemble" },
-      { label: "Séances", value: "1h30 chacun, puis 2 séances de 2 à 3h" },
+      { label: "Séances", value: "Une avec chacun, puis deux ensemble" },
+      { label: "Durée", value: "1 à 3 mois" },
       { label: "Tarif", value: "3\u00a0000\u00a0€ HT à deux" },
     ]}
     price={"3\u00a0000\u00a0€ HT"}
@@ -24,32 +25,23 @@ const Socle = () => (
   >
     <OfferLede>
       <p>
-        Tout va bien entre vous. Et vous savez aussi que les associations qui cassent allaient
-        presque toutes bien, au début. Ce qui les a abîmées, ce n'est généralement pas une grande
-        dispute. Ce sont de petites choses, qu'on a rangées dans les détails, et qui sont revenues.
-      </p>
-      <p>
-        Vous n'avez pas besoin d'avoir un problème pour venir. Socle sert à se parler tant que
-        c'est encore simple de le faire.
+        Tout va bien entre vous. Et vous savez que les associations qui cassent allaient bien, au
+        début. Ce qui les a abîmées, ce n'est pas une grande dispute. Ce sont de petits inconforts
+        qu'on a gardés pour soi, et qui sont revenus.
       </p>
     </OfferLede>
 
     <OfferSection
-      title="Ce qu'on fait"
-      kicker="Une gêne qui passe une fois n'a rien d'inquiétant. Celle qui revient mérite qu'on s'y arrête."
+      title="Ce qu'on regarde"
+      kicker="Un inconfort qui revient finit par devenir une tension."
     >
-      <OfferColumns
-        items={[
-          {
-            title: "Ce qui revient",
-            text: "On fait remonter ce que chacun a rangé dans les détails, s'il y a quelque chose, avant que ça ne devienne une tension.",
-          },
-          {
-            title: "Ce qui va changer",
-            text: "Une levée, un recrutement, des rôles qui bougent. On en parle avant que ça change.",
-          },
-        ]}
-      />
+      <EchelleInconfort />
+      <OfferRead>
+        <p>
+          Un inconfort qui passe une fois n'a rien d'inquiétant. C'est celui qui revient qu'il faut
+          écouter. Socle sert à le repérer tant qu'il est petit, avant qu'il ne monte d'un cran.
+        </p>
+      </OfferRead>
     </OfferSection>
 
     <OfferSection title="Comment ça se passe">
@@ -57,21 +49,26 @@ const Socle = () => (
         steps={[
           {
             together: false,
+            duration: "1h30",
             text: (
               <p>
-                1h30 avec chacun. Seul, on dit plus facilement ce qu'on range dans les détails
-                devant son associé. Ce temps sert le travail commun{"\u00a0"}: ce qui doit être dit
-                entre vous, je vous aide à le dire vous-même.
+                Chacun me raconte, de son côté, comment il vit votre relation, et ce qu'il a déjà
+                essayé quand quelque chose ne lui convenait pas.
               </p>
             ),
           },
           {
             together: true,
+            duration: "2 à 3h",
+            text: <p>On met sur la table ce qui est apparu, pour que ça se règle avant de peser.</p>,
+          },
+          {
+            together: true,
+            duration: "2 à 3h",
             text: (
               <p>
-                Deux séances de 2 à 3h. On pose sur la table ce qui est remonté, on regarde comment
-                ça se joue entre vous, et ce que chacun peut faire autrement. Entre les deux, il y a
-                souvent quelque chose à observer.
+                Quelques semaines plus tard, on regarde ce que la première séance a fait bouger, et
+                on ajuste.
               </p>
             ),
           },
@@ -81,34 +78,18 @@ const Socle = () => (
 
     <OfferSection
       title="Ce que vous en retirez"
-      kicker="Ce que vous avez su faire une fois, vous pourrez le refaire sans moi."
-    >
-      <OfferRead>
-        <p>
-          L'expérience d'avoir eu cette conversation ensemble, et ce que chacun a décidé de faire
-          autrement.
-        </p>
-      </OfferRead>
-    </OfferSection>
+      kicker="Des inconforts désamorcés à temps, avant qu'ils ne deviennent des tensions."
+    />
 
-    <OfferSection title="Si quelque chose de plus sérieux apparaît">
+    <OfferSection title="Si la tension est déjà là">
       <OfferRead>
         <p>
-          Il arrive que Socle fasse apparaître une tension déjà installée. Dans ce cas, je vous le
-          dis à tous les deux en même temps, et nous voyons ensemble si{" "}
+          Il arrive que Socle fasse apparaître une tension déjà installée. Dans ce cas, on en parle
+          ensemble, et{" "}
           <Link to="/offres/reset/" className="text-accent hover:underline">
             Reset
           </Link>{" "}
-          a du sens. Rien n'est automatique.
-        </p>
-      </OfferRead>
-    </OfferSection>
-
-    <OfferSection title="Ma place" kicker="Je ne prends parti pour aucun de vous.">
-      <OfferRead>
-        <p>
-          C'est pour ça que, pendant l'accompagnement, et dans les six mois qui suivent, je
-          n'accompagne aucun des associés seul.
+          peut prendre le relais.
         </p>
       </OfferRead>
     </OfferSection>
