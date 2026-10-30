@@ -1,3 +1,4 @@
+// Page retirée du site : les récits servent de matière aux lettres. /situations/ redirige vers /blog/.
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
@@ -28,7 +29,7 @@ const situations: Situation[] = [
     },
     bridge: {
       label: "Ce que je propose : Socle",
-      to: "/offres/#socle",
+      to: "/offres/socle/",
     },
   },
   {
@@ -48,7 +49,7 @@ const situations: Situation[] = [
     },
     bridge: {
       label: "Ce que je propose : Socle",
-      to: "/offres/#socle",
+      to: "/offres/socle/",
     },
   },
   {
@@ -66,7 +67,7 @@ const situations: Situation[] = [
     },
     bridge: {
       label: "Ce que je propose : Reset",
-      to: "/offres/#reset",
+      to: "/offres/reset/",
     },
   },
   {

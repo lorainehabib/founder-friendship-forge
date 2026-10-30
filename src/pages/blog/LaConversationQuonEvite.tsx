@@ -5,7 +5,11 @@ import EchelleDiagram from "@/components/EchelleDiagram";
 import NewsletterCapture from "@/components/NewsletterCapture";
 import { blogPosts, newsletterName } from "@/content/blog";
 
-const post = blogPosts[0];
+const post = blogPosts.find((item) => item.slug === "la-conversation-quon-evite");
+
+if (!post) {
+  throw new Error("Lettre introuvable : la-conversation-quon-evite");
+}
 
 const inconfortQuotes = [
   "Assez vite, j'ai remarqué qu'il faisait passer ses intérêts personnels avant le reste.",

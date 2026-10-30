@@ -6,6 +6,7 @@ type SeoProps = {
   title: string;
   description: string;
   path: string;
+  ogImage?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 };
 
@@ -102,9 +103,10 @@ const buildBaseSchemas = (canonicalUrl: string) => {
   ];
 };
 
-const Seo = ({ title, description, path, structuredData }: SeoProps) => {
+const Seo = ({ title, description, path, ogImage, structuredData }: SeoProps) => {
   useEffect(() => {
     const canonicalUrl = new URL(path, `${SITE_URL}/`).toString();
+    const image = ogImage ? new URL(ogImage, `${SITE_URL}/`).toString() : `${SITE_URL}/social.png`;
 
     document.title = title;
     upsertCanonical(canonicalUrl);
@@ -114,7 +116,12 @@ const Seo = ({ title, description, path, structuredData }: SeoProps) => {
     upsertMeta("meta[property=\"og:url\"]", "property", "og:url", canonicalUrl);
     upsertMeta("meta[property=\"og:type\"]", "property", "og:type", "website");
     upsertMeta("meta[property=\"og:locale\"]", "property", "og:locale", "fr_FR");
+    upsertMeta("meta[property=\"og:image\"]", "property", "og:image", image);
+    upsertMeta("meta[property=\"og:image:secure_url\"]", "property", "og:image:secure_url", image);
+    upsertMeta("meta[property=\"og:image:width\"]", "property", "og:image:width", ogImage ? "1200" : "1024");
+    upsertMeta("meta[property=\"og:image:height\"]", "property", "og:image:height", ogImage ? "630" : "535");
     upsertMeta("meta[name=\"twitter:card\"]", "name", "twitter:card", "summary_large_image");
+    upsertMeta("meta[name=\"twitter:image\"]", "name", "twitter:image", image);
 
     const staleStructuredData = document.head.querySelectorAll('script[data-seo-jsonld="true"]');
     staleStructuredData.forEach((script) => script.remove());
@@ -128,7 +135,7 @@ const Seo = ({ title, description, path, structuredData }: SeoProps) => {
       script.text = JSON.stringify(schema);
       document.head.appendChild(script);
     }
-  }, [description, path, structuredData, title]);
+  }, [description, ogImage, path, structuredData, title]);
 
   return null;
 };

@@ -27,6 +27,18 @@ export const blogPosts: BlogPost[] = [
     path: "/blog/la-conversation-quon-evite/",
     published: true,
   },
+  {
+    slug: "c-est-lui-le-probleme",
+    title: "C'est lui le problème",
+    excerpt:
+      "Il pense exactement la même chose de vous. La part que prennent nos réactions dans un désaccord qui s'enlise.",
+    date: "2026-10-30",
+    dateLabel: "30 octobre 2026",
+    path: "/blog/c-est-lui-le-probleme/",
+    published: true,
+  },
 ];
 
-export const publishedPosts = blogPosts.filter((post) => post.published);
+export const publishedPosts = blogPosts
+  .filter((post) => post.published)
+  .sort((a, b) => b.date.localeCompare(a.date));

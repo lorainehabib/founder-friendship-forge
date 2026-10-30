@@ -21,18 +21,25 @@ const routes = [
   },
   {
     path: "/offres/",
-    title: "Travailler ensemble — Loraine Habib",
-    description:
-      "Socle, Reset, Solo : trois accompagnements pour fondateurs, avant la tension, quand c'est déjà tendu, ou en individuel.",
+    title: "Travailler ensemble · Loraine Habib",
+    description: "Socle, Reset, Solo : qui vient, dans quel ordre, seul ou ensemble.",
     changefreq: "weekly",
     priority: "0.9",
   },
   {
-    path: "/situations/",
-    title: "Situations — Loraine Habib | Quelques exemples d'accompagnements",
-    description:
-      "Quatre situations réelles d'accompagnement de fondateurs, avant, pendant et après l'installation d'une tension entre associés.",
-    changefreq: "weekly",
+    path: "/offres/socle/",
+    title: "Socle · Loraine Habib",
+    description: "Quand tout va bien, et que vous voulez que ça dure. Tout va bien entre vous.",
+    ogImage: "/og/socle.png",
+    changefreq: "monthly",
+    priority: "0.8",
+  },
+  {
+    path: "/offres/reset/",
+    title: "Reset · Loraine Habib",
+    description: "Quand c'est déjà tendu, et que vous venez ensemble. Vous avez déjà eu la conversation.",
+    ogImage: "/og/reset.png",
+    changefreq: "monthly",
     priority: "0.8",
   },
   {
@@ -76,6 +83,14 @@ const routes = [
     priority: "0.7",
   },
   {
+    path: "/blog/c-est-lui-le-probleme/",
+    title: "C'est lui le problème · Loraine Habib",
+    description:
+      "Il pense exactement la même chose de vous. La part que prennent nos réactions dans un désaccord qui s'enlise.",
+    changefreq: "monthly",
+    priority: "0.7",
+  },
+  {
     path: "/mentions-legales/",
     title: "Mentions légales — Loraine Habib | Coaching fondateurs",
     description:
@@ -97,7 +112,7 @@ const upsert = (html, pattern, replacement, anchorPattern) => {
   return html.replace(anchorPattern, `${replacement}\n$&`);
 };
 
-const updateHtml = ({ path, title, description }) => {
+const updateHtml = ({ path, title, description, ogImage }) => {
   const canonical = `${siteUrl}${path}`;
 
   let html = indexHtml
@@ -106,6 +121,16 @@ const updateHtml = ({ path, title, description }) => {
     .replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${canonical}" />`)
     .replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${title}" />`)
     .replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${description}" />`);
+
+  if (ogImage) {
+    const image = `${siteUrl}${ogImage}`;
+    html = html
+      .replace(/<meta property="og:image" content=".*?" \/>/, `<meta property="og:image" content="${image}" />`)
+      .replace(/<meta property="og:image:secure_url" content=".*?" \/>/, `<meta property="og:image:secure_url" content="${image}" />`)
+      .replace(/<meta property="og:image:width" content=".*?" \/>/, `<meta property="og:image:width" content="1200" />`)
+      .replace(/<meta property="og:image:height" content=".*?" \/>/, `<meta property="og:image:height" content="630" />`)
+      .replace(/<meta name="twitter:image" content=".*?" \/>/, `<meta name="twitter:image" content="${image}" />`);
+  }
 
   html = upsert(
     html,
@@ -145,4 +170,25 @@ ${sitemapBody}
 `;
 
 await writeFile(resolve(distDir, "sitemap.xml"), sitemap, "utf8");
+
+const situationsDir = resolve(distDir, "situations");
+await mkdir(situationsDir, { recursive: true });
+await writeFile(
+  resolve(situationsDir, "index.html"),
+  `<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>L'angle mort · Loraine Habib</title>
+    <link rel="canonical" href="${siteUrl}/blog/" />
+    <meta http-equiv="refresh" content="0; url=/blog/" />
+    <script>location.replace("/blog/");</script>
+  </head>
+  <body>
+    <p><a href="/blog/">L'angle mort</a></p>
+  </body>
+</html>
+`,
+  "utf8",
+);
 

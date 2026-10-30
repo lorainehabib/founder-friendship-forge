@@ -16,8 +16,13 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://lorainehabib.com/situations/</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://lorainehabib.com/offres/socle/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lorainehabib.com/offres/reset/</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
@@ -37,6 +42,11 @@
   </url>
   <url>
     <loc>https://lorainehabib.com/blog/la-conversation-quon-evite/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lorainehabib.com/blog/c-est-lui-le-probleme/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

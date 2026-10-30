@@ -2,7 +2,10 @@ import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
-import { CALENDLY_URL } from "@/lib/site";
+import ReserveButton from "@/components/ReserveButton";
+
+const LETTER_CONVERSATION = "/blog/la-conversation-quon-evite/";
+const LETTER_BOUCLE = "/blog/c-est-lui-le-probleme/";
 
 type Offer = {
   id: string;
@@ -12,10 +15,11 @@ type Offer = {
   who: string;
   format: string;
   price: string;
-  priceNote?: string;
+  priceNote: string;
   signs: [string, string, string];
-  approach: string;
-  situation: { title: string; to: string };
+  description: string;
+  detail?: string;
+  situation?: { title: string; to: string };
 };
 
 const offers: Offer[] = [
@@ -25,20 +29,20 @@ const offers: Offer[] = [
     name: "Socle",
     title: "Quand tout va bien, et que vous voulez que ça dure",
     who: "À deux ou plus",
-    format:
-      "1h30 chacun, puis 2 séances de 2 à 3h ensemble",
-    price: "3 000 € HT",
-    priceNote: "À deux · 4 000 € HT à trois · au-delà sur devis",
+    format: "1h30 chacun, puis 2 séances de 2 à 3h ensemble",
+    price: "3\u00a0000\u00a0€ HT",
+    priceNote: "À deux · 4\u00a0000\u00a0€ HT à trois · au-delà sur devis",
     signs: [
+      "Tout va bien, et vous savez que c'est maintenant que ça se travaille.",
       "Vous vous associez, et vous voulez poser de bonnes bases.",
-      "De petites frustrations reviennent, sans que personne ne les nomme.",
       "Vous venez de lever, et les rôles vont changer.",
     ],
-    approach:
-      "Je vous aide à repérer les inconforts tant qu'ils sont petits, et à en parler avant qu'ils ne deviennent des tensions.",
+    description:
+      "Seul avec moi, chacun dit ce qu'il a remarqué, même ce qu'il range dans les détails. Ensemble, on regarde comment ça se joue entre vous, et ce que chacun peut faire autrement. Vous repartez capables d'avoir cette conversation sans moi.",
+    detail: "/offres/socle/",
     situation: {
-      title: "Tout va bien, à un détail près",
-      to: "/situations/#alex-stan",
+      title: "La conversation qu'on évite",
+      to: LETTER_CONVERSATION,
     },
   },
   {
@@ -47,39 +51,37 @@ const offers: Offer[] = [
     name: "Reset",
     title: "Quand c'est déjà tendu, et que vous venez ensemble",
     who: "À deux ou plus",
-    format: "Séances individuelles et communes",
-    price: "Dès 6 000 € HT",
+    format: "Une séance ensemble, 1h30 chacun, puis 4 séances de 2h, sur trois mois",
+    price: "Dès 6\u00a0000\u00a0€ HT",
     priceNote: "Selon la situation et le nombre d'associés",
     signs: [
       "Vous avez le sentiment d'avoir déjà tout essayé.",
       "Le même désaccord revient, sous des formes différentes.",
       "L'un de vous se demande s'il veut continuer.",
     ],
-    approach:
-      "Je ne creuse pas le fond du désaccord, je regarde la façon dont vous réagissez l'un à l'autre. C'est à cet endroit que la relation peut bouger.",
+    description:
+      "Je ne creuse pas le fond du désaccord, je regarde la façon dont vous réagissez l'un à l'autre. C'est à cet endroit que la relation peut bouger. Le temps seul avec chacun sert à entendre ce qui ne se dit pas encore devant l'autre. Entre les séances, il y a souvent quelque chose à essayer.",
+    detail: "/offres/reset/",
     situation: {
-      title: "Se parler, à cinq associés",
-      to: "/situations/#cinq-associes",
+      title: "C'est lui le problème",
+      to: LETTER_BOUCLE,
     },
   },
   {
     id: "solo",
     name: "Solo",
     title: "Quand vous venez seul",
-    who: "Seul · Coaching individuel",
+    who: "Coaching individuel",
     format: "8 séances d'1h30, sur cinq mois",
-    price: "4 500 € HT",
+    price: "4\u00a0500\u00a0€ HT",
+    priceNote: "",
     signs: [
-      "La relation avec votre associé vous pèse, et il n'est pas prêt à se faire accompagner.",
+      "La relation avec votre associé vous pèse, et vous voulez que quelque chose change, même s'il ne vient pas.",
       "Vous prenez un nouveau poste, ou un nouveau périmètre.",
       "Une décision traîne depuis des mois.",
     ],
-    approach:
-      "On part du concret : un moment précis, une réaction, une décision qui coince pour atteindre l'objectif fixé.",
-    situation: {
-      title: "Ça ne va plus",
-      to: "/situations/#ca-ne-va-plus",
-    },
+    description:
+      "On part du concret\u00a0: un moment précis, une réaction, une décision qui coince. On fixe dès la première séance un objectif clair\u00a0: à quoi vous verrez que ça a changé. Entre deux séances, il y a souvent une chose à essayer, choisie ensemble.",
   },
 ];
 
@@ -108,6 +110,18 @@ const faqItems = [
     q: "Comment ça se passe si on se rend compte qu'on doit se séparer ?",
     a: "Ça arrive. Le travail fait bouger la relation, et parfois, en y voyant plus clair, l'un des deux se rend compte que les conditions ne lui conviennent plus. Cette décision serait venue de toute façon. Elle vient juste plus vite, et plus lucidement.",
   },
+  {
+    q: "Ce que je dis seul, vous le répéterez à mon associé\u00a0?",
+    a: "Ce qui se dit en séance individuelle sert le travail commun. Je ne répète rien à votre place, mais je ne garde pas non plus un secret qui empêcherait d'avancer\u00a0: si quelque chose doit être dit entre vous, je vous aide à trouver comment le dire vous-même.",
+  },
+  {
+    q: "Puis-je être coaché seul pendant que nous sommes accompagnés à deux\u00a0?",
+    a: "Non. Pendant un accompagnement à deux ou plus, et dans les six mois qui suivent, je n'accompagne aucun des associés individuellement. Ma place est d'être la même pour chacun. Si l'un de vous a besoin d'un travail personnel, je vous oriente vers un ou une collègue.",
+  },
+  {
+    q: "Et si toutes les séances ne sont pas nécessaires\u00a0?",
+    a: "Pour Reset et Solo, on s'arrête quand l'objectif est atteint. Les séances que vous n'avez pas utilisées restent disponibles pendant un an, si vous en avez besoin plus tard.",
+  },
 ];
 
 const faqSchema = {
@@ -127,116 +141,111 @@ const Offres = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Travailler ensemble — Loraine Habib"
-        description="Socle, Reset, Solo : trois accompagnements pour fondateurs, avant la tension, quand c'est déjà tendu, ou en individuel."
+        title="Travailler ensemble · Loraine Habib"
+        description={"Socle, Reset, Solo\u00a0: qui vient, dans quel ordre, seul ou ensemble."}
         path="/offres/"
         structuredData={faqSchema}
       />
 
       <section>
-        <div className="mx-auto max-w-7xl px-6 md:px-10 pt-16 md:pt-28 pb-10 md:pb-14">
-          <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground max-w-4xl">
+        <div className="mx-auto max-w-7xl px-6 pt-[88px] md:px-10 md:pt-[133px]">
+          <h1 className="max-w-4xl font-serif text-[48px] font-normal leading-none text-foreground md:text-[72px]">
             Travailler ensemble.
           </h1>
-          <nav
-            aria-label="Les trois offres"
-            className="mt-8 flex flex-wrap gap-2 lg:hidden"
-          >
-            {offers.map((offer) => (
-              <a
-                key={offer.id}
-                href={`#${offer.id}`}
-                className="border border-border px-3 py-1.5 text-sm text-foreground hover:border-accent hover:text-accent transition-colors"
-              >
-                {offer.name}
-              </a>
-            ))}
-          </nav>
+          <p className="mt-5 text-base text-[#5c5148]">
+            Trois façons de travailler, selon votre situation.
+          </p>
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto max-w-7xl px-6 md:px-10 pb-20 md:pb-28">
-          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-6 lg:gap-y-0 lg:grid-rows-[repeat(13,auto)]">
+      <section className="relative">
+        <nav
+          aria-label="Les trois offres"
+          className="absolute left-6 right-6 top-[calc(-50px+8px)] flex flex-wrap gap-2 md:left-10 lg:hidden"
+        >
+          {offers.map((offer) => (
+            <a
+              key={offer.id}
+              href={`#${offer.id}`}
+              className="border border-border px-3 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
+            >
+              {offer.name}
+            </a>
+          ))}
+        </nav>
+        <div className="mx-auto mt-[50px] max-w-7xl px-6 pb-20 md:mt-16 md:px-10 md:pb-28">
+          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:grid-rows-[repeat(11,auto)] lg:items-stretch lg:gap-x-6 lg:gap-y-0">
             {offers.map((offer) => (
               <article
                 key={offer.id}
                 id={offer.id}
-                className="relative scroll-mt-28 flex flex-col border border-border/70 border-t-[3px] border-t-accent bg-secondary/55 p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_13] lg:gap-0 lg:[&>*]:self-start"
+                className="relative flex scroll-mt-28 flex-col rounded border border-border bg-secondary p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_11] lg:gap-0 lg:[&>*]:self-start"
               >
                 {offer.aliases?.map((alias) => (
-                  <span
-                    key={alias}
-                    id={alias}
-                    className="absolute top-0 scroll-mt-28"
-                    aria-hidden
-                  />
+                  <span key={alias} id={alias} className="absolute top-0 scroll-mt-28" aria-hidden />
                 ))}
 
-                <h2 className="font-serif text-6xl lg:text-7xl leading-[0.9] text-accent">
-                  {offer.name}
-                </h2>
-                <h3 className="mt-5 font-serif text-xl lg:text-[1.35rem] leading-snug font-medium text-foreground text-balance">
+                <h2 className="font-serif text-5xl leading-[0.9] text-foreground md:text-6xl">{offer.name}</h2>
+                <p className="mt-4 font-serif text-xl italic leading-snug text-foreground text-balance">
                   {offer.title}
-                </h3>
-
-                <p className="mt-8 w-full border-t border-border/80 bg-background px-4 pt-5 pb-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground lg:!self-stretch">
-                  {offer.who}
                 </p>
-                <p className="w-full bg-background px-4 py-1.5 text-sm leading-snug text-foreground/80 lg:!self-stretch">
-                  {offer.format}
-                </p>
-                <p className="w-full bg-background px-4 pt-2 font-serif text-xl leading-snug text-foreground lg:!self-stretch">
-                  {offer.price}
-                </p>
-                <p className="w-full border-b border-border/80 bg-background px-4 pt-2 pb-5 text-[13px] leading-snug text-muted-foreground lg:!self-stretch">
-                  {offer.priceNote ?? ""}
+                <p className="mt-3 text-[17px] leading-snug text-foreground">{offer.format}</p>
+                <p className="mt-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">{offer.who}</p>
+                <p className="mt-5 font-serif text-3xl leading-none text-foreground lining-nums">{offer.price}</p>
+                <p className="mt-2 min-h-[1.25rem] text-[13px] leading-snug text-muted-foreground lining-nums">
+                  {offer.priceNote}
                 </p>
 
-                <p className="mt-6 font-serif italic text-lg leading-snug text-foreground">
-                  Vous en êtes peut-être là
-                </p>
-                {offer.signs.map((sign) => (
-                  <p
-                    key={sign}
-                    className="mt-3 border-l border-accent/50 pl-3 text-[15px] leading-snug text-foreground/85"
-                  >
-                    {sign}
+                <div>
+                  <p className="mt-6 font-serif text-lg italic leading-snug text-foreground">
+                    Vous en êtes peut-être là
                   </p>
-                ))}
+                  <ul className="mt-2.5 flex flex-col gap-2.5">
+                    {offer.signs.map((sign) => (
+                      <li key={sign} className="flex items-start gap-3 text-[15px] leading-snug text-foreground/85">
+                        <span aria-hidden className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 bg-accent" />
+                        <span>{sign}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <p className="mt-6 w-full border-t border-border/70 pt-5 font-serif text-lg md:text-xl leading-snug text-foreground">
-                  {offer.approach}
-                </p>
+                <p className="mt-6 text-[15px] leading-relaxed text-foreground/85">{offer.description}</p>
 
-                <Link
-                  to={offer.situation.to}
-                  className="group mt-8 inline-flex flex-col gap-1.5 text-accent hover:text-foreground transition-colors w-fit"
-                >
-                  <span className="inline-flex items-center gap-2 text-sm tracking-wide">
-                    <span className="border-b border-accent/40 group-hover:border-foreground pb-0.5">
-                      Lire une situation réelle
+                {offer.detail ? (
+                  <Link
+                    to={offer.detail}
+                    className="group mt-8 inline-flex w-fit items-center gap-2 text-sm text-accent"
+                  >
+                    <span className="border-b border-transparent pb-0.5 group-hover:border-accent">
+                      Voir le détail
                     </span>
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
                       →
                     </span>
-                  </span>
-                  <span className="text-sm text-foreground/55 group-hover:text-foreground/80">
-                    « {offer.situation.title} »
-                  </span>
-                </Link>
+                  </Link>
+                ) : (
+                  <span className="mt-8" aria-hidden />
+                )}
 
-                <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group mt-5 inline-flex w-full items-center justify-center gap-2 bg-accent text-accent-foreground px-4 py-3.5 text-sm tracking-wide hover:bg-foreground transition-colors duration-300"
-                >
-                  Réserver un échange
-                  <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                    →
-                  </span>
-                </a>
+                <ReserveButton className="mt-4 w-full" />
+
+                {offer.situation ? (
+                  <Link
+                    to={offer.situation.to}
+                    className="group mt-4 inline-flex w-fit flex-col gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    <span className="inline-flex items-center gap-2">
+                      Lire une situation réelle
+                      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </span>
+                    <span>«{"\u00a0"}{offer.situation.title}{"\u00a0"}»</span>
+                  </Link>
+                ) : (
+                  <span className="mt-4" aria-hidden />
+                )}
               </article>
             ))}
           </div>
@@ -244,24 +253,20 @@ const Offres = () => {
       </section>
 
       <section className="border-t border-border/60 bg-secondary/30">
-        <div className="mx-auto max-w-5xl px-6 md:px-10 py-24 md:py-32">
-          <p className="text-xs uppercase tracking-[0.3em] text-accent mb-8">
-            Ce qu'on me demande souvent
-          </p>
+        <div className="mx-auto max-w-5xl px-6 py-24 md:px-10 md:py-32">
+          <p className="mb-8 text-xs uppercase tracking-[0.3em] text-accent">Ce qu'on me demande souvent</p>
           <div className="divide-y divide-border/70 border-y border-border/70">
             {faqItems.map((item) => (
               <details key={item.q} className="group py-8">
-                <summary className="flex cursor-pointer items-start justify-between gap-8 list-none">
-                  <h3 className="font-serif text-xl md:text-2xl text-foreground leading-snug group-open:text-accent transition-colors text-balance">
+                <summary className="flex cursor-pointer list-none items-start justify-between gap-8">
+                  <h3 className="text-balance font-serif text-xl leading-snug text-foreground transition-colors group-open:text-accent md:text-2xl">
                     {item.q}
                   </h3>
-                  <span className="text-accent text-2xl font-serif leading-none mt-1 transition-transform duration-500 group-open:rotate-45">
+                  <span className="mt-1 font-serif text-2xl leading-none text-accent transition-transform duration-500 group-open:rotate-45">
                     +
                   </span>
                 </summary>
-                <p className="mt-5 text-foreground/80 leading-relaxed max-w-3xl text-lg">
-                  {item.a}
-                </p>
+                <p className="mt-5 max-w-3xl text-lg leading-relaxed text-foreground/80">{item.a}</p>
               </details>
             ))}
           </div>
@@ -269,6 +274,10 @@ const Offres = () => {
       </section>
 
       <CtaBlock />
+
+      <div className="offer-mobile-reserve fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 px-4 py-3 backdrop-blur lg:hidden">
+        <ReserveButton className="w-full" />
+      </div>
     </SiteLayout>
   );
 };

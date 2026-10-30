@@ -9,7 +9,6 @@ const links = [
   { to: "/", label: "Accueil", end: true },
   { to: "/approche/", label: "Approche" },
   { to: "/offres/", label: "Offres" },
-  { to: "/situations/", label: "Situations" },
   { to: "/a-propos/", label: "À propos" },
   { to: "/blog/", label: newsletterName },
 ];
