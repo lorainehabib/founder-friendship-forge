@@ -5,6 +5,7 @@ import BoucleCharles from "@/components/BoucleCharles";
 import ReserveButton from "@/components/ReserveButton";
 import NewsletterCapture from "@/components/NewsletterCapture";
 import { blogPosts, newsletterName } from "@/content/blog";
+import { blogPostingSchema, blogPostSeo } from "@/seo-routes";
 
 const post = blogPosts.find((item) => item.slug === "c-est-lui-le-probleme");
 
@@ -12,28 +13,15 @@ if (!post) {
   throw new Error("Lettre introuvable : c-est-lui-le-probleme");
 }
 
-const articleSchema = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: post.title,
-  description: post.excerpt,
-  datePublished: post.date,
-  dateModified: post.date,
-  inLanguage: "fr",
-  url: `https://lorainehabib.com${post.path}`,
-  author: {
-    "@type": "Person",
-    name: "Loraine Habib",
-    url: "https://lorainehabib.com/",
-  },
-};
+const articleSchema = blogPostingSchema(post);
+const postSeo = blogPostSeo(post);
 
 const CestLuiLeProbleme = () => {
   return (
     <SiteLayout>
       <Seo
-        title={`${post.title} · Loraine Habib`}
-        description={post.excerpt}
+        title={postSeo.title}
+        description={postSeo.description}
         path={post.path}
         structuredData={articleSchema}
       />

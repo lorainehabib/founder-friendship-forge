@@ -10,6 +10,8 @@ export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
+  /** Titre de l'onglet et des aperçus. À défaut : « titre · Loraine Habib ». */
+  seoTitle?: string;
   date: string;
   dateLabel: string;
   path: string;
@@ -20,6 +22,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "la-conversation-quon-evite",
     title: "La conversation qu'on évite",
+    seoTitle: "La conversation qu'on évite entre associés · Loraine Habib",
     excerpt:
       "Ce qui casse une association, ce ne sont pas les grandes disputes. Ce sont les petits inconforts qu'on a gardés pour soi.",
     date: "2026-09-10",
@@ -30,6 +33,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "c-est-lui-le-probleme",
     title: "C'est lui le problème",
+    seoTitle: "C'est lui le problème\u00a0: désaccord entre associés · Loraine Habib",
     excerpt:
       "Il pense exactement la même chose de vous. La part que prennent nos réactions dans un désaccord qui s'enlise.",
     date: "2026-10-30",
@@ -42,3 +46,6 @@ export const blogPosts: BlogPost[] = [
 export const publishedPosts = blogPosts
   .filter((post) => post.published)
   .sort((a, b) => b.date.localeCompare(a.date));
+
+// Une nouvelle lettre publiée ici est prérendue au build (voir prerenderRoutes).
+// Il faut aussi la déclarer dans App.tsx, avec sa page.

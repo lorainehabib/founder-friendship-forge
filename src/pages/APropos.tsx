@@ -5,6 +5,7 @@ import Seo from "@/components/Seo";
 import Picture from "@/components/Picture";
 import portraitJpg from "@/assets/loraine-portrait-3.jpg";
 import portraitWebp from "@/assets/loraine-portrait-3.webp";
+import { aProposSeo } from "@/seo-routes";
 
 const trainings = [
   {
@@ -31,8 +32,8 @@ const APropos = () => {
   return (
     <SiteLayout>
       <Seo
-        title="À propos · Loraine Habib"
-        description="Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre associés."
+        title={aProposSeo.title}
+        description={aProposSeo.description}
         path="/a-propos/"
       />
 

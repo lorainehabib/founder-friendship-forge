@@ -7,6 +7,7 @@ import EchelleDiagram from "@/components/EchelleDiagram";
 import FreebieCapture from "@/components/FreebieCapture";
 import portraitJpg from "@/assets/loraine-portrait-2.jpg";
 import portraitWebp from "@/assets/loraine-portrait-2.webp";
+import { homeSeo } from "@/seo-routes";
 
 const recognitionItems = [
   "Vous mettez trois réunions à trancher ce qui se décidait en cinq minutes.",
@@ -76,8 +77,8 @@ const Index = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Loraine Habib · Coach de fondateurs | Relation entre cofondateurs"
-        description="La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension."
+        title={homeSeo.title}
+        description={homeSeo.description}
         path="/"
         structuredData={reviewSchemas}
       />

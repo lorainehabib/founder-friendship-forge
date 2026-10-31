@@ -3,6 +3,7 @@ import SiteLayout from "@/components/SiteLayout";
 import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
 import ReserveButton from "@/components/ReserveButton";
+import { offresSeo } from "@/seo-routes";
 
 type Offer = {
   id: string;
@@ -118,8 +119,8 @@ const Offres = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Travailler ensemble · Loraine Habib"
-        description={"Socle, Reset, Solo\u00a0: qui vient, dans quel ordre, seul ou ensemble."}
+        title={offresSeo.title}
+        description={offresSeo.description}
         path="/offres/"
         structuredData={faqSchema}
       />

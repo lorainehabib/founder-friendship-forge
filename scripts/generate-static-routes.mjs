@@ -1,117 +1,18 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
+
+process.env.NODE_ENV = "production";
 
 const siteUrl = "https://lorainehabib.com";
-const routes = [
-  {
-    path: "/",
-    title: "Loraine Habib · Coach de fondateurs | Relation entre cofondateurs",
-    description:
-      "La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension.",
-    changefreq: "weekly",
-    priority: "1.0",
-  },
-  {
-    path: "/approche/",
-    title: "Approche · Loraine Habib | Travailler la relation",
-    description:
-      "Travailler la relation, avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions.",
-    changefreq: "weekly",
-    priority: "0.9",
-  },
-  {
-    path: "/offres/",
-    title: "Travailler ensemble · Loraine Habib",
-    description: "Socle, Reset, Solo : qui vient, dans quel ordre, seul ou ensemble.",
-    changefreq: "weekly",
-    priority: "0.9",
-  },
-  {
-    path: "/offres/socle/",
-    title: "Socle · Loraine Habib",
-    description: "Quand tout va bien, à quelques détails près. Socle sert à repérer un inconfort tant qu'il est petit.",
-    ogImage: "/og/socle.png",
-    changefreq: "monthly",
-    priority: "0.8",
-  },
-  {
-    path: "/offres/reset/",
-    title: "Reset · Loraine Habib",
-    description: "Quand c'est déjà tendu, et que vous venez ensemble. Reset regarde la façon dont vous réagissez l'un à l'autre.",
-    ogImage: "/og/reset.png",
-    changefreq: "monthly",
-    priority: "0.8",
-  },
-  {
-    path: "/offres/solo/",
-    title: "Solo · Loraine Habib",
-    description:
-      "Quand vous venez seul, pour faire bouger une situation. On fixe un objectif concret, puis on cherche ce qui entretient le problème.",
-    ogImage: "/og/solo.png",
-    changefreq: "monthly",
-    priority: "0.8",
-  },
-  {
-    path: "/a-propos/",
-    title: "À propos · Loraine Habib",
-    description:
-      "Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre associés.",
-    changefreq: "monthly",
-    priority: "0.7",
-  },
-  {
-    path: "/faire-le-point/",
-    title: "Le point sur votre association · Loraine Habib",
-    description:
-      "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
-    changefreq: "monthly",
-    priority: "0.6",
-  },
-  {
-    path: "/le-point/",
-    title: "Le point sur votre association · Loraine Habib",
-    description:
-      "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
-    changefreq: "monthly",
-    priority: "0.6",
-  },
-  {
-    path: "/blog/",
-    title: "L'angle mort · Loraine Habib",
-    description:
-      "Une lettre sur ce qui empêche les dirigeants d'avancer.",
-    changefreq: "weekly",
-    priority: "0.7",
-  },
-  {
-    path: "/blog/la-conversation-quon-evite/",
-    title: "La conversation qu'on évite · Loraine Habib",
-    description:
-      "Ce qui casse une association, ce ne sont pas les grandes disputes. Ce sont les petits inconforts qu'on a gardés pour soi.",
-    changefreq: "monthly",
-    priority: "0.7",
-  },
-  {
-    path: "/blog/c-est-lui-le-probleme/",
-    title: "C'est lui le problème · Loraine Habib",
-    description:
-      "Il pense exactement la même chose de vous. La part que prennent nos réactions dans un désaccord qui s'enlise.",
-    changefreq: "monthly",
-    priority: "0.7",
-  },
-  {
-    path: "/mentions-legales/",
-    title: "Mentions légales · Loraine Habib | Coaching fondateurs",
-    description:
-      "Mentions légales, éditeur du site, RGPD et hébergement de lorainehabib.com, spécialisé en accompagnement de fondateurs.",
-    changefreq: "yearly",
-    priority: "0.3",
-  },
-];
+const serverEntry = pathToFileURL(resolve(process.cwd(), "dist/server/entry-server.js")).href;
+const { render, prerenderRoutes: routes } = await import(serverEntry);
 
 const distDir = resolve(process.cwd(), "dist");
 const indexFile = resolve(distDir, "index.html");
 const indexHtml = await readFile(indexFile, "utf8");
+
+const attr = (value) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
 
 const upsert = (html, pattern, replacement, anchorPattern) => {
   if (pattern.test(html)) {
@@ -125,11 +26,11 @@ const updateHtml = ({ path, title, description, ogImage }) => {
   const canonical = `${siteUrl}${path}`;
 
   let html = indexHtml
-    .replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
-    .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${description}" />`)
+    .replace(/<title>.*?<\/title>/, `<title>${attr(title)}</title>`)
+    .replace(/<meta name="description" content=".*?" \/>/, `<meta name="description" content="${attr(description)}" />`)
     .replace(/<link rel="canonical" href=".*?" \/>/, `<link rel="canonical" href="${canonical}" />`)
-    .replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${title}" />`)
-    .replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${description}" />`);
+    .replace(/<meta property="og:title" content=".*?" \/>/, `<meta property="og:title" content="${attr(title)}" />`)
+    .replace(/<meta property="og:description" content=".*?" \/>/, `<meta property="og:description" content="${attr(description)}" />`);
 
   if (ogImage) {
     const image = `${siteUrl}${ogImage}`;
@@ -152,10 +53,17 @@ const updateHtml = ({ path, title, description, ogImage }) => {
 };
 
 for (const route of routes) {
-  if (route.path === "/") continue;
-  const routeDir = resolve(distDir, route.path.slice(1));
+  const appHtml = render(route.path);
+  if (appHtml.includes("Cette page n'existe pas.")) {
+    throw new Error(`Le prérendu de ${route.path} a produit la page 404. Ajoutez la route dans App.tsx.`);
+  }
+  if (!indexHtml.includes('<div id="root"></div>')) {
+    throw new Error('Le modèle dist/index.html ne contient pas <div id="root"></div>.');
+  }
+  const html = updateHtml(route).replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  const routeDir = route.path === "/" ? distDir : resolve(distDir, route.path.slice(1));
   await mkdir(routeDir, { recursive: true });
-  await writeFile(resolve(routeDir, "index.html"), updateHtml(route), "utf8");
+  await writeFile(resolve(routeDir, "index.html"), html, "utf8");
 }
 
 const lastmod = new Date().toISOString().slice(0, 10);
@@ -201,3 +109,4 @@ await writeFile(
   "utf8",
 );
 
+await rm(resolve(distDir, "server"), { recursive: true, force: true });

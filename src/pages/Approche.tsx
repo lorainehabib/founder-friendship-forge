@@ -3,6 +3,7 @@ import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import EchelleDiagram from "@/components/EchelleDiagram";
 import FreebieCapture from "@/components/FreebieCapture";
+import { approcheSeo } from "@/seo-routes";
 
 const faqItems = [
   {
@@ -40,8 +41,8 @@ const Approche = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Approche · Loraine Habib | Travailler la relation"
-        description="Travailler la relation, avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions."
+        title={approcheSeo.title}
+        description={approcheSeo.description}
         path="/approche/"
         structuredData={faqSchema}
       />

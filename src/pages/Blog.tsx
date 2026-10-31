@@ -3,13 +3,14 @@ import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import NewsletterCapture from "@/components/NewsletterCapture";
 import { publishedPosts, newsletterDescription, newsletterName, newsletterTagline } from "@/content/blog";
+import { blogSeo } from "@/seo-routes";
 
 const Blog = () => {
   return (
     <SiteLayout>
       <Seo
-        title={`${newsletterName} · Loraine Habib`}
-        description={newsletterTagline}
+        title={blogSeo.title}
+        description={blogSeo.description}
         path="/blog/"
       />
       <section>

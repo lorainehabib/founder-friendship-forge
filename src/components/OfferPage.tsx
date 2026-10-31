@@ -11,6 +11,7 @@ export type OfferFact = {
 
 type OfferPageProps = {
   name: string;
+  title?: string;
   hook: string;
   description: string;
   path: string;
@@ -115,6 +116,7 @@ export const OfferSituation = ({
 
 const OfferPage = ({
   name,
+  title,
   hook,
   description,
   path,
@@ -126,7 +128,7 @@ const OfferPage = ({
   children,
 }: OfferPageProps) => (
   <SiteLayout>
-    <Seo title={`${name} · Loraine Habib`} description={description} path={path} ogImage={ogImage} />
+    <Seo title={title ?? `${name} · Loraine Habib`} description={description} path={path} ogImage={ogImage} />
     <article className="lining-nums">
       <div className="mx-auto max-w-[760px] px-6">
         <p className="mb-5 mt-8 text-sm text-muted-foreground md:mt-10">

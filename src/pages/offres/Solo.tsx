@@ -1,11 +1,13 @@
 import OfferPage, { OfferLede, OfferRead, OfferSection } from "@/components/OfferPage";
 import SeanceRythme from "@/components/SeanceRythme";
+import { soloSeo } from "@/seo-routes";
 
 const Solo = () => (
   <OfferPage
     name="Solo"
+    title={soloSeo.title}
     hook="Quand vous venez seul, pour faire bouger une situation."
-    description="Quand vous venez seul, pour faire bouger une situation. On fixe un objectif concret, puis on cherche ce qui entretient le problème."
+    description={soloSeo.description}
     path="/offres/solo/"
     ogImage="/og/solo.png"
     facts={[

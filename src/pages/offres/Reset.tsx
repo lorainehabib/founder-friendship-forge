@@ -1,11 +1,13 @@
 import OfferPage, { OfferLede, OfferRead, OfferSection, OfferSituation, OfferSteps } from "@/components/OfferPage";
 import ReactionLoop from "@/components/ReactionLoop";
+import { resetSeo } from "@/seo-routes";
 
 const Reset = () => (
   <OfferPage
     name="Reset"
+    title={resetSeo.title}
     hook="Quand c'est déjà tendu, et que vous venez ensemble."
-    description="Quand c'est déjà tendu, et que vous venez ensemble. Reset regarde la façon dont vous réagissez l'un à l'autre."
+    description={resetSeo.description}
     path="/offres/reset/"
     ogImage="/og/reset.png"
     facts={[

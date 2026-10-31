@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import EchelleInconfort from "@/components/EchelleInconfort";
 import OfferPage, { OfferLede, OfferRead, OfferSection, OfferSituation, OfferSteps } from "@/components/OfferPage";
+import { socleSeo } from "@/seo-routes";
 
 const Socle = () => (
   <OfferPage
     name="Socle"
+    title={socleSeo.title}
     hook="Quand tout va bien, à quelques détails près."
-    description="Quand tout va bien, à quelques détails près. Socle sert à repérer un inconfort tant qu'il est petit."
+    description={socleSeo.description}
     path="/offres/socle/"
     ogImage="/og/socle.png"
     facts={[

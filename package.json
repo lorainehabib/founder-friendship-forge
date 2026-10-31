@@ -11,7 +11,7 @@
     "dev": "vite",
     "convert:images": "node scripts/convert-images.mjs",
     "prebuild": "node scripts/convert-images.mjs",
-    "build": "vite build && node scripts/generate-static-routes.mjs",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/generate-static-routes.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

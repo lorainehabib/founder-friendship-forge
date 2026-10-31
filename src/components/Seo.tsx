@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-
-const SITE_URL = "https://lorainehabib.com";
+import { PERSON_ID, SITE_URL } from "@/seo-routes";
 
 type SeoProps = {
   title: string;
@@ -35,7 +34,7 @@ const upsertCanonical = (href: string) => {
 };
 
 const buildBaseSchemas = (canonicalUrl: string) => {
-  const personId = `${SITE_URL}/#person`;
+  const personId = PERSON_ID;
   const serviceId = `${SITE_URL}/#service`;
 
   return [
@@ -44,13 +43,25 @@ const buildBaseSchemas = (canonicalUrl: string) => {
       "@type": "Person",
       "@id": personId,
       name: "Loraine Habib",
-      jobTitle: "Coach de fondateurs",
+      jobTitle: "Coach de dirigeants et d'associés",
+      description:
+        "Coach spécialisée dans la relation entre associés de startups. Ancienne Chief of Staff du CEO de BlaBlaCar et membre de son comité exécutif.",
+      image: `${SITE_URL}/loraine-habib.jpg`,
       url: SITE_URL,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Paris",
+        addressCountry: "France",
+      },
       knowsAbout: [
         "Relation entre cofondateurs",
         "Conflits entre cofondateurs",
         "Coaching de fondateurs",
         "Accompagnement des equipes dirigeantes",
+        "Relation entre associés",
+        "Conflit entre associés",
+        "Coaching d'associés",
+        "Coaching de dirigeants",
       ],
       worksFor: {
         "@id": serviceId,
@@ -122,22 +133,27 @@ const Seo = ({ title, description, path, ogImage, structuredData }: SeoProps) =>
     upsertMeta("meta[property=\"og:image:height\"]", "property", "og:image:height", ogImage ? "630" : "535");
     upsertMeta("meta[name=\"twitter:card\"]", "name", "twitter:card", "summary_large_image");
     upsertMeta("meta[name=\"twitter:image\"]", "name", "twitter:image", image);
+  }, [description, ogImage, path, title]);
 
-    const staleStructuredData = document.head.querySelectorAll('script[data-seo-jsonld="true"]');
-    staleStructuredData.forEach((script) => script.remove());
+  const canonicalUrl = new URL(path, `${SITE_URL}/`).toString();
+  const customSchemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
+  const schemas = [...buildBaseSchemas(canonicalUrl), ...customSchemas];
 
-    const customSchemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
-    const schemas = [...buildBaseSchemas(canonicalUrl), ...customSchemas];
-    for (const schema of schemas) {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.dataset.seoJsonld = "true";
-      script.text = JSON.stringify(schema);
-      document.head.appendChild(script);
-    }
-  }, [description, ogImage, path, structuredData, title]);
-
-  return null;
+  return (
+    <>
+      {schemas.map((schema) => {
+        const record = schema as Record<string, unknown>;
+        const key = String(record["@type"]) + String(record["@id"] ?? record.headline ?? record.reviewBody ?? "");
+        return (
+          <script
+            key={key}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
+          />
+        );
+      })}
+    </>
+  );
 };
 
 export default Seo;
