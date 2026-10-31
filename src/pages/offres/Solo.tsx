@@ -5,9 +5,9 @@ const Solo = () => (
   <OfferPage
     name="Solo"
     hook="Quand vous venez seul, pour faire bouger une situation."
-    description="Quand vous venez seul, pour faire bouger une situation. On définit ce qui doit changer, puis on cherche ce qui l'empêche."
+    description="Quand vous venez seul, pour faire bouger une situation. On fixe un objectif concret, puis on cherche ce qui entretient le problème."
     path="/offres/solo/"
-    ogImage="/og/reset.png"
+    ogImage="/og/solo.png"
     facts={[
       { label: "Séances", value: "8 × 1h30" },
       { label: "Durée", value: "4 à 6 mois" },

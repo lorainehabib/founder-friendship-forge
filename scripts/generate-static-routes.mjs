@@ -5,7 +5,7 @@ const siteUrl = "https://lorainehabib.com";
 const routes = [
   {
     path: "/",
-    title: "Loraine Habib — Coach de fondateurs | Relation entre cofondateurs",
+    title: "Loraine Habib · Coach de fondateurs | Relation entre cofondateurs",
     description:
       "La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension.",
     changefreq: "weekly",
@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: "/approche/",
-    title: "Approche — Loraine Habib | Travailler la relation",
+    title: "Approche · Loraine Habib | Travailler la relation",
     description:
       "Travailler la relation, avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions.",
     changefreq: "weekly",
@@ -29,7 +29,7 @@ const routes = [
   {
     path: "/offres/socle/",
     title: "Socle · Loraine Habib",
-    description: "Quand tout va bien, et que vous voulez que ça dure. Tout va bien entre vous.",
+    description: "Quand tout va bien, à quelques détails près. Socle sert à repérer un inconfort tant qu'il est petit.",
     ogImage: "/og/socle.png",
     changefreq: "monthly",
     priority: "0.8",
@@ -37,14 +37,23 @@ const routes = [
   {
     path: "/offres/reset/",
     title: "Reset · Loraine Habib",
-    description: "Quand c'est déjà tendu, et que vous venez ensemble. Vous avez déjà eu la conversation.",
+    description: "Quand c'est déjà tendu, et que vous venez ensemble. Reset regarde la façon dont vous réagissez l'un à l'autre.",
     ogImage: "/og/reset.png",
     changefreq: "monthly",
     priority: "0.8",
   },
   {
+    path: "/offres/solo/",
+    title: "Solo · Loraine Habib",
+    description:
+      "Quand vous venez seul, pour faire bouger une situation. On fixe un objectif concret, puis on cherche ce qui entretient le problème.",
+    ogImage: "/og/solo.png",
+    changefreq: "monthly",
+    priority: "0.8",
+  },
+  {
     path: "/a-propos/",
-    title: "À propos — Loraine Habib",
+    title: "À propos · Loraine Habib",
     description:
       "Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre associés.",
     changefreq: "monthly",
@@ -52,7 +61,7 @@ const routes = [
   },
   {
     path: "/faire-le-point/",
-    title: "Le point sur votre association — Loraine Habib",
+    title: "Le point sur votre association · Loraine Habib",
     description:
       "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
     changefreq: "monthly",
@@ -60,7 +69,7 @@ const routes = [
   },
   {
     path: "/le-point/",
-    title: "Le point sur votre association — Loraine Habib",
+    title: "Le point sur votre association · Loraine Habib",
     description:
       "En 20 minutes, faites le point sur votre association : un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
     changefreq: "monthly",
@@ -68,7 +77,7 @@ const routes = [
   },
   {
     path: "/blog/",
-    title: "L'angle mort — Loraine Habib",
+    title: "L'angle mort · Loraine Habib",
     description:
       "Une lettre sur ce qui empêche les dirigeants d'avancer.",
     changefreq: "weekly",
@@ -76,7 +85,7 @@ const routes = [
   },
   {
     path: "/blog/la-conversation-quon-evite/",
-    title: "La conversation qu'on évite — Loraine Habib",
+    title: "La conversation qu'on évite · Loraine Habib",
     description:
       "Ce qui casse une association, ce ne sont pas les grandes disputes. Ce sont les petits inconforts qu'on a gardés pour soi.",
     changefreq: "monthly",
@@ -92,7 +101,7 @@ const routes = [
   },
   {
     path: "/mentions-legales/",
-    title: "Mentions légales — Loraine Habib | Coaching fondateurs",
+    title: "Mentions légales · Loraine Habib | Coaching fondateurs",
     description:
       "Mentions légales, éditeur du site, RGPD et hébergement de lorainehabib.com, spécialisé en accompagnement de fondateurs.",
     changefreq: "yearly",

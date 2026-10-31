@@ -178,17 +178,19 @@ const Offres = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-auto border-t border-border pt-5">
-                      <p className="whitespace-nowrap font-serif text-[30px] font-normal leading-none text-foreground lining-nums">
-                        {offer.price}
-                      </p>
-                      <p className="mt-2 text-[13px] leading-snug text-muted-foreground lining-nums">{offer.priceNote}</p>
-                      <span className="mt-4 inline-flex items-center gap-2 text-[14px] text-accent">
-                        Voir le détail
-                        <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
-                          →
+                    <div className="mt-auto pt-6">
+                      <div className="border-t border-border pt-5">
+                        <p className="whitespace-nowrap font-serif text-[30px] font-normal leading-none text-foreground lining-nums">
+                          {offer.price}
+                        </p>
+                        <p className="mt-2 text-[13px] leading-snug text-muted-foreground lining-nums">{offer.priceNote}</p>
+                        <span className="mt-4 inline-flex items-center gap-2 text-[14px] text-accent">
+                          Voir le détail
+                          <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+                            →
+                          </span>
                         </span>
-                      </span>
+                      </div>
                     </div>
                   </div>
                 </Link>
