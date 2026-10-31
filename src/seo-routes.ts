@@ -73,7 +73,7 @@ export const aProposSeo: SeoRoute = {
   path: "/a-propos/",
   title: "Loraine Habib · Coach d'associés, ex-Chief of Staff BlaBlaCar",
   description:
-    "Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD\u00a0: deux regards pour travailler la relation entre associés.",
+    "Ancienne Chief of Staff du CEO de BlaBlaCar et formée à la psychologie des relations\u00a0: deux regards pour travailler la relation entre associés.",
   changefreq: "monthly",
   priority: "0.7",
 };
