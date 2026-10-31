@@ -26,6 +26,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lorainehabib.com/offres/solo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lorainehabib.com/a-propos/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

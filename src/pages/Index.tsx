@@ -21,17 +21,17 @@ const portes = [
   {
     title: "Socle.",
     subtitle: "Tout va bien, à quelques détails près.",
-    to: "/offres/#socle",
+    to: "/offres/socle/",
   },
   {
     title: "Reset.",
     subtitle: "C'est déjà tendu.",
-    to: "/offres/#reset",
+    to: "/offres/reset/",
   },
   {
     title: "Solo.",
     subtitle: "Vous venez seul.",
-    to: "/offres/#solo",
+    to: "/offres/solo/",
   },
 ];
 

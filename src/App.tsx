@@ -10,6 +10,7 @@ import Approche from "./pages/Approche.tsx";
 import Offres from "./pages/Offres.tsx";
 import Socle from "./pages/offres/Socle.tsx";
 import Reset from "./pages/offres/Reset.tsx";
+import Solo from "./pages/offres/Solo.tsx";
 import APropos from "./pages/APropos.tsx";
 import FaireLePoint from "./pages/FaireLePoint.tsx";
 import MentionsLegales from "./pages/MentionsLegales.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/offres" element={<Offres />} />
           <Route path="/offres/socle" element={<Socle />} />
           <Route path="/offres/reset" element={<Reset />} />
+          <Route path="/offres/solo" element={<Solo />} />
           <Route path="/situations" element={<Navigate to="/blog/" replace />} />
           <Route path="/a-propos" element={<APropos />} />
           <Route path="/faire-le-point" element={<FaireLePoint />} />

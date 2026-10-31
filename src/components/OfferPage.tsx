@@ -53,35 +53,44 @@ export const OfferSection = ({
 export const OfferSteps = ({
   steps,
 }: {
-  steps: { together: boolean; duration: string; text: ReactNode }[];
+  steps: { label: string; duration?: string; text: ReactNode }[];
 }) => (
-  <ol>
-    {steps.map((step, index) => (
-      <li key={index} className="grid grid-cols-[2.75rem_1fr] gap-x-4 sm:gap-x-5">
-        <div className="flex flex-col items-center">
-          <span
-            className={`flex h-11 w-11 shrink-0 items-center justify-center font-serif text-[1.65rem] leading-none lining-nums ${
-              step.together ? "bg-accent text-white" : "border-2 border-accent bg-background text-accent"
-            }`}
+  <div
+    role="list"
+    className="flex flex-col gap-1 md:grid md:grid-cols-[minmax(0,1fr)_1.75rem_minmax(0,1fr)_1.75rem_minmax(0,1fr)] md:items-stretch md:gap-x-2 md:gap-y-0"
+  >
+    {steps.map((step, index) => {
+      const last = index === steps.length - 1;
+      return (
+        <div key={step.label + index} className="contents">
+          <div
+            role="listitem"
+            className={`rounded px-6 py-7 md:px-7 ${last ? "bg-accent text-white" : "bg-[#f3eee8] text-foreground"}`}
           >
-            {index + 1}
-          </span>
-          {index < steps.length - 1 && <span aria-hidden className="my-1 w-px flex-1 bg-accent/40" />}
-        </div>
-        <div className={index < steps.length - 1 ? "pb-8" : ""}>
-          <h3 className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span className="font-serif text-[1.65rem] font-medium leading-none text-foreground">
-              {step.together ? "Ensemble" : "Avec chacun"}
+            <p
+              className={`font-serif text-[64px] font-normal leading-none lining-nums ${
+                last ? "text-[#fbe9df]" : "text-accent"
+              }`}
+            >
+              {index + 1}
+            </p>
+            <h3 className="mt-4 font-serif text-[25px] font-medium leading-tight">{step.label}</h3>
+            {step.duration && (
+              <p className={`mt-1 font-sans text-sm font-normal tracking-normal lining-nums ${last ? "text-[#fbe9df]" : "text-[#5c5148]"}`}>
+                {step.duration}
+              </p>
+            )}
+            <div className={`mt-4 text-base leading-relaxed ${last ? "text-white" : "text-foreground"}`}>{step.text}</div>
+          </div>
+          {index < steps.length - 1 && (
+            <span aria-hidden className="flex items-center justify-center text-[1.75rem] leading-none text-accent">
+              <span className="inline-block rotate-90 md:rotate-0">›</span>
             </span>
-            <span className="font-sans text-sm font-normal tracking-normal text-[#5c5148] lining-nums">
-              {step.duration}
-            </span>
-          </h3>
-          <div className="mt-3 text-lg leading-relaxed text-foreground">{step.text}</div>
+          )}
         </div>
-      </li>
-    ))}
-  </ol>
+      );
+    })}
+  </div>
 );
 
 export const OfferSituation = ({

@@ -33,7 +33,7 @@ const Reset = () => (
     </OfferLede>
 
     <OfferSection
-      title="Ce que je regarde"
+      title="Sur quoi on travaille"
       kicker="Chacun réagit à la réaction de l'autre, sans s'en rendre compte."
     >
       <OfferRead>
@@ -68,12 +68,12 @@ const Reset = () => (
       <OfferSteps
         steps={[
           {
-            together: true,
+            label: "Ensemble",
             duration: "2h",
             text: <p>On part de ce qui bloque aujourd'hui entre vous.</p>,
           },
           {
-            together: false,
+            label: "Avec chacun",
             duration: "1h30",
             text: (
               <p>
@@ -83,7 +83,7 @@ const Reset = () => (
             ),
           },
           {
-            together: true,
+            label: "Ensemble",
             duration: "4 séances de 2h",
             text: (
               <p>On travaille à en sortir. Le travail se fait à la fois pendant les séances et entre elles.</p>

@@ -4,88 +4,81 @@ import CtaBlock from "@/components/CtaBlock";
 import Seo from "@/components/Seo";
 import ReserveButton from "@/components/ReserveButton";
 
-const LETTER_CONVERSATION = "/blog/la-conversation-quon-evite/";
-const LETTER_BOUCLE = "/blog/c-est-lui-le-probleme/";
-
 type Offer = {
   id: string;
   aliases?: string[];
   name: string;
   title: string;
-  who: string;
-  sessions: string;
-  duration: string;
+  alone?: boolean;
   price: string;
   priceNote: string;
   signs: [string, string, string];
-  description: string;
-  detail?: string;
-  situation?: { title: string; to: string };
+  detail: string;
+  header: string;
+  meta: string;
 };
+
+const PairMark = () => (
+  <svg width="26" height="16" viewBox="0 0 26 16" aria-hidden className="shrink-0">
+    <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="18" cy="8" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+  </svg>
+);
+
+const SoloMark = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden className="shrink-0">
+    <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+  </svg>
+);
 
 const offers: Offer[] = [
   {
     id: "socle",
     aliases: ["s-associer", "entretenir"],
     name: "Socle",
-    title: "Quand tout va bien, à quelques détails près",
-    who: "À deux ou plus",
-    sessions: "Une avec chacun, puis deux ensemble",
-    duration: "1 à 3 mois",
-    price: "3\u00a0000\u00a0€ HT",
-    priceNote: "À deux · 4\u00a0000\u00a0€ HT à trois · au-delà sur devis",
+    title: "Quand tout va bien, à quelques détails près.",
+    price: "3\u00a0000\u00a0€\u00a0HT à deux",
+    priceNote: "4\u00a0000\u00a0€\u00a0HT à trois, au-delà sur devis",
     signs: [
       "Tout va bien, et vous savez que c'est maintenant que ça se travaille.",
       "Vous travaillez ensemble depuis peu, et vous voulez poser de bonnes bases.",
       "Vous venez de lever, et les rôles vont changer.",
     ],
-    description:
-      "Un inconfort qui revient finit par devenir une tension. On le repère tant qu'il est petit, on regarde comment chacun y réagit, et on le désamorce à temps.",
     detail: "/offres/socle/",
-    situation: {
-      title: "La conversation qu'on évite",
-      to: LETTER_CONVERSATION,
-    },
+    header: "bg-[#ece3d8] text-foreground",
+    meta: "text-accent",
   },
   {
     id: "reset",
     aliases: ["debloquer"],
     name: "Reset",
-    title: "Quand c'est déjà tendu, et que vous venez ensemble",
-    who: "À deux ou plus",
-    sessions: "Une ensemble, une avec chacun, puis quatre ensemble",
-    duration: "3 à 4 mois",
-    price: "Dès 6\u00a0000\u00a0€ HT",
+    title: "Quand c'est déjà tendu, et que vous venez ensemble.",
+    price: "Dès 6\u00a0000\u00a0€\u00a0HT",
     priceNote: "Selon la situation et le nombre d'associés",
     signs: [
       "Vous avez le sentiment d'avoir déjà tout essayé.",
       "Le même désaccord revient, sous des formes différentes.",
       "L'un de vous se demande s'il veut continuer.",
     ],
-    description:
-      "Je ne creuse pas le fond du désaccord, je regarde la façon dont vous réagissez l'un à l'autre\u00a0: c'est à cet endroit que la relation peut bouger. C'est le même travail que Socle, sur des tensions déjà installées, ce qui demande plus de temps.",
     detail: "/offres/reset/",
-    situation: {
-      title: "C'est lui le problème",
-      to: LETTER_BOUCLE,
-    },
+    header: "bg-accent text-white",
+    meta: "text-[#fbe9df]",
   },
   {
     id: "solo",
     name: "Solo",
-    title: "Quand c'est à vous de faire bouger les choses",
-    who: "Coaching individuel",
-    sessions: "Huit séances d'1h30",
-    duration: "4 à 6 mois",
-    price: "4\u00a0500\u00a0€ HT",
-    priceNote: "",
+    title: "Quand vous venez seul, pour faire bouger une situation.",
+    alone: true,
+    price: "4\u00a0500\u00a0€\u00a0HT",
+    priceNote: "Coaching individuel",
     signs: [
       "Une relation de travail vous pèse, avec un associé, un manager ou un collègue.",
-      "Vous prenez un nouveau poste, ou un nouveau périmètre.",
+      "Vous prenez un nouveau rôle, ou un nouveau périmètre.",
       "Une décision traîne depuis des mois.",
     ],
-    description:
-      "Avant de chercher des solutions, on définit à quoi vous verrez que la situation a changé. Pas «\u00a0que ça aille mieux\u00a0», mais des changements concrets\u00a0: une réunion qui se passe autrement, une décision enfin prise. Puis on cherche précisément ce qui empêche ces changements aujourd'hui, et c'est sur ça qu'on travaille.",
+    detail: "/offres/solo/",
+    header: "bg-[#2C2420] text-[#FAF8F5]",
+    meta: "text-[#C4A882]",
   },
 ];
 
@@ -158,89 +151,47 @@ const Offres = () => {
           ))}
         </nav>
         <div className="mx-auto mt-[50px] max-w-7xl px-6 pb-20 md:mt-16 md:px-10 md:pb-28">
-          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:grid-rows-[repeat(12,auto)] lg:items-stretch lg:gap-x-6 lg:gap-y-0">
+          <div className="grid gap-6 lg:grid-cols-3">
             {offers.map((offer) => (
-              <article
-                key={offer.id}
-                id={offer.id}
-                className="relative flex scroll-mt-28 flex-col rounded border border-border bg-secondary p-6 md:p-8 lg:grid lg:grid-rows-subgrid lg:[grid-row:span_12] lg:gap-0 lg:[&>*]:self-start"
-              >
+              <article key={offer.id} id={offer.id} className="relative h-full scroll-mt-28">
                 {offer.aliases?.map((alias) => (
                   <span key={alias} id={alias} className="absolute top-0 scroll-mt-28" aria-hidden />
                 ))}
-
-                <h2 className="font-serif text-5xl leading-[0.9] text-foreground md:text-6xl">{offer.name}</h2>
-                <p className="mt-4 font-serif text-xl italic leading-snug text-foreground text-balance">
-                  {offer.title}
-                </p>
-                <p className="mt-4">
-                  <span className="mb-1 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-accent">
-                    Séances
-                  </span>
-                  <span className="block text-[17px] leading-snug text-foreground lining-nums">{offer.sessions}</span>
-                </p>
-                <p className="mt-3">
-                  <span className="mb-1 block font-sans text-xs font-medium uppercase tracking-[0.14em] text-accent">
-                    Durée
-                  </span>
-                  <span className="block text-[17px] leading-snug text-foreground">{offer.duration}</span>
-                </p>
-                <p className="mt-3 text-xs uppercase tracking-[0.16em] text-muted-foreground">{offer.who}</p>
-                <p className="mt-5 font-serif text-3xl leading-none text-foreground lining-nums">{offer.price}</p>
-                <p className="mt-2 min-h-[1.25rem] text-[13px] leading-snug text-muted-foreground lining-nums">
-                  {offer.priceNote}
-                </p>
-
-                <div>
-                  <p className="mt-6 font-serif text-lg italic leading-snug text-foreground">
-                    Vous en êtes peut-être là
-                  </p>
-                  <ul className="mt-2.5 flex flex-col gap-2.5">
-                    {offer.signs.map((sign) => (
-                      <li key={sign} className="flex items-start gap-3 text-[15px] leading-snug text-foreground/85">
-                        <span aria-hidden className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 bg-accent" />
-                        <span>{sign}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <p className="mt-6 text-[15px] leading-relaxed text-foreground/85">{offer.description}</p>
-
-                {offer.detail ? (
-                  <Link
-                    to={offer.detail}
-                    className="group mt-8 inline-flex w-fit items-center gap-2 text-sm text-accent"
-                  >
-                    <span className="border-b border-transparent pb-0.5 group-hover:border-accent">
-                      Voir le détail
-                    </span>
-                    <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
-                      →
-                    </span>
-                  </Link>
-                ) : (
-                  <span className="mt-8" aria-hidden />
-                )}
-
-                <ReserveButton className="mt-4 w-full" />
-
-                {offer.situation ? (
-                  <Link
-                    to={offer.situation.to}
-                    className="group mt-4 inline-flex w-fit flex-col gap-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    <span className="inline-flex items-center gap-2">
-                      Lire une situation réelle
-                      <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
-                        →
+                <Link
+                  to={offer.detail}
+                  className="group flex h-full flex-col overflow-hidden rounded border border-border bg-white transition duration-300 hover:-translate-y-[3px] hover:shadow-[0_14px_30px_-18px_rgba(44,36,32,0.45)]"
+                >
+                  <div className={`flex min-h-0 flex-col px-7 py-8 lg:min-h-[225px] lg:px-8 ${offer.header}`}>
+                    <p className={`flex items-center gap-2.5 font-sans text-xs font-medium uppercase tracking-[0.14em] ${offer.meta}`}>
+                      {offer.alone ? <SoloMark /> : <PairMark />}
+                      {offer.alone ? "Seul" : "À deux ou plus"}
+                    </p>
+                    <h2 className="mt-[22px] font-serif text-[60px] font-normal leading-[0.9]">{offer.name}</h2>
+                    <p className="mt-[14px] font-serif text-[22px] italic leading-[1.25]">{offer.title}</p>
+                  </div>
+                  <div className="flex flex-1 flex-col bg-background px-7 py-7 lg:px-8">
+                    <ul className="flex flex-col gap-[14px]">
+                      {offer.signs.map((sign) => (
+                        <li key={sign} className="flex items-start gap-3.5 text-base leading-snug text-[#3d332d]">
+                          <span aria-hidden className="mt-[0.45rem] h-1.5 w-1.5 shrink-0 bg-accent" />
+                          <span>{sign}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto border-t border-border pt-5">
+                      <p className="whitespace-nowrap font-serif text-[30px] font-normal leading-none text-foreground lining-nums">
+                        {offer.price}
+                      </p>
+                      <p className="mt-2 text-[13px] leading-snug text-muted-foreground lining-nums">{offer.priceNote}</p>
+                      <span className="mt-4 inline-flex items-center gap-2 text-[14px] text-accent">
+                        Voir le détail
+                        <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+                          →
+                        </span>
                       </span>
-                    </span>
-                    <span>«{"\u00a0"}{offer.situation.title}{"\u00a0"}»</span>
-                  </Link>
-                ) : (
-                  <span className="mt-4" aria-hidden />
-                )}
+                    </div>
+                  </div>
+                </Link>
               </article>
             ))}
           </div>

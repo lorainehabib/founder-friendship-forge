@@ -31,7 +31,7 @@ const Socle = () => (
     </OfferLede>
 
     <OfferSection
-      title="Ce que je regarde"
+      title="Sur quoi on travaille"
       kicker="Un inconfort qui revient finit par devenir une tension."
     >
       <EchelleInconfort />
@@ -47,7 +47,7 @@ const Socle = () => (
       <OfferSteps
         steps={[
           {
-            together: false,
+            label: "Avec chacun",
             duration: "1h30",
             text: (
               <p>
@@ -57,12 +57,12 @@ const Socle = () => (
             ),
           },
           {
-            together: true,
+            label: "Ensemble",
             duration: "2 à 3h",
             text: <p>On met sur la table ce qui est apparu, pour que ça se règle avant de peser.</p>,
           },
           {
-            together: true,
+            label: "Ensemble",
             duration: "2 à 3h",
             text: (
               <p>
