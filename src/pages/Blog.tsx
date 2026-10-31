@@ -8,7 +8,7 @@ const Blog = () => {
   return (
     <SiteLayout>
       <Seo
-        title={`${newsletterName} — Loraine Habib`}
+        title={`${newsletterName} · Loraine Habib`}
         description={newsletterTagline}
         path="/blog/"
       />

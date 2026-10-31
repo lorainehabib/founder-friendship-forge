@@ -174,8 +174,8 @@ const CestLuiLeProbleme = () => {
         <section className="border-t border-border/60">
           <div className="mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
             <p className="max-w-3xl text-sm italic leading-relaxed text-muted-foreground">
-              Je m'appelle Loraine Habib. J'accompagne les fondateurs pour que leur association
-              tienne, et avance, dès le début ou quand c'est déjà tendu. J'ai été Chief of Staff du
+              Je m'appelle Loraine Habib. J'accompagne les associés pour que leur association
+              tienne, et avance, quand tout va bien ou quand c'est déjà tendu. J'ai été Chief of Staff du
               CEO de BlaBlaCar, et je suis formée à la psychologie des relations.
             </p>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">
@@ -183,8 +183,17 @@ const CestLuiLeProbleme = () => {
               40{"\u00a0"}minutes, gratuit et confidentiel.
             </p>
             <ReserveButton className="mt-8" />
+            <Link
+              to="/offres/reset/"
+              className="group mt-8 flex w-fit items-center gap-3 border-b border-accent/40 pb-1 text-sm tracking-wide text-accent transition-all hover:border-accent"
+            >
+              Le travail que je décris ici, c'est Reset
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
             <p className="mt-10 max-w-3xl text-lg leading-relaxed text-foreground/85">
-              Si cette lettre vous a fait penser à quelqu'un, transférez-la-lui.
+              Si cette lettre vous a fait penser à quelqu'un, partagez-la.
             </p>
             <p className="mt-6 text-lg text-foreground">Loraine</p>
           </div>

@@ -1,13 +1,8 @@
+import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import EchelleDiagram from "@/components/EchelleDiagram";
 import FreebieCapture from "@/components/FreebieCapture";
-
-const inconfortQuotes = [
-  "Assez vite, j'ai remarqué qu'il faisait passer ses intérêts personnels avant le reste.",
-  "On n'a jamais vraiment défini les rôles de chacun. À chaque fois qu'on essayait, on se confrontait aux mêmes désaccords.",
-  "Je ne comprends pas pourquoi elle ne veut pas partager certaines informations avec moi, mais devant son refus répété, j'ai laissé tomber ce sujet.",
-];
 
 const faqItems = [
   {
@@ -45,7 +40,7 @@ const Approche = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Approche — Loraine Habib | Travailler la relation"
+        title="Approche · Loraine Habib | Travailler la relation"
         description="Travailler la relation, avant d'en avoir besoin : repérer les inconforts avant qu'ils ne deviennent des tensions."
         path="/approche/"
         structuredData={faqSchema}
@@ -58,13 +53,15 @@ const Approche = () => {
           </h1>
           <div className="mt-12 md:mt-14 max-w-3xl">
             <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
-              <span className="text-accent">65 %</span> des start-ups à fort
-              potentiel échouent pour des raisons humaines, contre 35 % à cause
-              du produit ou du marché.
+              <span className="text-accent">65 %</span> des échecs de start-ups
+              tiennent à des raisons humaines au sein de l'équipe dirigeante,
+              contre 35 % au produit ou au marché.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">
-              Source&nbsp;: Noam Wasserman,{" "}
-              <em>The Founder's Dilemmas</em>, Harvard Business School.
+              Source&nbsp;: enquête de Gorman et Sahlman auprès d'investisseurs
+              en capital-risque (<em>Journal of Business Venturing</em>, 1989),
+              citée par Noam Wasserman dans <em>The Founder's Dilemmas</em>{" "}
+              (2012).
             </p>
           </div>
         </div>
@@ -80,35 +77,12 @@ const Approche = () => {
               ce sont les petits inconforts qu'on a gardés pour soi.
             </p>
             <p>
-              J'ai accompagné plusieurs dizaines d'associés en difficulté, dont
-              certains n'arrivaient plus du tout à travailler ensemble. Ils
-              décrivent la même chronologie : les sujets de tension entre eux
-              existaient depuis très tôt dans la relation, et c'est avec le
-              temps qu'ils se sont transformés en sujets de conflit. Il ne
-              s'est pas passé quelque chose de complètement imprévisible,
-              l'autre n'est pas devenu une personne infernale du jour au
-              lendemain. Mais les choses qui les agaçaient légèrement, à force
-              de se répéter sans être résolues, sont devenues chaque jour un
-              peu plus difficiles à encaisser, jusqu'à devenir carrément
-              insupportables.
+              J'ai accompagné plusieurs dizaines d'associés en difficulté. Tous
+              décrivent la même chronologie : ce qui les oppose aujourd'hui
+              était là très tôt, sous la forme de petites gênes qu'ils ne
+              jugeaient pas assez graves pour en parler. C'est la répétition
+              qui les a rendues insupportables.
             </p>
-            <p>
-              Avant un conflit, il y a donc des tensions. Et avant les
-              tensions, des inconforts – ces petites choses qui nous gênent
-              dans la relation, mais qu'on ne juge pas assez graves pour en
-              faire quoi que ce soit&nbsp;:
-            </p>
-          </div>
-
-          <div className="mt-10 space-y-4">
-            {inconfortQuotes.map((q) => (
-              <blockquote
-                key={q}
-                className="border-l-2 border-accent pl-5 py-2 font-serif italic text-lg md:text-xl text-foreground/90"
-              >
-                «&nbsp;{q}&nbsp;»
-              </blockquote>
-            ))}
           </div>
 
           <p className="mt-10 font-serif italic text-xl md:text-2xl leading-snug text-foreground">
@@ -137,6 +111,26 @@ const Approche = () => {
             <p className="font-serif italic text-xl md:text-2xl leading-snug text-foreground">
               C'est comme ça qu'une association tient, et qu'elle avance.
             </p>
+            <div className="flex flex-col items-start gap-5 pt-2">
+              <Link
+                to="/blog/la-conversation-quon-evite/"
+                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+              >
+                Lire une situation réelle&nbsp;: «&nbsp;La conversation qu'on évite&nbsp;»
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <Link
+                to="/offres/"
+                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+              >
+                Voir les offres
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

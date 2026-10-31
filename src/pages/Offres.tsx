@@ -28,7 +28,7 @@ const offers: Offer[] = [
     id: "socle",
     aliases: ["s-associer", "entretenir"],
     name: "Socle",
-    title: "Quand tout va bien, et que vous voulez que ça dure",
+    title: "Quand tout va bien, à quelques détails près",
     who: "À deux ou plus",
     sessions: "Une avec chacun, puis deux ensemble",
     duration: "1 à 3 mois",

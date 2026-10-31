@@ -20,7 +20,7 @@ const recognitionItems = [
 const portes = [
   {
     title: "Socle.",
-    subtitle: "Vous vous associez, ou tout va bien.",
+    subtitle: "Tout va bien, à quelques détails près.",
     to: "/offres/#socle",
   },
   {
@@ -76,7 +76,7 @@ const Index = () => {
   return (
     <SiteLayout>
       <Seo
-        title="Loraine Habib — Coach de fondateurs | Relation entre cofondateurs"
+        title="Loraine Habib · Coach de fondateurs | Relation entre cofondateurs"
         description="La relation entre fondateurs, ça se travaille. J'accompagne les cofondateurs pour que leur association tienne et avance, dès les premiers signes de tension."
         path="/"
         structuredData={reviewSchemas}
@@ -189,13 +189,13 @@ const Index = () => {
               Mon approche
             </p>
             <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
-              <span className="text-accent">65 %</span> des start-ups à fort
-              potentiel échouent pour des raisons humaines, contre 35 % à cause
-              du produit ou du marché.
+              <span className="text-accent">65 %</span> des échecs de start-ups
+              tiennent à des raisons humaines au sein de l'équipe dirigeante,
+              contre 35 % au produit ou au marché.
             </p>
             <p className="text-sm text-muted-foreground">
-              Noam Wasserman, <em>The Founder's Dilemmas</em>, Harvard Business
-              School.
+              Enquête auprès d'investisseurs en capital-risque, citée par Noam
+              Wasserman dans <em>The Founder's Dilemmas</em>.
             </p>
             <p>
               Ces raisons humaines s'installent lentement. Tout part de petits

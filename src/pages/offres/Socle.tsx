@@ -5,8 +5,8 @@ import OfferPage, { OfferLede, OfferRead, OfferSection, OfferSituation, OfferSte
 const Socle = () => (
   <OfferPage
     name="Socle"
-    hook="Quand tout va bien, et que vous voulez que ça dure."
-    description="Quand tout va bien, et que vous voulez que ça dure. Socle sert à repérer un inconfort tant qu'il est petit."
+    hook="Quand tout va bien, à quelques détails près."
+    description="Quand tout va bien, à quelques détails près. Socle sert à repérer un inconfort tant qu'il est petit."
     path="/offres/socle/"
     ogImage="/og/socle.png"
     facts={[
@@ -18,8 +18,7 @@ const Socle = () => (
     priceNote={"À deux · 4\u00a0000\u00a0€ HT à trois · au-delà sur devis."}
     start={
       <p>
-        Le premier pas est un échange de 40{"\u00a0"}minutes, gratuit et confidentiel. Souvent, c'est
-        l'un de vous qui prend contact. C'est normal{"\u00a0"}: la suite se fait à deux.
+        Le premier pas est un échange de 40{"\u00a0"}minutes, gratuit et confidentiel, seul ou ensemble.
       </p>
     }
   >
@@ -32,7 +31,7 @@ const Socle = () => (
     </OfferLede>
 
     <OfferSection
-      title="Ce qu'on regarde"
+      title="Ce que je regarde"
       kicker="Un inconfort qui revient finit par devenir une tension."
     >
       <EchelleInconfort />

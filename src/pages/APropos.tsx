@@ -31,7 +31,7 @@ const APropos = () => {
   return (
     <SiteLayout>
       <Seo
-        title="À propos — Loraine Habib"
+        title="À propos · Loraine Habib"
         description="Ancienne Chief of Staff du CEO de BlaBlaCar et thérapeute formée à l'AEMD : deux regards à la fois pour travailler la relation entre associés."
         path="/a-propos/"
       />
@@ -109,9 +109,8 @@ const APropos = () => {
               pour que mes angles morts ne deviennent jamais les vôtres.
             </p>
             <p>
-              Aujourd'hui, j'accompagne les fondateurs et les équipes
-              dirigeantes à faire tenir et avancer la relation qui porte leur
-              projet.
+              Aujourd'hui, j'accompagne les dirigeants pour que la relation
+              qui porte leur projet tienne, et avance.
             </p>
             <p className="font-serif italic text-xl md:text-2xl leading-snug text-foreground pt-4">
               Un accompagnement avec moi a toujours une fin. Ce qui me fait
@@ -126,7 +125,7 @@ const APropos = () => {
               to="/offres/"
               className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
             >
-              Voir les accompagnements
+              Voir les offres
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

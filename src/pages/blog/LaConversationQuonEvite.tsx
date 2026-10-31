@@ -3,6 +3,7 @@ import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import EchelleDiagram from "@/components/EchelleDiagram";
 import NewsletterCapture from "@/components/NewsletterCapture";
+import ReserveButton from "@/components/ReserveButton";
 import { blogPosts, newsletterName } from "@/content/blog";
 
 const post = blogPosts.find((item) => item.slug === "la-conversation-quon-evite");
@@ -49,7 +50,7 @@ const travaillerWhy = [
   },
   {
     label: "Identifier ce que ça nous fait ressentir.",
-    body: "Quand on s'arrête à la surface : «\u00a0il m'agace\u00a0», on n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on n'a encore moins d'accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
+    body: "Quand on s'arrête à la surface : «\u00a0il m'agace\u00a0», on n'atteint pas ce qu'il y a dessous : «\u00a0je ne me sens pas reconnu\u00a0». Quand on est pris dans l'émotion, on la vit, on ne l'observe pas. Et on a encore moins accès à ce que vit l'autre. Un regard extérieur aide à descendre jusqu'au vrai ressenti, le sien et celui de l'associé.",
   },
   {
     label: "Ajuster nos comportements.",
@@ -77,7 +78,7 @@ const LaConversationQuonEvite = () => {
   return (
     <SiteLayout>
       <Seo
-        title={`${post.title} — Loraine Habib`}
+        title={`${post.title} · Loraine Habib`}
         description={post.excerpt}
         path={post.path}
         structuredData={articleSchema}
@@ -97,13 +98,15 @@ const LaConversationQuonEvite = () => {
             </h1>
             <div className="mt-12 md:mt-14 max-w-3xl">
               <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
-                <span className="text-accent">65 %</span> des start-ups à fort
-                potentiel échouent pour des raisons humaines, contre 35 % à cause
-                du produit ou du marché.
+                <span className="text-accent">65 %</span> des échecs de start-ups
+                tiennent à des raisons humaines au sein de l'équipe dirigeante,
+                contre 35 % au produit ou au marché.
               </p>
               <p className="mt-4 text-sm text-muted-foreground">
-                Source&nbsp;: Noam Wasserman,{" "}
-                <em>The Founder's Dilemmas</em>, Harvard Business School.
+                Source&nbsp;: enquête de Gorman et Sahlman auprès d'investisseurs
+                en capital-risque (<em>Journal of Business Venturing</em>, 1989),
+                citée par Noam Wasserman dans <em>The Founder's Dilemmas</em>{" "}
+                (2012).
               </p>
             </div>
           </div>
@@ -131,7 +134,7 @@ const LaConversationQuonEvite = () => {
               </p>
               <p>
                 Avant un conflit, il y a des tensions. Et avant les tensions,
-                des inconforts – ces petites choses qui nous gênent dans la
+                des inconforts : ces petites choses qui nous gênent dans la
                 relation, mais qu'on ne juge pas assez graves pour en faire quoi
                 que ce soit&nbsp;:
               </p>
@@ -291,6 +294,34 @@ const LaConversationQuonEvite = () => {
               règlent avant de peser. C'est comme ça qu'une association tient, et
               qu'elle avance.
             </p>
+          </div>
+        </section>
+
+        <section className="border-t border-border/60">
+          <div className="mx-auto max-w-4xl px-6 py-16 md:px-10 md:py-20">
+            <p className="max-w-3xl text-sm italic leading-relaxed text-muted-foreground">
+              Je m'appelle Loraine Habib. J'accompagne les associés pour que leur association
+              tienne, et avance, quand tout va bien ou quand c'est déjà tendu. J'ai été Chief of Staff du
+              CEO de BlaBlaCar, et je suis formée à la psychologie des relations.
+            </p>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/85">
+              Si vous voulez prendre du recul sur votre association, réservez un premier échange de
+              40{"\u00a0"}minutes, gratuit et confidentiel.
+            </p>
+            <ReserveButton className="mt-8" />
+            <Link
+              to="/offres/socle/"
+              className="group mt-8 flex w-fit items-center gap-3 border-b border-accent/40 pb-1 text-sm tracking-wide text-accent transition-all hover:border-accent"
+            >
+              Le travail que je décris ici avec Alex et Stan, c'est Socle
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+            <p className="mt-10 max-w-3xl text-lg leading-relaxed text-foreground/85">
+              Si cette lettre vous a fait penser à quelqu'un, partagez-la.
+            </p>
+            <p className="mt-6 text-lg text-foreground">Loraine</p>
           </div>
         </section>
       </article>

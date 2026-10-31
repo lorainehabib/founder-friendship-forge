@@ -17,8 +17,7 @@ const Reset = () => (
     priceNote="Selon la situation et le nombre d'associés. Le tarif exact est fixé après notre premier échange."
     start={
       <p>
-        Le premier pas est un échange de 40{"\u00a0"}minutes, gratuit et confidentiel. Souvent, c'est
-        l'un de vous qui prend contact. C'est normal{"\u00a0"}: la suite se fait à deux.
+        Le premier pas est un échange de 40{"\u00a0"}minutes, gratuit et confidentiel, seul ou ensemble.
       </p>
     }
   >

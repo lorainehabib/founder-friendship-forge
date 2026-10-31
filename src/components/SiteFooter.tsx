@@ -55,7 +55,7 @@ const SiteFooter = () => {
       </div>
       <div className="border-t border-border/70">
         <div className="mx-auto max-w-7xl px-6 md:px-10 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} LHG — SIRET 982 781 387 00013</p>
+          <p>© {new Date().getFullYear()} LHG · SIRET 982 781 387 00013</p>
           <Link to="/mentions-legales/" onClick={scrollTop} className="hover:text-accent transition-colors">
             Mentions légales
           </Link>
