@@ -37,7 +37,7 @@ const SiteFooter = () => {
             Contact
           </p>
           <ul className="space-y-2 text-sm text-foreground/80">
-            <li>habib.loraine@gmail.com</li>
+            <li>loraine@lorainehabib.com</li>
             <li>10 rue Saint Marc, 75002 Paris</li>
             <li>Présentiel & visio</li>
             <li>

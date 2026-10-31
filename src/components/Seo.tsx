@@ -85,7 +85,7 @@ const buildBaseSchemas = (canonicalUrl: string) => {
         {
           "@type": "ContactPoint",
           contactType: "customer support",
-          email: "habib.loraine@gmail.com",
+          email: "loraine@lorainehabib.com",
           availableLanguage: ["fr"],
         },
       ],

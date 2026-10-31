@@ -23,7 +23,7 @@ const MentionsLegales = () => (
 
       <div className="space-y-12">
         <Section title="Éditeur du site">
-          <p>Nom&nbsp;: Loraine Habib<br />Nom commercial&nbsp;: LHG<br />Statut&nbsp;: Entreprise individuelle<br />SIRET&nbsp;: 982 781 387 00013<br />Adresse&nbsp;: 10 rue Saint Marc, 75002 Paris<br />Email&nbsp;: habib.loraine@gmail.com</p>
+          <p>Nom&nbsp;: Loraine Habib<br />Nom commercial&nbsp;: LHG<br />Statut&nbsp;: Entreprise individuelle<br />SIRET&nbsp;: 982 781 387 00013<br />Adresse&nbsp;: 10 rue Saint Marc, 75002 Paris<br />Email&nbsp;: loraine@lorainehabib.com</p>
           <p>Directrice de la publication&nbsp;: Loraine Habib</p>
         </Section>
 
@@ -37,9 +37,9 @@ const MentionsLegales = () => (
         </Section>
 
         <Section title="Données personnelles & RGPD">
-          <p><strong className="font-medium text-foreground">Responsable du traitement.</strong> Loraine Habib (LHG), habib.loraine@gmail.com</p>
+          <p><strong className="font-medium text-foreground">Responsable du traitement.</strong> Loraine Habib (LHG), loraine@lorainehabib.com</p>
           <p><strong className="font-medium text-foreground">Données collectées.</strong> Si vous laissez votre adresse email pour recevoir le PDF «&nbsp;Le point sur votre association&nbsp;» ou la newsletter «&nbsp;L'angle mort&nbsp;», elle est collectée via MailerLite, qui agit en tant que sous-traitant. Vous pouvez vous désinscrire à tout moment via le lien présent dans chaque email. La prise de rendez-vous s'effectue via la plateforme Cal.com, qui agit en tant que sous-traitant et dispose de sa propre politique de confidentialité&nbsp;: <a href="https://cal.com/privacy" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">cal.com/privacy</a>.</p>
-          <p><strong className="font-medium text-foreground">Vos droits.</strong> Conformément au RGPD&nbsp;: accès, rectification, effacement, limitation, opposition, portabilité. Pour les exercer&nbsp;: habib.loraine@gmail.com. En cas de difficulté, vous pouvez saisir la CNIL&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">www.cnil.fr</a>.</p>
+          <p><strong className="font-medium text-foreground">Vos droits.</strong> Conformément au RGPD&nbsp;: accès, rectification, effacement, limitation, opposition, portabilité. Pour les exercer&nbsp;: loraine@lorainehabib.com. En cas de difficulté, vous pouvez saisir la CNIL&nbsp;: <a href="https://www.cnil.fr" target="_blank" rel="noreferrer" className="text-accent underline-offset-4 hover:underline">www.cnil.fr</a>.</p>
         </Section>
 
         <Section title="Cookies">
