@@ -86,7 +86,7 @@ const Approche = () => {
           </div>
 
           <p className="mt-10 font-serif italic text-xl md:text-2xl leading-snug text-foreground">
-            Tous ces inconforts ne deviendront pas des conflits. Mais tous les
+            Tous les inconforts ne deviendront pas des conflits. Mais tous les
             conflits viennent d'inconforts non réglés.
           </p>
         </div>
