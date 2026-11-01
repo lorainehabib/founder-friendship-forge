@@ -6,6 +6,7 @@ import NewsletterCapture from "@/components/NewsletterCapture";
 import ReserveButton from "@/components/ReserveButton";
 import { blogPosts, newsletterName } from "@/content/blog";
 import { blogPostingSchema, blogPostSeo } from "@/seo-routes";
+import BlogFigure from "@/components/BlogFigure";
 
 const post = blogPosts.find((item) => item.slug === "la-conversation-quon-evite");
 
@@ -84,6 +85,7 @@ const LaConversationQuonEvite = () => {
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
               La conversation qu'on évite.
             </h1>
+            <BlogFigure slug={post.slug} className="mt-10 md:mt-12" />
             <div className="mt-12 md:mt-14 max-w-3xl">
               <p className="font-serif text-2xl md:text-3xl leading-[1.25] text-foreground">
                 <span className="text-accent">65 %</span> des échecs de start-ups

@@ -4,6 +4,7 @@ import Seo from "@/components/Seo";
 import NewsletterCapture from "@/components/NewsletterCapture";
 import { publishedPosts, newsletterDescription, newsletterName, newsletterTagline } from "@/content/blog";
 import { blogSeo } from "@/seo-routes";
+import BlogFigure from "@/components/BlogFigure";
 
 const Blog = () => {
   return (
@@ -28,23 +29,21 @@ const Blog = () => {
             <NewsletterCapture />
           </div>
           {publishedPosts.length > 0 && (
-            <ul className="mt-14 md:mt-16 divide-y divide-border/70 border-y border-border/70">
+            <ul className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2 md:mt-16">
               {publishedPosts.map((post) => (
                 <li key={post.slug}>
-                  <Link
-                    to={post.path}
-                    className="group grid gap-3 py-10 md:py-12 hover:bg-secondary/30 transition-colors -mx-2 px-2 md:mx-0 md:px-0"
-                  >
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      {post.dateLabel}
-                    </p>
-                    <h2 className="font-serif text-2xl md:text-4xl leading-[1.15] text-foreground group-hover:text-accent transition-colors text-balance">
+                  <Link to={post.path} className="group flex flex-col">
+                    <BlogFigure slug={post.slug} className="mb-5" />
+                    <h2 className="font-serif text-2xl leading-[1.2] text-foreground transition-colors group-hover:text-accent text-balance">
                       {post.title}.
                     </h2>
-                    <p className="max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
+                    <p className="mt-3 text-base leading-relaxed text-foreground/80">
                       {post.excerpt}
                     </p>
-                    <span className="mt-2 inline-flex items-center gap-3 text-accent text-sm tracking-wide">
+                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                      {post.dateLabel}
+                    </p>
+                    <span className="mt-3 inline-flex items-center gap-3 text-sm tracking-wide text-accent">
                       Lire
                       <span className="transition-transform duration-300 group-hover:translate-x-1">
                         →

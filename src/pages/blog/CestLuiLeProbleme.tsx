@@ -6,6 +6,7 @@ import ReserveButton from "@/components/ReserveButton";
 import NewsletterCapture from "@/components/NewsletterCapture";
 import { blogPosts, newsletterName } from "@/content/blog";
 import { blogPostingSchema, blogPostSeo } from "@/seo-routes";
+import BlogFigure from "@/components/BlogFigure";
 
 const post = blogPosts.find((item) => item.slug === "c-est-lui-le-probleme");
 
@@ -38,19 +39,12 @@ const CestLuiLeProbleme = () => {
             <h1 className="text-balance font-serif text-4xl leading-[1.05] text-foreground md:text-6xl">
               C'est lui le problème.
             </h1>
+            <BlogFigure slug={post.slug} className="mt-10 md:mt-12" />
           </div>
         </header>
 
         <section className="border-t border-border/60">
           <div className="mx-auto max-w-4xl space-y-6 px-6 py-16 text-lg leading-relaxed text-foreground/85 md:px-10 md:py-24">
-            <p>
-              Le mois dernier, j'écrivais sur les inconforts qu'on garde pour soi. Ce mois-ci, je
-              m'intéresse aux désaccords dont on a parlé, et qui s'aggravent quand même.
-            </p>
-            <p>
-              Dans cette deuxième lettre, j'explore un autre angle mort{"\u00a0"}: la part que
-              prennent nos propres réactions dans un désaccord qui s'enlise.
-            </p>
             <p>
               Votre associé vous épuise. Il tranche sans vous consulter, ou il rouvre chaque
               décision déjà prise, ou il ne s'investit pas autant que vous. Vous avez essayé de lui
