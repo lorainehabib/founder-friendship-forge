@@ -41,47 +41,23 @@ const testimonials = [
     quote:
       "Je traversais une période particulièrement stressante. Je suis repartie avec des options claires. Et surtout, c'étaient les miennes.",
     attribution: "Marie Loubière · Cofondatrice, Gynea",
-    schemaAuthor: "Marie Loubière",
   },
   {
     quote:
       "J'étais dans le flou. Loraine a mis des mots précis sur ce que je n'arrivais pas à formuler. À partir de là, j'ai pu structurer une vision claire de mon organisation.",
     attribution: "Matieu Pons · Cofondateur, Datack",
-    schemaAuthor: "Matieu Pons",
   },
   {
     quote:
       "Loraine m'a aidé à regarder en face ce que j'évitais, et à trancher. Ce qui traînait depuis des mois s'est débloqué en quelques semaines.",
     attribution: "CEO · Fintech · +40 collaborateurs",
-    schemaAuthor: "CEO d'une fintech (+40 collaborateurs)",
   },
 ];
-
-const SITE_URL = "https://lorainehabib.com";
-
-const reviewSchemas = testimonials.map((t) => ({
-  "@context": "https://schema.org",
-  "@type": "Review",
-  reviewBody: t.quote,
-  author: {
-    "@type": "Person",
-    name: t.schemaAuthor,
-  },
-  itemReviewed: {
-    "@id": `${SITE_URL}/#service`,
-  },
-  inLanguage: "fr",
-}));
 
 const Index = () => {
   return (
     <SiteLayout>
-      <Seo
-        title={homeSeo.title}
-        description={homeSeo.description}
-        path="/"
-        structuredData={reviewSchemas}
-      />
+      <Seo title={homeSeo.title} description={homeSeo.description} path="/" />
 
       {/* HERO */}
       <section className="relative">

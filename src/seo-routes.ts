@@ -10,6 +10,8 @@ export type SeoRoute = {
   ogImage?: string;
   changefreq: string;
   priority: string;
+  /** Adresse canonique si cette route est un alias. Absente du sitemap. */
+  canonicalPath?: string;
 };
 
 export const homeSeo: SeoRoute = {
@@ -90,6 +92,7 @@ export const faireLePointSeo: SeoRoute = {
 export const lePointSeo: SeoRoute = {
   ...faireLePointSeo,
   path: "/le-point/",
+  canonicalPath: "/faire-le-point/",
 };
 
 export const blogSeo: SeoRoute = {

@@ -22,8 +22,8 @@ const upsert = (html, pattern, replacement, anchorPattern) => {
   return html.replace(anchorPattern, `${replacement}\n$&`);
 };
 
-const updateHtml = ({ path, title, description, ogImage }) => {
-  const canonical = `${siteUrl}${path}`;
+const updateHtml = ({ path, canonicalPath, title, description, ogImage }) => {
+  const canonical = `${siteUrl}${canonicalPath ?? path}`;
 
   let html = indexHtml
     .replace(/<title>.*?<\/title>/, `<title>${attr(title)}</title>`)
@@ -67,7 +67,7 @@ for (const route of routes) {
 }
 
 const lastmod = new Date().toISOString().slice(0, 10);
-const sitemapBody = routes
+const sitemapBody = routes.filter((route) => !route.canonicalPath)
   .map((route) =>
     [
       "  <url>",
