@@ -56,6 +56,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://lorainehabib.com/blog/conflit-associe-que-faire/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://lorainehabib.com/mentions-legales/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

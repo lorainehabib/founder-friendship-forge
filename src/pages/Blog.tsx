@@ -1,12 +1,30 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SiteLayout from "@/components/SiteLayout";
 import Seo from "@/components/Seo";
 import NewsletterCapture from "@/components/NewsletterCapture";
-import { publishedPosts, newsletterDescription, newsletterName, newsletterTagline } from "@/content/blog";
+import {
+  categoryLabels,
+  publishedPosts,
+  publicationLabel,
+  newsletterDescription,
+  newsletterName,
+  newsletterTagline,
+  type BlogCategory,
+} from "@/content/blog";
 import { blogSeo } from "@/seo-routes";
 import BlogFigure from "@/components/BlogFigure";
 
+const filters: Array<{ id: "tout" | BlogCategory; label: string }> = [
+  { id: "tout", label: "Tout" },
+  { id: "lettre", label: categoryLabels.lettre },
+  { id: "situation", label: categoryLabels.situation },
+];
+
 const Blog = () => {
+  const [filter, setFilter] = useState<(typeof filters)[number]["id"]>("tout");
+  const posts = publishedPosts.filter((post) => filter === "tout" || post.category === filter);
+
   return (
     <SiteLayout>
       <Seo
@@ -28,20 +46,49 @@ const Blog = () => {
           <div className="mt-12 md:mt-14">
             <NewsletterCapture />
           </div>
-          {publishedPosts.length > 0 && (
-            <ul className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2 md:mt-16">
-              {publishedPosts.map((post) => (
+          <div className="mt-14 flex flex-wrap gap-x-6 gap-y-3 md:mt-16" role="group" aria-label="Filtrer les publications">
+            {filters.map((item) => {
+              const active = filter === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setFilter(item.id)}
+                  className={`border-b pb-1 text-sm tracking-wide transition-colors ${
+                    active
+                      ? "border-foreground text-foreground"
+                      : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </button>
+              );
+            })}
+          </div>
+          {posts.length > 0 && (
+            <ul className="mt-10 grid gap-x-12 gap-y-14 sm:grid-cols-2">
+              {posts.map((post) => (
                 <li key={post.slug}>
                   <Link to={post.path} className="group flex flex-col">
                     <BlogFigure slug={post.slug} className="mb-5" />
-                    <h2 className="font-serif text-2xl leading-[1.2] text-foreground transition-colors group-hover:text-accent text-balance">
+                    <p className="text-xs uppercase tracking-[0.2em] text-accent">
+                      {categoryLabels[post.category]}
+                    </p>
+                    <h2 className="mt-3 font-serif text-2xl leading-[1.2] text-foreground transition-colors group-hover:text-accent text-balance">
                       {post.title}.
                     </h2>
                     <p className="mt-3 text-base leading-relaxed text-foreground/80">
                       {post.excerpt}
                     </p>
-                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                      {post.dateLabel}
+                    <p
+                      className={
+                        post.category === "lettre"
+                          ? "mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground"
+                          : "mt-4 text-sm text-muted-foreground"
+                      }
+                    >
+                      {publicationLabel(post)}
                     </p>
                     <span className="mt-3 inline-flex items-center gap-3 text-sm tracking-wide text-accent">
                       Lire

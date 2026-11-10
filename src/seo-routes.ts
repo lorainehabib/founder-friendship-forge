@@ -116,21 +116,26 @@ export const mentionsSeo: SeoRoute = {
 export const blogPostSeo = (post: BlogPost): SeoRoute => ({
   path: post.path,
   title: post.seoTitle ?? `${post.title} · Loraine Habib`,
-  description: post.excerpt,
+  description: post.description ?? post.excerpt,
   changefreq: "monthly",
   priority: "0.7",
 });
 
 export const blogPostingSchema = (post: BlogPost) => ({
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": "Article",
   headline: post.title,
-  description: post.excerpt,
+  description: post.description ?? post.excerpt,
   datePublished: post.date,
   dateModified: post.date,
   inLanguage: "fr",
   url: `${SITE_URL}${post.path}`,
-  author: { "@id": PERSON_ID },
+  mainEntityOfPage: `${SITE_URL}${post.path}`,
+  author: {
+    "@type": "Person",
+    "@id": PERSON_ID,
+    name: "Loraine Habib",
+  },
   publisher: {
     "@type": "Person",
     "@id": PERSON_ID,

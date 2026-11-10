@@ -14,7 +14,7 @@ Prise de rendez-vous : https://cal.com/loraine-habib/echange
 - [Socle](https://lorainehabib.com/offres/socle/) : quand tout va bien, à quelques détails près.
 - [Reset](https://lorainehabib.com/offres/reset/) : quand c'est déjà tendu, et que vous venez ensemble.
 - [Solo](https://lorainehabib.com/offres/solo/) : quand vous venez seul, pour faire bouger une situation.
-- [L'angle mort](https://lorainehabib.com/blog/) : les récits d'accompagnement, dans les lettres.
+- [L'angle mort](https://lorainehabib.com/blog/) : les lettres et les situations, sur la relation entre associés.
 - [À propos](https://lorainehabib.com/a-propos/) : parcours, formations et certifications.
 - [Mentions légales](https://lorainehabib.com/mentions-legales/) : éditeur, hébergement, RGPD.
 
@@ -22,8 +22,14 @@ Prise de rendez-vous : https://cal.com/loraine-habib/echange
 
 À mettre à jour à chaque nouvelle lettre.
 
-- [La conversation qu'on évite](https://lorainehabib.com/blog/la-conversation-quon-evite/) : ce qui casse une association, ce ne sont pas les grandes disputes, ce sont les petits inconforts qu'on a gardés pour soi.
-- [C'est lui le problème](https://lorainehabib.com/blog/c-est-lui-le-probleme/) : il pense exactement la même chose de vous. La part que prennent nos réactions dans un désaccord qui s'enlise.
+- [La conversation qu'on évite](https://lorainehabib.com/blog/la-conversation-quon-evite/) (numéro 1) : ce qui casse une association, ce ne sont pas les grandes disputes, ce sont les petits inconforts qu'on a gardés pour soi.
+- [C'est lui le problème](https://lorainehabib.com/blog/c-est-lui-le-probleme/) (numéro 2) : la part que prennent nos réactions dans un désaccord qui s'enlise.
+
+## Situations
+
+Articles de fond, sans numéro. Ils restent valables dans le temps.
+
+- [Conflit avec son associé : quand on a tout essayé](https://lorainehabib.com/blog/conflit-associe-que-faire/) : vous avez l'impression d'avoir tout essayé avec votre associé. Ce qui se joue, ce qu'on peut encore faire, et quand faire appel à un coach ou à un médiateur.
 
 ## Profil
 

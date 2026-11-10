@@ -98,10 +98,12 @@ export const OfferSituation = ({
   children,
   to,
   label,
+  more,
 }: {
   children: ReactNode;
   to: string;
   label: string;
+  more?: { to: string; label: string };
 }) => (
   <section className="mt-16 border-t border-[#e0d5c8] pt-10">
     <h2 className="mb-4 font-sans text-sm font-medium tracking-normal text-accent">Une situation réelle</h2>
@@ -110,6 +112,11 @@ export const OfferSituation = ({
       <Link to={to} className="mt-4 inline-flex items-center gap-2 text-base text-accent hover:underline">
         {label}
       </Link>
+      {more && (
+        <Link to={more.to} className="mt-3 flex items-center gap-2 text-base text-accent hover:underline">
+          {more.label}
+        </Link>
+      )}
     </aside>
   </section>
 );

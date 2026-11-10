@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import OfferPage, { OfferLede, OfferRead, OfferSection } from "@/components/OfferPage";
 import SeanceRythme from "@/components/SeanceRythme";
 import { soloSeo } from "@/seo-routes";
@@ -66,6 +67,12 @@ const Solo = () => (
     >
       <SeanceRythme />
     </OfferSection>
+
+    <p className="mt-16 border-t border-[#e0d5c8] pt-10">
+      <Link to="/blog/conflit-associe-que-faire/" className="inline-flex items-center gap-2 text-base text-accent hover:underline">
+        Peut-on se faire coacher sur sa relation d'associés sans son associé{"\u00a0"}? →
+      </Link>
+    </p>
   </OfferPage>
 );
 

@@ -123,6 +123,15 @@ const Approche = () => {
                 </span>
               </Link>
               <Link
+                to="/blog/conflit-associe-que-faire/"
+                className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
+              >
+                Conflit avec son associé&nbsp;: quand on a tout essayé
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <Link
                 to="/offres/"
                 className="group inline-flex items-center gap-3 text-accent text-sm tracking-wide border-b border-accent/40 hover:border-accent pb-1 transition-all"
               >

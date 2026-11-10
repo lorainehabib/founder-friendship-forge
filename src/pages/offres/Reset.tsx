@@ -111,6 +111,10 @@ const Reset = () => (
     <OfferSituation
       to="/blog/c-est-lui-le-probleme/"
       label={"Lire leur histoire dans «\u00a0C'est lui le problème\u00a0» →"}
+      more={{
+        to: "/blog/conflit-associe-que-faire/",
+        label: "Conflit avec son associé\u00a0: quand on a tout essayé →",
+      }}
     >
       <p>
         Charles et Inès s'étaient mis d'accord{"\u00a0"}: l'équipe tech se concentre sur la nouvelle

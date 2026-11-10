@@ -2,6 +2,8 @@ import conversationJpg from "@/assets/blog-la-conversation-quon-evite.jpg";
 import conversationWebp from "@/assets/blog-la-conversation-quon-evite.webp";
 import problemeJpg from "@/assets/blog-c-est-lui-le-probleme.jpg";
 import problemeWebp from "@/assets/blog-c-est-lui-le-probleme.webp";
+import conflitJpg from "@/assets/blog-conflit-associe-que-faire.jpg";
+import conflitWebp from "@/assets/blog-conflit-associe-que-faire.webp";
 
 export type BlogIllustration = {
   jpg: string;
@@ -19,5 +21,10 @@ export const blogIllustrations: Record<string, BlogIllustration> = {
     jpg: problemeJpg,
     webp: problemeWebp,
     alt: "Deux personnes face à face, chacune montrant l'autre du doigt.",
+  },
+  "conflit-associe-que-faire": {
+    jpg: conflitJpg,
+    webp: conflitWebp,
+    alt: "Deux personnes côte à côte, bras croisés, séparées par une fissure.",
   },
 };

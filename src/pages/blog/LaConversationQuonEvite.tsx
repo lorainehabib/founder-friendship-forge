@@ -80,7 +80,7 @@ const LaConversationQuonEvite = () => {
               <Link to="/blog/" className="hover:text-foreground transition-colors">
                 {newsletterName}
               </Link>
-              <span className="text-muted-foreground"> · {post.dateLabel}</span>
+              <span className="text-muted-foreground"> · Numéro {post.number} · {post.dateLabel}</span>
             </p>
             <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-balance text-foreground">
               La conversation qu'on évite.
@@ -304,6 +304,15 @@ const LaConversationQuonEvite = () => {
               className="group mt-8 flex w-fit items-center gap-3 border-b border-accent/40 pb-1 text-sm tracking-wide text-accent transition-all hover:border-accent"
             >
               Le travail que je décris ici avec Alex et Stan, c'est Socle
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            </Link>
+            <Link
+              to="/blog/conflit-associe-que-faire/"
+              className="group mt-5 flex w-fit items-center gap-3 border-b border-accent/40 pb-1 text-sm tracking-wide text-accent transition-all hover:border-accent"
+            >
+              Conflit avec son associé{"\u00a0"}: quand on a tout essayé
               <span className="transition-transform duration-300 group-hover:translate-x-1">
                 →
               </span>

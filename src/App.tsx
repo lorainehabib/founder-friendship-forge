@@ -18,6 +18,7 @@ import MentionsLegales from "./pages/MentionsLegales.tsx";
 import Blog from "./pages/Blog.tsx";
 import LaConversationQuonEvite from "./pages/blog/LaConversationQuonEvite.tsx";
 import CestLuiLeProbleme from "./pages/blog/CestLuiLeProbleme.tsx";
+import ConflitAssocieQueFaire from "./pages/blog/ConflitAssocieQueFaire.tsx";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ export const AppRoutes = () => (
       <Route path="/blog" element={<Blog />} />
       <Route path="/blog/la-conversation-quon-evite" element={<LaConversationQuonEvite />} />
       <Route path="/blog/c-est-lui-le-probleme" element={<CestLuiLeProbleme />} />
+      <Route path="/blog/conflit-associe-que-faire" element={<ConflitAssocieQueFaire />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
