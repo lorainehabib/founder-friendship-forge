@@ -1,10 +1,12 @@
 export const newsletterName = "L'angle mort";
 
-export const newsletterTagline =
-  "Une lettre sur ce qui empêche les dirigeants d'avancer.";
+export const newsletterTagline = "Ce qui empêche les dirigeants d'avancer.";
 
 export const newsletterDescription =
-  "À partir de situations réellement vécues par mes clients, on tire le fil jusqu'à mettre le doigt sur l'angle mort\u00a0: cet endroit qui bloque, qu'on ne voit pas parce qu'on est dedans. Et à voir l'angle mort des autres, on finit parfois par entrevoir le sien.";
+  "À partir de situations réellement vécues par mes clients, je tire le fil jusqu'à mettre le doigt sur l'angle mort\u00a0: cet endroit qui bloque, qu'on ne voit pas parce qu'on est dedans. Et à voir l'angle mort des autres, on finit parfois par entrevoir le sien.";
+
+export const newsletterScope =
+  "Les lettres partent d'une histoire. Les situations partent d'une difficulté fréquente entre associés.";
 
 export type BlogCategory = "lettre" | "situation";
 

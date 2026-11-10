@@ -9,6 +9,7 @@ import {
   publicationLabel,
   newsletterDescription,
   newsletterName,
+  newsletterScope,
   newsletterTagline,
   type BlogCategory,
 } from "@/content/blog";
@@ -42,6 +43,9 @@ const Blog = () => {
           </p>
           <p className="mt-8 max-w-3xl text-lg md:text-xl text-foreground/85 leading-relaxed">
             {newsletterDescription}
+          </p>
+          <p className="mt-6 max-w-3xl text-lg md:text-xl text-foreground/85 leading-relaxed">
+            {newsletterScope}
           </p>
           <div className="mt-12 md:mt-14">
             <NewsletterCapture />
