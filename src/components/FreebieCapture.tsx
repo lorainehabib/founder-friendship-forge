@@ -5,12 +5,14 @@ type FreebieCaptureProps = {
   headingLevel?: "h1" | "h2";
   source?: string;
   className?: string;
+  description?: string;
 };
 
 const FreebieCapture = ({
   headingLevel = "h2",
   source = "unknown",
   className,
+  description = "Les petits inconforts d'aujourd'hui sont les tensions de demain. En 20 minutes, faites le point sur votre association\u00a0: un questionnaire pour évaluer votre niveau d'inconfort, puis une grille d'observation pour y voir plus clair.",
 }: FreebieCaptureProps) => {
   const Heading = headingLevel;
 
@@ -32,10 +34,7 @@ const FreebieCapture = ({
             : "mt-6 text-base md:text-lg text-foreground/80 leading-relaxed"
         }
       >
-        Les petits inconforts d'aujourd'hui sont les tensions de demain. En 20
-        minutes, faites le point sur votre association&nbsp;: un questionnaire
-        pour évaluer votre niveau d'inconfort, puis une grille d'observation
-        pour y voir plus clair.
+        {description}
       </p>
       <div className="mt-10">
         <FreebieForm source={source} />

@@ -64,20 +64,16 @@ const Index = () => {
         <div className="mx-auto max-w-7xl px-6 md:px-10 pt-12 md:pt-24 pb-20 md:pb-32">
           <div className="grid gap-12 md:gap-16 lg:grid-cols-12 items-center">
             <div className="lg:col-span-7 animate-fade-up">
-              <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-balance text-foreground">
-                La relation entre associés,{" "}
-                <span className="block italic text-muted-foreground mt-2">
-                  ça se travaille.
-                </span>
+              <h1 className="font-serif text-4xl min-[360px]:text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-[4.8rem] leading-[1.05] text-balance text-foreground">
+                Ce ne sont pas <span className="italic text-accent">les grandes disputes</span> qui cassent une association.
               </h1>
               <div className="mt-10 space-y-5 max-w-xl text-xl md:text-2xl text-foreground/80 leading-relaxed text-pretty">
                 <p className="text-foreground">
-                  Ce qui casse une association, ce ne sont pas les grandes
-                  disputes. Ce sont les petits inconforts qu'on garde pour soi.
+                  Ce sont les petits inconforts qu’on garde pour soi.
                 </p>
                 <p className="text-foreground/80 text-lg md:text-xl">
-                  J'accompagne les fondateurs pour que leur association tienne,
-                  et avance.
+                  J’aide les associés à les régler, pour que leur association
+                  tienne, et avance.
                 </p>
               </div>
             </div>
@@ -175,8 +171,10 @@ const Index = () => {
               Wasserman dans <em>The Founder's Dilemmas</em>.
             </p>
             <p>
-              Ces raisons humaines s'installent lentement. Tout part de petits
-              inconforts qu'on garde pour soi.
+              Ces raisons humaines s’installent lentement. Ce que les associés
+              ne se disent pas finit par se voir partout&nbsp;: dans les
+              décisions qui traînent, dans un COMEX qui évite les mêmes sujets,
+              dans des équipes qui ne savent plus qui tranche.
             </p>
           </div>
           <div className="mt-14 md:mt-16">
@@ -259,7 +257,12 @@ const Index = () => {
         className="scroll-mt-28 border-t border-border/60 bg-secondary/40"
       >
         <div className="mx-auto max-w-3xl px-6 md:px-10 py-24 md:py-32">
-          <FreebieCapture source="accueil" />
+          <FreebieCapture
+            source="accueil"
+            description={
+              "Où en êtes-vous sur l’échelle\u00a0? En 20 minutes, faites le point sur votre association\u00a0: un questionnaire pour évaluer votre niveau d’inconfort, puis une grille d’observation pour y voir plus clair."
+            }
+          />
         </div>
       </section>
     </SiteLayout>
